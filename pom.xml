@@ -1,0 +1,41 @@
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Test soapui</name>
+    <groupId>tdrury</groupId>
+    <artifactId>com.example.soapuitests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <description>first test</description>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.smartbear.soapui</groupId>
+                <artifactId>soapui-maven-plugin</artifactId>
+                <version>5.0.0</version>
+
+                <executions>
+                    <execution>
+                        <id>Fidus-TestSuite</id>
+                        <configuration>
+                            <projectFile>/home/isr/Documents/testsuites/Client-PersonService-v1-1-soapui-project.xml</projectFile>
+                            <outputFolder>/home/isr/target/surefire-reports</outputFolder>
+                            <!--<testSuite>Positive cases</testSuite>-->
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
