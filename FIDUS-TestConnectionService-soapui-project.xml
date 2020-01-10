@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="FIDUS-TestConnectionService" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" id="e746d8d5-63c8-4dcd-9ac4-bb107f05147d" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="TestConnectionService_v1.0Soap11Binding" type="wsdl" bindingName="{http://fidus.brussels/service/testconnection/v1}TestConnectionService_v1.0Soap11Binding" soapVersion="1_1" anonymous="optional" definition="https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0?wsdl" id="387b1949-71ed-4a2c-9dcd-90fe1c04760c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0?wsdl"><con:part><con:url>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/testconnection/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidus.brussels/service/testconnection/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mes="http://fidus.brussels/service/testconnection/messages/v1" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsp:Policy wsu:Id="SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+            <sp:MustSupportRefIssuerSerial/>
+          </sp:Policy>
+        </sp:Wss10>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:SignedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/testconnection/v1">
+      <xsd:import namespace="http://fidus.brussels/service/testconnection/messages/v1" schemaLocation="TestConnectionService_v1.0?xsd=testConnectionMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="testTimeoutRequestMessage">
+    <wsdl:part name="testTimeoutRequest" element="mes:testTimeoutRequest"/>
+  </wsdl:message>
+  <wsdl:message name="testTimeoutResponseMessage">
+    <wsdl:part name="testTimeoutResponse" element="mes:testTimeoutResponse"/>
+  </wsdl:message>
+  <wsdl:message name="testConnectionRequestMessage">
+    <wsdl:part name="TestConnectionRequest" element="mes:testConnectionRequest"/>
+  </wsdl:message>
+  <wsdl:message name="testConnectionResponseMessage">
+    <wsdl:part name="TestConnectionResponse" element="mes:testConnectionResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="TestConnectionService_v1.0PortType" wsp:PolicyURIs="#SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsdl:operation name="testTimeout">
+      <wsdl:input message="tns:testTimeoutRequestMessage" wsaw:Action="http://fidus.brussels/services/testconnection/testTimout"/>
+      <wsdl:output message="tns:testTimeoutResponseMessage" wsaw:Action="http://fidus.brussels/service/testconnection/v1/TestConnectionServicePortType/testTimeoutResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <wsdl:input message="tns:testConnectionRequestMessage" wsaw:Action="http://fidus.brussels/services/testconnection/testConnection"/>
+      <wsdl:output message="tns:testConnectionResponseMessage" wsaw:Action="http://fidus.brussels/service/testconnection/v1/TestConnectionServicePortType/testConnectionResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TestConnectionService_v1.0Soap11Binding" type="tns:TestConnectionService_v1.0PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="testTimeout">
+      <soap:operation soapAction="http://fidus.brussels/services/testconnection/testTimout" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <soap:operation soapAction="http://fidus.brussels/services/testconnection/testConnection" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TestConnectionService_v1.0">
+    <wsdl:port name="TestConnectionService_v1.0HttpsSoap11Endpoint" binding="tns:TestConnectionService_v1.0Soap11Binding">
+      <soap:address location="https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0.TestConnectionService_v1.0HttpsSoap11Endpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0?xsd=testConnectionMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/testconnection/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/service/testconnection/messages/v1" xmlns:cme="http://fidus.brussels/type/common/messages/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="TestConnectionService_v1.0?xsd=baseMessageTypes_v1.xsd"/>
+  <xsd:complexType name="TestConnectionRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="testConnectionRequest" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TestConnectionResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="testConnectionResponse" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TestTimeoutRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="testTimeoutRequest" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TestTimeoutResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="testTimeoutResponse" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="testConnectionRequest" type="tns:TestConnectionRequestType"/>
+  <xsd:element name="testConnectionResponse" type="tns:TestConnectionResponseType"/>
+  <xsd:element name="testTimeoutRequest" type="tns:TestTimeoutRequestType"/>
+  <xsd:element name="testTimeoutResponse" type="tns:TestTimeoutResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0?xsd=baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nps="http://fidus.brussels/service/personservice/personservices/naturalPerson/v1" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by Fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" nillable="true" type="xsd:language">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://fidus.brussels/services/testconnection/v1</con:endpoint><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0.TestConnectionService_v1.0HttpsSoap11Endpoint</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://fidus.brussels/services/testconnection/testConnection" name="testConnection" bindingOperationName="testConnection" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="65748bf5-9dd7-4ded-9933-ff672f734a59"><con:settings/><con:call name="Request 1" id="86dacc27-25ab-4387-9004-a5887aa1ecb7"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://fidus.brussels/services/testconnection/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testConnectionRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:testConnectionRequest>?</v1:testConnectionRequest>
+      </v1:testConnectionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/testconnection/testConnection"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="230f4da6-def8-4846-86ae-93021ebb0889" isOneWay="false" action="http://fidus.brussels/services/testconnection/testTimout" name="testTimeout" bindingOperationName="testTimeout" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0f6cc4d2-a271-4275-906b-359ccb1cc746" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://fidus.brussels/services/testconnection/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testTimeoutRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:testTimeoutRequest>?</v1:testTimeoutRequest>
+      </v1:testTimeoutRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/testconnection/testTimout"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite" id="a3c59e79-38bb-4106-a7f1-8fb50fc2f732"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase OK" searchProperties="true" id="4643886b-e88b-4a70-911e-3943908701db"><con:settings/><con:testStep type="request" name="testConnection - Request OK" id="6b790b02-6b4a-483e-bce1-453bc4ac3a65"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testConnection</con:operation><con:request name="testConnection - Request OK" outgoingWss="Outflow" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0552df8c-e27b-4f84-947f-6113fce876d7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testConnectionRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testConnectionRequest>Ping</v1:testConnectionRequest>
+      </v1:testConnectionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response" id="aacb720c-422d-4847-9fb6-22f790a3a6a7"/><con:assertion type="Schema Compliance" id="483038a6-b057-4845-bac4-ac38df151c5b" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="4ade1838-43af-420c-807a-e6434a3fbdc1" name="Not SOAP Fault"/><con:assertion type="Simple Contains" id="418c184a-2398-4767-9fed-9ddd5ef506a5" name="Contains"><con:configuration><token>>Pong&lt;</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/testconnection/testConnection"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="testTimeout - Request OK" id="23257bcf-c92b-4dad-9bfa-c36de51b5de3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testTimeout</con:operation><con:request name="testTimeout - Request OK" id="70ef2e27-870f-4d0d-9585-2fea4b6cbc1f" outgoingWss="Outflow"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testTimeoutRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testTimeoutRequest>10</v1:testTimeoutRequest>
+      </v1:testTimeoutRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="29dd6a77-7dc3-42ba-8756-4553995581d2"/><con:assertion type="Schema Compliance" id="86203eb1-1919-4665-83c8-bb9dc21b2a7d" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" id="1bf87a59-0b11-4a4c-87cd-47f6e2653fed" name="Not SOAP Fault"/><con:assertion type="Simple Contains" id="df74a7ab-6663-43cf-b6ef-40311344b02c" name="Contains"><con:configuration><token>>Done&lt;</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="05d9d586-e8f0-4780-a48d-0fec9afe965c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase Fault" searchProperties="true"><con:settings/><con:testStep type="request" name="testConnection - No WS-Security applied" id="774864ff-143b-42f6-9fb9-8d5bdc94ce75"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testConnection</con:operation><con:request name="testConnection - No WS-Security applied" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0552df8c-e27b-4f84-947f-6113fce876d7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testConnectionRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testConnectionRequest>Ping</v1:testConnectionRequest>
+      </v1:testConnectionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4ade1838-43af-420c-807a-e6434a3fbdc1" name="Not SOAP Fault"/><con:assertion type="Simple Contains" id="418c184a-2398-4767-9fed-9ddd5ef506a5" name="Contains"><con:configuration><token>Missing wsse:Security header in request</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/testconnection/testConnection"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="testConnection - Invalid request message" id="48e2b34f-2746-4b31-bbfd-bb705600af5f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testConnection</con:operation><con:request name="testConnection - Invalid request message" outgoingWss="Outflow" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0552df8c-e27b-4f84-947f-6113fce876d7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testConnectionRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testConnectionRequest>Ping</v1:testConnectionRequest>
+         <v1:testConnectionRequest>Ping</v1:testConnectionRequest>
+      </v1:testConnectionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response" id="aacb720c-422d-4847-9fb6-22f790a3a6a7"/><con:assertion type="Schema Compliance" id="483038a6-b057-4845-bac4-ac38df151c5b" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="Simple Contains" id="418c184a-2398-4767-9fed-9ddd5ef506a5" name="Contains"><con:configuration><token>Validation failed</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="e7344345-7a4f-4a55-83db-5e831156c84c" name="SOAP Fault"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/testconnection/testConnection"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="testConnection - Invalid endpoint URL" id="c178b0fb-ed35-48a1-9aa9-e2a682eb841d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testConnection</con:operation><con:request name="testConnection - Invalid endpoint URL" outgoingWss="Outflow" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0552df8c-e27b-4f84-947f-6113fce876d7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestttttttConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testConnectionRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testConnectionRequest>Ping</v1:testConnectionRequest>
+      </v1:testConnectionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response" id="aacb720c-422d-4847-9fb6-22f790a3a6a7"/><con:assertion type="Schema Compliance" id="483038a6-b057-4845-bac4-ac38df151c5b" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="Simple Contains" id="418c184a-2398-4767-9fed-9ddd5ef506a5" name="Contains"><con:configuration><token>Service not found.</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="55eefafa-8c39-4dff-ba9f-075ea3b89343" name="SOAP Fault"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/testconnection/testConnection"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="testTimeout - No WS-Security applied" id="adf7b504-bc66-4087-b5f0-f3365578d164"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testTimeout</con:operation><con:request name="testTimeout - No WS-Security applied" id="70ef2e27-870f-4d0d-9585-2fea4b6cbc1f" outgoingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testTimeoutRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testTimeoutRequest>10</v1:testTimeoutRequest>
+      </v1:testTimeoutRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="fabc5cbc-62e1-4481-a657-13757bc41deb" name="Not SOAP Fault"/><con:assertion type="Simple Contains" id="a112a157-bcd2-4291-a87f-0d656a734cb0" name="Contains"><con:configuration><token>Missing wsse:Security header in request</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="testTimeout - Invalid request message" id="e884756d-a5b3-4b00-a992-a666f66a5ce3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testTimeout</con:operation><con:request name="testTimeout - Invalid request message" id="70ef2e27-870f-4d0d-9585-2fea4b6cbc1f" outgoingWss="Outflow"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testTimeoutRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testTimeoutRequestttttt>10</v1:testTimeoutRequestttttt>
+      </v1:testTimeoutRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="29dd6a77-7dc3-42ba-8756-4553995581d2"/><con:assertion type="Schema Compliance" id="e029e28b-1893-442f-b369-f3709571b385" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="Simple Contains" id="89003b56-6d1e-4211-8360-84562a1bf120" name="Contains"><con:configuration><token>Validation failed</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="b8ab4502-0b41-43e5-b0cb-0b80053b7cbd" name="SOAP Fault"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="testTimeout - Invalid endpoint URL" id="bb07f9b2-7a25-43d6-b67c-a7699898c296"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TestConnectionService_v1.0Soap11Binding</con:interface><con:operation>testTimeout</con:operation><con:request name="testTimeout - Invalid endpoint URL" id="70ef2e27-870f-4d0d-9585-2fea4b6cbc1f" outgoingWss="Outflow"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/TestConnectionService_v1.00000000000</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/testconnection/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:testTimeoutRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:testTimeoutRequest>10</v1:testTimeoutRequest>
+      </v1:testTimeoutRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="29dd6a77-7dc3-42ba-8756-4553995581d2"/><con:assertion type="Schema Compliance" id="b133e1e9-79e2-4bb1-9289-a67f9440dc65" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="Simple Contains" id="63d6177c-d088-481e-899a-3b257b56365e" name="Contains"><con:configuration><token>Service not found.</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="63cc8307-a700-4be0-ae05-12dd8b46dd15" name="SOAP Fault"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer><con:crypto><con:source>C:/Users/RBTBV56/Downloads/testconnection.jks</con:source><con:password>wso2carbon</con:password><con:type>KEYSTORE</con:type></con:crypto><con:crypto><con:source>C:/cirb/rajarshi-stage_fidus_brussels_12908014/rajarshi-stage_fidus_brussels_12908014/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow</con:name><con:entry type="Signature" username="testconnection-test.fidus.brussels" password="wso2carbont"><con:configuration><crypto>testconnection.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><prependSignature>true</prependSignature><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>testConnection</con:name></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
