@@ -33,8 +33,8 @@
                     <execution>
                         <id>Fidus-TestSuite</id>
                         <configuration>
-                            <projectFile>home/isr/Documents/testsuites/Client-PersonService-v1-1-soapui-project.xml</projectFile>
-                            <outputFolder>home/isr/target/surefire-reports</outputFolder>
+                            <projectFile>Client-PersonService-v1-1-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
                             <!--<testSuite>Positive cases</testSuite>-->
                             <junitReport>true</junitReport>
                             <!--<exportwAll>true</exportwAll>-->
