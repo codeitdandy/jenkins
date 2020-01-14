@@ -62,10 +62,7 @@
                         </goals>
                         <phase>test</phase>
                     </execution>
-        </executions>
-
-                </executions>
-                    
+		    </executions>
                     <dependencies>
 					
                     <dependency>
