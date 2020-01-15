@@ -34,7 +34,7 @@
 			  <execution>
                         <id>Fidus-TestSuiteCountry</id>
                         <configuration>
-                            <projectFile>Client-PersonService-v1-1-soapui-project.xml</projectFile>
+                            <projectFile>Client-CountryService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <!--<testSuite>Positive cases</testSuite>-->
                             <junitReport>true</junitReport>
