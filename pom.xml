@@ -36,7 +36,7 @@
                         <configuration>
                             <projectFile>Client-CountryService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
-                            <!--<testSuite>Positive cases</testSuite>-->
+                            <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
                             <!--<exportwAll>true</exportwAll>-->
                             <printReport>true</printReport>
@@ -52,7 +52,7 @@
                         <configuration>
                             <projectFile>Client-ArchitectOrderService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
-                            <!--<testSuite>Positive cases</testSuite>-->
+                            <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
                             <!--<exportwAll>true</exportwAll>-->
                             <printReport>true</printReport>
@@ -68,7 +68,23 @@
                         <configuration>
                             <projectFile>Client-AttestationService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
-                            <!--<testSuite>Positive cases</testSuite>-->
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+			 <execution>
+                        <id>Fidus-TestSuiteHousehold</id>
+                        <configuration>
+                            <projectFile>Client-test-houseHoldService1.0.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
                             <!--<exportwAll>true</exportwAll>-->
                             <printReport>true</printReport>
