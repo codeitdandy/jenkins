@@ -1,0 +1,2301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Client-CivilStatusMigration" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" id="258b2078-7fde-4e84-b415-90e79b93b3a0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="b27947eb-0f7c-41ca-a646-b83e240eb821" wsaVersion="NONE" name="CivilStatusMigrationServiceHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/civilstatusmigrationservice/v1}CivilStatusMigrationServiceHTTPBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/CivilStatusMigrationService_v1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/CivilStatusMigrationService_v1.wsdl"><con:part><con:url>file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/CivilStatusMigrationService_v1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/civilstatusmigrationservice/v1" name="CivilStatusMigrationService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mes="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:tns="http://fidus.brussels/service/civilstatusmigrationservice/v1">
+  <xsd:annotation>
+    <xsd:documentation>CivilStatusMigrationService WDSL v1.</xsd:documentation>
+  </xsd:annotation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fidus.brussels/service/civilstatusmigrationservice/v1" elementFormDefault="qualified">
+      <xsd:import namespace="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" schemaLocation="messages/civilStatusMigrationServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="migrateDocumentRequestMessage">
+    <wsdl:part name="MigrateDocumentRequest" element="mes:migrateDocumentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="migrateDocumentResponseMessage">
+    <wsdl:part name="MigrateDocumentResponse" element="mes:migrateDocumentResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CivilStatusMigrationServicePortType">
+    <wsdl:operation name="migrateDocument">
+      <wsdl:input message="tns:migrateDocumentRequestMessage"/>
+      <wsdl:output message="tns:migrateDocumentResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CivilStatusMigrationServiceHTTPBinding" type="tns:CivilStatusMigrationServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="migrateDocument">
+      <soap:operation soapAction="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CivilStatusMigrationService_v1">
+    <wsdl:port name="CivilStatusMigrationService_v1" binding="tns:CivilStatusMigrationServiceHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/civilstatusmigrationservice/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/messages/civilStatusMigrationServiceMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:mig="http://www.fgov.be/dabs/core">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="http://www.fgov.be/dabs/core" schemaLocation="migrationMessage_1.0.xsd"/>
+  <xsd:complexType name="DocumentRequestType">
+    <xsd:annotation>
+      <xsd:documentation>The document whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="document" type="mig:document"/>
+      <xsd:element minOccurs="0" name="notificationId" type="xsd:string"/>
+      <xsd:element name="language" type="tns:languageType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="languageType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="fr"/>
+      <xsd:enumeration value="nl"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MigrateDocumentRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:DocumentRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MigrateDocumentResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="document" type="mig:document" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Business exceptions that occur when processing the request or response e.g. missing data for a single response element.
+						Exceptions at this level may contain back-end specific codes and content.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Element of the request and the response-->
+  <xsd:element name="migrateDocumentRequest" type="tns:MigrateDocumentRequestType"/>
+  <xsd:element name="migrateDocumentResponse" type="tns:MigrateDocumentResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/messages/baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="relatesTo" type="tns:MessageIdType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Optional field. The unique id of a previous batch file in this exchange Only used for responses.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/messages/exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/tbenarmass/parent/civilstatusmigrationserviceservice/CivilStatusMigrationServiceGateway/src/main/resources/wsdl/civilStatusMigrationService/1.0.0/messages/migrationMessage_1.0.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.fgov.be/dabs/core" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.fgov.be/dabs/core">
+  <xsd:element name="migrateDocument" type="tns:migrateDocument"/>
+  <xsd:element name="migrateDocumentResponse" type="tns:migrateDocumentResponse"/>
+  <xsd:complexType name="migrateDocument">
+    <xsd:sequence>
+      <xsd:element name="document" type="tns:document"/>
+      <xsd:element minOccurs="0" name="notificationId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="document">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="attachments">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="attachment" type="tns:attachment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="certificateOriginType" type="tns:certificateOriginType"/>
+      <xsd:element minOccurs="0" name="factDate" type="tns:dabsDate"/>
+      <xsd:element minOccurs="0" name="establishingDate" type="xsd:date"/>
+      <xsd:element name="redactionPlace" type="tns:municipality"/>
+      <xsd:element name="origin" type="tns:docOrigin"/>
+      <xsd:element minOccurs="0" name="persons">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="person" type="tns:person"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="oldDocumentReference" type="xsd:string"/>
+      <xsd:element name="docState" type="tns:docState"/>
+      <xsd:element minOccurs="0" name="sideNotes">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="sideNote" type="tns:sideNote"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="act" type="xsd:base64Binary"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="impactedBy" nillable="true" type="tns:impactedDocument"/>
+      <xsd:element minOccurs="0" name="documentReference" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="attachment">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:attachmentType"/>
+      <xsd:element minOccurs="0" name="language" type="tns:language"/>
+      <xsd:element name="country" type="xsd:string"/>
+      <xsd:element name="file" type="xsd:base64Binary"/>
+      <xsd:element name="extension" type="tns:extensionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dabsDate">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="day" nillable="true" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="month" nillable="true" type="xsd:int"/>
+      <xsd:element name="year" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="municipality">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="municipalityCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="municipalityFreeText" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="countryCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="countryFreeText" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="person">
+    <xsd:sequence>
+      <xsd:element name="origin" type="tns:personOrigin"/>
+      <xsd:element minOccurs="0" name="nobility" type="tns:nobility"/>
+      <xsd:element minOccurs="0" name="nobilityFree" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="birthPlace" type="tns:municipality"/>
+      <xsd:element minOccurs="0" name="birthDate" type="tns:dabsDate"/>
+      <xsd:element minOccurs="0" name="firstname" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="lastname" type="xsd:string"/>
+      <xsd:element name="roles">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="role" type="tns:roleType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="personNumber" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="sideNote">
+    <xsd:sequence>
+      <xsd:element name="decisionType" type="tns:decisionType"/>
+      <xsd:element name="decisionCategory" type="tns:decisionCategory"/>
+      <xsd:element minOccurs="0" name="decisionReference" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="decisionDate" type="tns:dabsDate"/>
+      <xsd:element minOccurs="0" name="decisionPlace" type="tns:municipality"/>
+      <xsd:element minOccurs="0" name="decisionAuthorityCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="decisionAuthorityFree" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="applicationDate" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="registrationDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="impactedDocument">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="documentReference" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="factDate" type="tns:dabsDate"/>
+      <xsd:element minOccurs="0" name="type" type="tns:docType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="absenceCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="adoptionCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adoptionType" type="tns:adoptionType"/>
+          <xsd:element minOccurs="0" name="nameDeclaration" type="tns:nameDeclaration"/>
+          <xsd:element minOccurs="0" name="newFirstNames" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="fcaRecognitionDate" type="xsd:date"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="nameDeclaration">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="name1" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="name2" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="annulmentCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="annuledCertificateNumber" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="annulationType" type="tns:decisionCategory"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authorityDecisionCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authorityDecisionDetail" type="tns:authorityDecisionDetail"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="authorityDecisionDetail">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="decisionType" type="tns:decisionType"/>
+      <xsd:element minOccurs="0" name="decisionCategory" type="tns:decisionCategory"/>
+      <xsd:element minOccurs="0" name="decisionReference" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="decisionAuthorityCode" type="tns:jurisdictionPlace"/>
+      <xsd:element minOccurs="0" name="decisionAuthorityFree" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="decisionDate" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="applicationDate" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="modifiedCertificateReference" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" name="changedValues" type="tns:update_value"/>
+      <xsd:element maxOccurs="unbounded" name="person" type="tns:person"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType final="extension restriction" name="localDate">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="update_value">
+    <xsd:sequence>
+      <xsd:element name="changedFieldCode" type="tns:code"/>
+      <xsd:element name="changedFieldOldValue" type="xsd:string"/>
+      <xsd:element name="changedFieldNewValue" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="birthCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="birthTime" type="xsd:time"/>
+          <xsd:element minOccurs="0" name="nameDeclaration" type="tns:nameDeclaration"/>
+          <xsd:element name="nameDeclarationMadeByTheParents" type="xsd:boolean"/>
+          <xsd:element name="gender" type="tns:gender"/>
+          <xsd:element minOccurs="0" name="childAddress" type="tns:address"/>
+          <xsd:element minOccurs="0" name="consentRole" type="tns:roleType"/>
+          <xsd:element minOccurs="0" name="consentDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="ConsentPlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="consentAuthority" type="tns:consentAuthorityType"/>
+          <xsd:element minOccurs="0" name="juridicalAuthority" type="tns:jurisdictionPlace"/>
+          <xsd:element minOccurs="0" name="juridicalReference" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="verdictDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="nationalityCode" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="prenatalRecognitionDocumentReference" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="address">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="placeCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="postCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="streetCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="houseNumber" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="indexNumber" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="deathCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deceasePlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="deceaseTime" type="xsd:time"/>
+          <xsd:element minOccurs="0" name="lifelessBody" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="divorceCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="marriageCertificateNumber" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="firstNameChangeCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element name="firstNames" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="declarationOfLifelessChildCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="firstnames" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="gender" type="tns:gender"/>
+          <xsd:element minOccurs="0" name="birthTime" type="xsd:time"/>
+          <xsd:element name="birthPlace" type="tns:municipality"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="marriageCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="namechangeSpouse1" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="namechangeSpouse2" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="nameChangeCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element name="nameDeclaration" type="tns:nameDeclaration"/>
+          <xsd:element name="reasonForTheCertificate" type="tns:nameChangeReasonType"/>
+          <xsd:element minOccurs="0" name="requestingDate" type="xsd:date"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="nationalityCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reasonForTheCertificate" type="tns:nationalityReasonType"/>
+          <xsd:element minOccurs="0" name="otherNationalityCode" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="prenatalRecognitionCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="motherConsentDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="motherConsentPlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="motherConsentAuthority" type="tns:consentAuthorityType"/>
+          <xsd:element minOccurs="0" name="juridicalReference" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="juridicalAuthority" type="tns:jurisdictionPlace"/>
+          <xsd:element minOccurs="0" name="verdictDate" type="xsd:date"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="recognitionCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="nameDeclaration" type="tns:nameDeclaration"/>
+          <xsd:element name="nameDeclarationMadeByTheParents" type="xsd:boolean"/>
+          <xsd:element minOccurs="0" name="filiationConsentDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="filiationConsentPlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="filiationConsentAuthority" type="tns:consentAuthorityType"/>
+          <xsd:element minOccurs="0" name="childConsentDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="childConsentPlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="childConsentAuthority" type="tns:consentAuthorityType"/>
+          <xsd:element minOccurs="0" name="legalRepresentativeConsentDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="legalRepresentativeConsentPlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="legalRepresentativeConsentAuthority" type="tns:consentAuthorityType"/>
+          <xsd:element minOccurs="0" name="courtConsentJurisdiction" type="tns:jurisdictionPlace"/>
+          <xsd:element minOccurs="0" name="courtConsentVerdictDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="courtConsentReference" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="newFirstName" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="sexChangeCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element name="newGender" nillable="true" type="tns:gender"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="unknownPersonDeathCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deceasePlace" type="tns:municipality"/>
+          <xsd:element minOccurs="0" name="deceaseTime" type="xsd:time"/>
+          <xsd:element minOccurs="0" name="lifelessBody" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="modificationCertificate">
+    <xsd:complexContent>
+      <xsd:extension base="tns:document">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authorityDecisionDetail" type="tns:authorityDecisionDetail"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="roleRequirement">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="migrateDocumentResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="document" type="tns:document"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="error">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="errorCode" type="xsd:int"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="arguments" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="msg" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="attachmentType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="FOREIGN"/>
+      <xsd:enumeration value="OLD"/>
+      <xsd:enumeration value="OTHER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="language">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="aa"/>
+      <xsd:enumeration value="ab"/>
+      <xsd:enumeration value="ae"/>
+      <xsd:enumeration value="af"/>
+      <xsd:enumeration value="ak"/>
+      <xsd:enumeration value="am"/>
+      <xsd:enumeration value="an"/>
+      <xsd:enumeration value="ar"/>
+      <xsd:enumeration value="as"/>
+      <xsd:enumeration value="av"/>
+      <xsd:enumeration value="ay"/>
+      <xsd:enumeration value="az"/>
+      <xsd:enumeration value="ba"/>
+      <xsd:enumeration value="be"/>
+      <xsd:enumeration value="bg"/>
+      <xsd:enumeration value="bh"/>
+      <xsd:enumeration value="bm"/>
+      <xsd:enumeration value="bi"/>
+      <xsd:enumeration value="bn"/>
+      <xsd:enumeration value="bo"/>
+      <xsd:enumeration value="br"/>
+      <xsd:enumeration value="bs"/>
+      <xsd:enumeration value="ca"/>
+      <xsd:enumeration value="ce"/>
+      <xsd:enumeration value="ch"/>
+      <xsd:enumeration value="co"/>
+      <xsd:enumeration value="cr"/>
+      <xsd:enumeration value="cs"/>
+      <xsd:enumeration value="cu"/>
+      <xsd:enumeration value="cv"/>
+      <xsd:enumeration value="cy"/>
+      <xsd:enumeration value="da"/>
+      <xsd:enumeration value="de"/>
+      <xsd:enumeration value="dv"/>
+      <xsd:enumeration value="dz"/>
+      <xsd:enumeration value="ee"/>
+      <xsd:enumeration value="el"/>
+      <xsd:enumeration value="en"/>
+      <xsd:enumeration value="eo"/>
+      <xsd:enumeration value="es"/>
+      <xsd:enumeration value="et"/>
+      <xsd:enumeration value="eu"/>
+      <xsd:enumeration value="fa"/>
+      <xsd:enumeration value="ff"/>
+      <xsd:enumeration value="fi"/>
+      <xsd:enumeration value="fj"/>
+      <xsd:enumeration value="fo"/>
+      <xsd:enumeration value="fr"/>
+      <xsd:enumeration value="fy"/>
+      <xsd:enumeration value="ga"/>
+      <xsd:enumeration value="gd"/>
+      <xsd:enumeration value="gl"/>
+      <xsd:enumeration value="gn"/>
+      <xsd:enumeration value="gu"/>
+      <xsd:enumeration value="gv"/>
+      <xsd:enumeration value="ha"/>
+      <xsd:enumeration value="he"/>
+      <xsd:enumeration value="hi"/>
+      <xsd:enumeration value="ho"/>
+      <xsd:enumeration value="hr"/>
+      <xsd:enumeration value="ht"/>
+      <xsd:enumeration value="hu"/>
+      <xsd:enumeration value="hy"/>
+      <xsd:enumeration value="hz"/>
+      <xsd:enumeration value="ia"/>
+      <xsd:enumeration value="id"/>
+      <xsd:enumeration value="ie"/>
+      <xsd:enumeration value="ig"/>
+      <xsd:enumeration value="ii"/>
+      <xsd:enumeration value="ik"/>
+      <xsd:enumeration value="io"/>
+      <xsd:enumeration value="is"/>
+      <xsd:enumeration value="it"/>
+      <xsd:enumeration value="iu"/>
+      <xsd:enumeration value="ja"/>
+      <xsd:enumeration value="jv"/>
+      <xsd:enumeration value="ka"/>
+      <xsd:enumeration value="kg"/>
+      <xsd:enumeration value="ki"/>
+      <xsd:enumeration value="kj"/>
+      <xsd:enumeration value="kk"/>
+      <xsd:enumeration value="kl"/>
+      <xsd:enumeration value="km"/>
+      <xsd:enumeration value="kn"/>
+      <xsd:enumeration value="ko"/>
+      <xsd:enumeration value="kr"/>
+      <xsd:enumeration value="ks"/>
+      <xsd:enumeration value="ku"/>
+      <xsd:enumeration value="kv"/>
+      <xsd:enumeration value="kw"/>
+      <xsd:enumeration value="ky"/>
+      <xsd:enumeration value="la"/>
+      <xsd:enumeration value="lb"/>
+      <xsd:enumeration value="lg"/>
+      <xsd:enumeration value="li"/>
+      <xsd:enumeration value="ln"/>
+      <xsd:enumeration value="lo"/>
+      <xsd:enumeration value="lt"/>
+      <xsd:enumeration value="lu"/>
+      <xsd:enumeration value="lv"/>
+      <xsd:enumeration value="mg"/>
+      <xsd:enumeration value="mh"/>
+      <xsd:enumeration value="mi"/>
+      <xsd:enumeration value="mk"/>
+      <xsd:enumeration value="ml"/>
+      <xsd:enumeration value="mn"/>
+      <xsd:enumeration value="mr"/>
+      <xsd:enumeration value="ms"/>
+      <xsd:enumeration value="mt"/>
+      <xsd:enumeration value="my"/>
+      <xsd:enumeration value="na"/>
+      <xsd:enumeration value="nb"/>
+      <xsd:enumeration value="nd"/>
+      <xsd:enumeration value="ne"/>
+      <xsd:enumeration value="ng"/>
+      <xsd:enumeration value="nl"/>
+      <xsd:enumeration value="nn"/>
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="nr"/>
+      <xsd:enumeration value="nv"/>
+      <xsd:enumeration value="ny"/>
+      <xsd:enumeration value="oc"/>
+      <xsd:enumeration value="oj"/>
+      <xsd:enumeration value="om"/>
+      <xsd:enumeration value="or"/>
+      <xsd:enumeration value="os"/>
+      <xsd:enumeration value="pa"/>
+      <xsd:enumeration value="pi"/>
+      <xsd:enumeration value="pl"/>
+      <xsd:enumeration value="ps"/>
+      <xsd:enumeration value="pt"/>
+      <xsd:enumeration value="qu"/>
+      <xsd:enumeration value="rm"/>
+      <xsd:enumeration value="rn"/>
+      <xsd:enumeration value="ro"/>
+      <xsd:enumeration value="ru"/>
+      <xsd:enumeration value="rw"/>
+      <xsd:enumeration value="sa"/>
+      <xsd:enumeration value="sc"/>
+      <xsd:enumeration value="sd"/>
+      <xsd:enumeration value="se"/>
+      <xsd:enumeration value="sg"/>
+      <xsd:enumeration value="si"/>
+      <xsd:enumeration value="sk"/>
+      <xsd:enumeration value="sl"/>
+      <xsd:enumeration value="sm"/>
+      <xsd:enumeration value="sn"/>
+      <xsd:enumeration value="so"/>
+      <xsd:enumeration value="sq"/>
+      <xsd:enumeration value="sr"/>
+      <xsd:enumeration value="ss"/>
+      <xsd:enumeration value="st"/>
+      <xsd:enumeration value="su"/>
+      <xsd:enumeration value="sv"/>
+      <xsd:enumeration value="sw"/>
+      <xsd:enumeration value="ta"/>
+      <xsd:enumeration value="te"/>
+      <xsd:enumeration value="tg"/>
+      <xsd:enumeration value="th"/>
+      <xsd:enumeration value="ti"/>
+      <xsd:enumeration value="tk"/>
+      <xsd:enumeration value="tl"/>
+      <xsd:enumeration value="tn"/>
+      <xsd:enumeration value="to"/>
+      <xsd:enumeration value="tr"/>
+      <xsd:enumeration value="ts"/>
+      <xsd:enumeration value="tt"/>
+      <xsd:enumeration value="tw"/>
+      <xsd:enumeration value="ty"/>
+      <xsd:enumeration value="ug"/>
+      <xsd:enumeration value="uk"/>
+      <xsd:enumeration value="ur"/>
+      <xsd:enumeration value="uz"/>
+      <xsd:enumeration value="ve"/>
+      <xsd:enumeration value="vi"/>
+      <xsd:enumeration value="vo"/>
+      <xsd:enumeration value="wa"/>
+      <xsd:enumeration value="wo"/>
+      <xsd:enumeration value="xh"/>
+      <xsd:enumeration value="yi"/>
+      <xsd:enumeration value="yo"/>
+      <xsd:enumeration value="za"/>
+      <xsd:enumeration value="zh"/>
+      <xsd:enumeration value="zu"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="extensionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PDF"/>
+      <xsd:enumeration value="JPEG"/>
+      <xsd:enumeration value="PNG"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="certificateOriginType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NEW_BELGIAN_CERTIFICATE"/>
+      <xsd:enumeration value="FOREIGN_CERTIFICATE"/>
+      <xsd:enumeration value="MIGRATED_CERTIFICATE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="docOrigin">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DABS"/>
+      <xsd:enumeration value="E_BIRTH"/>
+      <xsd:enumeration value="E_DEATH"/>
+      <xsd:enumeration value="MIGRATION"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="personOrigin">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="RR"/>
+      <xsd:enumeration value="BIS"/>
+      <xsd:enumeration value="BIS_TMP"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="nobility">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PRINCE"/>
+      <xsd:enumeration value="PRINCESS"/>
+      <xsd:enumeration value="DUKE"/>
+      <xsd:enumeration value="DUCHESS"/>
+      <xsd:enumeration value="MARQUIS"/>
+      <xsd:enumeration value="MARQUISE"/>
+      <xsd:enumeration value="COUNT"/>
+      <xsd:enumeration value="COUNTESS"/>
+      <xsd:enumeration value="VISCOUNT"/>
+      <xsd:enumeration value="VISCOUNTESS"/>
+      <xsd:enumeration value="BARON"/>
+      <xsd:enumeration value="BARONESS"/>
+      <xsd:enumeration value="KNIGHT"/>
+      <xsd:enumeration value="NOBLE_WOMAN"/>
+      <xsd:enumeration value="NOBLE_MAN"/>
+      <xsd:enumeration value="ARCHDUKE"/>
+      <xsd:enumeration value="ARCHDUCHESS"/>
+      <xsd:enumeration value="GRAND_DUKE"/>
+      <xsd:enumeration value="GRAND_DUCHESS"/>
+      <xsd:enumeration value="KING_OF_BELGIUM"/>
+      <xsd:enumeration value="QUEEN_OF_BELGIUM"/>
+      <xsd:enumeration value="PRINCE_OF_BELGIUM"/>
+      <xsd:enumeration value="PRINCESS_OF_BELGIUM"/>
+      <xsd:enumeration value="DUKE_OF_BRABANT"/>
+      <xsd:enumeration value="DUCHESS_OF_BRABANT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="roleType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ABS"/>
+      <xsd:enumeration value="ADOPTIVE_MOTHER"/>
+      <xsd:enumeration value="ADOPTIVE_FATHER"/>
+      <xsd:enumeration value="ADOPTIVE_COPARENT"/>
+      <xsd:enumeration value="CHILD"/>
+      <xsd:enumeration value="CONCERNED_PERSON"/>
+      <xsd:enumeration value="COPARENT"/>
+      <xsd:enumeration value="DECEASED"/>
+      <xsd:enumeration value="DECLARANT"/>
+      <xsd:enumeration value="DECLARANT_1"/>
+      <xsd:enumeration value="DECLARANT_2"/>
+      <xsd:enumeration value="FATHER"/>
+      <xsd:enumeration value="LEGAL_REPRESENTATIVE"/>
+      <xsd:enumeration value="MISSING"/>
+      <xsd:enumeration value="NOT_RECOGNISING_FATHER"/>
+      <xsd:enumeration value="NOT_RECOGNISING_COPARENT"/>
+      <xsd:enumeration value="MOTHER"/>
+      <xsd:enumeration value="SPOUSE_1"/>
+      <xsd:enumeration value="SPOUSE_2"/>
+      <xsd:enumeration value="RECOGNIZER_FATHER"/>
+      <xsd:enumeration value="RECOGNIZER_MOTHER"/>
+      <xsd:enumeration value="RECOGNIZER_COPARENT"/>
+      <xsd:enumeration value="WITNESS"/>
+      <xsd:enumeration value="ADDED_FATHER"/>
+      <xsd:enumeration value="ADDED_MOTHER"/>
+      <xsd:enumeration value="ADDED_COPARENT"/>
+      <xsd:enumeration value="REMOVED_FATHER"/>
+      <xsd:enumeration value="REMOVED_MOTHER"/>
+      <xsd:enumeration value="REMOVED_COPARENT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="docState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DRAFT"/>
+      <xsd:enumeration value="READY_FOR_VALIDATION"/>
+      <xsd:enumeration value="DELETED"/>
+      <xsd:enumeration value="VALIDATE_FOR_SIGNATURE"/>
+      <xsd:enumeration value="READY_FOR_SIGNATURE"/>
+      <xsd:enumeration value="TO_CHECK"/>
+      <xsd:enumeration value="REFUSED"/>
+      <xsd:enumeration value="PARTIALLY_MIGRATED"/>
+      <xsd:enumeration value="PARTIALLY_MIGR_COPY"/>
+      <xsd:enumeration value="PARTIALLY_MIGR_EXTRACT"/>
+      <xsd:enumeration value="FINAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="decisionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="JUDGMENT"/>
+      <xsd:enumeration value="ARREST"/>
+      <xsd:enumeration value="FOREIGN_DECISION"/>
+      <xsd:enumeration value="FOREIGN_CERTIFICATE"/>
+      <xsd:enumeration value="KING_ARREST"/>
+      <xsd:enumeration value="OFFICER_CORRECTION"/>
+      <xsd:enumeration value="PV"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="decisionCategory">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DIVORCE"/>
+      <xsd:enumeration value="FOREIGN_DIVORCE_BELGIAN_MARRIAGE"/>
+      <xsd:enumeration value="MARRIAGE_ANNULATION"/>
+      <xsd:enumeration value="MIGRATED_TRANSCRIPTION"/>
+      <xsd:enumeration value="FOREIGN_MARRIAGE_RECOGNITION"/>
+      <xsd:enumeration value="RECOGNITION_ANNULATION"/>
+      <xsd:enumeration value="CERTIFICATE_CORRECTION"/>
+      <xsd:enumeration value="JUDICIAL_ABSENCE"/>
+      <xsd:enumeration value="JUDICIAL_DECEASE"/>
+      <xsd:enumeration value="BELGIAN_ADOPTION"/>
+      <xsd:enumeration value="FOREIGN_ADOPTION"/>
+      <xsd:enumeration value="ADOPTION_REVISION"/>
+      <xsd:enumeration value="ADOPTION_REVOCATION"/>
+      <xsd:enumeration value="BELGIAN_NATIONALITY_DEPRIVATION"/>
+      <xsd:enumeration value="NAME_CHANGE"/>
+      <xsd:enumeration value="FIRSTNAME_CHANGE"/>
+      <xsd:enumeration value="ESTABLISHING_PATERNITY"/>
+      <xsd:enumeration value="ESTABLISHING_MATERNITY"/>
+      <xsd:enumeration value="ESTABLISHING_COPARENT"/>
+      <xsd:enumeration value="CONTESTING_PATERNITY"/>
+      <xsd:enumeration value="CONTESTING_MATERNITY"/>
+      <xsd:enumeration value="CONTESTING_COPARENT"/>
+      <xsd:enumeration value="NEW_SEX_CHANGE"/>
+      <xsd:enumeration value="SEX_CHANGE_ANNULATION"/>
+      <xsd:enumeration value="CERTIFICATE_ANNULATION"/>
+      <xsd:enumeration value="CERTIFICATE_ANNULATION_ART463"/>
+      <xsd:enumeration value="CERTIFICATE_REPLACEMENT"/>
+      <xsd:enumeration value="PV_SYSTEM_UNAVAILABLE"/>
+      <xsd:enumeration value="PV_BIRTH_ON_BOARD"/>
+      <xsd:enumeration value="PV_DECEASE_ON_BOARD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="docType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BIRTH_CERTIFICATE"/>
+      <xsd:enumeration value="MARRIAGE_CERTIFICATE"/>
+      <xsd:enumeration value="DEATH_CERTIFICATE"/>
+      <xsd:enumeration value="NATIONALITY_CERTIFICATE"/>
+      <xsd:enumeration value="RECOGNITION_CERTIFICATE"/>
+      <xsd:enumeration value="PRENATAL_RECOGNITION_CERTIFICATE"/>
+      <xsd:enumeration value="NAME_CHANGE_CERTIFICATE"/>
+      <xsd:enumeration value="FIRSTNAME_CHANGE_CERTIFICATE"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE"/>
+      <xsd:enumeration value="SEX_CHANGE_CERTIFICATE"/>
+      <xsd:enumeration value="JUDICIAL_DECREE"/>
+      <xsd:enumeration value="ABSENCE_CERTIFICATE"/>
+      <xsd:enumeration value="UNKNOWN_PERSON_DEATH_CERTIFICATE"/>
+      <xsd:enumeration value="DIVORCE_CERTIFICATE"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE"/>
+      <xsd:enumeration value="AUTHORITY_DECISION"/>
+      <xsd:enumeration value="ANNULMENT_CERTIFICATE"/>
+      <xsd:enumeration value="MODIFICATION_CERTIFICATE"/>
+      <xsd:enumeration value="UPDATE_DOCUMENT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="adoptionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SIMPLE"/>
+      <xsd:enumeration value="FULL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="jurisdictionPlace">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="111002"/>
+      <xsd:enumeration value="112025"/>
+      <xsd:enumeration value="113040"/>
+      <xsd:enumeration value="171022"/>
+      <xsd:enumeration value="173083"/>
+      <xsd:enumeration value="121004"/>
+      <xsd:enumeration value="124062"/>
+      <xsd:enumeration value="125072"/>
+      <xsd:enumeration value="142006"/>
+      <xsd:enumeration value="144021"/>
+      <xsd:enumeration value="145035"/>
+      <xsd:enumeration value="131005"/>
+      <xsd:enumeration value="133011"/>
+      <xsd:enumeration value="134022"/>
+      <xsd:enumeration value="138025"/>
+      <xsd:enumeration value="163023"/>
+      <xsd:enumeration value="161031"/>
+      <xsd:enumeration value="162063"/>
+      <xsd:enumeration value="163079"/>
+      <xsd:enumeration value="181001"/>
+      <xsd:enumeration value="183034"/>
+      <xsd:enumeration value="184043"/>
+      <xsd:enumeration value="191034"/>
+      <xsd:enumeration value="192094"/>
+      <xsd:enumeration value="152011"/>
+      <xsd:enumeration value="153053"/>
+      <xsd:enumeration value="157081"/>
+      <xsd:enumeration value="211002"/>
+      <xsd:enumeration value="253053"/>
+      <xsd:enumeration value="221004"/>
+      <xsd:enumeration value="244021"/>
+      <xsd:enumeration value="262063"/>
+      <xsd:enumeration value="230101"/>
+      <xsd:enumeration value="230102"/>
+      <xsd:enumeration value="230103"/>
+      <xsd:enumeration value="230201"/>
+      <xsd:enumeration value="230202"/>
+      <xsd:enumeration value="330100"/>
+      <xsd:enumeration value="330200"/>
+      <xsd:enumeration value="330500"/>
+      <xsd:enumeration value="330600"/>
+      <xsd:enumeration value="430101"/>
+      <xsd:enumeration value="430102"/>
+      <xsd:enumeration value="430103"/>
+      <xsd:enumeration value="430201"/>
+      <xsd:enumeration value="430202"/>
+      <xsd:enumeration value="430203"/>
+      <xsd:enumeration value="430204"/>
+      <xsd:enumeration value="530100"/>
+      <xsd:enumeration value="530201"/>
+      <xsd:enumeration value="530202"/>
+      <xsd:enumeration value="530203"/>
+      <xsd:enumeration value="530301"/>
+      <xsd:enumeration value="530302"/>
+      <xsd:enumeration value="530303"/>
+      <xsd:enumeration value="530401"/>
+      <xsd:enumeration value="530402"/>
+      <xsd:enumeration value="630101"/>
+      <xsd:enumeration value="630102"/>
+      <xsd:enumeration value="630103"/>
+      <xsd:enumeration value="210100"/>
+      <xsd:enumeration value="610100"/>
+      <xsd:enumeration value="310100"/>
+      <xsd:enumeration value="410100"/>
+      <xsd:enumeration value="510100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="code">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PERSON_NOBILITY"/>
+      <xsd:enumeration value="PERSON_NOBILITYFREE"/>
+      <xsd:enumeration value="PERSON_FIRSTNAMES"/>
+      <xsd:enumeration value="PERSON_LASTNAME"/>
+      <xsd:enumeration value="PERSON_BIRTHDATE"/>
+      <xsd:enumeration value="PERSON_BIRTHPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="PERSON_BIRTHPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="PERSON_BIRTHPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="PERSON_BIRTHPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="DOCUMENT_DOCUMENTREFERENCE"/>
+      <xsd:enumeration value="DOCUMENT_ESTABLISHINGDATE"/>
+      <xsd:enumeration value="DOCUMENT_REDACTIONPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="DOCUMENT_REDACTIONPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="DOCUMENT_REDACTIONPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="DOCUMENT_REDACTIONPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="ROLE_ROLE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_BIRTHTIME"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_GENDER"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_NAME_DECLARATIONMADEBYTHEPARENTS"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_NAMEDECLARATION_NAME"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_NAMEDECLARATION_NAME1"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_NAMEDECLARATION_NAME2"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_PRENATALRECOGNITIONDOCUMENTREFERENCE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTROLE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTDATE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_CONSENTAUTHORITY"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_JURIDICALAUTHORITY"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_JURIDICALREFERENCE"/>
+      <xsd:enumeration value="BIRTHCERTIFICATE_VERDICTDATE"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_MOTHERCONSENTDATE"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_MOTHERCONSENTPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_MOTHERCONSENTPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_MOTHERCONSENTPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_MOTHERCONSENTPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_MOTHERCONSENTAUTHORITY"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_JURIDICALAUTHORITY"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_JURIDICALREFERENCE"/>
+      <xsd:enumeration value="PRENATALRECOGNITIONCERTIFICATE_VERDICTDATE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FILIATIONCONSENTDATE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FILIATIONCONSENTPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FILIATIONCONSENTPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FILIATIONCONSENTPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FILIATIONCONSENTPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_FILIATIONCONSENTAUTHORITY"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_CHILDCONSENTDATE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_CHILDCONSENTPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_CHILDCONSENTPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_CHILDCONSENTPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_CHILDCONSENTPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_CHILDCONSENTAUTHORITY"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_LEGALREPRESENTATIVECONSENTDATE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_LEGALREPRESENTATIVECONSENTPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_LEGALREPRESENTATIVECONSENTPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_LEGALREPRESENTATIVECONSENTPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_LEGALREPRESENTATIVECONSENTPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_LEGALREPRESENTATIVECONSENTAUTHORITY"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_COURTCONSENTJURISDICTION"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_COURTCONSENTVERDICTDATE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_COURTCONSENTREFERENCE"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_NAMEDECLARATIONMADEBYTHEPARENTS"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_NEWFIRSTNAME"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_NAMEDECLARATION"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_NAMEDECLARATION_NAME1"/>
+      <xsd:enumeration value="RECOGNITIONCERTIFICATE_NAMEDECLARATION_NAME2"/>
+      <xsd:enumeration value="MARRIAGECERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="MARRIAGECERTIFICATE_NAMECHANGESPOUSE1"/>
+      <xsd:enumeration value="MARRIAGECERTIFICATE_NAMECHANGESPOUSE2"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_DECEASETIME"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_DECEASEPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_DECEASEPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_DECEASEPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_DECEASEPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="DEATHCERTIFICATE_DECEASEPLACE_LIFELESSBODY"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_BIRTHTIME"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_BIRTHPLACE_MUNICIPALITYCODE"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_BIRTHPLACE_MUNICIPALITYFREETEXT"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_BIRTHPLACE_COUNTRYCODE"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_BIRTHPLACE_COUNTRYFREETEXT"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_FIRSTNAMES"/>
+      <xsd:enumeration value="DECLARATION_OF_LIFELESS_CHILD_CERTIFICATE_GENDER"/>
+      <xsd:enumeration value="NAMECHANGE_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="NAMECHANGE_CERTIFICATE_NAMEDECLARATION"/>
+      <xsd:enumeration value="NAMECHANGE_CERTIFICATE_NAMEDECLARATION_NAME1"/>
+      <xsd:enumeration value="NAMECHANGE_CERTIFICATE_NAMEDECLARATION_NAME2"/>
+      <xsd:enumeration value="NAMECHANGE_CERTIFICATE_REASONFORTHECERTIFICATE"/>
+      <xsd:enumeration value="NAMECHANGE_CERTIFICATE_REQUESTINGDATE"/>
+      <xsd:enumeration value="FIRSTNAMECHANGE_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="FIRSTNAMECHANGE_CERTIFICATE_FIRSTNAMES"/>
+      <xsd:enumeration value="NATIONALITY_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="NATIONALITY_CERTIFICATE_REASON_FOR_THE_CERTIFICATE"/>
+      <xsd:enumeration value="TRANSSEXUALITY_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="TRANSSEXUALITY_NEWGENDER"/>
+      <xsd:enumeration value="ABSENCE_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_ADOPTIONTYPE"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_NEWNAME_NAME"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_NEWNAME_NAME1"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_NEWNAME_NAME2"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_NEWFIRSTNAMES"/>
+      <xsd:enumeration value="ADOPTION_CERTIFICATE_FCARECOGNITIONDATE"/>
+      <xsd:enumeration value="DIVORCE_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="DIVORCE_CERTIFICATE_MARRIAGECERTIFICATENUMBER"/>
+      <xsd:enumeration value="ANNULMENT_CERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="ANNULMENT_ANNULEDCERTIFICATENUMBER"/>
+      <xsd:enumeration value="ANNULMENT_ANNULATIONTYPE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_FACTDATE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_MODIFIEDCERTIFICATEREFERENCE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_DECISIONAUTHORITYCODE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_DECISIONAUTHORITYFREE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_DECISIONDATE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_APPLICATIONDATE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_DECISIONTYPE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_DECISIONCATEGORY"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_DECISIONREFERENCE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_CHANGEDVALUES_CHANGEDFIELDCODE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_CHANGEDVALUES_CHANGEDFIELDOLDVALUE"/>
+      <xsd:enumeration value="MODIFICATIONCERTIFICATE_CHANGEDVALUES_CHANGEDFIELDNEWVALUE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="gender">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MALE"/>
+      <xsd:enumeration value="FEMALE"/>
+      <xsd:enumeration value="UNKNOWN"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="consentAuthorityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BELGIAN_REGISTRAR"/>
+      <xsd:enumeration value="FOREIGN_AUTHORITY"/>
+      <xsd:enumeration value="NOTARY"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="nameChangeReasonType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="APPLICATION_ARTICLE335P3"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE335TERP2"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE335QUATER"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE12"/>
+      <xsd:enumeration value="NAME_CHANGE_DECISION"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="nationalityReasonType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="APPLICATION_ARTICLE8P1S2B"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE9S2B"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE12BISP1S1"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE12BISP1S2"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE12BISP1S3"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE12BISP1S4"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE12BISP1S5"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE22P1S2"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE22P1S5"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE24"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE11BIS"/>
+      <xsd:enumeration value="APPLICATION_ARTICLE17"/>
+      <xsd:enumeration value="BELGIAN_NATIONALITY_REVOCATION"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="DABSException" type="tns:DABSException"/>
+  <xsd:complexType name="DABSException">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="error" type="tns:error"/>
+      <xsd:element minOccurs="0" name="traceId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="IOException" type="tns:IOException"/>
+  <xsd:complexType name="IOException">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://fidus.brussels/services/civilstatusmigrationservice/v1</con:endpoint></con:endpoints><con:operation id="ad15c545-cab5-4ff3-97c0-d000232ec5eb" isOneWay="false" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument" name="migrateDocument" bindingOperationName="migrateDocument" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7e47a56e-b864-4ab9-a6a1-96ad8221a672" name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d7d6d37a-c3d5-4990-b37e-ff9836039bea" name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3037ffae-0bd5-4ae6-a1ba-6c109ef3010c" name="3 -Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f0baf926-3753-4189-a283-c5c8ac951ea3" name="3 -Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/><con:wsrmConfig version="1.2"/></con:call><con:call id="34c3571b-bca6-4c42-9255-6933836468fc" name="3 -Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/><con:wsrmConfig version="1.2"/></con:call><con:call id="abcff521-3c36-474e-8afc-5cf40de2905c" name="3 -Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="1339d61d-0bac-456c-b534-481d70a98372" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="4d54f0d3-6851-4710-9ac3-432e055ed6b6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="migrateDocument" searchProperties="true"><con:settings/><con:testStep type="request" id="1f3b0445-6691-461f-bf48-e58102a3f1a8" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusMigrationServiceHTTPBinding</con:interface><con:operation>migrateDocument</con:operation><con:request name="testcase2 - Dev - Request" id="f28b1f65-745e-4761-b70b-66e83ec56a16" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="83b24d89-7219-4542-8145-c1f733043f1f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3306e6a1-92d3-4bc7-a8e5-cfb0097ee136" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7d5c49a6-3ed7-4422-84d3-c91db4b11339" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="af1be548-0768-403b-bbc6-dcdaae7da547" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ec755125-24aa-49c3-b7b5-1601d07be721" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="migrateDocument" searchProperties="true"><con:settings/><con:testStep type="request" id="f23b85dc-cef5-4180-802d-072eb891f89a" name="testcase3 -Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusMigrationServiceHTTPBinding</con:interface><con:operation>migrateDocument</con:operation><con:request name="testcase3 -Test - External - Request" id="d5bdc76b-5263-4f82-af12-028e4795447c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="eb5b7a66-665a-4c18-bfb2-aa00f8ae9b06" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c5eed99f-b934-4f1a-9398-e308452944a9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="adb1ede7-40b2-4992-a710-e273d5d9e48d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/></con:request></con:config></con:testStep><con:testStep type="request" id="5d185cc2-4a6a-466a-9101-f32d35734d82" name="testcase3 -Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusMigrationServiceHTTPBinding</con:interface><con:operation>migrateDocument</con:operation><con:request name="testcase3 -Test - LB - Request" id="a9f6d0b4-537a-4920-bf8a-57cd572740d0" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="55756122-71d2-48f9-acfe-3b8069b0f9ed" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f03e4762-cd8d-4b93-9cdf-c284084820a2" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7a3dbd97-ddad-4be2-beb8-30584e18dfb0" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/></con:request></con:config></con:testStep><con:testStep type="request" id="b30613ff-a673-435a-9ec4-3c85c6358395" name="testcase3 -Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusMigrationServiceHTTPBinding</con:interface><con:operation>migrateDocument</con:operation><con:request name="testcase3 -Test - Worker1 - Request" id="d9c58b80-ebfc-47f3-8290-48128d58bed7" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="082f5bf7-dfc1-4fa2-9825-d46afdaaa3c9" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c616f579-55cc-406f-87fd-191f438e9e72" name="SOAP Response"/><con:assertion type="Schema Compliance" id="fe0051f0-dc8e-42b5-8875-c3236dc772be" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/></con:request></con:config></con:testStep><con:testStep type="request" id="9164edfc-5593-4835-846b-a4cd5916965d" name="testcase3 -Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusMigrationServiceHTTPBinding</con:interface><con:operation>migrateDocument</con:operation><con:request name="testcase3 -Test - Worker2 - Request" id="75d1cce8-a3d3-46f2-aa76-3e19cd50d6ac" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/CivilStatusMigrationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusmigrationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:core="http://www.fgov.be/dabs/core">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:migrateDocumentRequest>
+         <v1:messageContext>
+           <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+ 		<v1:language>fr</v1:language>
+ 		<v1:municipalityCode>01050</v1:municipalityCode>
+          <v1:documentRequestType>
+ 		<core:document xsi:type="core:marriageCertificate">
+           <core:attachments/>
+           <core:certificateOriginType>MIGRATED_CERTIFICATE</core:certificateOriginType>
+           <core:factDate>
+              <core:day>10</core:day>
+              <core:month>10</core:month>
+              <core:year>2017</core:year>
+           </core:factDate>
+           <core:redactionPlace>
+              <core:municipalityCode>12007</core:municipalityCode>
+              <core:countryCode>150</core:countryCode>
+              <core:countryFreeText>Belgium</core:countryFreeText>
+           </core:redactionPlace>
+           <core:origin>MIGRATION</core:origin>
+           <core:persons>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityCode>12010</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test2222</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>8</core:day>
+                    <core:month>8</core:month>
+                    <core:year>1989</core:year>
+                 </core:birthDate>
+                 <core:firstname>Caroline442017 Madi442107</core:firstname>
+                 <core:lastname>Libaers441207</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_2</core:role>
+                 </core:roles>
+                 <core:personNumber>89102413036</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:nobilityFree/>
+                 <core:birthPlace>
+                    <core:municipalityFreeText>Budel</core:municipalityFreeText>
+                    <core:countryCode>129</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>5</core:day>
+                    <core:month>7</core:month>
+                    <core:year>1979</core:year>
+                 </core:birthDate>
+                 <core:firstname>Bram Tonny Gerda</core:firstname>
+                 <core:lastname>Van Huffel</core:lastname>
+                 <core:roles>
+                    <core:role>SPOUSE_1</core:role>
+                 </core:roles>
+                 <core:personNumber>1125</core:personNumber>
+              </core:person>
+              <core:person>
+                 <core:origin>RR</core:origin>
+                 <core:birthPlace>
+                    <core:municipalityCode>12007</core:municipalityCode>
+                    <core:countryCode>150</core:countryCode>
+                    <core:countryFreeText>test</core:countryFreeText>
+                 </core:birthPlace>
+                 <core:birthDate>
+                    <core:day>1</core:day>
+                    <core:month>4</core:month>
+                    <core:year>1986</core:year>
+                 </core:birthDate>
+                 <core:firstname>Mounir</core:firstname>
+                 <core:lastname>Ouchan</core:lastname>
+                 <core:roles>
+                    <core:role>ABS</core:role>
+                 </core:roles>
+                 <core:personNumber>86040128370</core:personNumber>
+              </core:person>
+           </core:persons>
+           <core:oldDocumentReference>2017/41</core:oldDocumentReference>
+           <core:docState>PARTIALLY_MIGR_EXTRACT</core:docState>
+        </core:document>
+        </v1:documentRequestType>
+         </v1:request>
+      </v1:migrateDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="9ae4e9c9-e12d-4469-91b1-f79aae2b12e5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="372dda5f-ae9a-41cc-8919-dacd3d374d41" name="SOAP Response"/><con:assertion type="Schema Compliance" id="94221e44-f44e-47d3-9ac5-232d92f693b7" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/civilstatusmigrationservice/migrateDocument"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/>
+  <con:wssContainer>
+    <con:crypto>
+      <con:source>/data/wso2/keystores/fidus-testuser-dev.jks</con:source>
+      <con:password>wso2carbon</con:password>
+      <con:type>KEYSTORE</con:type>
+    </con:crypto>
+    
+    <con:crypto>
+      <con:source>/data/wso2/keystores/fidus-gateway-dev.jks</con:source>
+      <con:password>wso2carbon</con:password>
+      <con:type>TRUSTSTORE</con:type>
+    </con:crypto>
+    <con:crypto>
+      <con:source>/data/wso2/keystores/fidus-gateway-test.jks</con:source>
+      <con:password>wso2carbon</con:password>
+      <con:type>TRUSTSTORE</con:type>
+    </con:crypto>
+    
+    <con:crypto>
+      <con:source>/data/wso2/keystores/fidus-gateway-staging.jks</con:source>
+      <con:password>wso2carbon</con:password>
+      <con:type>TRUSTSTORE</con:type>
+    </con:crypto>
+    
+    <con:crypto>
+      <con:source>/data/wso2/keystores/fidus-gateway-prod.jks</con:source>
+      <con:password>wso2carbon</con:password>
+      <con:type>TRUSTSTORE</con:type>
+    </con:crypto>
+    <con:crypto><con:source>/data/wso2/testuser.jks</con:source><con:password>wso2carbon</con:password><con:type>KEYSTORE</con:type></con:crypto><con:crypto><con:source>/home/tbenarmass/provider-bcss-test.jks</con:source><con:password>6OueYr72EeFZrGKMlV3F</con:password><con:type>KEYSTORE</con:type></con:crypto>
+    
+    
+    
+    
+    
+    
+    
+  <con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing></con:wssContainer>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/><con:sensitiveInformation/>
+</con:soapui-project>
