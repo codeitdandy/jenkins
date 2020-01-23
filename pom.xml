@@ -143,6 +143,22 @@
                         </goals>
                         <phase>test</phase>
                     </execution>
+			<execution>
+                        <id>Fidus-TestSuiteCivilStatusNotification</id>
+                        <configuration>
+                            <projectFile>Client-test-CivilStatusNotificationService1.0.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
 		    </executions>
                     <dependencies>
 					
