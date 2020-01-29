@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="11b404ed-5013-42b2-92a9-013432525abe" activeEnvironment="Default" name="Client-LowEmissionZoneService-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="548e423b-90e0-4e19-b45f-01f908a20276" wsaVersion="NONE" name="LowEmissionZoneServiceHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/lowemissionzoneservice/v1}LowEmissionZoneServiceHTTPBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/ebarbieux/Dev/fidus/lowemissionzoneservice/LowEmissionZoneServiceGateway/src/main/resources/wsdl/lowEmissionZoneService/1.0.0/LowEmissionZoneService_v1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/ebarbieux/Dev/fidus/lowemissionzoneservice/LowEmissionZoneServiceGateway/src/main/resources/wsdl/lowEmissionZoneService/1.0.0/LowEmissionZoneService_v1.wsdl"><con:part><con:url>file:/home/ebarbieux/Dev/fidus/lowemissionzoneservice/LowEmissionZoneServiceGateway/src/main/resources/wsdl/lowEmissionZoneService/1.0.0/LowEmissionZoneService_v1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/lowemissionzoneservice/v1" name="LowEmissionZoneService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mes="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:tns="http://fidus.brussels/service/lowemissionzoneservice/v1">
+  <xsd:annotation>
+    <xsd:documentation>LowEmissionZoneService WDSL v1.</xsd:documentation>
+  </xsd:annotation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fidus.brussels/service/lowemissionzoneservice/v1" elementFormDefault="qualified">
+      <xsd:import namespace="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" schemaLocation="messages/lowEmissionZoneServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getPhotoRequestMessage">
+    <wsdl:part name="GetLowEmissionZoneServiceRequest" element="mes:getPhotoRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getPhotoResponseMessage">
+    <wsdl:part name="GetLowEmissionZoneServiceResponse" element="mes:getPhotoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="sendFormRequestMessage">
+    <wsdl:part name="SendFormRequest" element="mes:sendFormRequest"/>
+  </wsdl:message>
+  <wsdl:message name="sendFormResponseMessage">
+    <wsdl:part name="SendFormResponse" element="mes:sendFormResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="LowEmissionZoneServicePortType">
+    <wsdl:operation name="getPhoto">
+      <wsdl:input message="tns:getPhotoRequestMessage"/>
+      <wsdl:output message="tns:getPhotoResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="sendForm">
+      <wsdl:input message="tns:sendFormRequestMessage"/>
+      <wsdl:output message="tns:sendFormResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LowEmissionZoneServiceHTTPBinding" type="tns:LowEmissionZoneServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPhoto">
+      <soap:operation soapAction="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendForm">
+      <soap:operation soapAction="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LowEmissionZoneService_v1">
+    <wsdl:port name="LowEmissionZoneService_v1" binding="tns:LowEmissionZoneServiceHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/lowemissionzoneservice/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/ebarbieux/Dev/fidus/lowemissionzoneservice/LowEmissionZoneServiceGateway/src/main/resources/wsdl/lowEmissionZoneService/1.0.0/messages/lowEmissionZoneServiceMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/lowemissionzoneservice/messages/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xsd:complexType name="LowEmissionZoneServiceRequestType">
+    <xsd:annotation>
+      <xsd:documentation>List of the identifiers which are requested</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ids" type="tns:ListOfIds">
+        <xsd:annotation>
+          <xsd:documentation>List of ids</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendFormRequestTypeType">
+    <xsd:annotation>
+      <xsd:documentation></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="applicationName" type="xsd:string"/>
+      <xsd:element name="formName" type="xsd:string"/>
+      <xsd:element name="formKey" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfIds">
+    <xsd:sequence>
+      <xsd:element name="id" type="tns:id" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="id">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[a-zA-Z0-9]{24,}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request getLowEmissionZoneService definition-->
+  <xsd:complexType name="GetPhotoRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:LowEmissionZoneServiceRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendFormRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:SendFormRequestTypeType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getLowEmissionZoneService definition-->
+  <xsd:complexType name="GetPhotoResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the
+						message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendFormResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ResponsesTypeType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the
+        					message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesTypeType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:SendFormResponseTypeType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="photos" type="tns:photos" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendFormResponseTypeType">
+    <xsd:sequence>
+      <xsd:element name="status" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="photos">
+    <xsd:sequence>
+      <xsd:element name="photo" type="tns:photo" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="photo">
+    <xsd:sequence>
+      <xsd:element name="binary" type="tns:AttachmentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Business exceptions that occur when processing
+                        the request or response e.g. missing data for a single response
+                        element.
+                        Exceptions at this level may contain back-end specific
+                        codes and content.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="AttachmentType">
+    <xsd:restriction base="xsd:base64Binary"/>
+  </xsd:simpleType>
+  <!--Element of the request and the response-->
+  <xsd:element name="getPhotoRequest" type="tns:GetPhotoRequestType"/>
+  <xsd:element name="getPhotoResponse" type="tns:GetPhotoResponseType"/>
+  <xsd:element name="sendFormRequest" type="tns:SendFormRequestType"/>
+  <xsd:element name="sendFormResponse" type="tns:SendFormResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/ebarbieux/Dev/fidus/lowemissionzoneservice/LowEmissionZoneServiceGateway/src/main/resources/wsdl/lowEmissionZoneService/1.0.0/messages/baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="relatesTo" type="tns:MessageIdType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Optional field. The unique id of a previous batch file in this exchange Only used for responses.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/ebarbieux/Dev/fidus/lowemissionzoneservice/LowEmissionZoneServiceGateway/src/main/resources/wsdl/lowEmissionZoneService/1.0.0/messages/exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://fidus.brussels/services/lowemissionzoneservice/v1</con:endpoint><con:endpoint>http://fidus.brussels/services/messageformeservice/v1</con:endpoint></con:endpoints><con:operation id="1ada035c-f750-459e-a201-428e5fb2b469" isOneWay="false" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService" name="getPhoto" bindingOperationName="getPhoto" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0bde390e-f55b-4b7f-aedb-4f7b85f196c9" name="1 - Local - Request - OK" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5aa7aac28e4b3c665da4322a</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="eba2e52f-9b3e-43c5-b703-ebcc56afdb97" name="2 - Dev - Request - OK" incomingWss="Inflow DEV" outgoingWss="Outflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d7988042-f538-4a25-b99b-e9c5ecfab90c" name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5aaa1d838e4b3c665d0534ad</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534af</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534ae</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053770</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053772</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053771</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053592</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053594</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053593</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="361adb88-ddeb-431b-804d-9d0b67ea18ba" name="4 - Staging - LB - Request" incomingWss="Inflow STAGING" outgoingWss="Outflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3653606e-ac74-4d28-9f57-25a537e0d142" name="5 - Prod - External - Request" incomingWss="Inflow PROD" outgoingWss="Outflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="71a75f70-b66d-43a5-8c0f-a9b2b996efd6" name="3 - Test - Worker1 - Request" incomingWss="Inflow TEST" outgoingWss="Outflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5ab8981848d3bb536a1a91ce</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="481b251d-b566-4b08-aea6-d4f44e773461" name="3 - Test - Worker2 - Request" incomingWss="Inflow TEST" outgoingWss="Outflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0921d4fe-5316-41a3-90d9-4c1e442ef5ea" name="4 - Staging - Worker1 - Request" incomingWss="Inflow STAGING" outgoingWss="Outflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6062bc62-0548-479c-8ca8-47164dad11fb" name="4 - Staging - Worker2 - Request" incomingWss="Inflow STAGING" outgoingWss="Outflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4582e159-15cd-4905-a4e9-339b9c4ac4d0" name="5 - Prod - LB - Request" incomingWss="Inflow PROD" outgoingWss="Outflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="515addc6-997a-4a6a-aa8c-449cbc184e2c" name="5 - Prod - Worker1 - Request" incomingWss="Inflow PROD" outgoingWss="Outflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="18a8a466-7266-4883-9a71-2c9e8b94b94a" name="5 - Prod - Worker2 - Request" incomingWss="Inflow PROD" outgoingWss="Outflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/accessmanagerservice/getOrganisationChildNodes"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0e897cda-0141-4d70-bcc4-23c65812f07b" name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5aaa1d838e4b3c665d0534ad</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534af</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534ae</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053770</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053772</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053771</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053592</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053594</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053593</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="dadec513-726f-45f2-9b50-e3f7361c8693" name="2 - DevNew - Request - OK" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="38b2f07d-784a-481d-a765-cfdb012f7982" name="3 - Test - Worker1New - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5ab8981848d3bb536a1a91ce</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="dcb73c32-222e-4f04-bb75-c3ba0980c8ed" name="3 - Test - Worker2New - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="072bc3e2-ad88-4d75-a01c-16a04d83b31d" name="4 - Staging - Worker1New - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e1ea012d-d73b-42aa-a024-6850c81c07fc" name="4 - Staging - Worker2New - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b84e678b-521a-48b0-aa48-7a0d6ace9af4" isOneWay="false" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm" name="sendForm" bindingOperationName="sendForm" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d935dc99-1c1d-45c1-a828-36558ea00fba" name="1 - Local - Request - OK" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d8868273-9aa6-40b8-9660-19018181a056" name="3 - Test - External - Request - OK" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a0f21dff-d2d0-47ae-a231-d4aaabe5f148" name="2 - Dev - Request - OK" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="86ac5407-2ec6-4f3b-91f4-ee4dee2e63f0" name="3 - Test - LB - Request - OK" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4d7d7897-ebd5-4ae8-8d68-0a8d8730d97b" name="3 - Test - Worker1 - Request - OK" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d1148d94-8738-4629-9427-8e3fe11003ca" name="3 - Test - Worker2 - Request - OK" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0c5ab764-8227-4e1a-ab90-3fb6c0d4de7d" name="4 - Staging - Worker2 - Request - OK" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="186690ff-b16e-46da-a3bd-f3d21f0ba092" name="4 - Staging - Worker1 - Request - OK" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="def64cf0-c6c0-40fe-b1b2-02037054abc9" name="4 - LB - Staging - Request - OK"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="04497023-df5c-4ca1-acb7-b1acf7a38870" name="2 - DevNew - Request - OK" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="66e39eb5-b38c-4c7e-83dc-98c63e0c0053" name="3 - Test - Worker1New - Request - OK" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="df29614d-847c-4a58-9def-7c5f0c6ba5d8" name="3 - Test - Worker2New - Request - OK" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="35aa5ca5-374c-4b1e-88f2-f177f962ae1d" name="4 - Staging - Worker1New - Request - OK" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call><con:call id="9c30b1a6-63a0-475e-b32c-aff0cce722ef" name="4 - Staging - Worker2New - Request - OK" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="ed31351e-d42d-4a9f-830b-2804bf64cc4a" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a7a1dc9d-d969-4c32-989d-4cab5cca9219" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPhoto" searchProperties="true"><con:settings/><con:testStep type="request" id="6c64554e-e0c4-4880-9ddf-c1ef13b3ff4a" name="testcase2 - Dev - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase2 - Dev - Request - OK" id="60e6d516-40ae-4a68-836a-c4dbe254f29c" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="db992422-2617-4c92-bfdf-6eee91ada183" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4f6985e9-6699-4c70-b276-07199eca85ac" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7174c548-ac95-429e-8b52-7de1b89d3073" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="ef61d43b-1b9b-495f-8bdd-e669ba69593f" name="testcase2 - DevNew - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase2 - DevNew - Request - OK" id="883892c7-e127-48da-805d-a62524607939" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c49c4a8b-ffdc-46a0-a653-e553799a2f56" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c1d8b26d-b9ea-455b-ba7d-7dd0dc9f9cd6" name="SOAP Response"/><con:assertion type="Schema Compliance" id="a5064293-58df-4859-b59c-49c15806a3e3" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4bb51d8c-b5b3-4d9c-bb14-250a0fd5f137" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="sendForm" searchProperties="true"><con:settings/><con:testStep type="request" id="5c4e8e3c-9894-4a6e-b47c-1e6dfe50d3d6" name="testcase2 - Dev - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase2 - Dev - Request - OK" id="fde6d494-9880-4c63-92c6-2ecf479324bc" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="2ce31fa8-0d82-4023-a05b-7f95118d8437" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0f7313ef-17ad-415a-84bc-3d08f955bfdb" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b2ed9029-87ab-4c34-8664-00923c35f672" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="1f3a81a0-4d51-4520-b97f-e20864b6d614" name="testcase2 - DevNew - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase2 - DevNew - Request - OK" id="9fafb9fb-4a7d-4ba8-939a-703854dca4dc" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="57e6625b-c6fb-4fa1-8570-f0eb2ee7c429" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5d9f7763-db42-4a7e-beaf-43cb32ba22cc" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d860686e-514e-4651-ba21-5c905dce1768" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="ff37d3e4-249b-4fd0-a493-8c68dc4738b2" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1d4dc8b9-1000-4a48-b7c3-46d100b97082" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPhoto" searchProperties="true"><con:settings/><con:testStep type="request" id="8e9fdd90-41e2-459e-96b7-16f4f323ff33" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase3 - Test - LB - Request" id="04134b3b-9b4b-4d27-aa4d-af249e787b64" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5aaa1d838e4b3c665d0534ad</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534af</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534ae</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053770</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053772</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053771</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053592</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053594</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053593</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="67787a3f-32cf-4c24-814c-5712f2eed59e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="7297b1dc-b523-44f7-81fb-4c2d8a78202f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4a48baf6-e63d-48c5-a407-b4ee4fce36bf" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="cb8ccf49-1fcc-4b2d-ab60-3e66358df6f8" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="679a8685-65a9-40a4-80cb-3cffde28292b" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5ab8981848d3bb536a1a91ce</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b8d33714-96e2-406a-81eb-0feca7824949" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="03358062-9b5b-47da-ac40-b2e963b15b60" name="SOAP Response"/><con:assertion type="Schema Compliance" id="766e7ff3-d319-4327-a225-158dc57cb3e6" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="c37abca2-c30b-43ed-b226-d3286163fdb0" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="e39e70f8-2520-43c6-857d-97e45b2f943e" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="2a340247-70cb-4f86-b6e9-d85155ce15c3" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="1eccefa7-ab49-4f02-bb85-565c803659fc" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7c19d978-eb99-4371-b665-093405f81e78" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="0668e5a5-a142-464f-b5d7-59f6bc99ee0e" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase3 - Test - External - Request" id="6486659b-523e-4a40-88c5-0e6f527d2e3d" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5aaa1d838e4b3c665d0534ad</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534af</v1:id>
+               <v1:id>5aaa1d838e4b3c665d0534ae</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053770</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053772</v1:id>
+               <v1:id>5aaa1d8d8e4b3c665d053771</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053592</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053594</v1:id>
+               <v1:id>5aaa1d868e4b3c665d053593</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="76681258-191a-4c99-94ae-23668307dc42" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="62d7f796-0335-4b2e-b51d-5c031cd188c1" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c160dd19-eecf-4290-944b-59780b68ac23" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="69b688f8-f1a8-4318-b136-308c10349739" name="testcase3 - Test - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase3 - Test - Worker1New - Request" id="1ab370ad-768b-49eb-83dc-89fd829f25a7" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5ab8981848d3bb536a1a91ce</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="012704a7-9ede-4146-8d6b-086a93112ad1" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9bd776a1-3a99-4969-9aeb-5f6d4a67bb3c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e4873e10-8ce3-4934-ba13-14a273a16a1c" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="a78173f3-e699-4a19-a5c1-36ed7867e2d2" name="testcase3 - Test - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase3 - Test - Worker2New - Request" id="1223378f-2938-4f55-9a78-4b6ef0c5ea32" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="0a54b530-6a37-413c-95a2-52bc0d50cefb" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="dfeab9f8-96e1-42fe-9cbc-c8a98db68230" name="SOAP Response"/><con:assertion type="Schema Compliance" id="5afe0f5f-84fe-428f-a33f-815b09ab1894" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="00df275a-18f0-4ce5-99a1-2d6f92e1a54b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="sendForm" searchProperties="true"><con:settings/><con:testStep type="request" id="246ecc7e-42c1-4c75-9e2f-b6486d9407b9" name="testcase3 - Test - External - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase3 - Test - External - Request - OK" id="a00fddab-38ae-4faf-9b83-14bd13cdff5c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="0342ca80-190e-4aab-8bf6-6ee0a5f75c06" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="d35ac548-98a4-48d6-9926-e5920648a7b2" name="SOAP Response"/><con:assertion type="Schema Compliance" id="8ad00f86-2b0f-451c-ac09-b65a86893ea9" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="b6e04485-2d08-41e6-af7c-e32df43ca74c" name="testcase3 - Test - LB - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase3 - Test - LB - Request - OK" id="406b97e9-35a1-4e5e-a95a-390e79884575" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6ec9c8f1-d06e-4242-9c4a-f57e986ce42f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="649726b8-6c15-40df-880c-074b6fda797f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c6937974-7671-4190-b4aa-82573e535969" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="af24fd9f-1bfc-45b7-ac41-3718571885da" name="testcase3 - Test - Worker1 - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase3 - Test - Worker1 - Request - OK" id="97a58d84-0bc7-454b-8d70-44d9223b78e9" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="28587b9a-4969-4e5e-9d86-0a08f9a6c973" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="140ed100-b0d6-4375-845d-2c2377490569" name="SOAP Response"/><con:assertion type="Schema Compliance" id="2aff00d3-3c37-4a40-a50e-02946f7278f2" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="3655777f-b74f-46dd-b980-22ce188515f3" name="testcase3 - Test - Worker2 - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase3 - Test - Worker2 - Request - OK" id="cc0b2656-5baf-4bec-a540-516ebd1e3f99" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="2c1caa1b-eb4d-469f-b434-def9810a87fc" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="bd89d86a-8cc6-46ad-9489-ce3e34fd3fde" name="SOAP Response"/><con:assertion type="Schema Compliance" id="282cce9d-4362-47ff-93e0-2027b9940980" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="68b5c4f3-e908-4ac0-9bfd-593f2f781eae" name="testcase3 - Test - Worker1New - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase3 - Test - Worker1New - Request - OK" id="be62dcbf-d28e-4a74-95d4-0698a2e51708" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1e9b1bcd-e8c2-4778-81a2-501927aac6cb" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4a56959f-41ce-4779-873f-5e116a41e9c5" name="SOAP Response"/><con:assertion type="Schema Compliance" id="03a428b2-dddb-4d8d-9bad-58e22299b58a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="c6cf1536-19b3-47b4-8ef8-bf9c0d24e3c1" name="testcase3 - Test - Worker2New - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase3 - Test - Worker2New - Request - OK" id="911b526c-0b71-41bc-bba2-fac19f4c9b90" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="9169cae5-b33e-467a-8044-6b052773c688" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="19200b8e-22b4-45e3-a4c0-a697d0dba32c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c7347adb-e56b-4c8b-b55d-6be70950335a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="8ef45ec9-799d-44b3-af11-cf06def3e18d" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="57737885-964a-402a-80d0-768101e0e01a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPhoto" searchProperties="true"><con:settings/><con:testStep type="request" id="6193c537-f408-4c96-b4f7-aa6332626252" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase4 - Staging - LB - Request" id="d4e3904a-cfe3-4fd9-8b54-bd4dac6abeb6" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="37ef7fdc-0fa1-4f42-897d-e276235c164b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="65f9376e-caf0-4ef6-a885-08c096e6da84" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6c5d93ce-7521-4a8e-8a97-c586f9554e4f" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="2df80227-1c92-46a9-8131-730089d5df4f" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="7f592e69-3152-4f70-8bc6-400edcafbeb2" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="739977c3-0dcf-4aaf-a364-b448bf2778cd" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="45397962-59a2-4fcb-9e65-0c2639cdff54" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0e514dcf-be51-41fc-9184-b177333376ae" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="1e9e1300-c7b7-4801-bf40-6aa5bdc6a48b" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="63566412-726f-4206-ab42-edf105f3f05b" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="761559c3-41b6-478b-9220-eade34b0397e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="03ee1873-bded-4e71-b667-14f54f4511e9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="2302b78f-fafb-4ce1-862e-0a6f785888c1" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="f2e2e6af-cb9d-4c23-b277-67234e6b09b2" name="testcase4 - Staging - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase4 - Staging - Worker1New - Request" id="8b28a315-c892-465d-a143-e78c7a1b9fd3" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="a556322b-c31c-4305-a386-31c959e1ad47" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="68678ca4-d370-424e-bc4e-5289594054c0" name="SOAP Response"/><con:assertion type="Schema Compliance" id="a529f625-d6fc-4b51-8d99-2f1e24a00641" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="581b1bd0-1651-4a4a-952f-b87058c6b97b" name="testcase4 - Staging - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase4 - Staging - Worker2New - Request" id="8023ca5d-71a5-46ef-897b-b49393cd2a7b" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c7d34902-e5c7-4e32-8462-4beac3f5d7ca" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="63579efa-6054-4e16-88f6-43eefc0857f9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c4cbc6cd-291b-45ca-bfad-e08dfe83aea4" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="193e266b-4cf8-497b-9c1d-6610e2a6a952" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="sendForm" searchProperties="true"><con:settings/><con:testStep type="request" id="164b326b-6c02-4e1b-b51f-98ec7e22ac6e" name="testcase4 - Staging - Worker2 - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase4 - Staging - Worker2 - Request - OK" id="79f360b6-31ce-43fb-aa55-17a33bddbf6e" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="85f66b60-bf18-48c0-8b5c-db7a3f9b64f2" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f66a5eb7-9294-4bf2-a146-e7b1c6b1e892" name="SOAP Response"/><con:assertion type="Schema Compliance" id="5e75dfb3-003b-4a5f-9a15-fa99af3ec9b5" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="ded25ab7-3e88-4b97-97f6-0e0fdd0e8f0f" name="testcase4 - Staging - Worker1 - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase4 - Staging - Worker1 - Request - OK" id="da1f9154-1c29-407a-9004-af1a74405a18" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="21e6e32e-e071-4c3e-af8f-249fc4931f40" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="44399e74-d6a0-45d4-a905-4783ad3df25b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="3b62210d-aeed-4e13-90b2-1a2c1be96827" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="64e201c2-e3ce-4ab6-95ee-3a99ffa48a94" name="testcase4 - LB - Staging - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase4 - LB - Staging - Request - OK" id="2d81f511-de78-48ef-8e72-660c05782a8b" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="2db9c194-6665-441d-aee9-e224e637cffa" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b2836a72-3ccf-4d29-bf72-92c7470e07a8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b1dfc5c3-dab4-4706-809f-965be9b9a99b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="c895a23f-85e1-4b65-ba86-2fbde44e3031" name="testcase4 - Staging - Worker1New - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase4 - Staging - Worker1New - Request - OK" id="8899a65a-9691-4a48-becc-38a514e47372" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e483b691-d84f-44bc-983a-fd34c4c9b880" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="72789d34-59d1-485d-b8ce-35c0966ab072" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e8681f82-35ba-453a-a1a4-cd3fe567067e" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:testStep type="request" id="749492ed-d954-41f3-a8e3-ddfc05ec93a4" name="testcase4 - Staging - Worker2New - Request - OK"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>sendForm</con:operation><con:request name="testcase4 - Staging - Worker2New - Request - OK" id="b24f7fe9-57b5-48ed-8038-1e1d9de9a215" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/LowEmissionZoneService_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1.1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:sendFormRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:applicationName>IrisBox</v1:applicationName>
+            <v1:formName>registrationForm</v1:formName>
+            <v1:formKey>12345678910</v1:formKey>
+         </v1:request>
+      </v1:sendFormRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f906187c-8046-473f-aca5-835daa8c07a4" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="ae569343-66c4-46c0-96cb-6f4e16fcc6e7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="251b7579-123f-4a9a-9ecb-b3a99c29f6a8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/sendForm"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="7288555e-5ba9-4eca-95df-80d922c0547e" name="PROD"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6a997966-c50d-4ae2-a737-9f1de53b8cf1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPhoto" searchProperties="true"><con:settings/><con:testStep type="request" id="d809646b-9afe-4a06-8fb7-332126d180b7" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase5 - Prod - External - Request" id="a7e4020f-105b-4b09-a081-7c4f89203831" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="39d5f6df-6d5e-4ebc-8f15-ac49ae55b618" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="134c1995-6450-4ce3-bc42-77aed1daee95" name="SOAP Response"/><con:assertion type="Schema Compliance" id="cb94186b-dbbf-49c2-9a36-f4d62f0f5844" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="655296e5-21b8-467d-848b-c7b8880ba8bb" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase5 - Prod - LB - Request" id="a9064039-8221-499f-8629-a382345aa452" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="738ca195-a2be-40d7-af1a-db18900be378" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5a1e37cb-2b5f-467e-8976-3063868b726e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="2e7b63e9-26da-4022-9fad-bfff7abf6491" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="a563b114-b049-4566-a35d-1056fcce923a" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="2928a754-37c2-4539-9d93-3c20558731f5" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="92eccc47-1d06-4e00-a704-ffb814ebf16f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="cc1c7b9b-7352-4d07-9fc8-b1efe60855e3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="aa439a49-a767-46b5-8269-5c8ba37c96c8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:testStep type="request" id="e80d1f77-072b-4144-8aaa-4300e0f0a015" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LowEmissionZoneServiceHTTPBinding</con:interface><con:operation>getPhoto</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="f38bed30-39ee-41e5-9690-e5a1ab31c047" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/LowEmissionZoneService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/lowemissionzoneservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getPhotoRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:ids>
+               <!--1 or more repetitions:-->
+               <v1:id>5a7837bb53e29879de2e289f</v1:id>
+            </v1:ids>
+         </v1:request>
+      </v1:getPhotoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b6a8e0b3-c518-41c5-a4bb-08dce9ccae07" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="cb8b4a3f-3852-47c4-b55c-e2afc4061ecd" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9f73b8d3-d446-43e2-8965-5bca621b2711" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/lowemissionzoneservice/getLowEmissionZoneService"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing><con:outgoing><con:name>Outflow PROD</con:name></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5ae7a000-daa4-49ac-9abc-d32f219c5c70" activeEnvironment="Default" name="Client-BeStAddressService-1.0-soapui-project" resourceRoot="${projectDir}" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3da50095-994b-44b2-a7e4-8fd02a7109ce" wsaVersion="NONE" name="BeStAddressServiceHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/bestaddressservice/v1}BeStAddressServiceHTTPBinding" soapVersion="1_1" anonymous="optional" definition="../../bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/BeStAddressService_v1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/BeStAddressService_v1.wsdl"><con:part><con:url>file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/BeStAddressService_v1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BeStAddressService" targetNamespace="http://fidus.brussels/service/bestaddressservice/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mes="http://fidus.brussels/service/bestaddressservice/messages/v1" xmlns:tns="http://fidus.brussels/service/bestaddressservice/v1" xmlns:ns="http://fidus.brussels/type/common/entities/v1" xmlns:ns1="http://fidus.brussels/type/common/errors/v1" xmlns:ns2="http://fidus.brussels/type/common/exceptions/v1" xmlns:ns3="http://fidus.brussels/type/common/messages/v1">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fidus.brussels/service/bestaddressservice/v1" elementFormDefault="qualified">
+      <xsd:import namespace="http://fidus.brussels/service/bestaddressservice/messages/v1" schemaLocation="messages/beStAddressServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="searchMunicipalityRequestMessage">
+    <wsdl:part name="SearchMunicipalityRequest" element="mes:SearchMunicipalityRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchMunicipalityResponseMessage">
+    <wsdl:part name="SearchMunicipalityResponse" element="mes:SearchMunicipalityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchStreetRequestMessage">
+    <wsdl:part name="SearchStreetRequest" element="mes:SearchStreetRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchStreetResponseMessage">
+    <wsdl:part name="SearchStreetResponse" element="mes:SearchStreetResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchAddressRequestMessage">
+    <wsdl:part name="searchAddressRequest" element="mes:SearchAddressRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchAddressResponseMessage">
+    <wsdl:part name="searchAddressResponse" element="mes:SearchAddressResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchAddressRepresentationRequestMessage">
+    <wsdl:part name="searchAddressRepresentationRequest" element="mes:SearchAddressRepresentationRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchAddressRepresentationResponseMessage">
+    <wsdl:part name="searchAddressRepresentationResponse" element="mes:SearchAddressRepresentationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchAddressHistoryRequestMessage">
+    <wsdl:part name="searchAddressHistoryRequest" element="mes:SearchAddressHistoryRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchAddressHistoryResponseMessage">
+    <wsdl:part name="searchAddressHistoryResponse" element="mes:SearchAddressHistoryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchStreetNameHistoryRequestMessage">
+    <wsdl:part name="searchStreetNameHistoryRequest" element="mes:SearchStreetNameHistoryRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchStreetNameHistoryResponseMessage">
+    <wsdl:part name="searchStreetNameHistoryResponse" element="mes:SearchStreetNameHistoryResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BeStAddressServicePortType">
+    <wsdl:operation name="searchMunicipality">
+      <wsdl:input message="tns:searchMunicipalityRequestMessage"/>
+      <wsdl:output message="tns:searchMunicipalityResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchStreet">
+      <wsdl:input message="tns:searchStreetRequestMessage"/>
+      <wsdl:output message="tns:searchStreetResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchAddress">
+      <wsdl:input message="tns:searchAddressRequestMessage"/>
+      <wsdl:output message="tns:searchAddressResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchAddressRepresentation">
+      <wsdl:input message="tns:searchAddressRepresentationRequestMessage"/>
+      <wsdl:output message="tns:searchAddressRepresentationResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchAddressHistory">
+      <wsdl:input message="tns:searchAddressHistoryRequestMessage"/>
+      <wsdl:output message="tns:searchAddressHistoryResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchStreetNameHistory">
+      <wsdl:input message="tns:searchStreetNameHistoryRequestMessage"/>
+      <wsdl:output message="tns:searchStreetNameHistoryResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BeStAddressServiceHTTPBinding" type="tns:BeStAddressServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="searchMunicipality">
+      <soap:operation soapAction="http://fidus.brussels/services/bestaddressservice/searchMunicipality"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchStreet">
+      <soap:operation soapAction="http://fidus.brussels/services/bestaddressservice/searchStreet"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAddress">
+      <soap:operation soapAction="http://fidus.brussels/services/bestaddressservice/searchAddress"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAddressRepresentation">
+      <soap:operation soapAction="http://fidus.brussels/services/bestaddressservice/searchAddressRepresentation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchStreetNameHistory">
+      <soap:operation soapAction="http://fidus.brussels/services/bestaddressservice/searchStreetNameHistory"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAddressHistory">
+      <soap:operation soapAction="http://fidus.brussels/services/bestaddressservice/searchAddressHistory"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BeStAddressService_v1">
+    <wsdl:port name="BeStAddressService_v1" binding="tns:BeStAddressServiceHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/bestaddressservice/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <xsd:annotation>
+    <xsd:documentation>BeStAddressService WDSL v1.0.0</xsd:documentation>
+  </xsd:annotation>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/messages/beStAddressServiceMessages_v1.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by Anita De Greef (Realdolmen NV)-->
+<!--édité avec XMLSpy v2018 (x64) (http://www.altova.com) par Axel Dussart (CIRB)-->
+<xsd:schema targetNamespace="http://fidus.brussels/service/bestaddressservice/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:err="http://fidus.brussels/type/common/errors/v1" xmlns:tns="http://fidus.brussels/service/bestaddressservice/messages/v1" xmlns:ent="http://fidus.brussels/type/common/entities/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/entities/v1" schemaLocation="entities_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/errors/v1" schemaLocation="errors_v1.xsd"/>
+  <xsd:complexType name="MunicipalityRequestType">
+    <xsd:sequence>
+      <xsd:element name="identifier" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="municipalityName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetNameRequestType">
+    <xsd:sequence>
+      <xsd:element name="language" type="ent:LanguagecodeValueType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="municipalityCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetNameCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetNameStatus" type="ent:StreetNameStatusValueType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetNameType" type="ent:StreetNameTypeValueType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRequestType">
+    <xsd:sequence>
+      <xsd:element name="addressCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="adressStatus" type="ent:AddressStatusValueType" minOccurs="0"/>
+      <xsd:element name="boxNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="houseNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="municipalityCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="municipalityName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="PartOfMunicipalityCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="partOfMunicipalityName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="postCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetNameCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SimpleAddressRepresentationRequestType">
+    <xsd:sequence>
+      <xsd:element name="addressCode" type="cme:IdentifierSearchType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="language" type="ent:LanguagecodeValueType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRepresentationRequestType">
+    <xsd:sequence>
+      <xsd:element name="addressCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="boxNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="houseNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="municipalityName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="postCode" type="cme:IdentifierSearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MunicipalityResponseType">
+    <xsd:sequence minOccurs="1" maxOccurs="3">
+      <xsd:element name="errorOrWarning" type="err:ErrorOrWarningType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="source" type="cme:SourceType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Municipality" type="ent:MunicipalityType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetNameResponseType">
+    <xsd:sequence minOccurs="1" maxOccurs="3">
+      <xsd:element name="errorOrWarning" type="err:ErrorOrWarningType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="source" type="cme:SourceType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="streetName" type="ent:StreetNameType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressResponseType">
+    <xsd:sequence minOccurs="1" maxOccurs="3">
+      <xsd:element name="errorOrWarning" type="err:ErrorOrWarningType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="source" type="cme:SourceType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="address" type="ent:AddressType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRepresentationResponseType">
+    <xsd:sequence minOccurs="1" maxOccurs="3">
+      <xsd:element name="errorOrWarning" type="err:ErrorOrWarningType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="source" type="cme:SourceType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="addressRepresentation" type="ent:AddressRepresentationType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MunicipalityRequestBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchMunicipalityReq" type="tns:MunicipalityRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MunicipalityResponseBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchMunicipalityResp" type="tns:MunicipalityResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetRequestBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchStreetNameReq" type="tns:StreetNameRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetResponseBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchStreetNameResp" type="tns:StreetNameResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRequestBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchAddressReq" type="tns:AddressRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressResponseBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchAddressResp" type="tns:AddressResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRepresentationRequestBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchAddressRepresentationReq" type="tns:SimpleAddressRepresentationRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRepresentationResponseBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchAddressRepresentationResp" type="tns:AddressRepresentationResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetNameHistoryRequestBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchStreetNameHistoryReq" type="tns:StreetNameHistoryRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressHistoryRequestBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchAddressHistoryReq" type="tns:AddressHistoryRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getBeStAddressService definition-->
+  <xsd:complexType name="SearchMunicipalityRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:MunicipalityRequestBodyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getBeStAddressService definition-->
+  <xsd:complexType name="SearchMunicipalityResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:MunicipalityResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MunicipalityResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:MunicipalityResponseBodyType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchStreetRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:StreetRequestBodyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getBeStAddressService definition-->
+  <xsd:complexType name="SearchStreetResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:StreetResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:StreetResponseBodyType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getBeStAddressService definition-->
+  <xsd:complexType name="SearchAddressRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:AddressRequestBodyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchAddressResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:AddressResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:AddressResponseBodyType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getBeStAddressRepresentationService definition-->
+  <xsd:complexType name="SearchAddressRepresentationRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:AddressRepresentationRequestBodyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchAddressRepresentationResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:AddressRepresentationResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressRepresentationResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:AddressRepresentationResponseBodyType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request SearchStreetNameHistory operation definition-->
+  <xsd:complexType name="SearchStreetNameHistoryRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:StreetNameHistoryRequestBodyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchStreetNameHistoryResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:StreetNameHistoryResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetNameHistoryResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:StreetNameHistoryResponseBodyType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetNameHistoryRequestType">
+    <xsd:sequence>
+      <xsd:element name="searchStreetNameHistoryByID" type="cme:HistorySearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="searchStreetNameHistoryByName" type="cme:GeographicalNameSearchType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StreetNameHistoryResponseBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchStreetNameHistoryResp" type="tns:StreetNameResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request SearchAddressHistory operation definition-->
+  <xsd:complexType name="SearchAddressHistoryRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:AddressHistoryRequestBodyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchAddressHistoryResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:AddressHistoryResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressHistoryResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:AddressHistoryResponseBodyType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressHistoryRequestType">
+    <xsd:sequence>
+      <xsd:element name="searchAddressHistory" type="cme:HistorySearchType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressHistoryResponseBodyType">
+    <xsd:sequence>
+      <xsd:element name="BeStSearchAddressHistoryResp" type="tns:AddressResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Element of the request and the response-->
+  <xsd:element name="SearchMunicipalityRequest" type="tns:SearchMunicipalityRequestType"/>
+  <xsd:element name="SearchMunicipalityResponse" type="tns:SearchMunicipalityResponseType"/>
+  <xsd:element name="SearchStreetRequest" type="tns:SearchStreetRequestType"/>
+  <xsd:element name="SearchStreetResponse" type="tns:SearchStreetResponseType"/>
+  <xsd:element name="SearchAddressRequest" type="tns:SearchAddressRequestType"/>
+  <xsd:element name="SearchAddressResponse" type="tns:SearchAddressResponseType"/>
+  <xsd:element name="SearchAddressRepresentationRequest" type="tns:SearchAddressRepresentationRequestType"/>
+  <xsd:element name="SearchAddressRepresentationResponse" type="tns:SearchAddressRepresentationResponseType"/>
+  <xsd:element name="SearchStreetNameHistoryRequest" type="tns:SearchStreetNameHistoryRequestType"/>
+  <xsd:element name="SearchStreetNameHistoryResponse" type="tns:SearchStreetNameHistoryResponseType"/>
+  <xsd:element name="SearchAddressHistoryRequest" type="tns:SearchAddressHistoryRequestType"/>
+  <xsd:element name="SearchAddressHistoryResponse" type="tns:SearchAddressHistoryResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/messages/baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1" xmlns:ent="http://fidus.brussels/type/common/entities/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/entities/v1" schemaLocation="entities_v1.xsd"/>
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="relatesTo" type="tns:MessageIdType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Optional field. The unique id of a previous batch file in this exchange Only used for responses.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+			This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Namespace">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BE.BRUSSELS.BRIC.ADM.ADDR"/>
+      <xsd:enumeration value="BE.BRUSSELS.BRIC.ADM.MUNICIPALITY"/>
+      <xsd:enumeration value="BE.BRUSSELS.BRIC.ADM.PZ"/>
+      <xsd:enumeration value="BE.BRUSSELS.BRIC.ADM.STR"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="IdentifierSearchType" type="tns:IdentifierSearchType"/>
+  <xsd:complexType name="IdentifierSearchType">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <xsd:element name="NameSpace" type="tns:Namespace" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ObjectIdentifier" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VersionIdentifier" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="SearchType">
+    <xsd:union>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="equals"/>
+          <xsd:enumeration value="phonetic"/>
+          <xsd:enumeration value="contains"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="[Ee][Qq][Uu][Aa][Ll][Ss]"/>
+          <xsd:pattern value="[Pp][Hh][Oo][Nn][Ee][Tt][Ii][Cc]"/>
+          <xsd:pattern value="[Cc][Oo][Nn][Tt][Aa][Ii][Nn][Ss]"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:union>
+  </xsd:simpleType>
+  <xsd:simpleType name="SourceType">
+    <xsd:union>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="brussels"/>
+          <xsd:enumeration value="flanders"/>
+          <xsd:enumeration value="wallonia"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="[Bb][Rr][Uu][Ss][Ss][Ee][Ll][Ss]"/>
+          <xsd:pattern value="[Ff][Ll][Aa][Nn][Dd][Ee][Rr][Ss]"/>
+          <xsd:pattern value="[Ww][Aa][Ll][Ll][Oo][Nn][Ii][Aa]"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:union>
+  </xsd:simpleType>
+  <xsd:element name="GeographicalNameSearch" type="tns:GeographicalNameSearchType"/>
+  <xsd:complexType name="GeographicalNameSearchType">
+    <xsd:sequence>
+      <xsd:element name="Language" type="ent:LanguagecodeValueType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="SearchType" type="tns:SearchType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Spelling" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HistorySearchType">
+    <xsd:sequence>
+      <xsd:element name="beginDateTime" type="tns:DateTimeType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="endDateTime" type="tns:DateTimeType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Identifier" type="tns:IdentifierSearchType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="DateTimeType">
+    <xsd:restriction base="xsd:dateTime"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/messages/entities_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/entities/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ent="http://fidus.brussels/type/common/entities/v1">
+  <xsd:simpleType name="LanguagecodeValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="nl"/>
+      <xsd:enumeration value="fr"/>
+      <xsd:enumeration value="de"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PositionSpecificationValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="building"/>
+      <xsd:enumeration value="buildingUnit"/>
+      <xsd:enumeration value="entrance"/>
+      <xsd:enumeration value="mooringPlace"/>
+      <xsd:enumeration value="municipality"/>
+      <xsd:enumeration value="parcel"/>
+      <xsd:enumeration value="plot"/>
+      <xsd:enumeration value="stand"/>
+      <xsd:enumeration value="street"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Municipality-->
+  <xsd:element name="Municipality" type="ent:MunicipalityType"/>
+  <xsd:complexType name="MunicipalityType">
+    <xsd:sequence>
+      <xsd:element name="identifier" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="municipalityName" type="ent:GeographicalNameType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IdentifierType">
+    <xsd:sequence>
+      <xsd:element name="namespace" type="ent:CharstringType"/>
+      <xsd:element name="objectIdentifier" type="ent:CharstringType"/>
+      <xsd:element name="versionIdentifier" type="ent:CharstringType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CharstringType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:pattern value="[^\s].*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--reusable complex datatypes-->
+  <xsd:complexType name="GeographicalNameType">
+    <xsd:sequence>
+      <xsd:element name="language" type="ent:LanguagecodeValueType"/>
+      <xsd:element name="spelling" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="StreetNameStatusValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="current"/>
+      <xsd:enumeration value="proposed"/>
+      <xsd:enumeration value="reserved"/>
+      <xsd:enumeration value="retired"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="StreetNameStatusType">
+    <xsd:sequence>
+      <xsd:element name="status" type="ent:StreetNameStatusValueType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="validFrom" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="validTo" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="StreetNameTypeValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="hamlet"/>
+      <xsd:enumeration value="streetname"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="StreetNameType">
+    <xsd:sequence>
+      <xsd:element name="homonymAddition" type="ent:CharstringType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="streetnameCode" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="streetname" type="ent:GeographicalNameType" minOccurs="1" maxOccurs="unbounded"/>
+      <xsd:element name="streetnameStatus" type="ent:StreetNameStatusType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="streetnameType" type="ent:StreetNameTypeValueType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="isAssignedBy" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Municipality" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="isAssignedTo" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="RoadObject" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="streetSide" type="ent:SideCodeValueType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="ent:lifeCycleInfo"/>
+  </xsd:complexType>
+  <xsd:attributeGroup name="lifeCycleInfo">
+    <xsd:attribute name="beginLifeSpanVersion" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="endLifeSpanVersion" type="xsd:dateTime" use="optional"/>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="SideCodeValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="both"/>
+      <xsd:enumeration value="left"/>
+      <xsd:enumeration value="right"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AddressType">
+    <xsd:sequence>
+      <xsd:element name="addressCode" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="addressPosition" type="ent:GeographicalPositionType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="addressSortfield" type="ent:CharstringType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="addressStatus" type="ent:AddressStatusType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="boxNumber" type="ent:CharstringType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="houseNumber" type="ent:CharstringType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="officiallyAssigned" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="hasStreetname" minOccurs="1" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Streetname" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hasMunicipality" minOccurs="1" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Municipality" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hasPostalInfo" minOccurs="1" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PostalInfo" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="isAssignedTo" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AddressableObject" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="isSituatedIn" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartOfMunicipality" type="ent:IdentifierType" minOccurs="1" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="ent:lifeCycleInfo"/>
+  </xsd:complexType>
+  <!--AddressRepresentation-->
+  <xsd:complexType name="AddressRepresentationType">
+    <xsd:sequence>
+      <xsd:element name="boxnumber" type="ent:CharstringType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="completeAddress" type="ent:CharstringType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="housenumber" type="ent:CharstringType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="municipalityName" type="ent:GeographicalNameType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="postcode" type="ent:CharstringType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="streetname" type="ent:GeographicalNameType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="refersTo" type="ent:AddressReferenceType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PositionGeometryMethodValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="assignedByAdministrator"/>
+      <xsd:enumeration value="derivedFromObject"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AddressStatusValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="current"/>
+      <xsd:enumeration value="proposed"/>
+      <xsd:enumeration value="reserved"/>
+      <xsd:enumeration value="retired"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AddressStatusType">
+    <xsd:sequence>
+      <xsd:element name="status" type="ent:AddressStatusValueType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="validFrom" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="validTo" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GeographicalPositionType">
+    <xsd:sequence>
+      <xsd:element name="point" type="ent:pointCoordinates" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="positionGeometryMethod" type="ent:PositionGeometryMethodValueType"/>
+      <xsd:element name="positionSpecification" type="ent:PositionSpecificationValueType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="pointCoordinates">
+    <xsd:sequence>
+      <xsd:element name="posX" type="xsd:double" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="posY" type="xsd:double" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressReferenceType">
+    <xsd:sequence>
+      <xsd:element name="Address" type="ent:IdentifierType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/messages/exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/adussart/projects/git/fidus/parent/bestaddressservice_1.0/BeStAddressServiceGateway/src/main/resources/wsdl/beStAddressService/1.0.0/messages/errors_v1.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://fidus.brussels/type/common/errors/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:err="http://fidus.brussels/type/common/errors/v1">
+  <xs:complexType name="ErrorOrWarningType">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://fidus.brussels/services/bestaddressservice/v1</con:endpoint><con:endpoint>https://192.168.120.128:8243/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.24.45:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.24.51:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.24.57:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.24.64:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.26.33:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.26.40:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://192.168.36.205:8243/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://fidus-test.irisnetlab.be/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://fidus.irisnetlab.be/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://fidus.sec.brussels/services/BeStAddressService_v1.0</con:endpoint><con:endpoint>https://localhost:8243/services/BeStAddressService_v1.0</con:endpoint></con:endpoints><con:operation id="a660c791-4829-426e-a086-9f28d4c88b7c" isOneWay="false" action="http://fidus.brussels/services/bestaddressservice/searchMunicipality" name="searchMunicipality" bindingOperationName="searchMunicipality" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation><con:operation id="b37594c5-563b-4698-9e10-23c79acffd93" isOneWay="false" action="http://fidus.brussels/services/bestaddressservice/searchStreet" name="searchStreet" bindingOperationName="searchStreet" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation><con:operation id="12c00dc1-a96a-41ab-aafc-d3a096bbae76" isOneWay="false" action="http://fidus.brussels/services/bestaddressservice/searchAddress" name="searchAddress" bindingOperationName="searchAddress" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation><con:operation id="807a1893-e77a-413e-9f22-9cac969a4074" isOneWay="false" action="http://fidus.brussels/services/bestaddressservice/searchAddressRepresentation" name="searchAddressRepresentation" bindingOperationName="searchAddressRepresentation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c8acc936-dd1f-4663-8fde-5996d09e4224" name="Request 1" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/BeStAddressService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/bestaddressservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:SearchAddressRepresentationRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:BeStSearchAddressRepresentationReq>
+               <v1:addressCode>
+                  <!--Optional:-->
+                  <v11:NameSpace>BE.BRUSSELS.BRIC.ADM.ADDR</v11:NameSpace>
+                  <!--Optional:-->
+                  <v11:ObjectIdentifier>593889</v11:ObjectIdentifier>
+                  <!--Optional:-->
+                  <v11:VersionIdentifier>1</v11:VersionIdentifier>
+               </v1:addressCode>
+               <!--Optional:-->
+               <v1:language>fr</v1:language>
+            </v1:BeStSearchAddressRepresentationReq>
+         </v1:request>
+      </v1:SearchAddressRepresentationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/bestaddressservice/searchAddressRepresentation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="614ed76f-786f-4a80-8bb4-2f5b7bcd3b02" isOneWay="false" action="http://fidus.brussels/services/bestaddressservice/searchStreetNameHistory" name="searchStreetNameHistory" bindingOperationName="searchStreetNameHistory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c870924a-5dd4-43e3-95d7-c70f74643498" name="Request 1" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://fidus.brussels/services/bestaddressservice/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/bestaddressservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:SearchStreetNameHistoryRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>?</v1:legalContext>
+         <v1:request>
+            <v1:BeStSearchStreetNameHistoryReq>
+               <!--Optional:-->
+               <v1:searchStreetNameHistoryByID>
+                  <!--Optional:-->
+                  <v11:beginDateTime>?</v11:beginDateTime>
+                  <!--Optional:-->
+                  <v11:endDateTtime>?</v11:endDateTtime>
+                  <v11:Identifier>
+                     <!--Optional:-->
+                     <v11:NameSpace>?</v11:NameSpace>
+                     <!--Optional:-->
+                     <v11:ObjectIdentifier>?</v11:ObjectIdentifier>
+                     <!--Optional:-->
+                     <v11:VersionIdentifier>?</v11:VersionIdentifier>
+                  </v11:Identifier>
+               </v1:searchStreetNameHistoryByID>
+               <!--Optional:-->
+               <v1:searchStreetNameHistoryByName>
+                  <!--Optional:-->
+                  <v11:Language>?</v11:Language>
+                  <!--Optional:-->
+                  <v11:SearchType>?</v11:SearchType>
+                  <!--Optional:-->
+                  <v11:Spelling>?</v11:Spelling>
+               </v1:searchStreetNameHistoryByName>
+            </v1:BeStSearchStreetNameHistoryReq>
+         </v1:request>
+      </v1:SearchStreetNameHistoryRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/bestaddressservice/searchStreetNameHistory"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b2aaca29-e983-4c5d-b6a8-f8a45b924988" isOneWay="false" action="http://fidus.brussels/services/bestaddressservice/searchAddressHistory" name="searchAddressHistory" bindingOperationName="searchAddressHistory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="97156aff-3d42-4de0-8b09-5353d023e03c" name="Request 1" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/BeStAddressService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/bestaddressservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:SearchAddressHistoryRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>?</v1:legalContext>
+         <v1:request>
+            <v1:BeStSearchSAddressHistoryReq>
+               <!--Optional:-->
+               <v1:searchAddressHistory>
+                  <!--Optional:-->
+                  <v11:beginDateTime>?</v11:beginDateTime>
+                  <!--Optional:-->
+                  <v11:endDateTtime>?</v11:endDateTtime>
+                  <v11:Identifier>
+                     <!--Optional:-->
+                     <v11:NameSpace>?</v11:NameSpace>
+                     <!--Optional:-->
+                     <v11:ObjectIdentifier>?</v11:ObjectIdentifier>
+                     <!--Optional:-->
+                     <v11:VersionIdentifier>?</v11:VersionIdentifier>
+                  </v11:Identifier>
+               </v1:searchAddressHistory>
+            </v1:BeStSearchSAddressHistoryReq>
+         </v1:request>
+      </v1:SearchAddressHistoryRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/bestaddressservice/searchAddressHistory"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

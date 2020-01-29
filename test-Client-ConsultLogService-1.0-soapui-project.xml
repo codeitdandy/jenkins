@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="483e57b1-44e5-44b3-bc53-65fdfa72a47f" activeEnvironment="Default" name="Client-ConsultLogService-1.0-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="860a5d0d-a087-43c9-a0f4-5e66c28ae882" wsaVersion="NONE" name="ConsultLogService_v1.0Soap11Binding" type="wsdl" bindingName="{http://fidus.brussels/service/consultlogservice/v1}ConsultLogService_v1.0Soap11Binding" soapVersion="1_1" anonymous="optional" definition="https://localhost:9443/services/ConsultLogService_v1.0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:9443/services/ConsultLogService_v1.0?wsdl"><con:part><con:url>https://localhost:9443/services/ConsultLogService_v1.0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/consultlogservice/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidus.brussels/service/consultlogservice/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mes="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsp:Policy wsu:Id="SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+            <sp:MustSupportRefIssuerSerial/>
+          </sp:Policy>
+        </sp:Wss10>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:SignedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/consultlogservice/v1">
+      <xsd:import namespace="http://fidus.brussels/service/consultlogservice/messages/v1" schemaLocation="ConsultLogService_v1.0?xsd=consultLogServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getLogServiceRequestMessage">
+    <wsdl:part name="getLogServiceRequest" element="mes:getLogServiceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getLogServiceResponseMessage">
+    <wsdl:part name="getLogServiceResponse" element="mes:getLogServiceResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ConsultLogService_v1.0PortType" wsp:PolicyURIs="#SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsdl:operation name="getLogService">
+      <wsdl:input message="tns:getLogServiceRequestMessage" wsaw:Action="http://fidus.brussels/services/consultlogservice/getLogService"/>
+      <wsdl:output message="tns:getLogServiceResponseMessage" wsaw:Action="http://fidus.brussels/service/consultlogservice/v1/ConsultLogServicePortType/getLogServiceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultLogService_v1.0Soap11Binding" type="tns:ConsultLogService_v1.0PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getLogService">
+      <soap:operation soapAction="http://fidus.brussels/services/consultlogservice/getLogService" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultLogService_v1.0">
+    <wsdl:port name="ConsultLogService_v1.0HttpsSoap11Endpoint" binding="tns:ConsultLogService_v1.0Soap11Binding">
+      <soap:address location="/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:9443/services/ConsultLogService_v1.0?xsd=consultLogServiceMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/consultlogservice/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:cme="http://fidus.brussels/type/common/messages/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="ConsultLogService_v1.0?xsd=baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="ConsultLogService_v1.0?xsd=exceptionTypes_v1.xsd"/>
+  <xsd:complexType name="ConsultLogServiceRequestType">
+    <xsd:annotation/>
+    <xsd:sequence>
+      <xsd:element name="requestedPersoneInfo" type="tns:requestedPersoneDataType">
+        <xsd:annotation>
+          <xsd:documentation>The person whose information is requested.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="requesterInfo" type="tns:requesterInfoType">
+        <xsd:annotation>
+          <xsd:documentation>The person who is requesting informations.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="filter" type="tns:requestFilterType">
+        <xsd:annotation>
+          <xsd:documentation>The person who is requesting informations.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="requestedPersoneDataType">
+    <xsd:annotation>
+      <xsd:documentation>The person whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="personNumber" nillable="true" type="cme:PersonNumberType">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his
+						personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="period" type="tns:PeriodType">
+        <xsd:annotation>
+          <xsd:documentation>Period concerning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="requestFilterType">
+    <xsd:annotation>
+      <xsd:documentation>The person whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="service" type="tns:ServiceFilterType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ServiceFilterType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PeriodType">
+    <xsd:annotation>
+      <xsd:documentation>A period of time between a startdate and an
+				enddate</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="startDate">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="endDate">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="requesterInfoType">
+    <xsd:annotation>
+      <xsd:documentation></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="personNumber" type="cme:PersonNumberType">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="getLogServiceRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:ConsultLogServiceRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="getLogServiceResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element minOccurs="0" name="responses" type="tns:ResponsesType"/>
+      <xsd:element minOccurs="0" name="exceptions" type="exc:ExceptionsType">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the
+						message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="response" type="tns:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="transactionId" type="cme:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="applicationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>applicationId who called fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="institute" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>institute who called fidus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="legalContext" type="cme:LegalContextType">
+        <xsd:annotation>
+          <xsd:documentation>legalContext who called fidus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Service" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Service for whom was called fidus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>request Date when was called fidus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="responseStatut" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>fidus response OK/KO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="getLogServiceRequest" type="tns:getLogServiceRequestType"/>
+  <xsd:element name="getLogServiceResponse" type="tns:getLogServiceResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/ConsultLogService_v1.0?xsd=baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="relatesTo" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Optional field. The unique id of a previous batch file in this exchange Only used for responses.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" nillable="true" type="xsd:language">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/ConsultLogService_v1.0?xsd=exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/exceptions/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="exception" type="tns:ExceptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint</con:endpoint></con:endpoints><con:operation id="bf766cdf-e053-48f1-abc9-c29a1e6a019b" isOneWay="false" action="http://fidus.brussels/services/consultlogservice/getLogService" name="getLogService" bindingOperationName="getLogService" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1342047a-21ec-43fa-98cc-cd01bf7f714c" name="TEST - GW1" outgoingWss="outFlowtest" incomingWss="InflowTest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLogServiceRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:requestedPersoneInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+               <v1:period>
+                  <!--Optional:-->
+                  <v1:startDate>2018-05-01</v1:startDate>
+                  <!--Optional:-->
+                  <v1:endDate>2019-01-01</v1:endDate>
+               </v1:period>
+            </v1:requestedPersoneInfo>
+            <v1:requesterInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+            </v1:requesterInfo>
+            <!--Optional:-->
+            <v1:filter>
+               <v1:service>HouseHoldService_v1.0</v1:service>
+            </v1:filter>
+         </v1:request>
+      </v1:getLogServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/consultlogservice/getLogService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ef90b972-ec88-4d86-aefb-b864ed83f9fa" name="TEST - GW2" outgoingWss="outFlowtest" incomingWss="InflowTest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLogServiceRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:requestedPersoneInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+               <v1:period>
+                  <!--Optional:-->
+                  <v1:startDate>2018-05-01</v1:startDate>
+                  <!--Optional:-->
+                  <v1:endDate>2019-01-01</v1:endDate>
+               </v1:period>
+            </v1:requestedPersoneInfo>
+            <v1:requesterInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+            </v1:requesterInfo>
+            <!--Optional:-->
+            <v1:filter>
+               <!--v1:service>HouseHoldService_v1.0</v1:service-->
+            </v1:filter>
+         </v1:request>
+      </v1:getLogServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/consultlogservice/getLogService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d04aecdc-0680-4d84-a531-9ce39a310f50" name="Request 4" outgoingWss="outFlowDev" incomingWss="inflowDev"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLogServiceRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:requestedPersoneInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+               <v1:period>
+                  <!--Optional:-->
+                  <v1:startDate>2018-05-01</v1:startDate>
+                  <!--Optional:-->
+                  <v1:endDate>2019-01-01</v1:endDate>
+               </v1:period>
+            </v1:requestedPersoneInfo>
+            <v1:requesterInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+            </v1:requesterInfo>
+            <!--Optional:-->
+            <v1:filter>
+               <!--v1:service>HouseHoldService_v1.0</v1:service-->
+            </v1:filter>
+         </v1:request>
+      </v1:getLogServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/consultlogservice/getLogService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="7f9d3fe7-b567-4b6b-8416-a020e9beaeb1" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1d164515-bf5d-4ea0-85a3-055547205af8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getLogService" searchProperties="true"><con:settings/><con:testStep type="request" id="a508e013-3ab3-486f-b4e1-23e18ce9bcfe" name="testcaseTEST - GW1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ConsultLogService_v1.0Soap11Binding</con:interface><con:operation>getLogService</con:operation><con:request name="testcaseTEST - GW1" id="0f83aa26-e90b-40ed-a006-404cd6c1d3c3" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLogServiceRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:requestedPersoneInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+               <v1:period>
+                  <!--Optional:-->
+                  <v1:startDate>2018-05-01</v1:startDate>
+                  <!--Optional:-->
+                  <v1:endDate>2019-01-01</v1:endDate>
+               </v1:period>
+            </v1:requestedPersoneInfo>
+            <v1:requesterInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+            </v1:requesterInfo>
+            <!--Optional:-->
+            <v1:filter>
+               <v1:service>HouseHoldService_v1.0</v1:service>
+            </v1:filter>
+         </v1:request>
+      </v1:getLogServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="be4f2d1e-50fa-4411-8233-dc9dc0532837" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="93d5f3a2-e9de-4abd-b55f-b381910572c4" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7c43d4f4-b8f6-4269-b3d1-9ed5cf0a6a8d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/consultlogservice/getLogService"/></con:request></con:config></con:testStep><con:testStep type="request" id="03ec5206-a8d4-4c35-a1a8-d8b5a026cb69" name="testcaseTEST - GW2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ConsultLogService_v1.0Soap11Binding</con:interface><con:operation>getLogService</con:operation><con:request name="testcaseTEST - GW2" id="7bf3dd92-705c-4236-93d7-982035e5d5f5" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ConsultLogService_v1.0.ConsultLogService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/consultlogservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLogServiceRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:requestedPersoneInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+               <v1:period>
+                  <!--Optional:-->
+                  <v1:startDate>2018-05-01</v1:startDate>
+                  <!--Optional:-->
+                  <v1:endDate>2019-01-01</v1:endDate>
+               </v1:period>
+            </v1:requestedPersoneInfo>
+            <v1:requesterInfo>
+               <v1:personNumber>12003001507</v1:personNumber>
+            </v1:requesterInfo>
+            <!--Optional:-->
+            <v1:filter>
+               <!--v1:service>HouseHoldService_v1.0</v1:service-->
+            </v1:filter>
+         </v1:request>
+      </v1:getLogServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f234c332-e62f-4eaa-b2ef-8ec44e678399" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9ebd52b6-a0ec-465b-95c9-725ed6a639c8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7e9fb92a-8be1-45c1-aae5-cfb1aca0a6f8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/consultlogservice/getLogService"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

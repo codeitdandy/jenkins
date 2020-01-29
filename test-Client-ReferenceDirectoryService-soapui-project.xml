@@ -1,0 +1,2250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Client-ReferenceDirectoryService-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" id="98984661-bd39-4456-8f56-8ac089d90739" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ReferenceDirServiceHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/referencedir/v1}ReferenceDirServiceHTTPBinding" soapVersion="1_1" anonymous="optional" definition="/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/ReferenceDirectoryService_v1.wsdl" id="e6e17364-8174-4d27-9813-68d451c1bab3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    
+    <con:definitionCache type="TEXT" rootPart="file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/ReferenceDirectoryService_v1.wsdl"><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/ReferenceDirectoryService_v1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/referencedir/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mes="http://fidus.brussels/service/referencedir/messages/v1" xmlns:tns="http://fidus.brussels/service/referencedir/v1">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://fidus.brussels/service/referencedir/v1" elementFormDefault="qualified">
+      <xs:import namespace="http://fidus.brussels/service/referencedir/messages/v1" schemaLocation="messages/referenceDirMessages_v1.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SubscribeRequestMessage">
+    <wsdl:part name="SubscribeRequest" element="mes:subscribeReferenceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="SubscribeResponseMessage">
+    <wsdl:part name="SubscribeResponse" element="mes:subscribeReferenceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeRequestMessage">
+    <wsdl:part name="UnsubscribeRequest" element="mes:unsubscribeReferenceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeResponseMessage">
+    <wsdl:part name="UnsubscribeResponse" element="mes:unsubscribeReferenceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetServicesRequestMessage">
+    <wsdl:part name="GetServicesRequest" element="mes:getServicesReferenceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetServicesResponseMessage">
+    <wsdl:part name="GetServicesResponse" element="mes:getServicesReferenceResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ReferenceDirServicePortType">
+    <wsdl:operation name="subscribeReference">
+      <wsdl:input message="tns:SubscribeRequestMessage"/>
+      <wsdl:output message="tns:SubscribeResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="unsubscribeReference">
+      <wsdl:input message="tns:UnsubscribeRequestMessage"/>
+      <wsdl:output message="tns:UnsubscribeResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getServicesReference">
+      <wsdl:input message="tns:GetServicesRequestMessage"/>
+      <wsdl:output message="tns:GetServicesResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReferenceDirServiceHTTPBinding" type="tns:ReferenceDirServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="subscribeReference">
+      <soap:operation soapAction="http://fidus.brussels/services/referencedir/subscribeReference"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unsubscribeReference">
+      <soap:operation soapAction="http://fidus.brussels/services/referencedir/unsubscribeReference"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicesReference">
+      <soap:operation soapAction="http://fidus.brussels/services/referencedir/getServicesReference"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReferenceDirService_v1">
+    <wsdl:port name="ReferenceDirService_v1" binding="tns:ReferenceDirServiceHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/referencedir/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/referenceDirMessages_v1.xsd</con:url><con:content><![CDATA[<!--==========================================================================
+* File Name          : ReferenceDirMessages.xsd
+* Author             : Alexandre Carbenay
+* Owner              : CIRB-CIBG
+* Domain             : ISR
+* Creation date      : 07/04/2015
+* Last revision date : 27/05/2015
+* Description        : WS ReferenceDir - Messages
+* Status             : Draft
+* Current Version    : v1
+* Revision History	 : -
+==========================================================================-->
+<xs:schema targetNamespace="http://fidus.brussels/service/referencedir/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sub="http://fidus.brussels/type/referencedir/requests/subscribe/v1" xmlns:uns="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:ser="http://fidus.brussels/type/referencedir/requests/getservices/v1" xmlns:tns="http://fidus.brussels/service/referencedir/messages/v1">
+  <xs:import namespace="http://fidus.brussels/type/referencedir/requests/subscribe/v1" schemaLocation="referenceDirSubscribeTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" schemaLocation="referenceDirUnsubscribeTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/referencedir/requests/getservices/v1" schemaLocation="referenceDirGetServicesTypes_v1.xsd"/>
+  <xs:element name="subscribeReferenceRequest" type="sub:SubscribeReferenceRequestType"/>
+  <xs:element name="subscribeReferenceResponse" type="sub:SubscribeReferenceResponseType"/>
+  <xs:element name="unsubscribeReferenceRequest" type="uns:UnsubscribeReferenceRequestType"/>
+  <xs:element name="unsubscribeReferenceResponse" type="uns:UnsubscribeReferenceResponseType"/>
+  <xs:element name="getServicesReferenceRequest" type="ser:GetServicesReferenceRequestType"/>
+  <xs:element name="getServicesReferenceResponse" type="ser:GetServicesReferenceResponseType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/referenceDirSubscribeTypes_v1.xsd</con:url><con:content><![CDATA[<!--==========================================================================
+* File Name          : ReferenceDirSubscribeTypes.xsd
+* Author             : Alexandre Carbenay
+* Owner              : CIRB-CIBG
+* Domain             : ISR
+* Creation date      : 27/05/2015
+* Last revision date : 27/05/2015
+* Description        : WS ReferenceDir - Subscription Operation Types
+* Status             : Draft
+* Current Version    : v1
+* Revision History	 : -
+==========================================================================-->
+<xs:schema targetNamespace="http://fidus.brussels/type/referencedir/requests/subscribe/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:req="http://fidus.brussels/type/referencedir/requests/v1" xmlns:tns="http://fidus.brussels/type/referencedir/requests/subscribe/v1">
+  <xs:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/referencedir/requests/v1" schemaLocation="referenceDirTypes_v1.xsd"/>
+  <xs:complexType name="SubscribeReferenceRequestType">
+    <xs:sequence>
+      <xs:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xs:element name="legalContext" type="cme:LegalContextType"/>
+      <xs:element name="subscriptionRequest" type="req:SubscriptionRequestType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscribeReferenceResponseType">
+    <xs:sequence>
+      <xs:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xs:element name="responses" type="tns:ResponsesType"/>
+      <xs:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Technical errors that occur when processing the request e.g. xs validation errors.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponsesType">
+    <xs:sequence>
+      <xs:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseType">
+    <xs:sequence>
+      <xs:element name="subscriptionResponse" type="req:SubscriptionResponseType" minOccurs="0"/>
+      <xs:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Business error that occur when processing the request e.g. missing data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:nps="http://fidus.brussels/service/personservice/personservices/naturalPerson/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by Fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/referenceDirTypes_v1.xsd</con:url><con:content><![CDATA[<!--==========================================================================
+* File Name          : ReferenceDirTypes.xsd
+* Author             : Alexandre Carbenay
+* Owner              : CIRB-CIBG
+* Domain             : ISR
+* Creation date      : 07/04/2015
+* Last revision date : 27/05/2015
+* Description        : WS ReferenceDir - Types
+* Status             : Draft
+* Current Version    : v1
+* Revision History	 : -
+==========================================================================-->
+<xs:schema targetNamespace="http://fidus.brussels/type/referencedir/requests/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:tns="http://fidus.brussels/type/referencedir/requests/v1">
+  <xs:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xs:complexType name="SubscriptionRequestType">
+    <xs:sequence>
+      <xs:element name="reference" type="tns:ReferenceType">
+        <xs:annotation>
+          <xs:documentation>Reference ; either a person or an enterprise number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="endDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>End date for subscription period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriptionResponseType">
+    <xs:sequence>
+      <xs:element name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Service execution status.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnsubscriptionRequestType">
+    <xs:sequence>
+      <xs:element name="reference" type="tns:ReferenceType">
+        <xs:annotation>
+          <xs:documentation>Reference ; either a person or an enterprise number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="endDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>End date for subscription period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnsubscriptionResponseType">
+    <xs:sequence>
+      <xs:element name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Service execution status.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetServicesResponseType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <xs:element name="operations" type="tns:Operations" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Operations">
+    <xs:sequence>
+      <xs:element name="operation" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReferenceType">
+    <xs:sequence>
+      <xs:element name="personNumber" type="cme:PersonNumberType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/referenceDirUnsubscribeTypes_v1.xsd</con:url><con:content><![CDATA[<!--==========================================================================
+* File Name          : ReferenceDirSubscribeTypes.xsd
+* Author             : Alexandre Carbenay
+* Owner              : CIRB-CIBG
+* Domain             : ISR
+* Creation date      : 27/05/2015
+* Last revision date : 27/05/2015
+* Description        : WS ReferenceDir - Unsubscription Operation Types
+* Status             : Draft
+* Current Version    : v1
+* Revision History	 : -
+==========================================================================-->
+<xs:schema targetNamespace="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:req="http://fidus.brussels/type/referencedir/requests/v1" xmlns:tns="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1">
+  <xs:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/referencedir/requests/v1" schemaLocation="referenceDirTypes_v1.xsd"/>
+  <xs:complexType name="UnsubscribeReferenceRequestType">
+    <xs:sequence>
+      <xs:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xs:element name="legalContext" type="cme:LegalContextType"/>
+      <xs:element name="unsubscriptionRequest" type="req:UnsubscriptionRequestType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnsubscribeReferenceResponseType">
+    <xs:sequence>
+      <xs:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xs:element name="responses" type="tns:ResponsesType"/>
+      <xs:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Technical errors that occur when processing the request e.g. xs validation errors.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponsesType">
+    <xs:sequence>
+      <xs:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseType">
+    <xs:sequence>
+      <xs:element name="unsubscriptionResponse" type="req:UnsubscriptionResponseType" minOccurs="0"/>
+      <xs:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Business error that occur when processing the request e.g. missing data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/fidus/Documents/cirb/fidus/parent/referencedirservice/ReferenceDirServiceGateway/src/main/resources/wsdl/referenceDir/1.0.0/messages/referenceDirGetServicesTypes_v1.xsd</con:url><con:content><![CDATA[<!--==========================================================================
+* File Name          : ReferenceDirSubscribeTypes.xsd
+* Author             : Alexandre Carbenay
+* Owner              : CIRB-CIBG
+* Domain             : ISR
+* Creation date      : 27/05/2015
+* Last revision date : 27/05/2015
+* Description        : WS ReferenceDir - Unsubscription Operation Types
+* Status             : Draft
+* Current Version    : v1
+* Revision History	 : -
+==========================================================================-->
+<xs:schema targetNamespace="http://fidus.brussels/type/referencedir/requests/getservices/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:req="http://fidus.brussels/type/referencedir/requests/v1" xmlns:tns="http://fidus.brussels/type/referencedir/requests/getservices/v1">
+  <xs:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xs:import namespace="http://fidus.brussels/type/referencedir/requests/v1" schemaLocation="referenceDirTypes_v1.xsd"/>
+  <xs:complexType name="GetServicesReferenceRequestType">
+    <xs:sequence>
+      <xs:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xs:element name="legalContext" type="cme:LegalContextType"/>
+      <xs:element name="getServicesRequest" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetServicesReferenceResponseType">
+    <xs:sequence>
+      <xs:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xs:element name="responses" type="tns:ResponsesType"/>
+      <xs:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Technical errors that occur when processing the request e.g. xs validation errors.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponsesType">
+    <xs:sequence>
+      <xs:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseType">
+    <xs:sequence>
+      <xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="getServicesReferenceResponse" type="req:GetServicesResponseType"/>
+      <xs:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Business error that occur when processing the request e.g. missing data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints>
+      <con:endpoint>http://fidus.brussels/services/referencedir/v1</con:endpoint>
+    </con:endpoints>
+    <con:operation isOneWay="false" action="http://fidus.brussels/services/referencedir/subscribeReference" name="subscribeReference" bindingOperationName="subscribeReference" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="dc8c1559-df1b-4c29-97d5-cc91ab242393">
+      <con:settings/>
+      <con:call name="1 - Local - Request" incomingWss="Inflow DEV" outgoingWss="Outflow DEV" id="0bf52dd1-abdf-48b4-b9b9-ce1b3f711495">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://localhost:8243/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>84072002128</v13:personNumber>
+            </v13:reference>
+            <v13:endDate>2017-07-27</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="4016106e-7341-4c9f-9c8a-0d0e6487cddf">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.36.61:8243/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>12003001507</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-10-30</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="860c6031-1187-4214-b1f7-4ceca82570e5">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>91120406960</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-12-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="4eab1019-fcb1-4da8-abb4-039939f92a83">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="1fc5b02b-3fe9-4660-a346-965a958df5cc">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.53:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="1f8b3a8d-19f2-47eb-aa5a-f514d6a4ddbe">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.54:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - Worker1 - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="375fb6d1-f2de-4fb3-8b6e-4996957820c2">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.16:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - Worker2 - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="d37a71b5-38ac-473e-877b-6a416f4b60b6">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.17:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - LB - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="133b22fb-f479-4d65-82d3-e8d8dca8f95a">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - External - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="54ca9107-3f47-4bec-9689-b4f573d98374">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - External - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="674d177e-f194-4130-9672-a98aacb3c5fd">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.sec.brussels/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>SocialTenantCandidate</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>71011353588</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-11-18</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - LB - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="e68c9c91-a621-4466-a8a8-7794329df9fd">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - Worker1 - Request" incomingWss="Inflow PROD" outgoingWss="Outflow PROD" id="49a54d64-bec1-4acc-a4e9-f023494b1fb7">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.26.22:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - Worker2 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="466303cc-7d96-4899-b6c8-2656dc00c6e9">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.26.19:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    <con:call id="52521c24-4ffd-49f0-98e5-a12767fa7be4" name="2 - DevNew - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>12003001507</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-10-30</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bce2f8ff-5cc9-4714-88dc-5b9457af1030" name="3 - Test - Worker1New - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5fd837ab-ad99-4bc8-a16d-a2d554a041c5" name="3 - Test - Worker2New - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="8680283a-3700-4baf-93a2-e6a3a960e14a" name="4 - Staging - Worker1New - Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a4f626cc-4149-4d7a-9bee-ce45565f0172" name="4 - Staging - Worker2New - Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/subscribeReference"/><con:wsrmConfig version="1.2"/></con:call></con:operation>
+    <con:operation isOneWay="false" action="http://fidus.brussels/services/referencedir/unsubscribeReference" name="unsubscribeReference" bindingOperationName="unsubscribeReference" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a51d4d13-ee2a-4d6e-87c7-5d91e1d46e0a">
+      <con:settings/>
+      <con:call name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="e86e7bc0-c69f-4462-abba-cea15385ca21">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost.localdomain:8243/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-03</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="b8474674-dc27-4c0e-8f9f-548611ae23a2">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.36.61:8243/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-03</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="767dd2a0-0941-48bb-aec1-91d370c20aef">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="537ce3e6-80bd-4c31-bbf7-1187707f47c5">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="99d1994f-493b-4f09-89d6-cc3bcd3f6542">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.53:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="abe5f53a-ef78-4316-859b-9a7f4f5af295">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.54:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - External - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="1bb9c64a-59f8-4d6e-97f5-d300bcd1f4d3">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - LB - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="2fe0c0c9-9f41-4d83-a78e-d2e420f6b62a">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - Worker1 - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="ba3d257a-444a-4f25-855b-fd9737170ed7">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.16:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - Worker2 - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="c2d30537-25cc-4c32-8372-af9a42efdbca">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.17:8443/services/ReferenceDirService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribe"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    <con:call id="3e7dd300-7f85-43da-88fb-f69c823c1254" name="2 - DevNew - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>12003001507</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-10-30</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="171c8af1-4fc4-4985-a30d-3d20aca65976" name="3 - Test - Worker1New - Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2cd2add0-38e9-4006-8738-86685aabf9f5" name="3 - Test - Worker2New - Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="28a9618b-cbbe-4495-9887-1d3d1e958568" name="4 - Staging - Worker1New - Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribeReference"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e229dd53-81bd-4557-8f92-ba1ae37b9de1" name="4 - Staging - Worker2New - Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/unsubscribeReference"/><con:wsrmConfig version="1.2"/></con:call></con:operation>
+  <con:operation id="c8d711dc-978d-4cc3-bf3d-08e5ea1335ec" isOneWay="false" action="http://fidus.brussels/services/referencedir/getServicesReference" name="getServicesReference" bindingOperationName="getServicesReference" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f51be972-d232-46aa-8631-d0291f7f4cf6" name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/getservices/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" >
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getServicesReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:getServicesRequest></v11:getServicesRequest>
+      </v1:getServicesReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/referencedir/getServicesReference"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface>
+  
+  <con:testSuite id="7652cdb6-d3bf-42fe-b06e-f14701bf0d55" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c45f40bf-39a8-482f-8d9e-a43eec1d5e91" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="subscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="a338679c-3f34-4da3-83a3-1a7f4b5209f1" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase2 - Dev - Request" id="9170c7c1-997d-47a5-809d-bec04156380a" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>12003001507</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-10-30</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="926b631a-ebe3-4592-8f5c-5602c4c985e0" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c43bdd2b-41a3-4b2d-af16-0d1e52bf1472" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7e7ebe80-7a7b-4ef1-a01b-424b92429875" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="993f7817-f8bd-4f33-9a1a-6bf661eee4cc" name="testcase2 - DevNew - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase2 - DevNew - Request" id="5ff6996b-c302-4ef4-8ab7-a401c4f235df" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>12003001507</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-10-30</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ddf9248c-f745-4fce-95c1-02153d4741e4" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="bb54b372-f81b-4bf8-83f4-0026eb2135f3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b0c042cb-4fbf-4070-8d96-f6adb62f2f77" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="58623486-1666-4b41-a43a-7f7babb2b638" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="unsubscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="da900281-2c02-4846-801b-33c74db5597a" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase2 - Dev - Request" id="a4650c52-4107-4885-8843-fbb7c7b96548" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-03</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="a4dee267-cf7f-4bfa-873a-9e69d22c220b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f53daa69-121a-4e5f-b72f-16a545f38621" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b866943c-3ff8-4e16-80d0-ab3bf7679ce9" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="5f0fafca-fdcb-41a4-8bb2-d23f2f4cbd3d" name="testcase2 - DevNew - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase2 - DevNew - Request" id="42d12f6d-4720-45d6-a991-3503271374b1" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8243/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>12003001507</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-10-30</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="712c1f3c-7234-4f0f-9f6e-aac31d6cc59d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0895e4e9-3d62-40cd-b34d-b55cf5fb929a" name="SOAP Response"/><con:assertion type="Schema Compliance" id="12b73d6b-4fa1-4bac-b2d0-60ad002a30a9" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="04e63daf-2e87-43f9-9976-6f569efeafb9" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="719d95c6-94c8-4a97-bba8-382885d0ae04" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="subscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="f8ca5305-b2e9-4ab2-9083-a4d090c35429" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase3 - Test - External - Request" id="3f2a3c33-4a7d-4780-9b1e-74e19f42527c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>91120406960</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-12-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e04014d8-6ad0-4e5f-8852-989a5e2867b5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8acffdae-6c3d-4cd9-bb63-40b14c394a9f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d9764cd5-dab8-4df1-ac2e-12799b79a564" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="44cc277c-2b7c-44fa-b342-fc1556881554" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase3 - Test - LB - Request" id="c7a3c1a4-41ff-4e31-b0bc-3e86d7604f07" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="17e100e7-96d7-4ccd-9a9b-0af6bd0b7b84" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4df77526-2c6a-4ad5-8e74-f362a9ea0d21" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7b906296-1978-4aaa-ad5c-861260c6abd8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="854d6214-ab75-4c7f-b47f-c1145aaf232c" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="dc57fbeb-2fa3-40b9-bb64-1ddf5d77d82c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="7561326e-a242-42a0-81fd-d8f3805876d2" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3b4f3c20-2d39-4628-b168-1a8838e7d9b0" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ff05c737-a4bb-4040-880e-4e1b744354b5" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="6e34d90a-1bf9-4367-b2ad-462154a3ffaf" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="5f793748-703e-4c13-85d1-58f0f8945d4d" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="468224d0-9a52-4d46-91e1-714b28c4f590" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="845fb8e6-a902-44d7-ab93-b4eb1030ee95" name="SOAP Response"/><con:assertion type="Schema Compliance" id="952cb6f1-7811-4453-8b8e-1e6b1472728b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="288522e7-e918-485a-a769-7edeb07055a4" name="testcase3 - Test - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase3 - Test - Worker1New - Request" id="011871b1-10c5-4bbc-b0a9-f83f34b60190" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4562ca55-1fc7-49b0-ba71-468768020ff9" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="913fe42e-dbfc-4d50-91d9-58ebb2798470" name="SOAP Response"/><con:assertion type="Schema Compliance" id="46941cb3-5d75-46a8-a925-fff63b1c3f70" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="9effd4a0-e187-4c1c-8172-039848b327bb" name="testcase3 - Test - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase3 - Test - Worker2New - Request" id="e5b21c92-86ee-4da3-a74e-8e6c8bcb6049" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2099-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="544e1123-af69-40df-81be-1bbba011db0b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8e76105b-4cf3-4ef2-a72d-a6e0a3f8e76c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4cfb12b0-3153-47c2-9bcd-e267d6044663" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d5d4cdcb-b25a-41f1-b89d-668b64b068bb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="unsubscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="78769c49-1668-4ee4-ad88-43ae637b176e" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase3 - Test - External - Request" id="83b2e281-c797-4e82-85c1-57f65920a0e7" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c163a7b3-48c3-4371-9d6c-f0e25e01ba68" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b843578b-4f3f-47c6-826a-44bfd640e885" name="SOAP Response"/><con:assertion type="Schema Compliance" id="38adf961-fd77-41cb-96ce-4fd0686a159c" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="9b13a330-0794-4171-9a5a-fd261cade0b6" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase3 - Test - LB - Request" id="864d69b7-b029-45c6-998d-3d861384ae93" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="3cf51194-2916-4950-ba6f-9cc29b82098f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9adfb193-16ea-4ef3-b82d-6ba64cf6f276" name="SOAP Response"/><con:assertion type="Schema Compliance" id="828e4402-6360-498d-a10e-14f301d21c7b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="d7059474-2d7e-4bd9-aaa3-4cc585c7cf44" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="da5a9edb-59d5-4f04-9a1d-2ab5f4030712" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5885abca-bc6c-4dbc-9e86-14c7d2691fa3" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="208dd7e5-fc18-4a04-8177-1e62989802d6" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ef961c73-6d1c-4e6b-9587-44abfc47bd7f" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="b937189c-1ac8-452f-8d7d-abeb00848ff9" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="2c3dca45-070e-42cf-9af7-7a52c5766b5b" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e8121a32-ddbd-47e5-b542-a3f4a81b4348" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f5ccc01c-5ca9-4823-8166-0ec39ba74a40" name="SOAP Response"/><con:assertion type="Schema Compliance" id="cdf33b3c-7697-4764-ae3a-9c5e6c254703" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="533b1a87-7248-409b-9be7-ca0eaa8011c1" name="testcase3 - Test - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase3 - Test - Worker1New - Request" id="d3912f44-0e44-4899-8a22-9cafe9c2adb9" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.73:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b3efa2eb-9d90-43cf-946b-3e35dbaca1e8" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a6ab5854-5fbd-48d4-942d-afce586e94d9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="32f3e321-7f9b-4100-b67e-a23d0d5df340" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="987ce504-1efd-46a9-8d7b-b811c07f3ea8" name="testcase3 - Test - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase3 - Test - Worker2New - Request" id="899e96c6-9629-4f08-aea0-7ec436a8a8ef" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.93:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ffb760ee-0d2d-4bb0-b2ad-06b5327523d0" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2a799a94-7a29-4cc9-938c-1da55c36ac7c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="70dc67fe-97a3-4177-a891-97d3b7c7b6de" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="c812593f-98d8-471d-97b6-e5424c9e4d84" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f8fe8586-a23f-44ed-9d84-cdd323a0dfd5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="subscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="2f1bfbee-2b7c-445b-ac50-be54552cb0c2" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="40213d1c-9bd9-4162-b896-01833aa3a8cd" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="7336d568-a605-487a-8452-3be177552ea4" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="d6903bb3-74b0-44ef-83be-92c4845da5f1" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ec276986-77a7-4c24-8052-12db551cff28" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="a666fb5b-8145-486e-b9e2-fd7e74a04d34" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="79b6d19f-15d6-4a39-9f47-0048db0d7674" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="09e0f200-20de-47c6-9123-01555396f892" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9aa8e9eb-ca23-4c80-a806-58b71483cc1f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="50b0b776-5c97-4be1-a6e1-93a141a00829" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="a26108b7-aa5e-4e5a-a270-c5b65c6f993d" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase4 - Staging - LB - Request" id="fe64fe8c-8b28-403a-bd15-166cd0f10f7d" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e08b8976-56a8-43d8-8a98-717ad7924d22" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="365c27a7-41bd-4438-9900-791423d95e98" name="SOAP Response"/><con:assertion type="Schema Compliance" id="edb995c6-2e60-4713-bdcd-51234296309c" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="b5043fd9-c1bc-4cc8-9c44-caa0f3edafab" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase4 - Staging - External - Request" id="e4e43763-054d-4898-b38a-5c0f0a8a521e" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="efa65a06-039b-4505-99d3-7e0f6497c8a5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8c034665-159d-4e52-8f05-a8847dcb144f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="82afe0f0-a04d-4d28-b4e5-f4ea3cec9bef" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="7fced9a4-977c-41cb-b6a9-b0f40a7c816c" name="testcase4 - Staging - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase4 - Staging - Worker1New - Request" id="2e4c75d4-33bc-4f52-b7d4-fa393c6c3d65" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2017-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e7c5f1f1-bf47-42cc-bb66-85b805b38afc" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="bad3f395-7ce3-4519-87ae-5d38c36e1685" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f7c345b9-5436-43b2-8799-b3cc10138c4e" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="c3189328-58db-43e2-820c-c02ae295eef3" name="testcase4 - Staging - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase4 - Staging - Worker2New - Request" id="02473048-d8bd-4702-add6-9b9728a5624c" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>85081509931</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-07-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d6ae2c1e-0ca4-42f1-bb3c-2a40fa68fcd5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5e84ea0f-e89a-4f73-b04c-6e2c231449df" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6722451d-5bbb-46b5-80e3-87e5463d79c6" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5842a0bc-f3a0-482d-96fb-e47124f2d074" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="unsubscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="34d9f7fb-0c89-4b8d-aac5-647f5ca0ced2" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase4 - Staging - External - Request" id="d353ac96-61b6-4bec-8750-75c8d1a823e6" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="9931c6af-c0c6-40b7-b780-ff78c319813c" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2af2252b-c256-4193-a742-30237749f969" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b97e5a34-326a-4216-aa7f-dac571b6a3b0" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="62a5a5a5-4e22-43d4-9ca7-093f30aad1ef" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase4 - Staging - LB - Request" id="f29e0f6c-2dee-4c61-bf7a-21d272a6c720" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="43c59924-661f-462c-80d3-d0155a121ffc" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c21e8e1c-e4aa-4e86-8ce6-6fc45154d4b7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9d31cbe9-3ea6-4841-b3b9-f44392a8e224" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="71711891-fd7f-494b-bc4d-7335d525ac25" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="9d8312ef-da8f-4272-b2b3-d25bbb57bd69" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="cf22bd10-cd16-4df5-84f7-cb0c637f6c9e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f7325262-816d-46c6-bbf6-e6166b6470c9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="df8fd64b-90a5-4fc2-9cff-132441b22034" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="bd2d2ade-b8d1-430e-a92e-1dfdb5c6752f" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="fc2daaff-1b67-4d30-a001-2713fc704483" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="aae51b68-d9db-403b-8ae6-a5dabc2248fb" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="876bf626-7de0-4b93-adf6-0d6710677e1c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4068ba05-b283-41dc-9d74-b8b2580b0459" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="851fd3bb-d675-4b25-b726-343a75b74e73" name="testcase4 - Staging - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase4 - Staging - Worker1New - Request" id="2e290ec5-cacb-4ff4-90ef-1ac12d069ad3" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.191:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+    
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="8fd36ab3-b948-47bb-9dd7-426d0ffcd1f0" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="bc065471-e3ab-4da2-8ed3-dd0459534193" name="SOAP Response"/><con:assertion type="Schema Compliance" id="17e33b9e-c5d4-4135-a753-b816c538fc63" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="e49483e0-c620-4c11-9cb9-af36861cb2e2" name="testcase4 - Staging - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>unsubscribeReference</con:operation><con:request name="testcase4 - Staging - Worker2New - Request" id="74c68d3c-8f0f-45ee-8044-91f731603679" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.23.198:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" xmlns:v11="http://fidus.brussels/type/referencedir/requests/unsubscribe/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:unsubscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:unsubscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:unsubscriptionRequest>
+      </v1:unsubscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="58284631-b6ec-4707-b7f8-7816bf678bc3" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2db0eec0-f1ee-4f70-95f0-7267f0ceb1c8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="25206f35-bd64-41f3-a1cb-9c8335a3ce91" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/unsubscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="c4536be6-3f2b-42f7-9260-7ed18f1dcf80" name="PROD"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a73fec77-8ee7-4ed2-9e85-03c41427d07b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="subscribeReference" searchProperties="true"><con:settings/><con:testStep type="request" id="05743eed-0e06-44a9-906b-27bedecc2ae7" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase5 - Prod - External - Request" id="d08c3e75-b77e-40ae-95f3-49731f64ef09" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>SocialTenantCandidate</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>71011353588</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-11-18</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="71e7422a-acc5-4cb5-a459-9b49197cf4bb" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0ba194a3-3713-435e-b30f-6e098bc57d4e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6c1747ef-6525-48d8-870d-d8e589d0f66f" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="c19b5871-f403-4c1c-965e-a1f2c157b4ec" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase5 - Prod - LB - Request" id="231cb105-a0b0-42b8-94cc-5577aa246cb2" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="54336c56-9067-41d8-8dc1-44c4c6b32abc" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3122da13-70bb-4283-affd-47d1f4964b3d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="abba4322-4e29-4d87-ace1-965462ea6ec3" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="05a03505-2493-4c71-a443-fb0780824613" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="bbf36f91-bf09-47f3-ab6e-826738902539" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5dfc4f25-c31a-4696-9ec8-7a944482c1ba" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="d17240af-569f-4cdd-a6a1-0e04a9b813d9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b03f5fee-7fda-4be1-8a20-8a0f07f26926" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:testStep type="request" id="79a5e99b-1f94-4ef2-87a8-b0854db09b8e" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReferenceDirServiceHTTPBinding</con:interface><con:operation>subscribeReference</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="3c64ccbe-fc24-468b-a7b7-17d51898a940" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/ReferenceDirService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/referencedir/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/referencedir/requests/subscribe/v1" 
+xmlns:v12="http://fidus.brussels/type/common/messages/v1" 
+xmlns:v13="http://fidus.brussels/type/referencedir/requests/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:subscribeReferenceRequest>
+         <v11:messageContext>
+            <v12:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v12:messageId>
+            <v12:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v12:timestamp>
+         </v11:messageContext>
+         <v11:legalContext>ServiceIntegrator</v11:legalContext>
+         <v11:subscriptionRequest>
+            <v13:reference>
+               <v13:personNumber>89102413022</v13:personNumber>
+            </v13:reference>
+            <!--Optional:-->
+            <v13:endDate>2016-04-08</v13:endDate>
+         </v11:subscriptionRequest>
+      </v1:subscribeReferenceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="47901b6b-34b5-4ecc-8e91-1285945a2578" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8bc82097-591b-4b88-bddb-b468aafee254" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7588353e-4845-4441-b203-89e22b37b6d1" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/referencedir/subscribeReference"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:endpoint mode="OVERRIDE">http://fidus.brussels/services/referencedir/v1</con:endpoint>
+  </con:endpointStrategy>
+  <con:properties/>
+  <con:wssContainer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing><con:outgoing><con:name>Outflow PROD</con:name></con:outgoing></con:wssContainer>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/><con:sensitiveInformation/>
+</con:soapui-project>

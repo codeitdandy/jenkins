@@ -1,0 +1,2048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Client-ArchitectOrderService-1.0-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" id="a3677aa2-6727-4a71-8012-98245e86ceec" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="cf75a02b-816b-4b50-a48c-3e3c299cfdf1" wsaVersion="NONE" name="ArchitectOrderServiceHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/architectorderservice/v1}ArchitectOrderServiceHTTPBinding" soapVersion="1_1" anonymous="optional" definition="/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/ArchitectOrderService_v1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    
+    <con:definitionCache type="TEXT" rootPart="file:/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/ArchitectOrderService_v1.wsdl"><con:part><con:url>file:/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/ArchitectOrderService_v1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/architectorderservice/v1" name="ArchitectOrderService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mes="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:tns="http://fidus.brussels/service/architectorderservice/v1">
+  <xsd:annotation>
+    <xsd:documentation>ArchitectOrder service WDSL v1.</xsd:documentation>
+  </xsd:annotation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fidus.brussels/service/architectorderservice/v1" elementFormDefault="qualified">
+      <xsd:import namespace="http://fidus.brussels/service/architectorderservice/messages/v1" schemaLocation="messages/architectOrderServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="byNationalNumberRequestMessage">
+    <wsdl:part name="ByNationalNumberRequest" element="mes:byNationalNumberRequest"/>
+  </wsdl:message>
+  <wsdl:message name="byNationalNumberResponseMessage">
+    <wsdl:part name="ByNationalNumberResponse" element="mes:byNationalNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="byCompanyNumberRequestMessage">
+    <wsdl:part name="ByCompanyNumberRequest" element="mes:byCompanyNumberRequest"/>
+  </wsdl:message>
+  <wsdl:message name="byCompanyNumberResponseMessage">
+    <wsdl:part name="ByCompanyNumberResponse" element="mes:byCompanyNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="byReferenceNumberRequestMessage">
+    <wsdl:part name="ByReferenceNumberRequest" element="mes:byReferenceNumberRequest"/>
+  </wsdl:message>
+  <wsdl:message name="byReferenceNumberResponseMessage">
+    <wsdl:part name="ByReferenceNumberResponse" element="mes:byReferenceNumberResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ArchitectOrderServicePortType">
+    <wsdl:operation name="byNationalNumber">
+      <wsdl:input message="tns:byNationalNumberRequestMessage"/>
+      <wsdl:output message="tns:byNationalNumberResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="byCompanyNumber">
+      <wsdl:input message="tns:byCompanyNumberRequestMessage"/>
+      <wsdl:output message="tns:byCompanyNumberResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="byReferenceNumber">
+      <wsdl:input message="tns:byReferenceNumberRequestMessage"/>
+      <wsdl:output message="tns:byReferenceNumberResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArchitectOrderServiceHTTPBinding" type="tns:ArchitectOrderServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="byNationalNumber">
+      <soap:operation soapAction="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="byCompanyNumber">
+      <soap:operation soapAction="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="byReferenceNumber">
+      <soap:operation soapAction="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArchitectOrderService_v1">
+    <wsdl:port name="ArchitectOrderService_v1" binding="tns:ArchitectOrderServiceHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/architectorderservice/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/messages/architectOrderServiceMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/service/architectorderservice/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:aow="https://archionweb.be/" xmlns:tns="http://fidus.brussels/service/architectorderservice/messages/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="https://archionweb.be/" schemaLocation="../archiOnWeb/archiOnWebService_v1.xsd"/>
+  <xsd:complexType name="PersonNumberRequestType">
+    <xsd:sequence>
+      <xsd:element name="personNumber" type="cme:PersonNumberType" nillable="true"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CompanyNumberRequestType">
+    <xsd:sequence>
+      <xsd:element name="companyNumber" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ReferenceNumberRequestType">
+    <xsd:sequence>
+      <xsd:element name="referenceNumber" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByNationalNumberRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:PersonNumberRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByCompanyNumberRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:CompanyNumberRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByReferenceNumberRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:ReferenceNumberRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByNationalNumberResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ByNationalNumberResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByNationalNumberResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="aow:ByNationalNumberRespType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByCompanyNumberResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ByCompanyNumberResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByCompanyNumberResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="aow:ByCompanyNumberRespType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByReferenceNumberResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ByReferenceNumberResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByReferenceNumberResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="aow:ByReferenceNumberRespType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Element of the request and the response-->
+  <xsd:element name="byNationalNumberRequest" type="tns:ByNationalNumberRequestType"/>
+  <xsd:element name="byNationalNumberResponse" type="tns:ByNationalNumberResponseType"/>
+  <xsd:element name="byCompanyNumberRequest" type="tns:ByCompanyNumberRequestType"/>
+  <xsd:element name="byCompanyNumberResponse" type="tns:ByCompanyNumberResponseType"/>
+  <xsd:element name="byReferenceNumberRequest" type="tns:ByReferenceNumberRequestType"/>
+  <xsd:element name="byReferenceNumberResponse" type="tns:ByReferenceNumberResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/messages/baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:nps="http://fidus.brussels/service/personservice/personservices/naturalPerson/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by Fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/messages/exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/isr/git/parent/architectorderservice_1.0/ArchitectOrderServiceGateway/src/main/resources/wsdl/architectOrderService/1.0.0/archiOnWeb/archiOnWebService_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="https://archionweb.be/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://archionweb.be/">
+  <xsd:complexType name="ByNationalNumberRespType">
+    <xsd:sequence>
+      <xsd:element name="ByNationalNumberResult" type="tns:WSResult" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByCompanyNumberRespType">
+    <xsd:sequence>
+      <xsd:element name="ByCompanyNumberResult" type="tns:WSResult" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ByReferenceNumberRespType">
+    <xsd:sequence>
+      <xsd:element name="ByReferenceNumberResult" type="tns:WSResult" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WSResult">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Architects" type="tns:ArrayOfArchitect"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Companies" type="tns:ArrayOfCompany"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfArchitect">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Architect" nillable="true" type="tns:Architect"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Architect">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="IsInOrder" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Gender" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="FirstName" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LastName" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Address" type="tns:AddressDto"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Contact" type="tns:ContactDto"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressDto">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Street" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="StreetNumber" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ZipCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="City" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Country" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ContactDto">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Phone1Prefix" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Phone1Number" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Phone2Prefix" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Phone2Number" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="FaxPrefix" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfCompany">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Company">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="IsInOrder" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LegalForm" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Address" type="tns:AddressDto"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Contact" type="tns:ContactDto"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints>
+      <con:endpoint>http://fidus.brussels/services/architectorderservice/v1</con:endpoint>
+    </con:endpoints>
+    <con:operation id="0407492c-5c5c-4fe6-85f1-754ab4cd026a" isOneWay="false" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber" name="byCompanyNumber" bindingOperationName="byCompanyNumber" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="5c271edc-97c2-4b7b-a79f-ab715c0ac555" name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://localhost:8243/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:password>l</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="40e4bc8a-08c5-4b64-a08c-07c7867a021c" name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.36.61:8243/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>123456789</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="e24b200a-74df-4c8b-b301-393fedb345eb" name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="241ee8e1-92ab-4765-895a-f4327c7dc7e3" name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="59c593c0-6083-43f7-8e0b-62566b7e3cdf" name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.53:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="40d40adc-c94e-4fc0-bf80-d59610886231" name="3 - Test - Worker2 - Request">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.54:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="9d3f2ce9-83a7-47d7-898a-c9d7be175811" name="4 - Staging - External - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="9419d606-b56d-42bb-8600-c0a1206876c5" name="4 - Staging - LB - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="fc447ef9-4397-4e18-b12a-2d997e189c8e" name="4 - Staging - Worker1 - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.16:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="fd51afa1-4472-4ac0-81b8-293513a27ddb" name="4 - Staging - Worker2 - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.17:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="ea553c42-56d7-4316-9ea5-9b47e2c7edf7" name="5 - Prod - External - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.sec.brussels/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="3576298b-d15e-4425-8963-c2df3769c475" name="5 - Prod - LB - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="fe1b3d2c-0f56-4444-bc54-84cd21520408" name="5 - Prod - Worker1 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.26.22:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="c3fc6f91-b456-43ee-8999-8b87a28bf921" name="5 - Prod - Worker2 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.26.19:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="25537aba-deb1-4eae-91f8-00d49e3e5071" isOneWay="false" action="http://fidus.brussels/services/architectorderservice/byNationalNumber" name="byNationalNumber" bindingOperationName="byNationalNumber" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="73339795-03d4-4f29-94dd-a75c92ba0bc3" name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://localhost:8243/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>12003001507</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="5cc4e7e6-f83a-44dd-9f0e-4122c1e2900a" name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.36.61:8243/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>12003001507</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="102f5c06-b18e-4df4-876a-b13939100560" name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="cb33c1b3-827f-4ed9-9454-5cd864515e74" name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="cc31648a-96a3-4f0f-8d16-1de905f39a4d" name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.53:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="f8c70de5-ee12-48b1-a114-b4e11b779ff6" name="3 - Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.54:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    <con:call id="25df8648-49d2-4dae-bde8-d792ba471ae3" name="4 - Staging - External - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e4889f43-768d-476f-9834-95bf88e3c8b7" name="4 - Staging - LB - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="18cde06c-13a7-4dd4-907e-590686d913c6" name="4 - Staging - Worker1 - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="dc833541-ff66-4423-8115-996132eab741" name="4 - Staging - Worker2 - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="8e9fcc9e-8471-4f62-b427-fc430829a30b" name="5 - Prod - External - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="eb87951c-1062-4b85-9888-094f531cd51c" name="5 - Prod - LB - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="85c6ebf7-aa55-4bec-9bf6-9e12856eb30d" name="5 - Prod - Worker1 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="68c0518c-0202-4540-92b3-7f0773f0b91d" name="5 - Prod - Worker2 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/><con:wsrmConfig version="1.2"/></con:call></con:operation>
+    <con:operation id="b60205d0-a1d5-4fee-9cb5-0d9bd1ab2f2d" isOneWay="false" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber" name="byReferenceNumber" bindingOperationName="byReferenceNumber" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="16f763bd-c984-48fc-98a4-0ed6ba0d1691" name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://localhost:8243/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>XX2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="f6efbd6a-8b6e-405d-956f-be81d9b7a011" name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.36.61:8243/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="c59086f2-b8fd-4082-a905-5629d5b200c6" name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="671c79d9-637b-44d2-8d46-b20a0cd8da69" name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="94c74b43-f0fb-42af-92ed-30a6e0bda47f" name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.53:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call id="d29ab91f-ed4c-4eae-9162-6a933b3cae4f" name="3 - Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.54:8443/services/ArchitectOrderService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    <con:call id="cf7e5411-4456-49a1-9201-98a120c65ca6" name="4 - Staging - External - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="47f4a19c-d855-4b2d-abdb-e3be26bb320e" name="4 - Staging - LB - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="7c760d72-3b2a-42e2-b6c3-ac9f1ee585e5" name="4 - Staging - Worker1 - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="92deafcd-5134-4e64-a7f9-2b40eb2b2bda" name="4 - Staging - Worker2 - Request" outgoingWss="Outflow STAGING" incomingWss="Inflow STAGING"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="578e3611-2a87-41db-aa22-58dd27eefb5a" name="5 - Prod - External - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="be8e730f-3656-4e09-a88a-7e8266a7e354" name="5 - Prod - LB - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e3af4201-abf6-4748-907f-61677dd7af3d" name="5 - Prod - Worker1 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call><con:call id="98338a77-cb8f-4f90-b96d-a63ad3ed2545" name="5 - Prod - Worker2 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/><con:wsrmConfig version="1.2"/></con:call></con:operation>
+  </con:interface>
+  <con:testSuite id="fb7baf21-00b7-42d2-bfe9-cedc30eedc4d" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="22c07ed8-f1e9-4a11-b0b7-130c87403285" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byCompanyNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="054ecb97-0956-4798-b9ae-83f8b48a2b80" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase2 - Dev - Request" id="77294a1f-9d8b-4fd4-8cda-106659806443" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>123456789</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c807d9bb-6f5e-4e6a-9bd5-f31539abf469" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="e7b389dc-ff8b-4c7c-8680-0cbcd3eb7ba3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="572b4a95-3eb0-4902-908b-d0a8a971d523" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="93c285db-6715-4f56-b4af-0ab7bc076ea3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byNationalNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="57befdb9-5e11-4e3e-98db-020fe472941d" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase2 - Dev - Request" id="1beb5c2f-ca82-411d-8bc9-0116d361cfe9" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>12003001507</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="10667c8f-a036-4dc6-ad63-e37494ad688b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0f10db40-d37b-4f10-b1e0-d38ed25a96ac" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b3f32887-ea79-4bbd-9ab8-57314f1b4497" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f17a1c72-2923-4fc2-8a2c-141bf31eb5a0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byReferenceNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="429c6874-9a33-4e75-be08-833c5e82e9eb" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase2 - Dev - Request" id="217b26a0-c290-4bb0-82f0-0a13f1d29b80" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1fdf5fb6-10cb-4547-9851-f6a493bd7f3a" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="d5e3877d-b636-4c60-bf1b-ada469efbfd3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="a77a2c51-ad69-4d11-879a-fcbd303a48e3" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="15df7833-b34c-419c-b11e-0794fa723cf9" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e695a0af-79c6-4051-a95f-97ccbb4deaab" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byCompanyNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="672f3e5a-c936-4414-aa40-0cfef4467ab0" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase3 - Test - External - Request" id="8590d762-3fca-488a-96e7-4f5dd5903356" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="a7cf3707-0ded-49f3-9491-6de76ddb847b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f28ba4e7-73b1-4c9e-941e-edea71036bda" name="SOAP Response"/><con:assertion type="Schema Compliance" id="619a543f-7a99-4787-bae7-0c2de29f48bb" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="e72875dd-cc20-4f49-aea1-59e3d4cd5ccc" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase3 - Test - LB - Request" id="5a546fab-173e-4d53-aaec-c41ec83d1fab" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e951d9f0-4d32-4283-afa9-73f6c1e7b618" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3463289d-c449-4515-b5db-a3fea59ea2f6" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ffaae73d-8273-42d5-ab07-103c60dbef65" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="8c3d40a9-6d61-40e6-8085-47f265ac0444" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="eb011266-7ef7-4cac-b723-e76a9290901c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="aafa6008-92cd-42d1-b182-499449de2e4e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="7c28e43f-4bcc-41fc-8058-97cf740c6aff" name="SOAP Response"/><con:assertion type="Schema Compliance" id="a69c0b65-4004-4be4-8404-0003df54c199" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="cf9892f5-c933-4fbf-a626-9b135b3f4e2b" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="9da5683b-4279-4ed1-85a3-08fa879b9c99" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="fe1bbceb-af9e-40cc-b189-be22c09b6e3e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a9198cc6-70ef-4bf4-8220-a2dcdb08e68e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="cf5854c9-b1e3-4a43-afec-672378ee2b96" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5a61adf6-e41e-448a-bbf7-642b42e8e9c7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byNationalNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="b39c1075-9a1a-45a6-a58c-96aae682fb8c" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase3 - Test - External - Request" id="9bc47258-932d-4fc2-b8ee-3d3651dde8a0" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="352629b8-3333-4660-80d1-e2edee979e17" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="850e8479-1305-4cec-86a0-1be911e6307d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="62c7ca24-6ec1-4808-a034-ab4fbf088716" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="dcd3031c-f086-4f0b-82e3-445b66cca738" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase3 - Test - LB - Request" id="b03c0992-45ec-48fd-9ad0-1c0eafebe4e9" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="901b7a47-0599-4897-b506-0942aab37858" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f853bbb0-3359-45ec-b40a-b02c2d46caef" name="SOAP Response"/><con:assertion type="Schema Compliance" id="780ba52c-8305-4bd2-b4d8-19bb74435046" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="673b5a0a-5267-4d5d-bc05-fe67738f401d" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="9dca4b43-7d24-4882-b175-0a8d624d0868" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5248c789-22f5-41c5-ace3-07c691d0cd0d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="48897ff1-f67a-49fc-bd7d-4eeb64172356" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f0a8b6c8-5284-4f7d-b6b6-bebd2df85c14" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="c6516498-b110-4da9-b411-9c18ffcd8871" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="b4917dda-86c7-44d5-a184-69aa623de18a" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="631931bc-266c-4ceb-8606-171666148345" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f0b1b35f-a36c-4a13-99fa-6fd24502f313" name="SOAP Response"/><con:assertion type="Schema Compliance" id="48f34aa4-2845-4398-9585-555966225789" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="62bfb5df-bfad-4157-ab60-412501c08225" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byReferenceNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="e607fa01-7045-429c-83a0-2e4b48001cbe" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase3 - Test - External - Request" id="702bc332-c39f-4d03-be73-05ec186b941d" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="728e57c1-ccee-4a8a-9172-6af71a3b057c" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="84dc1b1f-2a3f-4663-8176-a89108207ac3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="93556c3e-aa40-4d66-ab4c-cada452fa05d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="48df303d-9de6-4aab-816b-96467ae17e27" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase3 - Test - LB - Request" id="f3c2b754-dcf0-4c94-a422-e0a5e69a4d72" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b0b9f992-ba6f-40f6-aa81-b01418990467" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8dfd010f-bd87-4756-b62c-cbb740c10fad" name="SOAP Response"/><con:assertion type="Schema Compliance" id="bf9f481f-7064-4104-816c-61a189808906" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="78c81ff9-e934-4ebf-a241-b840740d4e57" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="9ec28df2-6cd4-4480-87ee-b2a53cd2ca6a" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="77adac4d-58e7-4868-8e3c-b616866ee7b6" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5e41a590-bd47-47af-9cec-99470b12f389" name="SOAP Response"/><con:assertion type="Schema Compliance" id="bb775ba0-12b3-492f-976d-822c7ffa9e5a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="7783eefc-78aa-4cba-965c-a33e2f69fa94" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="ce88b744-0ca6-494d-8721-2ecb6ed001fe" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f52a0f97-726d-4d5c-a380-1968bbc31825" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="750edbee-d320-4465-971b-3f8cfc66d078" name="SOAP Response"/><con:assertion type="Schema Compliance" id="698aa197-511e-43e5-9415-ce2f9eccaf16" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="f084c274-768c-4ae9-b290-975523b7f9bc" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="2a528b1d-0101-4931-9293-de017311196c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byCompanyNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="099bb485-2f7e-4067-aa0a-649ed9a80ef5" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase4 - Staging - External - Request" id="86c5bf5e-d8f1-45ad-adfa-17543e38a0be" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="53088a25-8bf0-4ed7-b74a-be2257e23f34" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="80da8677-b5b1-4cb6-bd4d-bb4d0a0eb2d8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6628c51b-bc76-480f-a6ac-b5e391e47813" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="530f13b5-4134-4ba1-9749-d259909c5f58" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase4 - Staging - LB - Request" id="2718fe45-d85c-4f4a-82ee-311933d7537c" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6460c22b-a388-4656-9b92-9eda4b99d249" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="94ddc994-e822-4302-a8f5-20e27dc8af8a" name="SOAP Response"/><con:assertion type="Schema Compliance" id="1f4d0213-9ec0-49d8-9544-563f44cd94b6" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="f1f521a1-8e69-4e69-8f53-21962a3c027c" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="84297603-4b03-45f0-a179-682a061e06f3" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d1bd6e6b-ba15-4290-aa71-00bdaf9a96eb" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="86e82692-12b7-4661-8145-28eb2e2f3ffa" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c2470961-b6a0-4882-af32-2d0d31471273" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="0868bece-6572-446a-b5d5-79886db96885" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="8f102998-2b5c-4cc3-a956-a5782d6857ec" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="158a4bbe-4fce-47cf-af77-d2895608f59f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="ac09f3b9-83d9-4d77-830e-54a36c3be32b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c4d71422-eee1-4ddb-be29-f4e2b2c7e56f" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ba13afda-7e7d-4865-b759-e4f0f05def49" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byNationalNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="4d074b53-9e61-46ef-b4fe-a060ad835415" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase4 - Staging - External - Request" id="6032db92-f1a4-4c33-aa56-dc9dbeb419fd" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="45ed2b30-bf41-420e-b090-c6a0fa3eb255" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="75344eb3-2668-4217-9e10-1de74b453f72" name="SOAP Response"/><con:assertion type="Schema Compliance" id="68ff37bb-5c8c-4448-800e-747ac4ae5783" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="4f469359-14d9-4b6a-b2d5-421eeebde6c8" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase4 - Staging - LB - Request" id="2e8079c2-dcdc-4e66-9320-023599388f3b" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="2f622e39-55ce-41ac-9854-ac7502e42bea" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a257bf89-2bcf-4ae9-9887-280b6d14c3a4" name="SOAP Response"/><con:assertion type="Schema Compliance" id="1eadea0a-d892-4502-9b85-557eda3c41b6" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="1f1f4c78-2cf7-4b05-ac1a-ebdb4291095f" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="a4702a0a-5b7b-4d06-b402-b637ffb53674" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="653145ef-aa3c-444c-87e7-65d4d3578fb5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b0fe6be6-5ac3-4838-ac8e-75dac36a7f9b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="91ca235e-3c67-44e4-bb53-eda62ba37572" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="58f9ef57-9e00-4211-94e5-fac7c6cd74bd" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="7b8ce264-f8ad-4eae-8fdc-13170dd9f077" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="886f4411-6050-4f1e-8344-e189d9159a5d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b7c43c5c-53da-4647-97b8-e31b9e1ad788" name="SOAP Response"/><con:assertion type="Schema Compliance" id="762821b1-bfde-43f4-86a1-4aef873d94e0" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="83c72abb-89e2-48e7-8a02-0f0682cecc08" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byReferenceNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="d920f027-5f30-4bd6-b957-93c9f36bc815" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase4 - Staging - External - Request" id="4526a9ad-c2b7-4dd3-bda8-d42f8e99f832" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="517a513c-f5e9-4758-8e2a-b486b5903b96" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="edd8f5ce-e838-4cca-a1fa-3429535ed386" name="SOAP Response"/><con:assertion type="Schema Compliance" id="59118809-8f82-46b7-9600-78138497bfa8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="8c3727e0-6900-4a4c-a6df-5bb908574d4f" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase4 - Staging - LB - Request" id="5be64f08-6d82-464e-9932-ab8c40874b1e" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f4b12c57-b453-41c9-8441-fd48ae8c236f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f0884138-c95b-41b5-9656-af5b13fa7e44" name="SOAP Response"/><con:assertion type="Schema Compliance" id="2cfca1e9-a3c0-4f9f-a5ba-9b2ee8d0a9de" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="5efa3b7c-e75e-49ca-9ce1-aaf19fec731d" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="0c7eb706-1aa3-4cd4-b38e-3149bf8d492d" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b9d0ccb3-7ace-4a33-86ab-231fb3459b2f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0020e000-6724-462c-8e12-49a67ad7b6e3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e437b25c-9f2a-40f0-b077-93f6c3ff6289" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="1a4cc1fd-ec51-4f61-ab72-91c34e8bd8d1" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="1d323887-d9fa-46bc-a693-77228b923a86" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="089042d6-dc71-460d-9f02-07800bbd646f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="800b648e-7801-496d-a02e-3a47f6c69679" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9d9cb74f-c1ab-458a-a798-7d4630719cee" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="ca9e132c-e4a6-4ac1-83fa-149419d93e25" name="PROD"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f614ec4a-1791-48eb-b4e1-799ee0ad50c6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byCompanyNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="0065800b-9369-4749-aff4-990978497c53" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase5 - Prod - External - Request" id="9f0934ba-6215-4106-ab36-531c91113c24" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="94665313-3911-4572-9a64-bc891e99e552" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="802c4722-f4da-4f0a-8484-c2be25ea451c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4f62eff6-488b-43b0-8cf9-1d1b68130413" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="b0c11fbe-c15f-4cc0-91ed-f9a6fa6c599a" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase5 - Prod - LB - Request" id="d9deec7b-0a03-4bd2-bf55-07f1b1622ea3" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="a1355b01-9dfc-4f62-b674-dd53a3060f9d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f8bdd87e-ef78-4e03-ae89-3791ff70e3c6" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ebd8537c-49d3-4d73-9a9c-fd978ffbcec4" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="7dd85f7d-1dc6-4b57-a28d-537147d1abdf" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="b4c032f3-7d9d-41a1-a919-b97c63dc7002" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="cb76d4ee-fbab-4f73-94be-8ea0733e890e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a2fced0b-05d6-471f-9556-04513ee9455f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="16a6474e-baee-4bff-b263-7b3f998885de" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="df4cc190-513d-40d7-b5f7-d34c172461cd" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byCompanyNumber</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="a3700555-604b-4465-8bb1-6832dd3e46ea" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byCompanyNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:companyNumber>BE 0535 693 485</v1:companyNumber>
+         </v1:request>
+      </v1:byCompanyNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c1aa0ef7-98dc-4fdd-9bd8-21fbe0418c89" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="e65a5d02-6295-4539-aa42-bac1a6c1860b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="5c667981-bd8d-47a8-ae87-878294877734" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byCompanyNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="94895454-cc37-4632-a1b3-27a324bc1958" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byNationalNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="5eb6043b-b552-41ce-8dfb-c32f8b6ea36e" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase5 - Prod - External - Request" id="7a68f607-2a41-4c00-b09a-f09b3d88133c" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="45149a0c-e8b5-42eb-aef2-05ebda03f144" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0be33d2a-c3bf-466d-aae8-e1924989c625" name="SOAP Response"/><con:assertion type="Schema Compliance" id="bd8905d4-1672-4375-97bc-5e1454c1a80f" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="6ba47aa3-a434-4a01-bddd-15d951637d30" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase5 - Prod - LB - Request" id="1110931c-0582-4488-a41e-b753c66c0cf9" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="30aa6445-e78c-4f85-a52a-2180c230154f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f3e9dde9-80a7-42a1-8a7d-3a2ed7b307ad" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b467cfbf-1ca1-4a44-873f-70a39673f582" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="7a109682-818e-41ff-9314-44d2e77589d4" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="fe4cfadf-59d3-48c9-a51a-a638291e7380" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="7861c94c-1b88-4548-bc22-ab93be4f1141" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c0e6ec28-222b-4cf7-bca2-b879fcfaa2de" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e9deec8d-7240-4121-8eb0-87c0f6feb4a2" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="c53f89d1-92d3-4538-9e14-fafdd3be9264" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byNationalNumber</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="663ddc71-4a4a-4da4-a47d-7d6915339303" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byNationalNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>86051242982</v1:personNumber>
+         </v1:request>
+      </v1:byNationalNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b0eb2da6-72d3-45c3-b20d-6527f5387018" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f0ada568-260d-4704-9be6-777a362e14cf" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b5c31d5f-6a6a-4fd6-bced-0c6e6d098d3c" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byNationalNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="82ad5a65-2820-4416-815f-dfe381866860" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="byReferenceNumber" searchProperties="true"><con:settings/><con:testStep type="request" id="b0604c45-edf8-49f2-8683-18b27265a6cf" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase5 - Prod - External - Request" id="e4bc10e4-7b30-4215-a809-373f6efe39c5" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="3a236ede-51df-4bf2-a523-306fabce2359" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="36194307-2973-48b0-984c-8f6375aafe2a" name="SOAP Response"/><con:assertion type="Schema Compliance" id="1973d680-5ff8-4d80-b68e-e4b0a20c0a34" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="d371e4d0-1d65-4ed3-a8bf-7062af104efd" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase5 - Prod - LB - Request" id="382b5243-c10f-45ba-87b8-0d9cb265f7d1" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d953f044-f853-4fe2-b1bf-3b366b4cf0d0" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="acbac5ff-3d7e-4590-a844-635eb858c01c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0b47b9cc-e858-45fb-a2b2-bd91f8f10d37" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="de01db58-f8db-4a7a-a341-a49e361c6707" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="2d8b331e-d799-4634-9551-b6e214859bb5" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b711493f-2b7d-4f3b-9646-5a66f5050ecb" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="9ed6620d-5a86-4be6-a6b1-f59e6b61d06d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d1a3f5a9-923a-4301-b89a-24c68e833de0" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:testStep type="request" id="ac05e164-3200-4bb8-8eb8-aea49433bee8" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ArchitectOrderServiceHTTPBinding</con:interface><con:operation>byReferenceNumber</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="00c35fcf-d315-4b37-a1dd-f1b472951dd5" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/ArchitectOrderService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/architectorderservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:byReferenceNumberRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>NovaUser</v1:legalContext>
+         <v1:request>
+            <v1:referenceNumber>2900107</v1:referenceNumber>
+         </v1:request>
+      </v1:byReferenceNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="a4250e28-74d1-46b2-b07c-12f82b1e31b1" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="36a1c63c-4c80-4972-a6d6-70ae4580a9ad" name="SOAP Response"/><con:assertion type="Schema Compliance" id="5dc55308-664a-4237-bc73-71a950f2c3c4" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/architectorderservice/byReferenceNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/>
+  <con:wssContainer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing><con:outgoing><con:name>Outflow PROD</con:name></con:outgoing></con:wssContainer>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/><con:sensitiveInformation/>
+</con:soapui-project>

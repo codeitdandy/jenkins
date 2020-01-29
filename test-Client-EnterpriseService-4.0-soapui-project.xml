@@ -1,0 +1,2660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Client-EnterpriseService-4.0-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" id="5f04eb27-7948-4c8d-af57-9ceeba9adfe9" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="TestCase 1"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings>
+  <con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="EnterpriseService_v4.0Soap11Binding" type="wsdl" bindingName="{http://fidus.brussels/service/enterpriseservice/v4.0}EnterpriseService_v4.0Soap11Binding" soapVersion="1_1" anonymous="optional" definition="https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?wsdl" id="49199394-b649-4146-ae56-a19c5146a430" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    
+    <con:definitionCache type="TEXT" rootPart="https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?wsdl"><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/enterpriseservice/v4.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidus.brussels/service/enterpriseservice/v4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mes="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsp:Policy wsu:Id="SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+            <sp:MustSupportRefIssuerSerial/>
+          </sp:Policy>
+        </sp:Wss10>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:SignedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/enterpriseservice/v4.0">
+      <xsd:import namespace="http://fidus.brussels/service/enterpriseservice/messages/v4.0" schemaLocation="EnterpriseService_v4.0?xsd=enterpriseServiceMessages_v4.0"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getEntityRequestMessage">
+    <wsdl:part name="GetEntityRequest" element="mes:getEntityRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getEntityResponseMessage">
+    <wsdl:part name="GetEntityResponse" element="mes:getEntityResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="EnterpriseService_v4.0PortType" wsp:PolicyURIs="#SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsdl:operation name="getEntity">
+      <wsdl:input message="tns:getEntityRequestMessage" wsaw:Action="http://fidus.brussels/services/enterpriseservice/getEntity"/>
+      <wsdl:output message="tns:getEntityResponseMessage" wsaw:Action="http://fidus.brussels/service/enterpriseservice/v4.0/EnterpriseServicePortType/getEntityResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EnterpriseService_v4.0Soap11Binding" type="tns:EnterpriseService_v4.0PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getEntity">
+      <soap:operation soapAction="http://fidus.brussels/services/enterpriseservice/getEntity" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EnterpriseService_v4.0">
+    <wsdl:port name="EnterpriseService_v4.0HttpsSoap11Endpoint" binding="tns:EnterpriseService_v4.0Soap11Binding">
+      <soap:address location="https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=enterpriseServiceMessages_v4.0</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/enterpriseservice/messages/v4.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:kbo="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:ckb="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="EnterpriseService_v4.0?xsd=baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="EnterpriseService_v4.0?xsd=exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=WSConsultEnterprise.xsd"/>
+  <xsd:import namespace="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=datamodel.xsd"/>
+  <xsd:complexType name="EntityRequestType">
+    <xsd:annotation>
+      <xsd:documentation>The enterprise whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="cbeEntityRequest" nillable="true" type="ckb:EntityRequest">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a enterprise is his enterpriseNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetEntityRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element minOccurs="0" name="userContext" type="cme:UserContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="ckb:EntityRequestDataType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetEntityResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element minOccurs="0" name="responses" type="tns:ResponsesType"/>
+      <xsd:element minOccurs="0" name="exceptions" type="exc:ExceptionsType">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="response" type="tns:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="entity" type="kbo:EntityDataType"/>
+      <xsd:element minOccurs="0" name="exceptions" type="exc:ExceptionsType">
+        <xsd:annotation>
+          <xsd:documentation>Business exceptions that occur when processing the request or response e.g. missing data for a single response element.
+						Exceptions at this level may contain back-end specific codes and content.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="getEntityRequest" type="tns:GetEntityRequestType"/>
+  <xsd:element name="getEntityResponse" type="tns:GetEntityResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" nillable="true" type="xsd:language">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/exceptions/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="exception" type="tns:ExceptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=WSConsultEnterprise.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wscommon="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:iso="http://fsb.belgium.be/data/common/isocodes/v1_00" xmlns:requestContext="http://fsb.belgium.be/common/RequestContext/v1_00" xmlns:cbe="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:tns="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:addr="http://economie.fgov.be/KBO/WSCOMMON/address/v1_00" xmlns:status="http://fsb.belgium.be/common/ReplyStatus/v1_00">
+  <xs:import namespace="http://economie.fgov.be/KBO/WSCOMMON/address/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=address.xsd"/>
+  <xs:import namespace="http://fsb.belgium.be/data/common/isocodes/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=isocodes.xsd"/>
+  <xs:import namespace="http://fsb.belgium.be/common/RequestContext/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=RequestContext.xsd"/>
+  <xs:import namespace="http://fsb.belgium.be/common/ReplyStatus/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=ReplyStatus.xsd"/>
+  <xs:import namespace="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=datamodel.xsd"/>
+  <xs:import namespace="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=wscommon.xsd"/>
+  <xs:complexType name="EntityRequest">
+    <xs:annotation>
+      <xs:documentation>a WSConsultKBO request</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RequestEntityData" type="tns:EntityRequestDataType">
+        <xs:annotation>
+          <xs:documentation>Specific request data's</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestContext" type="requestContext:RequestContextType">
+        <xs:annotation>
+          <xs:documentation>FSB mandatory fields</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityReply">
+    <xs:annotation>
+      <xs:documentation>a WSConsultKBO reply</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReplyData" type="tns:EntityReplyDatas"/>
+      <xs:element name="Status" type="status:ReplyStatusType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityRequestDataType">
+    <xs:annotation>
+      <xs:documentation>business data's used to process the request of an enterprise research</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EntitySelectionFilter" type="tns:EntitySelectionFilter">
+        <xs:annotation>
+          <xs:documentation>contains every criterion to select a set of subject to be returned to the requester. It is directly linked to the proportionnality of a request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EntityValueFilter" type="tns:EntityValueFilter">
+        <xs:annotation>
+          <xs:documentation>contains every information of which fields should be returned to the requester. It is directly linked to finality of a request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntitySelectionFilter">
+    <xs:annotation>
+      <xs:documentation>criteria's and values used to identify the requested enterprises</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="CbeNumberList" type="cbe:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>known CBEnumbers to get access to detailed informations. Service define a maximum occurence for this list dynamically. The upper limit is set regarding server configuration. Business key / enterprisenumber of the entity (not unique)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" name="EntityIdentificationList" type="cbe:EntityIdentificationType">
+        <xs:annotation>
+          <xs:documentation>known entity identificators to get access to detailed informations. Service define a maximum occurence for this list dynamically. The upper limit is set regarding server configuration.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SearchEntityList" type="tns:SearchEntityListType">
+        <xs:annotation>
+          <xs:documentation>note that this fields are not exhaustive for research. One should be implemented after first deployment. The result will only contain basic data's.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SearchEntityListType">
+    <xs:annotation>
+      <xs:documentation>Groups where all criteria's and features of a multiple research of enterprises</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ResultOccurence">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>maximum number of occurence wait by the requester. Upper limit is set by configuration of the server.</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:int">
+            <xs:minExclusive value="0"/>
+            <xs:maxInclusive value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Criteria" type="tns:SearchCriteriaType">
+        <xs:annotation>
+          <xs:documentation>Be careful, some combination are not possible. Check in the requirement Documentation or test it as development time</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchCriteriaType">
+    <xs:annotation>
+      <xs:documentation>Possible criteria's of a research</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnterpriseNumber" type="cbe:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Enterprise number, as 'business key' without date, used by registered entities</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EnterpriseType" type="cbe:CbeEnterpriseType">
+        <xs:annotation>
+          <xs:documentation>EPP/EPM, enabling this filter cancels the research on business units</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EnterpriseJuridicalForm" type="cbe:CbeJuridicalFormCode">
+        <xs:annotation>
+          <xs:documentation>enabling this filter cancels the research on business units</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityStatus" type="cbe:CbeStatusCode">
+        <xs:annotation>
+          <xs:documentation>Status of the researched entity</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityDenomination" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>depends on the similarity mechanism of KBO</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityAddress" type="tns:SearchCriteriaAddressType">
+        <xs:annotation>
+          <xs:documentation>set selected from address information. the result depends on backend capability.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityType" type="tns:EntityType">
+        <xs:annotation>
+          <xs:documentation>Default : both entity type will be returned</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchCriteriaAddressType">
+    <xs:annotation>
+      <xs:documentation>Possible address criteria's of a research</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="niscode" type="addr:nisCodeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The NIS code of the municipality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="streetcode" type="addr:streetCodeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The street code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="postcode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The postcode. This is a mandatory field.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="house-number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The house number. This is a mandatory field. If no house number is known, the letters ZN (Dutch: "zonder naam") should be used. Note: due to a limitation in the KBO/BCE, house numbers may be truncated to four characters, if the KBO/BCE is involved in a server transaction.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="countrycode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Countrycode. This is a mandatory field.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityType">
+    <xs:annotation>
+      <xs:documentation>Type of an entity used for research. if inexistant, both will be selected</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element default="true" name="Enterprise" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>true if the sender wants to have information about some enterprises.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="true" name="BusinessUnit" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>true if the sender wants to have information about some specific business units.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityValueFilter">
+    <xs:annotation>
+      <xs:documentation>Flags to describe which fields (domains) of an enterprise should be returned back. The request will be rejected if an unauthorized value has been asked. The reason of a rejection</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element default="true" minOccurs="0" name="quickList" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>The value of this element cannot be false (see cookbook) and must be either true of be left out. This element is deprecated since version 13, it was used to indicate that searches should use limited resources and thus complete faster than the older default search (this included loss of detailed information when getting lists and was/is described in the cookbook).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommonValueFilter" type="tns:CommonValueFilterType">
+        <xs:annotation>
+          <xs:documentation>common domains of value</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EnterpriseValueFilter" type="tns:EnterpriseValueFilterType">
+        <xs:annotation>
+          <xs:documentation>enterprise domains of value</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IncludeDates" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>include validity dates inside the reply</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IncludeDescriptions" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>include description of codes used inside the reply</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SnapshotPeriod" type="cbe:Period">
+        <xs:annotation>
+          <xs:documentation>validityPeriod of the historic data, without this field set only the actual data is returned</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FunctionCategory" type="cbe:FunctionCategory">
+        <xs:annotation>
+          <xs:documentation>function category filter, prefer this filter if only one of the categories is needed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PermissionCategory" type="cbe:PermissionCategory">
+        <xs:annotation>
+          <xs:documentation>permission category filter, prefer this filter if only one of the categories is needed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CommonValueFilterType">
+    <xs:annotation>
+      <xs:documentation>Common flags for any entity (enterprise or business unit)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element default="true" name="BasicDatas" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>default : true. Please set it false to ignore those fields : status, type, denominations, address, juridicalForms [see response fields].</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="ContactInformation" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the contact information</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="Activities" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the nacebel codes</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="Functions" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the Functions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="Permissions" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the permissions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="ExternalIdentification" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the ExternalIdentifications</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="ExOfficioExecutions" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the 'ex officio executions' information.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnterpriseValueFilterType">
+    <xs:annotation>
+      <xs:documentation>Specific flags for an enterprise entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element default="false" minOccurs="0" name="JuridicalSituation" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the juridical situation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="ForeignBranchOffices" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the foreign branch offices</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="BusinessUnits" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>get the business units</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="Bankaccounts" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the bank accounts of the enterprise returned in the response.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="Finances" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the finances information of the enterprise included in the response. Default is false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="ForeignOfficeIdentification" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the 'foreign office identification' information.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="LinkedEnterprise" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the links with other enterprises in case of merges. Default is false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="BusinessUnitLinkedEnterprise" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the enterprise a business unit has a link to. Default is false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="EnterpriseFunctions" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Set to true if the client wants to have the enterprise that this Enterprise has a function in. Default is false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="BusinessUnitDetails" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>true if the sender wants to have information about some specific business units.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityReplyDatas">
+    <xs:annotation>
+      <xs:documentation>List of business entities</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Entity" type="cbe:EntityDataType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EntityError" type="cbe:EntityErrorDataType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cbeEntityRequest" type="tns:EntityRequest"/>
+  <xs:element name="cbeEntityReply" type="tns:EntityReply"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=address.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://economie.fgov.be/KBO/WSCOMMON/address/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="http://fsb.belgium.be/data/common/isocodes/v1_00" xmlns:adr="http://economie.fgov.be/KBO/WSCOMMON/address/v1_00">
+  <xs:import namespace="http://fsb.belgium.be/data/common/isocodes/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=isocodes.xsd"/>
+  <xs:complexType name="countryCodeType">
+    <xs:simpleContent>
+      <xs:extension base="iso:CountryType">
+        <xs:attribute name="CBEoldCountryCode" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>deprecated : should be avoided
+							if possible</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="streetCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="nisCodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">NISCode must be compound of five digits.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="descriptionType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The type definition of a container for descriptive
+				properties of an address. These includes names of
+				streets, municipalities, etc.
+
+				Descriptions are always language-dependent.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="street" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The street name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="municipality" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The name of the municipality.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="country" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The name of the country.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="details" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Any additional details of the address.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="language" type="iso:LanguageType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The language in which any textual fields are
+						expressed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usageType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The address usage. Used as a base type.</xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:complexType name="kbo-usageType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The address usage within the KBO.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="adr:usageType">
+        <xs:sequence>
+          <xs:element name="address-type" type="xs:string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of address</xs:documentation>
+              <xs:documentation xml:lang="nl">Het type van het adres. Voorbeelden: 001
+								Adres Maatschappelijke Zetel / Domicilie
+								002 Adres Vestigingseenheid 003 Bijhuis
+								in België voor buitenlandse onderneming</xs:documentation>
+              <xs:documentation xml:lang="fr">Example: 001 Adresse du siège social /
+								du Domicile 002 Adresse d'unité
+								d'établissement 003 Succursale d'une
+								entreprise étrangère</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The description of the type of address</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="base-addressType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The address type defines basic properties that are valid
+				for all addresses, such as house number, postbox, and
+				postcode.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="house-number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The house number. This is a mandatory field. If
+						no house number is known, the letters ZN (Dutch:
+						"zonder naam") should be used.
+
+						Note: due to a limitation in the KBO/BCE, house
+						numbers may be truncated to four characters, if
+						the KBO/BCE is involved in a server transaction.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="postbox" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The postbox is an optional field.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="postcode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The postcode. This is an optional field.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="country-code" type="adr:countryCodeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The ISO country code of the address. This field
+						is optional. The value XZ indicates the ISO code is not available and
+						the attribute CBEoldCountryCode contains the NIS country code value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="description" type="adr:descriptionType"/>
+      <xs:element minOccurs="0" name="kboUsage" type="adr:kbo-usageType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="belgian-addressType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The belgian-addressType is an address and adds a few
+				codes which uniquely define a Belgian address. These
+				codes are NIS codes for municpalities, and street codes
+				for streets. The use of codes makes the address
+				independent of language.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="adr:base-addressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="streetcode" type="adr:streetCodeType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The street code.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="niscode" type="adr:nisCodeType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The NIS code of the municipality.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="foreign-addressType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A foreign address is an address without using codes for
+				municipalities and streets, we are forced to use
+				descriptive text for those fields.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="adr:base-addressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="state" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addressType">
+    <xs:choice>
+      <xs:element name="belgian-address" type="adr:belgian-addressType"/>
+      <xs:element name="foreign-address" type="adr:foreign-addressType"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=isocodes.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fsb.belgium.be/data/common/isocodes/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="http://fsb.belgium.be/data/common/isocodes/v1_00">
+  <xs:simpleType name="LanguageType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Language codes follow the ISO-639-1 two-letter code standards.
+                For details, see http://www.loc.gov/standards/iso639-2/iso639jac.html
+
+                Validation rules:
+                - two lower case letters
+
+                Regular expression: [a-z]{2}
+
+                Examples: nl, fr, de, en, es, ...
+
+				Notes.
+				1. The xs:language type has a facet ([a-zA-Z]{1,8})(-[a-zA-Z0-9]{1,8})*
+				   which allows more than two characters. For example to denote regional
+				   languages.
+				2. For undetermined languages, ISO reserves the three-letter code
+				   "und". For this reason, the two-letter restriction is not enforced
+				   in the schema.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:language"/>
+  </xs:simpleType>
+  <xs:simpleType name="CountryType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Country codes must be in the ISO-3166 two-letter format.
+                For a complete list, see
+                http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html
+                The FSB will translate the ISO code into specific KBO codes, if required.
+                The ISO standards permit certain two-letter codes to be customized by users. This
+                allows for the following codes, which can be used withing the PROVE application:
+                 ISO CODE     KBO CODE     meaning
+                    XA          900        stateless (when applied to nationalities)
+                    XB          901        not yet proven (when applied to nationalities)
+                    XC          992        moved to abroad (when applied nationalities)
+                    XD          995        at sea (international waters)
+                    XE          999        undetermined
+
+                Validation rules:
+                - two upper case letters
+
+                Regular expression: [A-Z]{2}
+
+                Examples: BE, NL, FR, DE, GB, ES, ...
+                (Note that UK is not a valid country code!)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="currency">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Currency codes must follow the ISO-4217 code standards. These are three-letter codes
+                derived from the ISO-639-1 two-letter country codes. For details, see
+                http://www.bsi-global.com/British_Standards/currency/index.xalter
+
+                Validation rules:
+                - three upper case letters
+
+                Regular expression: [A-Z]{3}
+
+                Examples: EUR, GBP, USD, ...</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="bic">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The type definition of a "Bank Identifier Code" (BIC), specified in ISO 9362.
+
+                For details, see http://www.swift.com/biconline/index.cfm?fuseaction=display_aboutbic
+
+                Validation rules:
+                - The length is 8 or 11 characters.
+                - First 4 chars are alphabetic and denote the bank code
+                - 5th and 6th char are an ISO country code
+                - 7th and 8th char are alphanumeric and denote the region within a country
+                - 9th - 11th char are the alphanumeric branch code
+                - A BIC code must be in upper case letters
+
+                Regular expression: [A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3}){0,1}
+
+                Examples: ABNAFRPP, GEBABEBB04A, ...</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3}){0,1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="iban">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The type definition of an international bank account number (IBAN), specified in ISO 13616.
+
+                Validation rules:
+                - The length is up to 34 characters
+                - The first two characters are the ISO two-letter country code
+                - The 3rd and 4th character are numeric control digits
+                - The 5th to the last char are alphanumeric
+                - For the calculation of the control digits:
+                    o  move the first four chars to the end of the number
+                    o  convert each alphabetic char in the number to a digit according to a conversion
+                       table: A=10, B=11, C=12, ..., Y=34, Z=35
+                       Note: each letter is converted to two digits, so the number of chars increases
+                    o  calculate the mod 97 of the full number: it must be equal to one
+
+                Regular expression: [A-Z]{2}\d{2}[A-Z0-9]{1,30}
+
+                Examples: BE68539007547034, FR1420041010050500013M02606, GB29NWBK60161331926819</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2}\d{2}[A-Z0-9]{1,30}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=RequestContext.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fsb.belgium.be/common/RequestContext/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="http://fsb.belgium.be/data/common/isocodes/v1_00" xmlns:requestContext="http://fsb.belgium.be/common/RequestContext/v1_00" xmlns:tns="http://fsb.belgium.be/common/RequestContext/v1_00">
+  <xs:import namespace="http://fsb.belgium.be/data/common/isocodes/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=isocodes.xsd"/>
+  <xs:complexType name="RequestContextType">
+    <xs:sequence>
+      <xs:element name="RequestInfo" type="requestContext:RequestInfoType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Contains all the information specific to a
+						request</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConsumerInfo" type="requestContext:ConsumerInfoType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Contains all the information specific to a
+						consumer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RequestInfoType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Type use to identify a request.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">the id of the request that should be unique in
+						time and place.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">the time the request was initiated by the
+						client.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Version" type="requestContext:Version"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsumerInfoType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Type use to describe a consumer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Application" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">the application's name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UserInfo" type="requestContext:UserInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UserInfoType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Type use to describe a user</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">the user identification from the application
+						point of view.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Language" type="iso:LanguageType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The language in which any textual fields are
+						expressed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Version">
+    <xs:annotation>
+      <xs:documentation>Holds this client has been built against. This can be used for routing, and also for checking
+				if the client version matches the server version. The server version can also use this to do
+				some extra logic.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element fixed="1" name="major" type="xs:int"/>
+      <xs:element name="minor" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestContext" type="requestContext:RequestContextType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=ReplyStatus.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://fsb.belgium.be/common/ReplyStatus/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:status="http://fsb.belgium.be/common/ReplyStatus/v1_00">
+  <xs:complexType name="ReplyStatusType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string"/>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+      <xs:element minOccurs="0" name="SuggestedAction" type="xs:string"/>
+      <xs:element minOccurs="0" name="LineNumber" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Warnings" type="status:WarningsType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WarningsType">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="errorStatusType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is the message id from the request that triggered the Error Status</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This is the  id of the Error Status</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element minOccurs="0" name="path" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Optionally the location of the error in an dot-seperated objectmodel or
+				 xpath. This value is not! a part of the specification of the webservices(cookbook) and can change without warning.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="errorStatus" type="status:errorStatusType"/>
+  <xs:element name="Status" type="status:ReplyStatusType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=datamodel.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="http://fsb.belgium.be/data/common/isocodes/v1_00" xmlns:person="http://fsb.belgium.be/data/entity/person/number/v1_00" xmlns:tns="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:addr="http://economie.fgov.be/KBO/WSCOMMON/address/v1_00">
+  <xs:import namespace="http://economie.fgov.be/KBO/WSCOMMON/address/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=address.xsd"/>
+  <xs:import namespace="http://fsb.belgium.be/data/common/isocodes/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=isocodes.xsd"/>
+  <xs:import namespace="http://fsb.belgium.be/data/entity/person/number/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=PersonNumber.xsd"/>
+  <xs:simpleType name="emailType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The general type definition of an e-mail address. The
+                (simplified) regular expression pattern for an e-mail
+                address that is used is
+                (\w[\-._\w]*\w@\w[\-._\w]*\w\.\w{2,4})</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(\w[\-._\w]*\w@\w[\-._\w]*\w\.\w{2,4})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CbeEntityNumber">
+    <xs:annotation>
+      <xs:documentation>Crossroad Bank of Enterprise number, used to identify an
+                unique enterprise or businessUnit. It is composed by 10
+                digits (the first one could be avoided if equal to 0). A
+                0 on the first of the 10 digits reprensents an
+                enterprise and a 2 represents a business unit.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:long"/>
+  </xs:simpleType>
+  <xs:complexType name="EntityIdentificationType">
+    <xs:annotation>
+      <xs:documentation>Choose a technical id (EntityId) or a business key, to identify a registered entity</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="EntityId" type="tns:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Unique technical id of an entity, or an establishmentnumber</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BusinessKey" type="tns:BusinessKeyType">
+        <xs:annotation>
+          <xs:documentation>Composite key containing an enterprisenumber of an entity, and a date on which it was actual</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="BusinessKeyType">
+    <xs:annotation>
+      <xs:documentation>Identification of a registered entity based on an enterprisenumber, and a date on which it was actual</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EnterpriseNumber" type="tns:CbeEntityNumber"/>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnterpriseNumberType">
+    <xs:annotation>
+      <xs:documentation>enterprisenumber information (datagroup)
+                history of enterprisenumbers of the entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EnterpriseNumber" type="tns:CbeEntityNumber"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CbeAddressType">
+    <xs:annotation>
+      <xs:documentation>type code to identify the address. 001->headquarter,
+                002->business unit, 003->foreign branch office</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeDenominationType">
+    <xs:annotation>
+      <xs:documentation>type code to identify different denomination. 001->
+                social denomination, 002 ->abbreviation, 003 ->
+                commercial denomination</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="001"/>
+      <xs:enumeration value="002"/>
+      <xs:enumeration value="003"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CbeContactType">
+    <xs:annotation>
+      <xs:documentation>type code to identify different contact.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeStatusCode">
+    <xs:annotation>
+      <xs:documentation>enterprise or business unit status code. Example :
+                active, juridically created, inactive, ...</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeStopCode">
+    <xs:annotation>
+      <xs:documentation>Reference to the reason why the entity has been stopped</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeLinkBusinessType">
+    <xs:annotation>
+      <xs:documentation>Reference to the link between enterprises (sister,
+                mother, ...)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeEnterpriseType">
+    <xs:annotation>
+      <xs:documentation>Reference to the type of enterprise</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ELP">
+        <xs:annotation>
+          <xs:documentation>Enterprise Legal Person</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EPP">
+        <xs:annotation>
+          <xs:documentation>Enterprise Physical Person</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CbeJuridicalFormCode">
+    <xs:annotation>
+      <xs:documentation>Reference to the juridical form of the enterprise
+                (anonymous corporation, ...)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeAddressStatutoryCode">
+    <xs:annotation>
+      <xs:documentation>Reference to the address statutory code of the enterprise</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeTechnicalCreationReasonCode">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeTechnicalStopReasonCode">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeContactStatutoryCode">
+    <xs:annotation>
+      <xs:documentation>Reference to the contact statutory code of the enterprise</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeJuridicalFormOfficialAbbreviationCode">
+    <xs:annotation>
+      <xs:documentation>Reference to the</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeJuridicalSituationCode">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeJuridicalSituationAdministrationCode">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeForeignIdentificationCode">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeActivityVersion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="2003"/>
+      <xs:enumeration value="2008"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CbeActivityTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Principal activity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Secondary activity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Help activity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CbePublicationType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbePublicationSubject">
+    <xs:annotation>
+      <xs:documentation>subject of a publication</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="CbeNacebelCode">
+    <xs:annotation>
+      <xs:documentation>nacebel code used by CBE</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalIdentificationCodeType">
+    <xs:restriction base="xs:string">
+      <xs:length value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ExternalIdentificationType">
+    <xs:sequence>
+      <xs:element name="Value" type="xs:string"/>
+      <xs:element name="ExternalIdentificationCode" type="tns:ExternalIdentificationCodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnterpriseFunctionType">
+    <xs:sequence>
+      <xs:element name="CbeEntityNumber" type="tns:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Technical id of the entity (EntityId) on update (always output)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EnterpriseNumber" type="tns:EnterpriseNumberType"/>
+      <xs:element name="CbeEnterpriseType" type="tns:CbeEnterpriseType"/>
+      <xs:element name="Denomination" type="tns:DenominationType"/>
+      <xs:element minOccurs="0" name="JuridicalForm" type="tns:JuridicalForm"/>
+      <xs:element name="Address" type="tns:AddressType"/>
+      <xs:element name="Type" type="xs:string"/>
+      <xs:element minOccurs="0" name="TypeDescription" type="xs:string"/>
+      <xs:element name="ValidityPeriod" type="tns:Period"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ForeignBranchOfficeType">
+    <xs:annotation>
+      <xs:documentation>Data's of a foreign branch office, regarding address and contact information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" type="tns:AddressType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ContactInformation" type="tns:ContactInformationType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnterpriseDateType">
+    <xs:annotation>
+      <xs:documentation>Important dates of an enterprise : inscription and age.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InscriptionDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>if available</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Duration" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>if available, in year</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JuridicalForm">
+    <xs:annotation>
+      <xs:documentation>Juridical Form information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FormCode" type="tns:CbeJuridicalFormCode">
+        <xs:annotation>
+          <xs:documentation>CBE?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OfficialCodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OfficialAbbreviation" type="tns:CbeJuridicalFormOfficialAbbreviationCode">
+        <xs:annotation>
+          <xs:documentation>if available</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JuridicalSituationEvent">
+    <xs:annotation>
+      <xs:documentation>Event as part of a Juridical Situation of an Enterprise</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnterpriseNumber" type="tns:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Business key / enterprisenumber of the entity (not unique)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityIdentification" type="tns:EntityIdentificationType"/>
+      <xs:element name="JuridicalSituationCode" type="tns:CbeJuridicalSituationCode"/>
+      <xs:element name="JuridicalSituationBeginDate" type="xs:dateTime"/>
+      <xs:element name="JuridicalSituationStatus" type="xs:string"/>
+      <xs:element name="Event" type="tns:EventType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JuridicalSituation">
+    <xs:annotation>
+      <xs:documentation>Juridical Situation information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SituationCode" type="tns:CbeJuridicalSituationCode"/>
+      <xs:element minOccurs="0" name="CodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>CodeDescription is returned by WS Consult.
+                        CodeDescription should not be filled in when using WS Update.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AdministrationCode" type="tns:CbeJuridicalSituationAdministrationCode"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element minOccurs="0" name="Status" type="xs:string"/>
+      <xs:element minOccurs="0" name="Events">
+        <xs:annotation>
+          <xs:documentation>Events are returned by WS Consult.
+                        Events should not be filled in when using WS Update; use specific services to create, delete or
+                        update events.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Event" type="tns:EventType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EventType">
+    <xs:sequence>
+      <xs:element name="Code">
+        <xs:annotation>
+          <xs:documentation>Code is obligated, but ignored when using WS Update correct event.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>CodeDescription is returned by WS Consult.
+                        CodeDescription should not be filled in when using WS Update.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactInformationType">
+    <xs:annotation>
+      <xs:documentation>contact information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactType" type="tns:CbeContactType"/>
+      <xs:element minOccurs="0" name="Description" type="xs:string"/>
+      <xs:element name="Value" type="xs:string"/>
+      <xs:element minOccurs="0" name="ForeignBranchOfficeFlag" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ContactStatutoryCode" type="tns:CbeContactStatutoryCode"/>
+      <xs:element minOccurs="0" name="ContactStatutoryCodeDescription" type="xs:string"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DenominationType">
+    <xs:annotation>
+      <xs:documentation>denomination information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DenominationCode" type="tns:CbeDenominationType">
+        <xs:annotation>
+          <xs:documentation>CBE code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Language" type="iso:LanguageType"/>
+      <xs:element minOccurs="0" name="Value" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityType">
+    <xs:annotation>
+      <xs:documentation>activities information, using formally nace code</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NacebelCode" type="tns:CbeNacebelCode"/>
+      <xs:element minOccurs="0" name="ActivityType" type="tns:CbeActivityTypeType"/>
+      <xs:element minOccurs="0" name="NacebelCodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element minOccurs="0" name="Version" type="tns:CbeActivityVersion"/>
+      <xs:element minOccurs="0" name="ActivityGroup" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Period">
+    <xs:annotation>
+      <xs:documentation>timestamp. for example from September 1, 2006 to January
+                5, 2007</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Begin" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="End" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>if the entity has been stopped</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthorizationType">
+    <xs:sequence>
+      <xs:element name="PermissionCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="RegistrationDateKBO" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="PermissionCodeBeforeConversion" type="xs:string"/>
+      <xs:element minOccurs="0" name="ConfirmCancel" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element minOccurs="0" name="PhaseCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="Duration" type="xs:double"/>
+      <xs:element minOccurs="0" name="DistributedAdministrationCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="StoppingCode" type="tns:CbeStopCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PermissionCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PERMISSIONS"/>
+      <xs:enumeration value="AUTHORIZATIONS"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankAccountNumber" type="xs:string"/>
+      <xs:element name="UsagePurposeCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="IBAN" type="xs:string"/>
+      <xs:element minOccurs="0" name="BIC" type="xs:string"/>
+      <xs:element minOccurs="0" name="NonSepaBankAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Finances">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element name="FiscalYearEndDay" type="xs:integer"/>
+      <xs:element name="FiscalYearEndMonth" type="xs:integer"/>
+      <xs:element minOccurs="0" name="ExceptionalFiscalYearStart" type="xs:date"/>
+      <xs:element minOccurs="0" name="ExceptionalFiscalYearEnd" type="xs:date"/>
+      <xs:element minOccurs="0" name="MonthAnnualMeeting" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityErrorDataType">
+    <xs:annotation>
+      <xs:documentation>Contains information about an entity for which the
+                data could not be returned.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Number" type="tns:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Number from the request</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityIdentification" type="tns:EntityIdentificationType"/>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityDataType">
+    <xs:annotation>
+      <xs:documentation>Business entity. An entity is either a enterprise or a
+                business unit. Both of these have common fields and
+                specifics fields</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="Enterprise" type="tns:EnterpriseType"/>
+      <xs:element name="BusinessUnit" type="tns:BusinessUnitType"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="EntityCommonDataType">
+    <xs:annotation>
+      <xs:documentation>Domains containing all general information about an
+                enterprise and/or a business unit. iow: common fields of
+                a business entity (common between all realization).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:StatusType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Denomination" type="tns:DenominationType">
+        <xs:annotation>
+          <xs:documentation>isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Address" type="tns:AddressType">
+        <xs:annotation>
+          <xs:documentation>isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ContactInformation" type="tns:ContactInformationType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Activity" type="tns:ActivityType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Function" type="tns:FunctionType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="LinkedEnterprise">
+        <xs:annotation>
+          <xs:documentation>enterprise with KBO-known relationship</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="tns:LinkedEnterpriseType">
+              <xs:annotation>
+                <xs:documentation>Technical id of the entity (EntityId) on update (always output)</xs:documentation>
+              </xs:annotation>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Permission" type="tns:AuthorizationType"/>
+      <xs:element minOccurs="0" name="Validity" type="tns:ValidityType">
+        <xs:annotation>
+          <xs:documentation>isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressType">
+    <xs:annotation>
+      <xs:documentation>Specific data's used by CBE for the address of an entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" type="addr:addressType">
+        <xs:annotation>
+          <xs:documentation>If the address is removed (for privacy for
+                        instance), the details of the former address
+                        should not be seen, else details are visible</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="technicalCreationReasonCode" type="tns:CbeTechnicalCreationReasonCode"/>
+      <xs:element minOccurs="0" name="technicalCreationReasonCodeDescription" type="xs:string"/>
+      <xs:element minOccurs="0" name="technicalStopReasonCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="technicalStopReasonCodeDescription" type="tns:CbeTechnicalStopReasonCode"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinkedEnterpriseType">
+    <xs:annotation>
+      <xs:documentation>Data's of a linked-enterprise</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Number">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="tns:CbeEntityNumber"/>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LinkType" type="tns:CbeLinkBusinessType">
+        <xs:annotation>
+          <xs:documentation>CBE code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LinkTypeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element minOccurs="0" name="StopCode" type="tns:CbeStopCode"/>
+      <xs:element minOccurs="0" name="StopDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="IsChild" type="xs:boolean" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="ValidityType">
+    <xs:annotation>
+      <xs:documentation>Validity of an information by CBE, iow : date and reason
+                of a closure if occured.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element minOccurs="0" name="ClosingDate" type="xs:date"/>
+      <xs:element minOccurs="0" name="StopCode" type="tns:CbeStopCode">
+        <xs:annotation>
+          <xs:documentation>CBE code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StopDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CreationModeType">
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="3"/>
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RestartModeType">
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="3"/>
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EnterpriseType">
+    <xs:annotation>
+      <xs:documentation>atomic enterprise (entity realization)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Number" type="tns:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Business key / enterprisenumber of the entity (not unique) on input
+                        Technical id of the entity (EntityId) on update on output</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityIdentification" type="tns:EntityIdentificationType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EnterpriseNumber" type="tns:EnterpriseNumberType">
+        <xs:annotation>
+          <xs:documentation>isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Type" type="tns:CbeEnterpriseType">
+        <xs:annotation>
+          <xs:documentation>EPP/EPM. isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="JuridicalForm" type="tns:JuridicalForm">
+        <xs:annotation>
+          <xs:documentation>isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="JuridicalSituation" type="tns:JuridicalSituation"/>
+      <xs:element minOccurs="0" name="ForeignBranchOffice" type="tns:ForeignBranchOfficeType">
+        <xs:annotation>
+          <xs:documentation>branch office in Belgium for external society.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="BusinessUnit" type="tns:BusinessUnitType">
+        <xs:annotation>
+          <xs:documentation>should not contain details for sub-BusinessUnit.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Date" type="tns:EnterpriseDateType">
+        <xs:annotation>
+          <xs:documentation>isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EntityCommonInfo" type="tns:EntityCommonDataType"/>
+      <xs:element minOccurs="0" name="AddressStatutoryCode" type="tns:CbeAddressStatutoryCode"/>
+      <xs:element minOccurs="0" name="AddressStatutoryCodeDescription" type="xs:string"/>
+      <xs:element minOccurs="0" name="Capital" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Currency" type="xs:string"/>
+      <xs:element minOccurs="0" name="Duration" type="xs:integer"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="BankAccount" type="tns:BankAccount"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Finances" type="tns:Finances"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExternalIdentification" type="tns:ExternalIdentificationType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EnterpriseFunctions" type="tns:EnterpriseFunctionType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ForeignIdentification" type="tns:ForeignIdentificationType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BusinessUnitType">
+    <xs:annotation>
+      <xs:documentation>atomic business unit (entity realization)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Number" type="tns:CbeEntityNumber"/>
+      <xs:element minOccurs="0" name="EntityCommonInfo" type="tns:EntityCommonDataType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatusType">
+    <xs:sequence>
+      <xs:element name="StatusCode" type="tns:CbeStatusCode">
+        <xs:annotation>
+          <xs:documentation>CBE status code isBasicDatas</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CodeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="functionExecutorEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="enterpriseNumber" type="tns:CbeEntityNumber">
+        <xs:annotation>
+          <xs:documentation>Business key / enterprisenumber of the entity (not unique) on input
+                        Technical id of the entity (EntityId) on update on output</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="entityIdentification" type="tns:EntityIdentificationType">
+        <xs:annotation>
+          <xs:documentation>The enterprisenumber or EntityId of the registered entity holding the function</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Denomination" type="tns:DenominationType">
+        <xs:annotation>
+          <xs:documentation>Names of the enterprise holding the function</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="functionExecutorPerson">
+    <xs:sequence>
+      <xs:element name="personNumber" type="person:PersonNumberType">
+        <xs:annotation>
+          <xs:documentation>The personnumber of the person holding the
+                        function</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FirstName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The first name of the person holding the
+                        function</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LastName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The last name of the person holding the function</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StreetCode" type="addr:streetCodeType">
+        <xs:annotation>
+          <xs:documentation>The streetCode of the persons address. Only required in a special
+                        situation. Further info in the documentation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FunctionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="heldByEnterprise" type="tns:functionExecutorEnterprise"/>
+      <xs:element minOccurs="0" name="heldByPerson" type="tns:functionExecutorPerson"/>
+      <xs:element minOccurs="0" name="Type" type="tns:FunctionCodeType">
+        <xs:annotation>
+          <xs:documentation>CBE code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ExemptionNOSME" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Exemption" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ExemptionCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExemptionCodeDescription" type="xs:string"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+      <xs:element minOccurs="0" name="Stop" type="tns:CbeStopCode">
+        <xs:annotation>
+          <xs:documentation>if stopped, CBE code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StopDescription" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>if required</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ExOfficioExecution" type="tns:ExOfficioExecutionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FunctionCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FUNCTIONS"/>
+      <xs:enumeration value="ENTERPRENEURIAL_SKILLS"/>
+      <xs:enumeration value="WORKING_PARTNERS"/>
+      <xs:enumeration value="FUNCTIONS_AND_ENTERPRENEURIAL_SKILLS"/>
+      <xs:enumeration value="FUNCTIONS_AND_WORKING_PARTNERS"/>
+      <xs:enumeration value="ENTERPRENEURIAL_SKILLS_AND_WORKING_PARTNERS"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PersonDataType">
+    <xs:annotation>
+      <xs:documentation>atomic cbe people</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PersonIdentification" type="tns:PersonIdentificationType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FoundedEnterprise" type="tns:EnterpriseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonIdentificationType">
+    <xs:choice>
+      <xs:element name="MoralPerson" type="tns:CbeEntityNumber"/>
+      <xs:element name="PhysicalPersonByNumber">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="person:PersonNumberType">
+              <xs:attribute name="OnBehalfOf" type="tns:CbeEntityNumber">
+                <xs:annotation>
+                  <xs:documentation>If the physical person has a
+                                        mandate to do such function on
+                                        behalf of a moral person, this
+                                        should be documented</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PhysicalPersonByName" type="tns:PhysicalPersonByNameType">
+        <xs:annotation>
+          <xs:documentation>Should only be used if the identification
+                        numbers are unknown.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="PhysicalPersonByNameType">
+    <xs:sequence>
+      <xs:element name="FirstName" type="xs:string"/>
+      <xs:element name="LastName" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="OnBehalfOf" type="tns:CbeEntityNumber">
+      <xs:annotation>
+        <xs:documentation>If the physical person has a mandate to do such
+                    function on behalf of a moral person, this should be
+                    documented</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:simpleType name="FunctionCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:complexType name="ExOfficioExecutionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="FieldDescription" type="xs:string"/>
+      <xs:element name="ActionCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="ActionDescription" type="xs:string"/>
+      <xs:element name="ReasonCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReasonDescription" type="xs:string"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ForeignIdentificationType">
+    <xs:sequence>
+      <xs:element name="CountryCode" type="addr:countryCodeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The ISO country code of the address. This field
+                        is optional. The value XZ indicates the ISO code is not available and
+                        the attribute CBEoldCountryCode contains the NIS country code value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RegistryCode" type="tns:CbeForeignIdentificationCode"/>
+      <xs:element name="RegistryCodeDescription" type="xs:string"/>
+      <xs:element name="RegistryEntityNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="ValidityPeriod" type="tns:Period"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CheckUniquenessType">
+    <xs:annotation>
+      <xs:documentation>Enumeration to know the type of uniqueness check that has to happen for creating an legal person
+                enterprise.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Exact control regardless of legal form</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Phonetic control regardless of legal form (default)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>No control</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Exact control with legal form check</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Phonetic control with legal form check</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=PersonNumber.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fsb.belgium.be/data/entity/person/number/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:per="http://fsb.belgium.be/data/entity/person/number/v1_00">
+  <xs:simpleType name="PersonNumberType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The type definition of the number of a person. It is
+				based on a string to avoid problems with leading zeroes.
+
+				Validation rules: - The length is 11 digits, of which
+				the last two are control digits. - The first six digits
+				are the birth date in the format yymmdd. - Let num1 =
+				number(0:9) and num2 = number(9:11) - Then num2 = 97 -
+				(num1 % 97) for birth dates up to 31/12/1999 and num2 =
+				97 - ( (num1 + 2*10^9) % 97 ) for birth dates later than
+				31/12/1999
+
+				The modulus and birth date can not be captured in a
+				regular expression, but the basic check on the digits
+				and the length are used in a regular expression to
+				validate the enterprise number.
+
+				Note that birth dates are not always known, and
+				exceptions to the birth date rule exist. Therefore, the
+				birth date should not be considered in a validation
+				rule.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{11}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0?xsd=wscommon.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:datamodel="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:tns="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00">
+  <xs:import namespace="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" schemaLocation="EnterpriseService_v4.0?xsd=datamodel.xsd"/>
+  <xs:complexType name="BackendContext">
+    <xs:annotation>
+      <xs:documentation>part of the context specific for CBE (backend)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CbeRole" type="xs:string"/>
+      <xs:element name="OrganizationUnit">
+        <xs:annotation>
+          <xs:documentation>Final organization unit. CBE refered it as "instrumenteerde administratie"</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AgencyCode">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="10"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="DepartmentCode">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="10"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="testMode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints>
+      <con:endpoint>http://fidus.brussels/services/enterpriseservice/v1</con:endpoint>
+      <con:endpoint>http://fidus.brussels/services/enterpriseservice/v2.0</con:endpoint>
+      <con:endpoint>https://192.168.22.53:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://192.168.22.54:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://192.168.24.16:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://192.168.24.17:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://192.168.26.19:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://192.168.26.22:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://192.168.36.61:8243/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v1.0</con:endpoint>
+      <con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint>
+      <con:endpoint>https://fidus.irisnetlab.be/services/EnterpriseService_v1.0</con:endpoint>
+    <con:endpoint>https://fidus.sec.brussels/services/EnterpriseService_v1.0</con:endpoint><con:endpoint>https://localhost:8243/services/EnterpriseService_v1.0</con:endpoint></con:endpoints>
+    <con:operation isOneWay="false" action="http://fidus.brussels/services/enterpriseservice/getEntity" name="getEntity" bindingOperationName="getEntity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="263dbaec-7ec4-43ae-82df-06c9e907efd4">
+      <con:settings/>
+      <con:call name="1 - Local - Request Phonetic Search" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="88d862f5-1bac-4573-8294-8ff0e3b28828">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="1 - Local - Request Number Search" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="eea9f6d1-3681-4cb5-865d-4e1aa4545243">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="1 - Local - Request Number Search Validation Error" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="6a90f7ea-b581-4771-854f-c9c2456116a5">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    <con:call id="c8f9d315-7354-4db4-ad6f-07da1b0aa3e6" name="2 - Dev - Request Number Search" outgoingWss="Outflow DEV" incomingWss="Inflow DEV"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="8b02e6ba-68a4-4573-83f7-1418a9f9841e" name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="acb90716-a1f3-4922-9654-4bc884c18643" name="3 - Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1d8bda6f-e196-4031-927f-006d76e6bd2a" name="3 - Test - Worker1New - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="17e19376-bb3d-4637-a8f9-3bf8bee692b0" name="3 - Test - Worker2New - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="7f5108f6-434a-449b-822a-2b9da27b4206" name="4 - Stag - Worker1 - Request" outgoingWss="Outflow STG" incomingWss="Inflow STG"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="af3f4009-53e0-4a72-8a1f-dd4cc657fe56" name="4 - Stag - Worker1New - Request" outgoingWss="Outflow STG" incomingWss="Inflow STG"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="815b0282-01b5-429b-a24f-55e33cb63162" name="4 - Stag - Worker2 - Request" outgoingWss="Outflow STG" incomingWss="Inflow STG"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="9877f5d4-16fe-47cb-97bf-065e9d9b0ac6" name="4 - Stag - Worker2New - Request" outgoingWss="Outflow STG" incomingWss="Inflow STG"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/enterpriseservice/getEntity"/><con:wsrmConfig version="1.2"/></con:call></con:operation>
+  </con:interface>
+  <con:testSuite id="12e82f90-babc-46ce-abf5-4d6ce3d6d163" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6fde89a7-0ee5-40d5-9cb7-ac9df0103398" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getEntity" searchProperties="true"><con:settings/><con:testStep type="request" id="96f6fc47-9858-498d-9850-41618b1a227b" name="testcase2 - Dev - Request Number Search"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EnterpriseService_v4.0Soap11Binding</con:interface><con:operation>getEntity</con:operation><con:request name="testcase2 - Dev - Request Number Search" id="4c41e83c-cdaa-410d-bdfa-706393304ac7" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="8e339fc0-6313-4be6-9e8f-e53413555015" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0dc96ed9-d09b-49b8-8f6b-3170f867d543" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d86de1bd-e92e-4443-957a-0a6c0b245edf" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/enterpriseservice/getEntity"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="a7fc382a-5b1d-4841-b4ca-080de2843e0f" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="df04e160-de8e-4687-8f59-7f0fb4ec83a4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getEntity" searchProperties="true"><con:settings/><con:testStep type="request" id="8a499f5d-25c6-4e83-920d-af944b9e9d9a" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EnterpriseService_v4.0Soap11Binding</con:interface><con:operation>getEntity</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="46f57232-7ed5-4f83-8843-4eed56690264" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="89fed22a-6701-4ddf-a743-28437113ec5a" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="7a28631e-4060-4b4e-b2d0-18e5f9bff5e7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d121bdc0-60cf-4d85-91f4-50e0575a0803" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/enterpriseservice/getEntity"/></con:request></con:config></con:testStep><con:testStep type="request" id="73a6a6b8-ff67-421b-a201-61a8afacd486" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EnterpriseService_v4.0Soap11Binding</con:interface><con:operation>getEntity</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="9ebb0b58-9df9-4dc0-b79b-66ec90eccf43" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="24e04a3e-cfe5-49a5-a263-6c28cc97dfb2" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c0c9e320-ff87-4a48-b59a-c1c25062484b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="af3117a7-ae96-4449-bcd6-b7a36be7f633" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/enterpriseservice/getEntity"/></con:request></con:config></con:testStep><con:testStep type="request" id="454b7247-2233-45ec-8a76-0266c0f9cbd1" name="testcase3 - Test - Worker1New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EnterpriseService_v4.0Soap11Binding</con:interface><con:operation>getEntity</con:operation><con:request name="testcase3 - Test - Worker1New - Request" id="b4273eca-b7a6-4250-a252-8a6891c7bc0f" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="7878f21f-2070-47ed-a43a-7af6c034e62e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a927d42f-32a7-408f-bfb3-1d1210949b9e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9ff2c38d-ed0b-49a8-a7e3-faa507353409" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/enterpriseservice/getEntity"/></con:request></con:config></con:testStep><con:testStep type="request" id="ca325a99-491d-4bda-8c38-3bb4dc88ebce" name="testcase3 - Test - Worker2New - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EnterpriseService_v4.0Soap11Binding</con:interface><con:operation>getEntity</con:operation><con:request name="testcase3 - Test - Worker2New - Request" id="da923105-0141-4875-a075-20477681c98b" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/EnterpriseService_v4.0.EnterpriseService_v4.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v4="http://fidus.brussels/service/enterpriseservice/messages/v4.0" xmlns:v1="http://fidus.brussels/service/enterpriseservice/messages/v2.0" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://economie.fgov.be/KBO/WSConsultKBO/Enterprise/v1_00" xmlns:v13="http://economie.fgov.be/KBO/WSKBO/datamodel/v1_00" xmlns:v14="http://economie.fgov.be/KBO/WSKBO/wscommon/v1_00" xmlns:v15="http://fsb.belgium.be/common/RequestContext/v1_00">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v4:getEntityRequest>
+         <v4:messageContext>
+            <v11:messageId>?</v11:messageId>
+         </v4:messageContext>
+         <v4:legalContext>?</v4:legalContext>
+         <v4:request>
+            <v12:EntitySelectionFilter>
+               <!--You have a CHOICE of the next 3 items at this level-->
+               <!--1 or more repetitions:-->
+               <v12:EntityIdentificationList>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <v13:EntityId>?</v13:EntityId>
+                  <v13:BusinessKey>
+                     <v13:EnterpriseNumber>?</v13:EnterpriseNumber>
+                  </v13:BusinessKey>
+               </v12:EntityIdentificationList>
+               <v12:SearchEntityList>
+                  <v12:ResultOccurence>?</v12:ResultOccurence>
+                  <v12:Criteria/>
+               </v12:SearchEntityList>
+            </v12:EntitySelectionFilter>
+            <v12:EntityValueFilter>
+               <v12:CommonValueFilter>
+                  <v12:BasicDatas>true</v12:BasicDatas>
+               </v12:CommonValueFilter>
+            </v12:EntityValueFilter>
+         </v4:request>
+      </v4:getEntityRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e6939122-60c8-432e-bf99-77697b315bfe" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0468c118-1977-43d1-9ecb-a59781b5a992" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f55c18ae-0af1-43cc-a39b-650d2422fe48" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/enterpriseservice/getEntity"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/>
+  <con:wssContainer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing></con:wssContainer>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/><con:sensitiveInformation/>
+</con:soapui-project>

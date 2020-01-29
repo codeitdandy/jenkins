@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="970ef4ff-ccfc-45bf-8ce2-1753fc83cc85" activeEnvironment="Default" name="Client-LivingWagesWithAmountService-v1-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f5bc9592-918b-44f1-b884-6d72fd8db9ff" wsaVersion="NONE" name="LivingWagesWithAmountService_v1.0Soap11Binding" type="wsdl" bindingName="{http://fidus.brussels/service/livingwageswithamountservice/v1}LivingWagesWithAmountService_v1.0Soap11Binding" soapVersion="1_1" anonymous="optional" definition="https://localhost:9443/services/LivingWagesWithAmountService_v1.0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:9443/services/LivingWagesWithAmountService_v1.0?wsdl"><con:part><con:url>https://localhost:9443/services/LivingWagesWithAmountService_v1.0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/livingwageswithamountservice/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidus.brussels/service/livingwageswithamountservice/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mes="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsp:Policy wsu:Id="SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireThumbprintReference/>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+            <sp:MustSupportRefIssuerSerial/>
+          </sp:Policy>
+        </sp:Wss10>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:SignedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/livingwageswithamountservice/v1">
+      <xsd:import namespace="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" schemaLocation="LivingWagesWithAmountService_v1.0?xsd=livingWagesWithAmountServiceMessages_v1.xsd"/>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+      <xsd:import namespace="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" schemaLocation="LivingWagesWithAmountService_v1.0?xsd=livingWagesWithAmountServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getLivingWagesWithAmountServiceRequestMessage">
+    <wsdl:part name="GetLivingWagesWithAmountServiceRequest" element="mes:getLivingWagesWithAmountServiceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getLivingWagesWithAmountServiceResponseMessage">
+    <wsdl:part name="GetLivingWagesWithAmountServiceResponse" element="mes:getLivingWagesWithAmountServiceResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="LivingWagesWithAmountService_v1.0PortType" wsp:PolicyURIs="#SigOnly" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsdl:operation name="consultLivingWagesByYear">
+      <wsdl:input message="tns:getLivingWagesWithAmountServiceRequestMessage" wsaw:Action="http://fidus.brussels/services/livingwageswithamountservice/getLivingWagesWithAmountService"/>
+      <wsdl:output message="tns:getLivingWagesWithAmountServiceResponseMessage" wsaw:Action="http://fidus.brussels/service/livingwageswithamountservice/v1/LivingWagesWithAmountServicePortType/consultLivingWagesByYearResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LivingWagesWithAmountService_v1.0Soap11Binding" type="tns:LivingWagesWithAmountService_v1.0PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="consultLivingWagesByYear">
+      <soap:operation soapAction="http://fidus.brussels/services/livingwageswithamountservice/getLivingWagesWithAmountService" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LivingWagesWithAmountService_v1.0">
+    <wsdl:port name="LivingWagesWithAmountService_v1.0HttpsSoap11Endpoint" binding="tns:LivingWagesWithAmountService_v1.0Soap11Binding">
+      <soap:address location="/services/LivingWagesWithAmountService_v1.0.LivingWagesWithAmountService_v1.0HttpsSoap11Endpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:9443/services/LivingWagesWithAmountService_v1.0?xsd=livingWagesWithAmountServiceMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:puo="http://kszbcss.fgov.be/types/LivingWagesWithAmount/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="LivingWagesWithAmountService_v1.0?xsd=baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="LivingWagesWithAmountService_v1.0?xsd=exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/LivingWagesWithAmount/v1" schemaLocation="LivingWagesWithAmountService_v1.0?xsd=LivingWagesWithAmountTypesV1.xsd"/>
+  <xsd:complexType name="LivingWagesWithAmountServiceRequestType">
+    <xsd:annotation>
+      <xsd:documentation>The person whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="personNumber" nillable="true" type="cme:PersonNumberType">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetLivingWagesWithAmountServiceRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="puo:ConsultLivingWagesByYearRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetLivingWagesWithAmountServiceResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element minOccurs="0" name="responses" type="tns:ResponsesType"/>
+      <xsd:element minOccurs="0" name="exceptions" type="exc:ExceptionsType">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="puo:ConsultLivingWagesByYearResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="getLivingWagesWithAmountServiceRequest" type="tns:GetLivingWagesWithAmountServiceRequestType"/>
+  <xsd:element name="getLivingWagesWithAmountServiceResponse" type="tns:GetLivingWagesWithAmountServiceResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/LivingWagesWithAmountService_v1.0?xsd=baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="relatesTo" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Optional field. The unique id of a previous batch file in this exchange Only used for responses.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" nillable="true" type="xsd:language">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/LivingWagesWithAmountService_v1.0?xsd=exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/exceptions/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="exception" type="tns:ExceptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/LivingWagesWithAmountService_v1.0?xsd=LivingWagesWithAmountTypesV1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://kszbcss.fgov.be/types/LivingWagesWithAmount/v1" version="2015-02-05" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://kszbcss.fgov.be/types/LivingWagesWithAmount/v1" xmlns:common="http://kszbcss.fgov.be/types/common/v3" xmlns:puo="http://kszbcss.fgov.be/types/LivingWagesWithAmount/v1">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="LivingWagesWithAmountService_v1.0?xsd=CommonV3.xsd"/>
+  <xsd:complexType name="ConsultLivingWagesByYearRequestType">
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="common:InformationCustomerType"/>
+      <xsd:element minOccurs="0" name="informationCBSS" type="common:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="common:LegalContextType"/>
+      <xsd:element name="searchCriteria" type="ConsultLivingWagesByYearCriteriaType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultLivingWagesByYearResponseType">
+    <xsd:complexContent>
+      <xsd:extension base="ConsultLivingWagesByYearRequestType">
+        <xsd:sequence>
+          <xsd:element name="status" type="common:StatusType"/>
+          <xsd:element maxOccurs="3" minOccurs="0" name="result">
+            <xsd:complexType>
+              <xsd:complexContent>
+                <xsd:extension base="ResultBusinessType">
+                  <xsd:attribute name="year" type="ReferencedYearType" use="required"/>
+                </xsd:extension>
+              </xsd:complexContent>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultLivingWagesByYearCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType">
+        <xsd:annotation>
+          <xsd:documentation>SSIN of the person for who the data will be retreive</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:choice>
+        <xsd:annotation>
+          <xsd:documentation>Year for which the annual and monthly data will be retreived</xsd:documentation>
+        </xsd:annotation>
+        <xsd:element name="currentYear" type="TrueType"/>
+        <xsd:element name="referencedYear" type="ReferencedYearType"/>
+      </xsd:choice>
+      <xsd:choice minOccurs="0">
+        <xsd:element name="backForTwoYears" type="TrueType"/>
+        <xsd:element name="backForThreeYears" type="TrueType"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AnnualAllowanceType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="livingWages" type="ExtendedAnnualDataType"/>
+      <xsd:element minOccurs="0" name="livingWagesEquivalent" type="ExtendedAnnualDataType"/>
+      <xsd:element minOccurs="0" name="familyAllowances" type="AnnualDataType"/>
+    </xsd:sequence>
+    <xsd:attribute name="year" type="xsd:gYear" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="MonthlyAllowanceType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="livingWages" type="ExtendedMonthlyAllowanceDataType"/>
+      <xsd:element minOccurs="0" name="livingWagesEquivalent" type="ExtendedMonthlyAllowanceDataType"/>
+      <xsd:element minOccurs="0" name="familyAllowances" type="MonthlyAllowanceDataType"/>
+    </xsd:sequence>
+    <xsd:attribute name="month" type="xsd:gYearMonth" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="AnnualDataType">
+    <xsd:sequence>
+      <xsd:element name="amount" type="AmountType"/>
+      <xsd:element name="indicatorOfPartner" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MonthlyAllowanceDataType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="31" name="byPeriod" type="MonthlyDataType"/>
+      <xsd:element name="lastPayment" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExtendedMonthlyAllowanceDataType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="31" name="byPeriod" type="ExtendedMonthlyDataType"/>
+      <xsd:element name="lastPayment" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExtendedAnnualDataType">
+    <xsd:complexContent>
+      <xsd:extension base="AnnualDataType">
+        <xsd:sequence>
+          <xsd:element name="monthNumberWithoutHelp" type="MonthNumberWithoutHelpType"/>
+          <xsd:element name="indicatorOfMaximumAllowance" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MonthlyDataType">
+    <xsd:complexContent>
+      <xsd:extension base="ByPeriodType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExtendedMonthlyDataType">
+    <xsd:complexContent>
+      <xsd:extension base="MonthlyDataType">
+        <xsd:sequence>
+          <xsd:element name="indicatorOfMaximumAllowance" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AmountType">
+    <xsd:annotation>
+      <xsd:documentation>Euro amount</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MonthNumberWithoutHelpType">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="12"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ByPeriodType">
+    <xsd:sequence>
+      <xsd:element name="amount" type="AmountType"/>
+      <xsd:element name="period">
+        <xsd:complexType>
+          <xsd:complexContent>
+            <xsd:extension base="common:PeriodType"/>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="beneficiary" type="BeneficiaryType"/>
+      <xsd:element name="partner" type="PartnerType"/>
+      <xsd:element name="pswc" type="PswcType"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:int" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="PartnerType">
+    <xsd:choice>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element fixed="false" name="indicatorOfPartner" type="xsd:boolean"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="BeneficiaryType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element minOccurs="0" name="category" type="CategoryType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CategoryType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="CO_RESIDENT"/>
+      <xsd:enumeration value="ALONE"/>
+      <xsd:enumeration value="HEAD_OF_FAMILY"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PswcType">
+    <xsd:sequence>
+      <xsd:element name="cbeNumber" type="common:CbeNumberType"/>
+      <xsd:element name="file">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="11"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="suffix">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WageBeneficiaryType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResultBusinessType">
+    <xsd:choice>
+      <xsd:choice>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="annualAllowance" type="AnnualAllowanceType"/>
+          <xsd:element maxOccurs="12" minOccurs="0" name="monthlyAllowance" type="MonthlyAllowanceType"/>
+        </xsd:sequence>
+        <xsd:element name="noPayment" type="TrueType"/>
+      </xsd:choice>
+      <xsd:element maxOccurs="10" name="beneficiary" type="WageBeneficiaryType">
+        <xsd:annotation>
+          <xsd:documentation>Block containing the list of the linked beneficiaries if the requested SSIN is not a beneficiary (partner only)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:simpleType name="ReferencedYearType">
+    <xsd:restriction base="xsd:gYear"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="TrueType">
+    <xsd:restriction base="xsd:boolean">
+      <xsd:pattern value="true"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LivingWagesWithAmountLegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="relocation assistance"/>
+      <xsd:enumeration value="renovation subsidy"/>
+      <xsd:enumeration value="housing allowance"/>
+      <xsd:enumeration value="home buyers"/>
+      <xsd:enumeration value="loan approval"/>
+      <xsd:enumeration value="calculation of the scholarship"/>
+      <xsd:enumeration value="control of income against fraud"/>
+      <xsd:enumeration value="CBSS validation"/>
+      <xsd:enumeration value="CBSS internal processing"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/LivingWagesWithAmountService_v1.0?xsd=CommonV3.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://kszbcss.fgov.be/types/common/v3" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/common/v3">
+  <xsd:simpleType name="SeverityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFORMATION"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="FATAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="UUIDType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TicketType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="36"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CbeNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE number identifying an enterprise or business unit</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{10}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EnterpriseNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE enterprise number (starting with 0 or 1)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-1]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusinessUnitNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE business unit number (starting with 2-8)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[2-8]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SsinType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre National</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Rijksregister</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero Bis</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bis register : Bisnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero TER</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bisregister : Ternummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="IntegrationContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="InformationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block from CBSS.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType"/>
+      <xsd:element name="timestampReceive" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time request was received by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationCustomerType">
+    <xsd:annotation>
+      <xsd:documentation>Information block that can be used by the customer for diagnostic use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ticket" type="tns:TicketType">
+        <xsd:annotation>
+          <xsd:documentation>Client can assign their own ticket reference for the request. Not mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestampSent" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="customerIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationSupplierType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for supplier of a service</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ticket" type="tns:TicketType">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestampReceive" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestampReply" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="supplierIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotificationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for CBSS info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotifiedType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for partner info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ticket" type="tns:TicketType"/>
+      <xsd:element minOccurs="0" name="timestampReply" type="xsd:dateTime"/>
+      <xsd:element name="notifiedIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrganizationIdentificationType">
+    <xsd:choice>
+      <xsd:element name="cbeNumber" type="tns:CbeNumberType"/>
+      <xsd:sequence>
+        <xsd:element name="sector">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="institution">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="OpenPeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an optional end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="IncompleteDateType">
+    <xsd:annotation>
+      <xsd:documentation>A possibly incomplete date. Format yyyy-mm-dd, yyyy-mm-00 or yyyy-00-00</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="10"/>
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:pattern value="[0-2][0-9]{3}\-[0-1][0-9]\-[0-3][0-9]"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DescriptionType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying how a value that can exist in several languages will be modelled</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="tns:BaseDescriptionType">
+        <xsd:attribute name="language" type="tns:LanguageType" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="BaseDescriptionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DescriptionStyleParametersType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="descriptionExpected" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Using this element the consumer can specify whether the description of the given CTMS code is expected.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="descriptionLanguage" type="tns:LanguageType">
+        <xsd:annotation>
+          <xsd:documentation>The language the consumer can specify in order to receive code table value descriptions in the preferred language. If not provided the description will be provided in NL, FR and DE languages.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="errorDescriptionExpected" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Using this element the consumer can specify whether the description of the given error code is expected.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LanguageType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying the language of a given value</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NL"/>
+      <xsd:enumeration value="FR"/>
+      <xsd:enumeration value="DE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RegistersCharacterSetType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the possible character sets to use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ASCII"/>
+      <xsd:enumeration value="ASCII_ÄÖÜ"/>
+      <xsd:enumeration value="ASCII_CBSS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:group name="BusinessAnomaliesContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Structure reporting business errors to the consumer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="businessAnomalies" type="tns:BusinessAnomaliesType"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="BusinessAnomaliesType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the part of the response containing business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="25" name="businessAnomaly" type="tns:BusinessAnomalyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BusinessAnomalyType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of one business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique code referring to a description of this Fault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="description">
+        <xsd:annotation>
+          <xsd:documentation>Some description of this Fault</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="15" minOccurs="0" name="information" type="tns:InformationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CBSSFaultType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element maxOccurs="30" name="detail" type="tns:MessageType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageType">
+    <xsd:sequence>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="reasonCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="diagnostic">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="authorCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="15" minOccurs="0" name="information" type="tns:InformationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationType">
+    <xsd:sequence>
+      <xsd:element name="fieldName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fieldValue">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="BaseRequestType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service requests</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element minOccurs="0" name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType">
+        <xsd:annotation>
+          <xsd:documentation>legal context under which the request was made</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="BaseResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service responses</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StatusType">
+    <xsd:sequence>
+      <xsd:element name="value">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DATA_FOUND"/>
+            <xsd:enumeration value="NO_DATA_FOUND"/>
+            <xsd:enumeration value="NO_RESULT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="code">
+        <xsd:annotation>
+          <xsd:documentation>the code of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="description">
+        <xsd:annotation>
+          <xsd:documentation>the description of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="15" minOccurs="0" name="information" type="tns:InformationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="EuroPositiveAmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:maxExclusive value="1000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EuroAmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:maxExclusive value="1000000000000000"/>
+      <xsd:minExclusive value="-1000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EurocentPositiveAmountType">
+    <xsd:restriction base="xsd:unsignedLong">
+      <xsd:maxExclusive value="100000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EurocentAmountType">
+    <xsd:restriction base="xsd:long">
+      <xsd:minExclusive value="-100000000000000000"/>
+      <xsd:maxExclusive value="100000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>/services/LivingWagesWithAmountService_v1.0.LivingWagesWithAmountService_v1.0HttpsSoap11Endpoint</con:endpoint><con:endpoint>https://localhost:8243/services/LivingWagesWithAmountService_v1.0</con:endpoint></con:endpoints><con:operation id="b895348f-b1b8-47fa-9aca-3cb96569751c" isOneWay="false" action="http://fidus.brussels/services/livingwageswithamountservice/getLivingWagesWithAmountService" name="consultLivingWagesByYear" bindingOperationName="consultLivingWagesByYear" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e390fae1-40a3-480f-a695-53717fd92be8" name="Request 1" outgoingWss="outflowDev" incomingWss="inflowDev"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>/services/LivingWagesWithAmountService_v1.0.LivingWagesWithAmountService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLivingWagesWithAmountServiceRequest>
+         <v1:messageContext>
+         	  <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <informationCustomer>
+				<ticket>01 cas classique an en cours</ticket>
+				<customerIdentification>
+					<cbeNumber>0240678477</cbeNumber>
+				</customerIdentification>
+			</informationCustomer>
+			<legalContext>FIDUS:REGIONAL_TAXES_AND_FINES</legalContext>
+			<searchCriteria>
+				<ssin>58040954444</ssin>
+				<currentYear>true</currentYear>
+			</searchCriteria>
+         </v1:request>
+      </v1:getLivingWagesWithAmountServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/livingwageswithamountservice/getLivingWagesWithAmountService"/><con:wsrmConfig version="1.2"/></con:call><con:call id="246e9bab-bc1b-46d7-8a49-920d176130a8" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>/services/LivingWagesWithAmountService_v1.0.LivingWagesWithAmountService_v1.0HttpsSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:v1="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" 
+xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getLivingWagesWithAmountServiceRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>?</v1:legalContext>
+         <v1:request>
+            <informationCustomer>
+               <!--Optional:-->
+               <ticket>?</ticket>
+               <!--Optional:-->
+               <timestampSent>?</timestampSent>
+               <customerIdentification>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <cbeNumber>?</cbeNumber>
+                  <sector>?</sector>
+                  <institution>?</institution>
+               </customerIdentification>
+            </informationCustomer>
+            <!--Optional:-->
+            <informationCBSS>
+               <ticketCBSS>?</ticketCBSS>
+               <timestampReceive>?</timestampReceive>
+               <timestampReply>?</timestampReply>
+            </informationCBSS>
+            <legalContext>?</legalContext>
+            <searchCriteria>
+               <ssin>?</ssin>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <currentYear>?</currentYear>
+               <referencedYear>?</referencedYear>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <backForTwoYears>?</backForTwoYears>
+               <backForThreeYears>?</backForThreeYears>
+            </searchCriteria>
+         </v1:request>
+      </v1:getLivingWagesWithAmountServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/livingwageswithamountservice/getLivingWagesWithAmountService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="ab4ac6fb-c962-41c1-b767-004a3cdbd281" port="8080" path="/" host="localhost.localdomain" name="MockService 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="consultLivingWagesByYear" id="05bc99d7-e9a3-46db-b65b-d0f63524b7c8" interface="LivingWagesWithAmountService_v1.0Soap11Binding" operation="consultLivingWagesByYear"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="9c2f8e45-30db-4bb9-9444-577c4bcc3ef2" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/livingwageswithamountservice/v1" xmlns:v11="http://fidus.brussels/service/livingwageswithamountservice/messages/v1" xmlns:v12="http://fidus.brussels/type/common/messages/v1" xmlns:v13="http://fidus.brussels/type/common/exceptions/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:consultLivingWagesByYearResponse>
+         <v11:messageContext>
+            <v12:messageId>?</v12:messageId>
+            <v12:transactionId>?</v12:transactionId>
+            <!--Optional:-->
+            <v12:relatesTo>?</v12:relatesTo>
+            <!--Optional:-->
+            <v12:timestamp>?</v12:timestamp>
+         </v11:messageContext>
+         <!--Optional:-->
+         <v11:responses>
+            <v11:response>
+               <informationCustomer>
+                  <!--Optional:-->
+                  <ticket>?</ticket>
+                  <!--Optional:-->
+                  <timestampSent>?</timestampSent>
+                  <customerIdentification>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <cbeNumber>?</cbeNumber>
+                     <sector>?</sector>
+                     <institution>?</institution>
+                  </customerIdentification>
+               </informationCustomer>
+               <!--Optional:-->
+               <informationCBSS>
+                  <ticketCBSS>?</ticketCBSS>
+                  <timestampReceive>?</timestampReceive>
+                  <timestampReply>?</timestampReply>
+               </informationCBSS>
+               <legalContext>?</legalContext>
+               <searchCriteria>
+                  <ssin>?</ssin>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <currentYear>?</currentYear>
+                  <referencedYear>?</referencedYear>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <backForTwoYears>?</backForTwoYears>
+                  <backForThreeYears>?</backForThreeYears>
+               </searchCriteria>
+               <status>
+                  <value>?</value>
+                  <code>?</code>
+                  <!--Optional:-->
+                  <description>?</description>
+                  <!--0 to 15 repetitions:-->
+                  <information>
+                     <fieldName>?</fieldName>
+                     <!--Optional:-->
+                     <fieldValue>?</fieldValue>
+                  </information>
+               </status>
+               <!--0 to 3 repetitions:-->
+               <result year="?">
+                  <!--You have a CHOICE of the next 3 items at this level-->
+                  <!--Optional:-->
+                  <annualAllowance year="?">
+                     <!--Optional:-->
+                     <livingWages>
+                        <amount>?</amount>
+                        <indicatorOfPartner>?</indicatorOfPartner>
+                        <monthNumberWithoutHelp>?</monthNumberWithoutHelp>
+                        <indicatorOfMaximumAllowance>?</indicatorOfMaximumAllowance>
+                     </livingWages>
+                     <!--Optional:-->
+                     <livingWagesEquivalent>
+                        <amount>?</amount>
+                        <indicatorOfPartner>?</indicatorOfPartner>
+                        <monthNumberWithoutHelp>?</monthNumberWithoutHelp>
+                        <indicatorOfMaximumAllowance>?</indicatorOfMaximumAllowance>
+                     </livingWagesEquivalent>
+                     <!--Optional:-->
+                     <familyAllowances>
+                        <amount>?</amount>
+                        <indicatorOfPartner>?</indicatorOfPartner>
+                     </familyAllowances>
+                  </annualAllowance>
+                  <!--0 to 12 repetitions:-->
+                  <monthlyAllowance month="?">
+                     <!--Optional:-->
+                     <livingWages>
+                        <!--1 to 31 repetitions:-->
+                        <byPeriod id="?">
+                           <amount>?</amount>
+                           <period>
+                              <beginDate>?</beginDate>
+                              <!--Optional:-->
+                              <endDate>?</endDate>
+                           </period>
+                           <beneficiary>
+                              <ssin>?</ssin>
+                              <!--Optional:-->
+                              <category>?</category>
+                           </beneficiary>
+                           <partner>
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <ssin>?</ssin>
+                              <indicatorOfPartner>false</indicatorOfPartner>
+                           </partner>
+                           <pswc>
+                              <cbeNumber>?</cbeNumber>
+                              <file>?</file>
+                              <suffix>?</suffix>
+                           </pswc>
+                           <indicatorOfMaximumAllowance>?</indicatorOfMaximumAllowance>
+                        </byPeriod>
+                        <lastPayment>?</lastPayment>
+                     </livingWages>
+                     <!--Optional:-->
+                     <livingWagesEquivalent>
+                        <!--1 to 31 repetitions:-->
+                        <byPeriod id="?">
+                           <amount>?</amount>
+                           <period>
+                              <beginDate>?</beginDate>
+                              <!--Optional:-->
+                              <endDate>?</endDate>
+                           </period>
+                           <beneficiary>
+                              <ssin>?</ssin>
+                              <!--Optional:-->
+                              <category>?</category>
+                           </beneficiary>
+                           <partner>
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <ssin>?</ssin>
+                              <indicatorOfPartner>false</indicatorOfPartner>
+                           </partner>
+                           <pswc>
+                              <cbeNumber>?</cbeNumber>
+                              <file>?</file>
+                              <suffix>?</suffix>
+                           </pswc>
+                           <indicatorOfMaximumAllowance>?</indicatorOfMaximumAllowance>
+                        </byPeriod>
+                        <lastPayment>?</lastPayment>
+                     </livingWagesEquivalent>
+                     <!--Optional:-->
+                     <familyAllowances>
+                        <!--1 to 31 repetitions:-->
+                        <byPeriod id="?">
+                           <amount>?</amount>
+                           <period>
+                              <beginDate>?</beginDate>
+                              <!--Optional:-->
+                              <endDate>?</endDate>
+                           </period>
+                           <beneficiary>
+                              <ssin>?</ssin>
+                              <!--Optional:-->
+                              <category>?</category>
+                           </beneficiary>
+                           <partner>
+                              <!--You have a CHOICE of the next 2 items at this level-->
+                              <ssin>?</ssin>
+                              <indicatorOfPartner>false</indicatorOfPartner>
+                           </partner>
+                           <pswc>
+                              <cbeNumber>?</cbeNumber>
+                              <file>?</file>
+                              <suffix>?</suffix>
+                           </pswc>
+                        </byPeriod>
+                        <lastPayment>?</lastPayment>
+                     </familyAllowances>
+                  </monthlyAllowance>
+                  <noPayment>?</noPayment>
+                  <!--1 to 10 repetitions:-->
+                  <beneficiary>
+                     <ssin>?</ssin>
+                  </beneficiary>
+               </result>
+            </v11:response>
+         </v11:responses>
+         <!--Optional:-->
+         <v11:exceptions>
+            <!--1 or more repetitions:-->
+            <v13:exception>
+               <v13:type>?</v13:type>
+               <v13:code>?</v13:code>
+               <v13:source>?</v13:source>
+               <v13:description>?</v13:description>
+            </v13:exception>
+         </v11:exceptions>
+      </v1:consultLivingWagesByYearResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/livingwageswithamountservice/getLivingWagesWithAmountService"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

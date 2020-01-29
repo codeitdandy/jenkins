@@ -1,0 +1,2367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="45e80965-7c4a-434c-aaeb-1669bfe9dd8c" activeEnvironment="Default" name="Client-HouseHoldService2-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="32a8c5e6-c70f-430e-ae02-4386cab704b3" wsaVersion="NONE" name="HouseHoldHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/household/v1}HouseHoldHTTPBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/HouseHoldService_v1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/HouseHoldService_v1.wsdl"><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/HouseHoldService_v1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/household/v1" name="HouseHoldService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mes="http://fidus.brussels/service/household/messages/v1" xmlns:tns="http://fidus.brussels/service/household/v1">
+  <xsd:annotation>
+    <xsd:documentation>HouseHold service WDSL v1.</xsd:documentation>
+  </xsd:annotation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fidus.brussels/service/household/v1" elementFormDefault="qualified">
+      <xsd:import namespace="http://fidus.brussels/service/household/messages/v1" schemaLocation="messages/houseHoldMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getHouseHoldRequestMessage">
+    <wsdl:part name="GetHouseHoldRequest" element="mes:getHouseHoldRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getHouseHoldResponseMessage">
+    <wsdl:part name="GetHouseHoldResponse" element="mes:getHouseHoldResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchFamilyCompositionBySsinRequestMessage">
+    <wsdl:part name="SearchFamilyCompositionBySsinRequest" element="mes:searchFamilyCompositionBySsinRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchFamilyCompositionBySsinResponseMessage">
+    <wsdl:part name="SearchFamilyCompositionBySsinResponse" element="mes:searchFamilyCompositionBySsinResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchFamilyCompositionHistoryBySsinRequestMessage">
+    <wsdl:part name="SearchFamilyCompositionHistoryBySsinRequest" element="mes:searchFamilyCompositionHistoryBySsinRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchFamilyCompositionHistoryBySsinResponseMessage">
+    <wsdl:part name="SearchFamilyCompositionHistoryBySsinResponse" element="mes:searchFamilyCompositionHistoryBySsinResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchFamilyCompositionBySsinAndDateRequestMessage">
+    <wsdl:part name="SearchFamilyCompositionBySsinAndDateRequest" element="mes:searchFamilyCompositionBySsinAndDateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="searchFamilyCompositionBySsinAndDateResponseMessage">
+    <wsdl:part name="SearchFamilyCompositionBySsinAndDateResponse" element="mes:searchFamilyCompositionBySsinAndDateResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="HouseHoldPortType">
+    <wsdl:operation name="getHouseHold">
+      <wsdl:input message="tns:getHouseHoldRequestMessage"/>
+      <wsdl:output message="tns:getHouseHoldResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchFamilyCompositionBySsin">
+      <wsdl:input message="tns:searchFamilyCompositionBySsinRequestMessage"/>
+      <wsdl:output message="tns:searchFamilyCompositionBySsinResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchFamilyCompositionHistoryBySsin">
+      <wsdl:input message="tns:searchFamilyCompositionHistoryBySsinRequestMessage"/>
+      <wsdl:output message="tns:searchFamilyCompositionHistoryBySsinResponseMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchFamilyCompositionBySsinAndDate">
+      <wsdl:input message="tns:searchFamilyCompositionBySsinAndDateRequestMessage"/>
+      <wsdl:output message="tns:searchFamilyCompositionBySsinAndDateResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HouseHoldHTTPBinding" type="tns:HouseHoldPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getHouseHold">
+      <soap:operation soapAction="http://fidus.brussels/services/household/getHouseHold"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchFamilyCompositionBySsin">
+      <soap:operation soapAction="http://fidus.brussels/services/household/searchFamilyCompositionBySsin"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchFamilyCompositionHistoryBySsin">
+      <soap:operation soapAction="http://fidus.brussels/services/household/searchFamilyCompositionHistoryBySsin"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchFamilyCompositionBySsinAndDate">
+      <soap:operation soapAction="http://fidus.brussels/services/household/searchFamilyCompositionBySsinAndDate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HouseHoldService_v1">
+    <wsdl:port name="HouseHoldService_v1" binding="tns:HouseHoldHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/household/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/messages/houseHoldMessages_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/service/household/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/household/messages/v1" xmlns:fam="http://kszbcss.fgov.be/types/registries/FamilyCompositionService/v1" xmlns:fam2="http://kszbcss.fgov.be/types/familycomposition/v1" xmlns:common="http://kszbcss.fgov.be/types/common/v3">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/registries/FamilyCompositionService/v1" schemaLocation="../familycomposition/registries/FamilyCompositionService/FamilyCompositionServiceV1.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/familycomposition/v1" schemaLocation="../familycomposition/familycomposition/FamilyCompositionDataV1.xsd"/>
+  <!--<xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="../familycomposition/common/CommonV3.xsd"/>-->
+  <xsd:complexType name="HouseHoldRequestType">
+    <xsd:annotation>
+      <xsd:documentation>The person whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="personNumber" type="cme:PersonNumberType" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getHouseHold definition-->
+  <xsd:complexType name="GetHouseHoldRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:HouseHoldRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getHouseHold definition-->
+  <xsd:complexType name="GetHouseHoldResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request searchFamilyCompositionBySsin definition-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:FamilyCompositionBySsinRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyCompositionBySsinRequestType">
+    <xsd:annotation>
+      <xsd:documentation>The person whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="personNumber" type="cme:PersonNumberType" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Reponse searchFamilyCompositionBySsin definition-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <!--<xsd:element name="responses" type="fam:SearchFamilyCompositionBySsinResponseType" minOccurs="0"/>-->
+      <xsd:element name="responses" type="tns:ResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request searchFamilyCompositionHistoryBySsin definition-->
+  <xsd:complexType name="SearchFamilyCompositionHistoryBySsinRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:FamilyCompositionBySsinAndDateRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Reponse searchFamilyCompositionHistoryBySsin definition-->
+  <xsd:complexType name="SearchFamilyCompositionHistoryBySsinResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="fam:SearchFamilyCompositionHistoryBySsinResponseType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request searchFamilyCompositionBySsinAndDate definition-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinAndDateRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:FamilyCompositionBySsinAndDateRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyCompositionBySsinAndDateRequestType">
+    <xsd:sequence>
+      <xsd:element name="criteria" type="tns:SearchFamilyCompositionBySsinAndDateCriteriaType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchFamilyCompositionBySsinAndDateCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="personNumber" type="cme:PersonNumberType" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="date" type="xsd:date" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The date to obtain the family composition situation on a given date</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="enrichWithActualPersonData" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the data must be enriched with the legal data of all persons in the response.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Reponse searchFamilyCompositionBySsinAndDate definition-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinAndDateResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="fam:SearchFamilyCompositionBySsinAndDateResponseType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="familyComposition" type="fam2:FamilyCompositionResponseType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Business exceptions that occur when processing the request or response e.g. missing data for a single response element.
+						Exceptions at this level may contain back-end specific codes and content.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Element of the request and the response-->
+  <xsd:element name="getHouseHoldRequest" type="tns:GetHouseHoldRequestType"/>
+  <xsd:element name="getHouseHoldResponse" type="tns:GetHouseHoldResponseType"/>
+  <xsd:element name="searchFamilyCompositionBySsinRequest" type="tns:SearchFamilyCompositionBySsinRequestType"/>
+  <xsd:element name="searchFamilyCompositionBySsinResponse" type="tns:SearchFamilyCompositionBySsinResponseType"/>
+  <xsd:element name="searchFamilyCompositionHistoryBySsinRequest" type="tns:SearchFamilyCompositionHistoryBySsinRequestType"/>
+  <xsd:element name="searchFamilyCompositionHistoryBySsinResponse" type="tns:SearchFamilyCompositionBySsinResponseType"/>
+  <xsd:element name="searchFamilyCompositionBySsinAndDateRequest" type="tns:SearchFamilyCompositionBySsinAndDateRequestType"/>
+  <xsd:element name="searchFamilyCompositionBySsinAndDateResponse" type="tns:SearchFamilyCompositionBySsinAndDateResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/messages/baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:nps="http://fidus.brussels/service/personservice/personservices/naturalPerson/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by Fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/messages/exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/familycomposition/registries/FamilyCompositionService/FamilyCompositionServiceV1.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: FamilyCompositionServiceV1.xsd
+	* Author				: Jonas De Meulenaere
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain				: CBSS Registries Public Services
+	* Creation Date			: 18-06-2013
+	* Last revision date	: 18-06-2013
+	* Description			: This XML schema document contains a set of XML types used in request/response messages of the FamilyComposition Service. 
+	* Status				: 
+	* Current Version		: 0.1
+	* Revision History		: 18-06-2013	Creation
+	*						  17-10-2013	Move replacingSsin to top
+	*						  24-10-2013	Rename element familyCompositionHistory to familyCompositions + byDate response can have multiple compositions
+	* ====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/registries/FamilyCompositionService/v1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/registries/FamilyCompositionService/v1" xmlns:family="http://kszbcss.fgov.be/types/familycomposition/v1" xmlns:common="http://kszbcss.fgov.be/types/common/v3" xmlns:registriesCommon="http://kszbcss.fgov.be/types/registries/common/v3">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/familycomposition/v1" schemaLocation="../../familycomposition/FamilyCompositionDataV1.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/registries/common/v3" schemaLocation="../../registries/common/RegistriesCommonV3.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="../../common/CommonV3.xsd"/>
+  <!--======================================== GetBySsin capability ========================================-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinRequestType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the request to fetch family composition information based on a number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseRequestType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:SearchFamilyCompositionBySsinCriteriaType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SearchFamilyCompositionBySsinResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the family composition information fetched based on a number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseResponseType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:SearchFamilyCompositionBySsinCriteriaType">
+            <xsd:annotation>
+              <xsd:documentation>The search criteria from the request</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="status" type="registriesCommon:StatusType"/>
+          <xsd:sequence>
+            <xsd:element name="result" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="replacingSsin" type="common:SsinType" minOccurs="0">
+                    <xsd:annotation>
+                      <xsd:documentation>The SSIN replacing the requested SSIN</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="familyComposition" type="family:FamilyCompositionResponseType">
+                    <xsd:annotation>
+                      <xsd:documentation>The family composition found based on the given NR number</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:group ref="common:BusinessAnomaliesContentFragment"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!--======================================== GetBySsinAndDate capability ========================================-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinAndDateRequestType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the request to fetch family composition information based on a number and a date</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseRequestType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:SearchFamilyCompositionBySsinAndDateCriteriaType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SearchFamilyCompositionBySsinAndDateResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the family composition information fetched based on a number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseResponseType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:SearchFamilyCompositionBySsinAndDateCriteriaType">
+            <xsd:annotation>
+              <xsd:documentation>The search criteria from the request</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="status" type="registriesCommon:StatusType"/>
+          <xsd:sequence>
+            <xsd:element name="result" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="replacingSsin" type="common:SsinType" minOccurs="0">
+                    <xsd:annotation>
+                      <xsd:documentation>The SSIN replacing the requested SSIN</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="familyCompositions" type="family:FamilyCompositionsResponseType">
+                    <xsd:annotation>
+                      <xsd:documentation>The family composition found based on the given NR number</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:group ref="common:BusinessAnomaliesContentFragment"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!--======================================== History capability ========================================-->
+  <xsd:complexType name="SearchFamilyCompositionHistoryBySsinResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the family composition history information fetched based on a number</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseResponseType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:SearchFamilyCompositionBySsinCriteriaType">
+            <xsd:annotation>
+              <xsd:documentation>The search criteria from the request</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="status" type="registriesCommon:StatusType"/>
+          <xsd:sequence>
+            <xsd:element name="result" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="replacingSsin" type="common:SsinType" minOccurs="0">
+                    <xsd:annotation>
+                      <xsd:documentation>The SSIN replacing the requested SSIN</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="familyCompositions" type="family:FamilyCompositionsResponseType">
+                    <xsd:annotation>
+                      <xsd:documentation>The family compositions found based on the given NR number</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:group ref="common:BusinessAnomaliesContentFragment"/>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!--======================================== criteria ========================================-->
+  <xsd:complexType name="SearchFamilyCompositionBySsinCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType">
+        <xsd:annotation>
+          <xsd:documentation>The NRnumber used to fetch family composition information</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="enrichWithActualPersonData" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the data must be enriched with the legal data of all persons in the response.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchFamilyCompositionBySsinAndDateCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType">
+        <xsd:annotation>
+          <xsd:documentation>The NRnumber used to fetch family composition information</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="date" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>The date to obtain the family composition situation on a given date</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="enrichWithActualPersonData" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the data must be enriched with the legal data of all persons in the response.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/familycomposition/familycomposition/FamilyCompositionDataV1.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: FamilyCompositionDataV1.xsd
+	* Author				: Jonas De Meulenaere
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain				: CBSS Registries Public Services
+	* Creation Date			: 18-06-2013
+	* Last revision date	: 18-06-2013
+	* Description			: This XML schema document contains a set of XML types and content model fragments used to model family compositions data within the CBSS domain. 
+	* Status				: 
+	* Current Version		: 0.1
+	* Revision History		: 18-06-2013	Creation
+	*
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/familycomposition/v1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0" xmlns:common="http://kszbcss.fgov.be/types/common/v3" xmlns:base="http://kszbcss.fgov.be/types/legaldata/v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/familycomposition/v1" xmlns:person="http://kszbcss.fgov.be/types/legaldata/person/v3">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="../common/CommonV3.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/legaldata/v3" schemaLocation="../legaldata/BaseLegalDataV3.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/legaldata/person/v3" schemaLocation="../legaldata/person/PersonLegalDataV3.xsd"/>
+  <xsd:complexType name="FamilyCompositionResponseType">
+    <xsd:sequence>
+      <xsd:element name="familyMember" type="tns:FamilyMemberType" maxOccurs="50"/>
+    </xsd:sequence>
+    <xsd:attribute name="source" type="base:SourceType">
+      <xsd:annotation>
+        <xsd:documentation>Element identifying the register which is the providing source of the family composition.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyMemberType">
+    <xsd:group ref="tns:FamilyMemberContentFragment"/>
+    <xsd:attribute name="source" type="base:SourceType">
+      <xsd:annotation>
+        <xsd:documentation>Element identifying the register which is the providing source of the family composition.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyMemberHistoryType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:FamilyMemberType">
+        <xsd:sequence>
+          <xsd:element name="expiryDate" type="xsd:date" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyCompositionWithLegalCohabitationResponseType">
+    <xsd:sequence>
+      <xsd:element name="familyMember" maxOccurs="50">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="tns:FamilyMemberContentFragment"/>
+            <xsd:element name="legalCohabitation" type="tns:LegalCohabitationType" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="source" type="base:SourceType">
+      <xsd:annotation>
+        <xsd:documentation>Element identifying the register which is the authentic source of the family composition.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyCompositionsResponseType">
+    <xsd:sequence>
+      <xsd:element name="familyComposition" type="tns:FamilyCompositionType" maxOccurs="25"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FamilyCompositionType">
+    <xsd:sequence>
+      <xsd:element name="familyMember" type="tns:FamilyMemberHistoryType" maxOccurs="50"/>
+    </xsd:sequence>
+    <xsd:attribute name="source" type="base:SourceType">
+      <xsd:annotation>
+        <xsd:documentation>Element identifying the register which is the providing source of the family composition.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:group name="FamilyMemberContentFragment">
+    <xsd:sequence>
+      <xsd:group ref="tns:FamilyMemberIdentificationContentFragment"/>
+      <xsd:element name="positionCode" type="tns:PositionCodeType"/>
+      <xsd:element name="positionDescription" type="base:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:sequence minOccurs="0">
+        <xsd:element name="cohousingCode" type="tns:CohousingCodeType">
+          <xsd:annotation>
+            <xsd:documentation>Only present for NR</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="cohousingDescription" type="base:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      </xsd:sequence>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="FamilyMemberIdentificationContentFragment">
+    <xsd:choice>
+      <xsd:sequence>
+        <xsd:element name="ssin" type="common:SsinType"/>
+        <xsd:element name="actualPerson" type="person:PersonResponseType" minOccurs="0"/>
+      </xsd:sequence>
+      <xsd:element name="fictionalIdentificationNumber">
+        <xsd:annotation>
+          <xsd:documentation>non-SSIN reference used at the NR for family members without NR number</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="11"/>
+            <xsd:minLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:choice>
+  </xsd:group>
+  <xsd:simpleType name="PositionCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CohousingCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="LegalCohabitationType">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="partnerSsin" type="common:SsinType"/>
+        <xsd:element name="partnerReference">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="11"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:element name="registration">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="registrationDate" type="xsd:date"/>
+            <xsd:element name="location" type="base:LocationType">
+              <xsd:annotation>
+                <xsd:documentation>Place where civil state was registered.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="registrationBailiff" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="bailiffName">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="1"/>
+                  <xsd:maxLength value="48"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="location" type="base:LocationType" minOccurs="0">
+              <xsd:annotation>
+                <xsd:documentation>Place where civil state was registered.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/familycomposition/common/CommonV3.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: CommonV3.xsd
+	* Author					: Johan Kumps - Peter Van den Bosch
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain					: CBSS Registries Public Services
+	* Creation Date			: 31-05-2010
+	* Last revision date	: 25-03-2011
+	* Description				: This XML schema document contains a set of Common XML  type definition and content model fragments for use in CBSS webservices and batch file schema definitions within the CBSS domain. 
+	* Status					: 
+	* Current Version		: 3.1
+	* Revision History		: 09-03-2011  	String2Type added
+	*														LegalContext added
+	*														DescriptionType refactored + lenght constraint 50 changed to 100
+	*														InformationCustomerType.ticket length constraint 32 changed to 36
+	*														LegalContext + IntegrationContext concepts added
+	*														RuntimeFaultType refactored to CBSSFaultType
+	*														Parameters added to BaseRequestType
+	*                                18-10-2011 		removed String100Type 
+   *                                         				Added InformationNotificationCBSS/InformationNotified
+   *                                         				Increased the max number of occurences of Information in CBSSFaultType from 5 to 15
+	*									25-10-2011	Refactored unbounded business errors to 25
+	*														Refactored SSINType to SsinType
+   *                          09-11-2011 Changed namespace to v3
+   *                                         thorough validation leading to modifications: see CBSS common XSD types.doc
+   *                           18-01-2011          informationNotified: identification renamed to notifiedIdentification (consistency)
+   *                                                          CbeNumberType: changed from 9 or 10 digits, to mandatory 10 digits
+  *                                                          added types for euro amounts, enterprise numbers and business unit numbers
+ *                                                          Removed status and business anomalies from BaseResponseType, as the request fields should be copied in the same order in the response
+*                                20-03-2012        Renamed BaseDescriptionType to DescriptionType, removed old DescriptionType
+*                                                        Removed DescriptionStyleParametersType
+*                                                        Removed RegisterCharacterSetType
+*                                 29-05-2012           Really remove RegisterCharacterSetType
+*								  14-11-2013		Added InformationCBSSBatchType
+*								  04-09-2014		Added SenderReceiverType
+*								  07-01-2015		Added SequenceNumberType
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/common/v3" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="3.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/common/v3">
+  <!--Request / response meta data-->
+  <xsd:simpleType name="SeverityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFORMATION"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="FATAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="UUIDType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TicketType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="36"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CbeNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE number identifying an enterprise or business unit</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{10}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EnterpriseNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE enterprise number (starting with 0 or 1)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-1]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusinessUnitNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE business unit number (starting with 2-8)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[2-8]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SsinType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre National</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Rijksregister</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero Bis</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bis register : Bisnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero TER</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bisregister : Ternummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="IntegrationContextType">
+    <xsd:annotation>
+      <xsd:documentation>deprecated type. Use InscriptionContextType instead in new XSDs</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="InscriptionContextType">
+    <xsd:annotation>
+      <xsd:documentation>The way in which an organization knows a person (textual equivalent of former numerical quality code)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SequenceNumberType">
+    <xsd:restriction base="xsd:long">
+      <xsd:minInclusive value="1"/>
+      <xsd:totalDigits value="15"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="InformationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block from CBSS.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType"/>
+      <xsd:element name="timestampReceive" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time request was received by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationCustomerType">
+    <xsd:annotation>
+      <xsd:documentation>Information block that can be used by the customer for diagnostic use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Client can assign their own ticket reference for the request. Not mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="customerIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationSupplierType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for supplier of a service</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReceive" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="supplierIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotificationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated type. Use SenderReceiverType in new batch XSDs. Information block for CBSS info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotifiedType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated type. Use SenderReceiverType in new batch XSDs. Information block for partner info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0"/>
+      <xsd:element name="timestampReply" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="notifiedIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationCBSSBatchType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated type. Use SenderReceiverType in new batch XSDs</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="fileId" type="xsd:unsignedLong"/>
+      <xsd:element name="fileCreationTimestamp" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SenderReceiverType">
+    <xsd:annotation>
+      <xsd:documentation>Information block containing info about the sender or receiver of a message.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The partner can assign a ticket reference to the message. Not mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when message was sent.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="organizationIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrganizationIdentificationType">
+    <xsd:choice>
+      <xsd:element name="cbeNumber" type="tns:CbeNumberType"/>
+      <xsd:sequence>
+        <xsd:element name="sector">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="institution">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="OpenPeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an optional end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="IncompleteDateType">
+    <xsd:annotation>
+      <xsd:documentation>A possibly incomplete date. Format yyyy-mm-dd, yyyy-mm-00 or yyyy-00-00</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="10"/>
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:pattern value="[0-2][0-9]{3}\-[0-1][0-9]\-[0-3][0-9]"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DescriptionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LanguageType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying the language of a given value</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NL"/>
+      <xsd:enumeration value="FR"/>
+      <xsd:enumeration value="DE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Errors and warnings structures-->
+  <xsd:group name="BusinessAnomaliesContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Structure reporting business errors to the consumer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="businessAnomalies" type="tns:BusinessAnomaliesType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="BusinessAnomaliesType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the part of the response containing business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="businessAnomaly" type="tns:BusinessAnomalyType" maxOccurs="25"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BusinessAnomalyType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of one business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique code referring to a description of this Fault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="description">
+        <xsd:annotation>
+          <xsd:documentation>Some description of this Fault</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CBSSFaultType">
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType" minOccurs="0"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="detail" type="tns:MessageType" maxOccurs="30"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageType">
+    <xsd:sequence>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="reasonCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="diagnostic">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="authorCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationType">
+    <xsd:sequence>
+      <xsd:element name="fieldName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="fieldValue" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Base types for most common request/response format for consultation type operations. Can be used to define request and response types with extension type inheritance. Don't use if it doesn't fit the requirements.-->
+  <xsd:complexType name="BaseRequestType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service requests</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType" minOccurs="0"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType">
+        <xsd:annotation>
+          <xsd:documentation>legal context under which the request was made</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BaseResponseType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service responses</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Commonly used status type for consultation type operations. Define another if it doesn't fit requirements.-->
+  <xsd:complexType name="StatusType">
+    <xsd:sequence>
+      <xsd:element name="value">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DATA_FOUND"/>
+            <xsd:enumeration value="NO_DATA_FOUND"/>
+            <xsd:enumeration value="NO_RESULT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="code">
+        <xsd:annotation>
+          <xsd:documentation>the code of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>the description of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="EuroPositiveAmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:maxExclusive value="1000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EuroAmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:maxExclusive value="1000000000000000"/>
+      <xsd:minExclusive value="-1000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EurocentPositiveAmountType">
+    <xsd:restriction base="xsd:unsignedLong">
+      <xsd:maxExclusive value="100000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EurocentAmountType">
+    <xsd:restriction base="xsd:long">
+      <xsd:minExclusive value="-100000000000000000"/>
+      <xsd:maxExclusive value="100000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/familycomposition/legaldata/BaseLegalDataV3.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: BaseLegalDataV3.xsd
+	* Author					: Johan Kumps
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain					: CBSS Registries Public Services
+	* Creation Date			: 31-05-2010
+	* Description				: This XML schema document contains a set of XML types and content model fragments used to model legal person data within the CBSS domain. 
+	* Status					: 
+	* Current Version		: 3.2
+	* Revision History		: 09-03-2011  	ForeignAddressContentFragment now contains an optional foreignCityCode element.
+    *														ForeignLocationContentFragment now contains an optional foreignCityCode element.
+	*														ForeignAddressRequestContentFragment now contains an optional foreignCityCode element.
+	*														ForeignLocationRequestContentFragment now contains an optional foreignCityCode element.
+	*														AddressContentFragment/number + length 10 constraint
+	*														AddressContentFragment/boxNumber + length 10 constraint
+	*														CivilStateInfoContentFragment/civilStateCode length constraint 5 changed to 2 (Leading to incompatible change)
+	*														NisCodeType + length 5 constraint (Leading to incompatible change)
+	*														NobilityTitleContenctFragment added
+	*														BirthInfoContentFragment extended with ActContentFragment
+	*														ForeignLocationContentFragment added to CivilStateInfoContentFragment
+	*														ForeignLocationContentFragment. length constraint 3 changed to 5
+	*														foreignCityCode length constraint 10 changed to 5
+	*														foreignCityName length constraint 50 changed to 100
+	*														Refactored RegisterType to PersonType
+	*														Refactored to use common:SSINType
+	*														Removed SSINType
+	*														GenderCode refactored from String1Type to GenderType
+	*														Refactored to use common:IncompleteDateType
+	*														Removed IncompleteDateType
+	*														FamilyMember information removed
+	*									25-10-2011	Refactored PersonType to PersonClassType
+	*														Refactored person type to person class element
+	*														Refactored firstname to givenName
+	*									16-02-2012	New major version
+	*									16-03-2012	Added a content fragment for temporary address
+	*														Created AddressClassType
+	*														DescriptionType in CommonV3 changed, no language anymore: added specific DescriptionType here with optional language
+	*														Using CommonV3 DescriptionType for civilstate and nobilitytitle (adding a size constraint of 100)
+	*									04-04-2012	Removed class attribute from address types
+	*														Added new structure for diplomatic addresses and posts
+	*									07-09-2012	Codes in LegalData now possible in three languages
+	*												Removed act from BirthInfo 
+	*									01-10-2012	gender in request renamed to genderCode
+	*														Changed type for inceptionDate elements: now xsd:date
+	*									08-11-2012	name/name in request and response renamed to name/lastName
+	*									28-01-2013	New minor version 3.1
+	*														Added optional diplomaticPostName
+	*														Added switch for partnerSsin with new element partnerReference
+	*														Added AdministratorContentFragment
+	*									08-04-2014	New minor version 3.2:
+	*														Added BirthActContentFragment and BirthActTypeCode
+	*														Added birthAct to BirthInfoContentFragment
+	*														Added LegalCohabitationGroup, SubregisterGroup, AbsenceGroup, FiliationGroup
+	*														Added BirthGroup, DeceaseGroup, CivilStateGroup and NationalityGroup for consultation per datagroup
+	*									08-10-2014	Added expiration details for LegalCohabitation
+	*									08-10-2014	Extracted partner type from Civilstate and also used it in LegalCohabitation
+	*									04-02-2015	Created DiplomaticAddressHistoryContentFragment with multiple postaddresses to use in ResidentialAddressHistoryContentFragment
+	*									10-02-2015	Created PlainAddressHistoryType to reflect expiry dates for diplomatic addresses and post addresses
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/legaldata/v3" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="3.3.1" xmlns:common="http://kszbcss.fgov.be/types/common/v3" xmlns:tns="http://kszbcss.fgov.be/types/legaldata/v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="../common/CommonV3.xsd"/>
+  <!--Response content fragments-->
+  <xsd:group name="NameInfoContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the NameInfo part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="lastName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="givenName" type="tns:GivenNameType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="NationalityInfoContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the NationalityInfo part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="nationalityCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:unsignedShort">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="nationalityDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="BirthInfoContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the BirthInfo part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="birthDate" type="common:IncompleteDateType"/>
+      <xsd:element name="birthPlace" type="tns:LocationType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="DeceaseInfoContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the DeceaseInfo part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="deceaseDate" type="common:IncompleteDateType"/>
+      <xsd:element name="deceasePlace" type="tns:LocationType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="GenderInfoContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the GenderInfo part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="genderCode" type="tns:GenderCodeType"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="CivilStateInfoContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the CivilStateInfo part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="civilStateCode" type="tns:CivilstateCodeType"/>
+      <xsd:element name="civilStateDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="partner" type="tns:PartnerType" minOccurs="0"/>
+      <xsd:element name="location" type="tns:LocationType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Place where civil state was registered.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="SisOrIsiContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the social identification part of the person information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="hasSocialIdentificationCard" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!--Request content fragments-->
+  <xsd:group name="NameInfoRequestContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the NameInfo part of the person information to be provided by the customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="lastName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="givenName" type="tns:GivenNameType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="inceptionDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="NationalityInfoRequestContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the NationalityInfo part of the person information to be provided by the customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="nationalityCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date"/>
+      <xsd:element name="expiryDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="BirthInfoRequestContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the BirthInfo part of the person information to be provided by the customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="birthDate" type="common:IncompleteDateType"/>
+      <xsd:element name="birthPlace" type="tns:LocationType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="DeceaseInfoRequestContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the DeceaseInfo part of the person information to be provided by the customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="deceaseDate" type="common:IncompleteDateType"/>
+      <xsd:element name="deceasePlace" type="tns:LocationType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="GenderInfoRequestContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the GenderInfo part of the person information to be provided by the customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="genderCode" type="tns:GenderCodeType"/>
+      <xsd:element name="inceptionDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="CivilStateInfoRequestContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the CivilStateInfo part of the person information to be provided by the customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="civilStateCode" type="tns:CivilstateCodeType"/>
+      <xsd:element name="partnerSsin" type="common:SsinType" minOccurs="0"/>
+      <xsd:element name="location" type="tns:LocationType" minOccurs="0"/>
+      <xsd:element name="inceptionDate" type="xsd:date"/>
+      <xsd:element name="expiryDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!--General content fragments-->
+  <xsd:group name="NobilityTitleContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Type describing the nobility title of a person.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="nobilityTitleCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="nobilityTitleDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="ResidentialAddressContentFragment">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="residentialAddress" type="tns:AddressType">
+          <xsd:annotation>
+            <xsd:documentation>Element containing all information comprised in the residential address datagroup of the found person</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:group ref="tns:DiplomaticAddressContentFragment"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="ResidentialAddressHistoryContentFragment">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="residentialAddress" type="tns:AddressHistoryType">
+          <xsd:annotation>
+            <xsd:documentation>Element containing all information comprised in the residential address datagroup of the found person</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:group ref="tns:DiplomaticAddressHistoryContentFragment"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="AdministratorContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Information only available from the NR</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="location" type="tns:LocationType"/>
+        <xsd:element name="specialNotion" type="tns:SpecialNotionType"/>
+      </xsd:choice>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="DiplomaticAddressContentFragment">
+    <xsd:sequence>
+      <xsd:element name="diplomaticPost" type="tns:DiplomaticPostType">
+        <xsd:annotation>
+          <xsd:documentation>Diplomatic post responsible for the diplomatic address.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="diplomaticAddress" type="tns:PlainAddressType">
+        <xsd:annotation>
+          <xsd:documentation>Diplomatic address of the found person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="postAddress" type="tns:PlainAddressType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>An optional post address of the found person.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="DiplomaticAddressHistoryContentFragment">
+    <xsd:sequence>
+      <xsd:element name="diplomaticPost" type="tns:DiplomaticPostType">
+        <xsd:annotation>
+          <xsd:documentation>Diplomatic post responsible for the diplomatic address.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="diplomaticAddress" type="tns:PlainAddressHistoryType">
+        <xsd:annotation>
+          <xsd:documentation>Diplomatic address of the found person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="postAddress" type="tns:PlainAddressHistoryType" minOccurs="0" maxOccurs="10">
+        <xsd:annotation>
+          <xsd:documentation>An optional list of post address of the found person.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="TemporaryAddressContentFragment">
+    <xsd:sequence>
+      <xsd:element name="temporaryAddress" type="tns:PlainAddressType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!--Datagroup content fragments-->
+  <xsd:group name="SubregisterGroup">
+    <xsd:annotation>
+      <xsd:documentation>Information only available from the NR</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="subregisterCode" type="tns:NRSubregisterCodeType"/>
+      <xsd:element name="subregisterDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="LegalCohabitationGroup">
+    <xsd:annotation>
+      <xsd:documentation>Information only available from the NR</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="partner" type="tns:PartnerType"/>
+      <xsd:element name="registration">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="registrationDate" type="xsd:date"/>
+            <xsd:element name="location" type="tns:LocationType">
+              <xsd:annotation>
+                <xsd:documentation>Place where civil state was registered.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="registrationBailiff" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="bailiffName">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="48"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="location" type="tns:LocationType" minOccurs="0">
+                    <xsd:annotation>
+                      <xsd:documentation>Place where civil state was registered.</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="LegalCohabitationExpirationGroup">
+    <xsd:sequence>
+      <xsd:element name="expiryDate" type="xsd:date"/>
+      <xsd:element name="reasonCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:unsignedShort">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="99"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="reasonDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="location" type="tns:LocationType"/>
+      <xsd:element name="notificationDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="FiliationGroup">
+    <xsd:annotation>
+      <xsd:documentation>Information only available from the NR</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="filiationCode" type="tns:FiliationCodeType"/>
+      <xsd:element name="filiationDescription" type="common:DescriptionType" minOccurs="0"/>
+      <xsd:element name="parent" minOccurs="0" maxOccurs="2">
+        <xsd:complexType>
+          <xsd:complexContent>
+            <xsd:extension base="tns:ParentType">
+              <xsd:attribute name="sequence" use="required">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:unsignedShort">
+                    <xsd:maxInclusive value="3"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:attribute>
+            </xsd:extension>
+          </xsd:complexContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="actNumber" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="location" type="tns:LocationType" minOccurs="0"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="AbsenceGroup">
+    <xsd:annotation>
+      <xsd:documentation>Information only available from the NR</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="absenceCode" type="tns:AbsenceCodeType"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="BirthGroup">
+    <xsd:annotation>
+      <xsd:documentation>Model fragment describing the BirthInfo information as a separate entity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="birthDate" type="common:IncompleteDateType"/>
+      <xsd:element name="birthPlace" type="tns:LocationType" minOccurs="0"/>
+      <xsd:element name="actType" type="tns:ActType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="DeceaseGroup">
+    <xsd:annotation>
+      <xsd:documentation>Model describing the DeceaseInfo information as a separate entity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="deceaseDate" type="common:IncompleteDateType"/>
+      <xsd:element name="deceasePlace" type="tns:LocationType" minOccurs="0"/>
+      <xsd:element name="actType" type="tns:ActType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="CivilStateGroup">
+    <xsd:annotation>
+      <xsd:documentation>Model describing the CivilState information as a separate entity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="civilStateCode" type="tns:CivilstateCodeType"/>
+      <xsd:element name="civilStateDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="partner" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0">
+              <xsd:element name="partnerSsin" type="common:SsinType"/>
+              <xsd:element name="partnerReference">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="11"/>
+                    <xsd:minLength value="1"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+            </xsd:choice>
+            <xsd:element name="partnerBirthDate" type="common:IncompleteDateType" minOccurs="0"/>
+            <xsd:element name="partnerName" minOccurs="0">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:group ref="tns:NameInfoContentFragment"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="location" type="tns:LocationType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Place where civil state was registered.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="actNumber" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="NationalityGroup">
+    <xsd:annotation>
+      <xsd:documentation>Model describing the NationalityInfo as a separate entity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="nationalityCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:unsignedShort">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="nationalityDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="justification" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="justificationCode">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:unsignedShort">
+                  <xsd:minInclusive value="0"/>
+                  <xsd:maxInclusive value="999"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="justificationDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!--Types-->
+  <xsd:simpleType name="GenderCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="M"/>
+      <xsd:enumeration value="F"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CivilstateCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PersonRegisterType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying the register which is the authentic source of the legal data of a person.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="RR"/>
+      <xsd:enumeration value="BIS"/>
+      <xsd:enumeration value="RAD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="NRSubregisterCodeType">
+    <xsd:annotation>
+      <xsd:documentation>Code specifying the subregister of the National Registry in which the person can be found</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SourceType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying the register which is the authentic source of the legal data of a person.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NR"/>
+      <xsd:enumeration value="CBSS"/>
+      <xsd:enumeration value="BOTH"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ActCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="FiliationCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="GivenNameValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="48"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="GivenNameType">
+    <xsd:simpleContent>
+      <xsd:extension base="tns:GivenNameValueType">
+        <xsd:attribute name="sequence" use="required">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="3"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PartnerType">
+    <xsd:sequence>
+      <xsd:choice minOccurs="0">
+        <xsd:element name="partnerSsin" type="common:SsinType"/>
+        <xsd:element name="partnerReference">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="11"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:element name="partnerBirthDate" type="common:IncompleteDateType" minOccurs="0"/>
+      <xsd:element name="partnerName" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="tns:NameInfoContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ParentType">
+    <xsd:sequence>
+      <xsd:choice minOccurs="0">
+        <xsd:element name="parentSsin" type="common:SsinType"/>
+        <xsd:element name="parentReference">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="11"/>
+              <xsd:minLength value="1"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:element name="parentBirthDate" type="common:IncompleteDateType" minOccurs="0"/>
+      <xsd:element name="parentGender" type="tns:GenderCodeType" minOccurs="0"/>
+      <xsd:element name="parentName" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="tns:NameInfoContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="LocationType">
+    <xsd:annotation>
+      <xsd:documentation>Type describing a Belgian location (BelgianMunicipality). Can be used as a birthplace or decease place.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="countryCode" type="tns:CountryCodeType"/>
+      <xsd:element name="countryName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="cityCode" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="5"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="cityName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ActType">
+    <xsd:sequence>
+      <xsd:element name="actTypeCode" type="tns:ActCodeType"/>
+      <xsd:element name="actTypeDescription" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SpecialNotionType">
+    <xsd:annotation>
+      <xsd:documentation>Container for special NIS codes occurring in the information type 001</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="specialNotionCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="5"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="specialNotionName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PostalCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="15"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StreetCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="4"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="HouseNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="10"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="HouseIndexType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="4"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BoxNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="10"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PlainAddressType">
+    <xsd:sequence>
+      <xsd:element name="countryCode" type="tns:CountryCodeType">
+        <xsd:annotation>
+          <xsd:documentation>the country of this address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="countryName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="address" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>the actual address, in unformatted form</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PlainAddressHistoryType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:PlainAddressType">
+        <xsd:sequence>
+          <xsd:element name="expiryDate" type="xsd:date" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AddressType">
+    <xsd:sequence>
+      <xsd:element name="countryCode" type="tns:CountryCodeType"/>
+      <xsd:element name="countryName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="cityCode" type="tns:CityCodeType" minOccurs="0"/>
+      <xsd:element name="cityName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="postalCode" type="tns:PostalCodeType" minOccurs="0"/>
+      <xsd:element name="streetCode" type="tns:StreetCodeType" minOccurs="0"/>
+      <xsd:element name="streetName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="houseNumber" type="tns:HouseNumberType" minOccurs="0"/>
+      <xsd:element name="boxNumber" type="tns:BoxNumberType" minOccurs="0"/>
+      <xsd:element name="inceptionDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressHistoryType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AddressType">
+        <xsd:sequence>
+          <xsd:element name="expiryDate" type="xsd:date" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DiplomaticPostType">
+    <xsd:sequence>
+      <xsd:element name="countryCode" type="tns:CountryCodeType">
+        <xsd:annotation>
+          <xsd:documentation>Country code of the diplomatic post.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="countryName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xsd:element name="diplomaticPostCode" type="tns:DiplomaticPostCodeType">
+        <xsd:annotation>
+          <xsd:documentation>The official code of the diplomatic post.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="diplomaticPostName" type="tns:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CountryCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="999"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CityCodeType">
+    <xsd:annotation>
+      <xsd:documentation>For Belgian locations this is the "NISCode", for foreign locations the cityCode</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="5"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DescriptionType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying how a value that can exist in several languages will be modelled</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="common:DescriptionType">
+        <xsd:attribute name="language" type="common:LanguageType" use="optional"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="DiplomaticPostCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="9999"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AbsenceCodeType">
+    <xsd:restriction base="xsd:unsignedShort">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DatagroupStatusType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining possible statuses of a datagroup occurrence</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DATA_FOUND"/>
+      <xsd:enumeration value="NO_DATA_FOUND"/>
+      <xsd:enumeration value="NOT_SUPPORTED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/familycomposition/legaldata/person/PersonLegalDataV3.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: PersonLegalDataV3.xsd
+	* Author					: Johan Kumps
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain					: CBSS Registries Public Services
+	* Creation Date			: 31-05-2010
+	* Last revision date	: 16-03-2012
+	* Description				: This XML schema document contains a set of XML types and content model fragments used to model legal person data within the CBSS domain. 
+	* Status					: 
+	* Current Version		: 3.0
+	* Revision History		: 09-03-2011  	NobilityTitleContentFragment added
+	*														FamilyMembers datagroup removed
+	*														PaymentAddress information removed
+	*									25-10-2011	Refactored SSIN to camel case
+	*														Refactored PersonType to PersonClassType
+	*														Refactored person type to person class element
+	*														Refactored unbounded NationalityInfo to 20
+	*														Refactored unbounded CivilStateInfo to 20
+	*									16-02-2012	New major version
+	*									16-03-2012	Renamed residentialAddress to address
+	*														Readded temporaryAddress
+	*														CommonV3 BaseDescriptionType was renamed to DescriptionType
+	*									07-09-2012	Removed subregister
+	*									31-01-2013	added administrator
+	*
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/legaldata/person/v3" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="3.0" xmlns:common="http://kszbcss.fgov.be/types/common/v3" xmlns:base="http://kszbcss.fgov.be/types/legaldata/v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/legaldata/person/v3">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="../../common/CommonV3.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/legaldata/v3" schemaLocation="../BaseLegalDataV3.xsd"/>
+  <xsd:complexType name="PersonResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Type encapsulating all legaldata of a person specific for the PersonService</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType">
+        <xsd:annotation>
+          <xsd:documentation>The NR, BIS or RAD number of the found person (can be different from the ssin comprised in the request in case this ssin was replaced).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:group ref="tns:PersonLegalDataContentFragment" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="register" type="base:PersonRegisterType">
+      <xsd:annotation>
+        <xsd:documentation>Element identifying the register which is the authentic source of the legal data of this person. Will always be present if PersonLegalDataContentFragment is present.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:group name="PersonLegalDataContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Will not be returned if there was a problem fetching detailed information for the SSIN</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="nobilityTitle" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:NobilityTitleContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="name">
+        <xsd:annotation>
+          <xsd:documentation>Element containing all information comprised in the name datagroup of the found person</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:NameInfoContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="nationalities" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="nationality" maxOccurs="20">
+              <xsd:annotation>
+                <xsd:documentation>Element containing all information comprised in the nationality datagroup of the found person</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:group ref="base:NationalityInfoContentFragment"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="birth" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Element containing all information comprised in the birth datagroup of the found person</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:BirthInfoContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="decease" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Element containing all information comprised in the decease datagroup of the found person</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:DeceaseInfoContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="gender" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Element containing all information comprised in the gender datagroup of the found person</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:GenderInfoContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="civilStates" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="civilState" maxOccurs="20">
+              <xsd:annotation>
+                <xsd:documentation>Element containing all information comprised in the civilstate datagroup of the found person</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:group ref="base:CivilStateInfoContentFragment"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="address" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:ResidentialAddressContentFragment"/>
+            <xsd:group ref="base:TemporaryAddressContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="administrator" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group ref="base:AdministratorContentFragment"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/gbuyle/projects/fidus/householdservice/HouseHoldServiceGateway/src/main/resources/wsdl/houseHoldService/1.0.0/familycomposition/registries/common/RegistriesCommonV3.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: RegistriesCommonV3.xsd
+	* Author					: Johan Kumps - Peter Van den Bosch
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain					: CBSS Registries Public Services
+	* Creation Date			: 25-10-2011
+	* Last revision date	: 25-10-2011
+	* Description				: This XML schema document contains a set of Common XML  type definitions specific for the registries domain. 
+	* Status					: 
+	* Current Version		: 3.0
+	* Revision History		: 25-10-2011	Initial Version
+	*							16-02-2012	New major version
+	*							06-09-2012: 	Removed BaseRequestType and BaseResponseType because after removal of the characterSet, they offered nothing more than the common 	
+	*   											BaseRequestType and BaseResponseType
+	*												Added IntegrationContextType
+	*												Added StatusType specific for these services
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/registries/common/v3" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/registries/common/v3" xmlns:common="http://kszbcss.fgov.be/types/common/v3">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3" schemaLocation="../../common/CommonV3.xsd"/>
+  <xsd:complexType name="StatusType">
+    <xsd:sequence>
+      <xsd:element name="value" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="code">
+        <xsd:annotation>
+          <xsd:documentation>the code of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>the description of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationType">
+    <xsd:sequence>
+      <xsd:element name="fieldName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="fieldValue" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="GivenNameMatchingType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the possible ways to interpret the given firstnames during the phonetic search.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="FIRST_LETTER_FIRST_GIVENNAME"/>
+      <xsd:enumeration value="COMPLETE_FIRST_GIVENNAME"/>
+      <xsd:enumeration value="ALL_GIVENNAME"/>
+      <xsd:enumeration value="IGNORE_GIVENNAME"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RegisterIntegrationType">
+    <xsd:sequence>
+      <xsd:element name="integrationContext" type="common:IntegrationContextType">
+        <xsd:annotation>
+          <xsd:documentation>Context under which to register a person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="period" type="common:OpenPeriodType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://fidus.brussels/services/household/v1</con:endpoint><con:endpoint>https://localhost:8243/services/HouseHoldService_v1.0</con:endpoint></con:endpoints><con:operation id="6840708f-4b64-4c10-a785-d8c1c86bb37d" isOneWay="false" action="http://fidus.brussels/services/household/getHouseHold" name="getHouseHold" bindingOperationName="getHouseHold" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8b80d2e1-3894-48ba-8007-d90a3f2739ee" name="01 - Local Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/HouseHoldService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/household/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHouseHoldRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>85081509931</v1:personNumber>
+         </v1:request>
+      </v1:getHouseHoldRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/household/getHouseHold"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e1f103ea-b4e2-40f9-bc93-81c56deee7c1" isOneWay="false" action="http://fidus.brussels/services/household/searchFamilyCompositionBySsin" name="searchFamilyCompositionBySsin" bindingOperationName="searchFamilyCompositionBySsin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="78fa756f-3768-4943-b65e-ff12466aa5d6" name="01 - Local Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://fidus.brussels/services/household/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/household/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:searchFamilyCompositionBySsinRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>?</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>?</v1:personNumber>
+         </v1:request>
+      </v1:searchFamilyCompositionBySsinRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/household/searchFamilyCompositionBySsin"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="03df08f8-6d5c-4007-a658-cf4d3fe562a1" isOneWay="false" action="http://fidus.brussels/services/household/searchFamilyCompositionBySsinAndDate" name="searchFamilyCompositionBySsinAndDate" bindingOperationName="searchFamilyCompositionBySsinAndDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="64318859-122a-4d62-b0fc-da7f883a7d59" name="01 - Local Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://fidus.brussels/services/household/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/household/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:searchFamilyCompositionBySsinAndDateRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>?</v1:legalContext>
+         <v1:request>
+            <v1:criteria>
+               <v1:personNumber>?</v1:personNumber>
+               <!--Optional:-->
+               <v1:date>?</v1:date>
+               <!--Optional:-->
+               <v1:enrichWithActualPersonData>?</v1:enrichWithActualPersonData>
+            </v1:criteria>
+         </v1:request>
+      </v1:searchFamilyCompositionBySsinAndDateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/household/searchFamilyCompositionBySsinAndDate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6e95951b-59ae-4654-a7e1-10126593c4b4" isOneWay="false" action="http://fidus.brussels/services/household/searchFamilyCompositionHistoryBySsin" name="searchFamilyCompositionHistoryBySsin" bindingOperationName="searchFamilyCompositionHistoryBySsin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d7a7c5a9-2967-46c1-a262-955dec9698dd" name="01 - Local Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://fidus.brussels/services/household/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/household/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:searchFamilyCompositionHistoryBySsinRequest>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>?</v1:legalContext>
+         <v1:request>
+            <v1:criteria>
+               <v1:personNumber>?</v1:personNumber>
+               <!--Optional:-->
+               <v1:date>?</v1:date>
+               <!--Optional:-->
+               <v1:enrichWithActualPersonData>?</v1:enrichWithActualPersonData>
+            </v1:criteria>
+         </v1:request>
+      </v1:searchFamilyCompositionHistoryBySsinRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/household/searchFamilyCompositionHistoryBySsin"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,2954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Client-HandiService-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" id="a52b5fdc-404f-46ee-8b0a-e71f61a86f50" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="HandiServiceHTTPBinding" type="wsdl" bindingName="{http://fidus.brussels/service/handiservice/v1}HandiServiceHTTPBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/HandiService_v1.wsdl" id="57cdb0d8-5d82-4ceb-9a3f-19c196e2b0c3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/HandiService_v1.wsdl">
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/HandiService_v1.wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/service/handiservice/v1" name="HandiService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mes="http://fidus.brussels/service/handiservice/messages/v1" xmlns:tns="http://fidus.brussels/service/handiservice/v1">
+  <xsd:annotation>
+    <xsd:documentation>Handi service WDSL v1.</xsd:documentation>
+  </xsd:annotation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fidus.brussels/service/handiservice/v1" elementFormDefault="qualified">
+      <xsd:import namespace="http://fidus.brussels/service/handiservice/messages/v1" schemaLocation="messages/handiServiceMessages_v1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getHandiRequestMessage">
+    <wsdl:part name="GetHandiRequest" element="mes:getHandiRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getHandiResponseMessage">
+    <wsdl:part name="GetHandiResponse" element="mes:getHandiResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="HandiServicePortType">
+    <wsdl:operation name="getHandiFile">
+      <wsdl:input message="tns:getHandiRequestMessage"/>
+      <wsdl:output message="tns:getHandiResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HandiServiceHTTPBinding" type="tns:HandiServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getHandiFile">
+      <soap:operation soapAction="http://fidus.brussels/services/handiservice/getHandiFile"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HandiService_v1">
+    <wsdl:port name="HandiService_v1" binding="tns:HandiServiceHTTPBinding">
+      <soap:address location="http://fidus.brussels/services/handiservice/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/messages/handiServiceMessages_v1.xsd</con:url>
+        <con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/service/handiservice/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cme="http://fidus.brussels/type/common/messages/v1" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:tns="http://fidus.brussels/service/handiservice/messages/v1" xmlns:han="http://kszbcss.fgov.be/types/Handi/v1">
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="exceptionTypes_v1.xsd"/>
+  <xsd:import namespace="http://kszbcss.fgov.be/types/Handi/v1" schemaLocation="../handi/HandiTypesV1.xsd"/>
+  <xsd:complexType name="HandiRequestType">
+    <xsd:annotation>
+      <xsd:documentation>The person whose information is requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="personNumber" type="cme:PersonNumberType" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The basic identifier of a person is his personNumber.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="informationAtReferenceDate" type="han:InformationAtReferenceDateType" minOccurs="0"/>
+      <xsd:element name="paymentsAtPeriod" type="han:PeriodType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getHandiService definition-->
+  <xsd:complexType name="GetHandiRequestType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+      <xsd:element name="legalContext" type="cme:LegalContextType"/>
+      <xsd:element name="request" type="tns:HandiRequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Request getHandiService definition-->
+  <xsd:complexType name="GetHandiResponseType">
+    <xsd:sequence>
+      <xsd:element name="messageContext" type="cme:ResponseMessageContextType"/>
+      <xsd:element name="responses" type="tns:ResponsesType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Technical errors that occur when processing the message context e.g. insufficient rights.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponsesType">
+    <xsd:sequence>
+      <xsd:element name="response" type="tns:ResponseType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="file" type="han:FileType" minOccurs="0"/>
+      <xsd:element name="exceptions" type="exc:ExceptionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Business exceptions that occur when processing the request or response e.g. missing data for a single response element.
+						Exceptions at this level may contain back-end specific codes and content.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Element of the request and the response-->
+  <xsd:element name="getHandiRequest" type="tns:GetHandiRequestType"/>
+  <xsd:element name="getHandiResponse" type="tns:GetHandiResponseType"/>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/messages/baseMessageTypes_v1.xsd</con:url>
+        <con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/messages/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <!--Unformatted message Id-->
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--National Number of the person. Format depending on the Register-->
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Request message context-->
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Response message context-->
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by Fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by Fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Legal Context : the finality of the Privacy Commission-->
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" type="xsd:language" nillable="true">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/messages/exceptionTypes_v1.xsd</con:url>
+        <con:content><![CDATA[<xsd:schema targetNamespace="http://fidus.brussels/type/common/exceptions/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <!--Basic error typed-->
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element name="exception" type="tns:ExceptionType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/handi/HandiTypesV1.xsd</con:url>
+        <con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--=====================================================================
+* File Name          : HandiTypesV1.xsd
+* Author             : Alain Tilmant & Catherine Cocu  (BCSS)
+                      
+* Owner              : 
+* Domain             : 
+* Creation date      : 07/10/2014
+* Last revision date :  
+* Description        : support WS Handi (DB Tetra de la DGPH
+* Status             : Model
+* Current Version    : 1.1
+* Revision History
+* 07/10/2013 : adapter les informations pour un service a destination de plusieurs clients (CPAS, MRBC, VAPH, DG06, Studie Toelagen)
+* 08/10/2013 : ajout d'une operation et definition des premiers legal context
+* 14/10/2014 : ajout de tous les legal context connus a ce jour
+* 21/10/2013 : ajout des schemas de la DGPH pour reprendre ses types  particuliers d'adresse  (DGPH/BaseLegalDataV1.xsd + DGPH/common)
+* 28/10/2013 : suite aux premiers tests - decouvertes des adaptations unilaterales du schéma DGPH 
+								right : inversion totalMonthAmount & monthAmount
+								recognition : choice entre child and aldult
+								recognitionChild : unsuitability optional
+* 06/12/2013 : chgt nom handicapRecognition par handicapRecognitionDetails
+* 11/12/2013 : ajouter le ssin dans la reponse
+* 13/12/2013 : mettre deux occurences pour bloc socialCards
+* 20/12/2013 : noDataReasonType
+* 05/02/2014 : CategoryIVT add '-'   = ne s'applique pas
+* 12/05/2014 : correction legalContext + taille building 48 vs 24
+* 26/05/2014 : ajout des legal context de nouveaux clients
+* 02/09/2014 : ajout des legal context de nouveaux clients
+* 21/10/2014 : maj des legal context (27 a 31)-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/Handi/v1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2014-10-21" xmlns:tns="http://kszbcss.fgov.be/types/Handi/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:common="http://kszbcss.fgov.be/types/common/v3.0" xmlns:dgph="http://dgph.fgov.be/types/baselegaldata">
+  <xsd:import namespace="http://kszbcss.fgov.be/types/common/v3.0" schemaLocation="CommonV3.xsd"/>
+  <!--<xsd:import namespace="http://kszbcss.fgov.be/types/legaldata/v3" schemaLocation="BaseLegalDataV3.xsd"/>-->
+  <xsd:import namespace="http://dgph.fgov.be/types/baselegaldata" schemaLocation="DGPH/DGPHBaseLegalDataV1.xsd"/>
+  <xsd:complexType name="AbstractRequestCustomerType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Base complex type for all request messages.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="common:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="common:InformationCBSSType" minOccurs="0"/>
+      <xsd:element name="legalContext" type="tns:HandiLegalContext"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractResponseCustomerType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Base complex type for all response messages.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="common:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="common:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="tns:HandiLegalContext"/>
+      <!--<xsd:element name="status" type="common:StatusType"/>-->
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultFileRequestType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AbstractRequestCustomerType">
+        <xsd:sequence>
+          <xsd:element name="wantedInformation" type="tns:WantedInformationType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultFileResponseType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AbstractResponseCustomerType">
+        <xsd:sequence>
+          <xsd:element name="wantedInformation" type="tns:WantedInformationType"/>
+          <xsd:element name="status" type="common:StatusType"/>
+          <xsd:element name="file" type="tns:FileType" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultRightsAndPaymentsRequestType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AbstractRequestCustomerType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:CriteriaRightsAndPaymentsType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultRightsAndPaymentsResponseType">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AbstractResponseCustomerType">
+        <xsd:sequence>
+          <xsd:element name="criteria" type="tns:CriteriaRightsAndPaymentsType"/>
+          <xsd:element name="status" type="common:StatusType"/>
+          <xsd:element name="file" type="tns:FileType" minOccurs="0" maxOccurs="100"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EvolutionOfRequestType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="legislation" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="0"/>
+              <xsd:maxInclusive value="20"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="requestDate" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="administrativePendingRequest" type="xsd:boolean" minOccurs="0"/>
+        <xsd:element name="handicapRecognitionPending" type="xsd:boolean" minOccurs="0"/>
+        <xsd:element name="fileCompletionDate" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="appeal" type="xsd:boolean" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="FileType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element name="addressHandicappedPerson" type="tns:PersonDataType" minOccurs="0"/>
+      <xsd:element name="evolutionOfRequest" type="tns:EvolutionOfRequestType"/>
+      <!--from 5-->
+      <xsd:element name="handicapRecognition" type="tns:HandicapType"/>
+      <!--from 5-->
+      <xsd:element name="rights" type="tns:RightsType"/>
+      <!--from 100-->
+      <xsd:element name="socialCards" type="tns:SocialCardsType" maxOccurs="2"/>
+      <!--from 24-->
+      <xsd:element name="payments" type="tns:PaymentsType" maxOccurs="24"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HandicapRecognitionType">
+    <xsd:sequence>
+      <xsd:element name="lowerLimbs50p" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="fullBlindness" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="upperLimbsAmputated" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="upperLimbsParalyzed" type="xsd:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HandicapType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="dateOfDecision" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="startDateRecognition" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="endDateRecognition" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="handicapRecognitionDetails" type="tns:HandicapRecognitionType" minOccurs="0"/>
+        <xsd:choice>
+          <xsd:element name="resultRecognitionChild" type="tns:ResultRecognitionChildType" minOccurs="0"/>
+          <xsd:element name="resultRecognitionAdult" type="tns:ResultRecognitionAdultType" minOccurs="0"/>
+        </xsd:choice>
+      </xsd:sequence>
+    </xsd:choice>
+    <!--<xsd:element name="administrativeStatus" type="xsd:int"/>-->
+  </xsd:complexType>
+  <xsd:complexType name="PaymentsType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="yearMonth" type="xsd:gYearMonth" minOccurs="0"/>
+        <xsd:element name="amount" type="tns:MoneyAmountType" minOccurs="0"/>
+        <xsd:element name="cancelledPayment" type="xsd:boolean" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="PillarsType">
+    <xsd:sequence>
+      <xsd:element name="pillar1" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pillar2" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="12"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pillar3" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="18"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pillarsTotal" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="36"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResultRecognitionAdultType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="diminuationIndependence" minOccurs="0">
+          <xsd:complexType>
+            <xsd:choice>
+              <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+              <xsd:sequence>
+                <xsd:element name="mobility" type="tns:Int0_3Type" minOccurs="0"/>
+                <xsd:element name="nourishment" type="tns:Int0_3Type" minOccurs="0"/>
+                <xsd:element name="hygiene" type="tns:Int0_3Type" minOccurs="0"/>
+                <xsd:element name="household" type="tns:Int0_3Type" minOccurs="0"/>
+                <xsd:element name="supervision" type="tns:Int0_3Type" minOccurs="0"/>
+                <xsd:element name="socialSkills" type="tns:Int0_3Type" minOccurs="0"/>
+                <xsd:element name="totalPoints" minOccurs="0">
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:int">
+                      <xsd:minInclusive value="0"/>
+                      <xsd:maxInclusive value="18"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:choice>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="diminuationEarnings" type="xsd:boolean" minOccurs="0"/>
+        <xsd:element name="unsuitability" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="mentalUnsuitability" type="tns:Percentage" minOccurs="0"/>
+              <xsd:element name="physicalUnsuitability" type="tns:Percentage" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="ResultRecognitionChildType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="inabilityFollowCourse" type="xsd:boolean" minOccurs="0"/>
+        <xsd:element name="inabilityToWork" type="xsd:boolean" minOccurs="0"/>
+        <xsd:element name="disabilityCode" type="tns:Int0_3Type" minOccurs="0"/>
+        <xsd:element name="independencyScore" type="tns:Int0_3Type" minOccurs="0"/>
+        <xsd:element name="pillars" type="tns:PillarsType" minOccurs="0"/>
+        <xsd:element name="childPathology" type="xsd:boolean" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="RightsType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="period" type="common:OpenPeriodType" minOccurs="0"/>
+        <xsd:element name="legislation" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="3"/>
+              <xsd:maxInclusive value="9"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="totalMonthAmount" type="tns:MoneyAmountType" minOccurs="0"/>
+        <xsd:element name="monthAmount" type="tns:MoneyAmountType" minOccurs="0"/>
+        <xsd:element name="categoryIVT" type="tns:CategoryUVTType" minOccurs="0"/>
+        <xsd:element name="categoryIT" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="0"/>
+              <xsd:maxInclusive value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="partnerIncome" type="xsd:boolean" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="SocialCardsType">
+    <xsd:choice>
+      <xsd:element name="noDataReason" type="tns:NoDataReasonType"/>
+      <xsd:sequence>
+        <xsd:element name="deliveryDate" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="endDate" type="xsd:date" minOccurs="0"/>
+        <xsd:element name="cardNumber" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:pattern value="[0-9]{10}"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="cardType" type="tns:CardTypeType" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="WantedInformationType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element name="informationAtReferenceDate" type="tns:InformationAtReferenceDateType" minOccurs="0"/>
+      <xsd:element name="paymentsAtPeriod" type="tns:PeriodType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CardTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PARKINGCARD"/>
+      <xsd:enumeration value="REDUCTIONCARD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CategoryUVTType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="A"/>
+      <xsd:enumeration value="B"/>
+      <xsd:enumeration value="C"/>
+      <xsd:enumeration value="-"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Int0_3Type">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Percentage">
+    <xsd:annotation>
+      <xsd:documentation>A percentage number (from 0 to 100)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MoneyAmountType">
+    <xsd:annotation>
+      <xsd:documentation>An amount of money (max 999999999.99, with 2 decimals)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:totalDigits value="9"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PersonDataType">
+    <xsd:sequence>
+      <xsd:element name="lastName" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <!--Sometimes, people has no first name-->
+      <xsd:element name="firstName" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="24"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="address" type="dgph:AddressType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationAtReferenceDateType">
+    <xsd:sequence>
+      <xsd:element name="referenceDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>date de reference pour l'ensemble des informations demandées</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="evolutionOfRequest" type="xsd:boolean"/>
+      <xsd:element name="handicapRecognition" type="xsd:boolean"/>
+      <xsd:element name="rights" type="xsd:boolean"/>
+      <xsd:element name="socialCards" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!---->
+  <xsd:simpleType name="NoDataReasonType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no data in db"/>
+      <xsd:enumeration value="not requested"/>
+      <xsd:enumeration value="not authorized"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CriteriaRightsAndPaymentsType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element name="period" type="common:PeriodType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!---->
+  <xsd:complexType name="PeriodType">
+    <xsd:sequence>
+      <xsd:element name="startDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--21/10/2014-->
+  <xsd:simpleType name="HandiLegalContext">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="?"/>
+      <xsd:enumeration value="accompaniment of unemployed"/>
+      <xsd:enumeration value="assistance to individuals"/>
+      <xsd:enumeration value="calculation of the contribution for subsidies"/>
+      <xsd:enumeration value="calculation of the scholarship"/>
+      <xsd:enumeration value="CBSS validation"/>
+      <xsd:enumeration value="contribution for accomodation"/>
+      <xsd:enumeration value="debt recovery"/>
+      <xsd:enumeration value="determining solvency"/>
+      <xsd:enumeration value="exemption of fee registration"/>
+      <xsd:enumeration value="fiscal rebate"/>
+      <xsd:enumeration value="free fare for accompaniment"/>
+      <xsd:enumeration value="handicapped person AWIPH file"/>
+      <xsd:enumeration value="housing purchase and rental"/>
+      <xsd:enumeration value="internal processing"/>
+      <xsd:enumeration value="large family"/>
+      <xsd:enumeration value="minibus service"/>
+      <xsd:enumeration value="occupational adaptation contract"/>
+      <xsd:enumeration value="passenger with reduced mobility"/>
+      <xsd:enumeration value="relocation allowance"/>
+      <xsd:enumeration value="renovation subsidy"/>
+      <xsd:enumeration value="rent allowance"/>
+      <xsd:enumeration value="request for assistance"/>
+      <xsd:enumeration value="serious handicap"/>
+      <xsd:enumeration value="sickness fund - compulsory healthcare"/>
+      <xsd:enumeration value="social fraud"/>
+      <xsd:enumeration value="social inquiry"/>
+      <xsd:enumeration value="social rate mobile phone and internet"/>
+      <xsd:enumeration value="social service"/>
+      <xsd:enumeration value="subsidies for social housing agencies"/>
+      <xsd:enumeration value="visual deficiency"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/handi/CommonV3.xsd</con:url>
+        <con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+	* File Name				: CommonV3.xsd
+	* Author					: Johan Kumps - Peter Van den Bosch
+	* Owner					: Crossroad Bank for Social Security (CBSS)
+	* Domain					: CBSS Registries Public Services
+	* Creation Date			: 31-05-2010
+	* Last revision date	: 25-03-2011
+	* Description				: This XML schema document contains a set of Common XML  type definition and content model fragments for use in CBSS webservices and batch file schema definitions within the CBSS domain. 
+	* Status					: 
+	* Current Version		: 3.0
+	* Revision History		: 09-03-2011  	String2Type added
+	*														LegalContext added
+	*														DescriptionType refactored + lenght constraint 50 changed to 100
+	*														InformationCustomerType.ticket length constraint 32 changed to 36
+	*														LegalContext + IntegrationContext concepts added
+	*														RuntimeFaultType refactored to CBSSFaultType
+	*														Parameters added to BaseRequestType
+	*                                18-10-2011 		removed String100Type 
+   *                                         				Added InformationNotificationCBSS/InformationNotified
+   *                                         				Increased the max number of occurences of Information in CBSSFaultType from 5 to 15
+	*									25-10-2011	Refactored unbounded business errors to 25
+	*														Refactored SSINType to SsinType
+   *                          09-11-2011 Changed namespace to v3
+   *                                         thorough validation leading to modifications: see CBSS common XSD types.doc
+   *                           18-01-2011          informationNotified: identification renamed to notifiedIdentification (consistency)
+   *                                                          CbeNumberType: changed from 9 or 10 digits, to mandatory 10 digits
+  *                                                          added types for euro amounts, enterprise numbers and business unit numbers
+ *                                                          Removed status and business anomalies from BaseResponseType, as the request fields should be copied in the same order in the response
+*                                20-03-2012        Renamed BaseDescriptionType to DescriptionType, removed old DescriptionType
+*                                                        Removed DescriptionStyleParametersType
+*                                                        Removed RegisterCharacterSetType
+*                                 29-05-2012           Really remove RegisterCharacterSetType
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://kszbcss.fgov.be/types/common/v3.0" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kszbcss.fgov.be/types/common/v3.0">
+  <!--Request / response meta data-->
+  <xsd:simpleType name="SeverityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFORMATION"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="FATAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="UUIDType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TicketType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="36"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CbeNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE number identifying an enterprise or business unit</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{10}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EnterpriseNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE enterprise number (starting with 0 or 1)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-1]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusinessUnitNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE business unit number (starting with 2-8)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[2-8]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SsinType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre National</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Rijksregister</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero Bis</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bis register : Bisnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero TER</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bisregister : Ternummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="IntegrationContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="InformationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block from CBSS.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType"/>
+      <xsd:element name="timestampReceive" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time request was received by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationCustomerType">
+    <xsd:annotation>
+      <xsd:documentation>Information block that can be used by the customer for diagnostic use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Client can assign their own ticket reference for the request. Not mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="customerIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationSupplierType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for supplier of a service</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReceive" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="supplierIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotificationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for CBSS info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotifiedType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for partner info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0"/>
+      <xsd:element name="timestampReply" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="notifiedIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrganizationIdentificationType">
+    <xsd:choice>
+      <xsd:element name="cbeNumber" type="tns:CbeNumberType"/>
+      <xsd:sequence>
+        <xsd:element name="sector">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="institution">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="OpenPeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an optional end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="IncompleteDateType">
+    <xsd:annotation>
+      <xsd:documentation>A possibly incomplete date. Format yyyy-mm-dd, yyyy-mm-00 or yyyy-00-00</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="10"/>
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:pattern value="[0-2][0-9]{3}\-[0-1][0-9]\-[0-3][0-9]"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DescriptionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LanguageType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying the language of a given value</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NL"/>
+      <xsd:enumeration value="FR"/>
+      <xsd:enumeration value="DE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Errors and warnings structures-->
+  <xsd:group name="BusinessAnomaliesContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Structure reporting business errors to the consumer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="businessAnomalies" type="tns:BusinessAnomaliesType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="BusinessAnomaliesType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the part of the response containing business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="businessAnomaly" type="tns:BusinessAnomalyType" maxOccurs="25"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BusinessAnomalyType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of one business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique code referring to a description of this Fault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="description">
+        <xsd:annotation>
+          <xsd:documentation>Some description of this Fault</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CBSSFaultType">
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType" minOccurs="0"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="detail" type="tns:MessageType" maxOccurs="30"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageType">
+    <xsd:sequence>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="reasonCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="diagnostic">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="authorCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationType">
+    <xsd:sequence>
+      <xsd:element name="fieldName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="fieldValue" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Base types for most common request/response format for consultation type operations. Can be used to define request and response types with extension type inheritance. Don't use if it doesn't fit the requirements.-->
+  <xsd:complexType name="BaseRequestType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service requests</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType" minOccurs="0"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType">
+        <xsd:annotation>
+          <xsd:documentation>legal context under which the request was made</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BaseResponseType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service responses</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Commonly used status type for consultation type operations. Define another if it doesn't fit requirements.-->
+  <xsd:complexType name="StatusType">
+    <xsd:sequence>
+      <xsd:element name="value">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DATA_FOUND"/>
+            <xsd:enumeration value="NO_DATA_FOUND"/>
+            <xsd:enumeration value="NO_RESULT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="code">
+        <xsd:annotation>
+          <xsd:documentation>the code of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>the description of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="EuroPositiveAmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:maxExclusive value="1000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EuroAmountType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:maxExclusive value="1000000000000000"/>
+      <xsd:minExclusive value="-1000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EurocentPositiveAmountType">
+    <xsd:restriction base="xsd:unsignedLong">
+      <xsd:maxExclusive value="100000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EurocentAmountType">
+    <xsd:restriction base="xsd:long">
+      <xsd:minExclusive value="-100000000000000000"/>
+      <xsd:maxExclusive value="100000000000000000"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/handi/DGPH/DGPHBaseLegalDataV1.xsd</con:url>
+        <con:content><![CDATA[<!--============================================================================================================================
+* File Name          : DGPHBaseLegalDataV1.xsd
+* Author             : SPFSS + BCSS
+* Owner              : Crossroad Bank for Social Security (CBSS)
+* Domain             : CBSS Registries Public Services
+* Creation date      : 06-03-2013
+* Last revision date :  
+* Description	     : This XML schema document contains a set of XML types and content model fragments used to model legal person data. 
+* Status	     : 
+* Current Version    : 1.1
+* Revision History   : 
+* 30/09/2013 : schema adapte par la DGPH en consequence : (ATI)
+											* autre namespace
+											* changement de version
+*  05/02/2014 : (ATI) changer les noms et prefix namespace   avec DGPH
+* 28/04/2014 : agrandir la taille de building 48 vs 24
+============================================================================================================================-->
+<xs:schema targetNamespace="http://dgph.fgov.be/types/baselegaldata" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2014-04-28" xmlns="http://dgph.fgov.be" xmlns:tns="http://dgph.fgov.be/types/baselegaldata" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dgph_common="http://dgph.fgov.be/types/common/v3">
+  <xs:import namespace="http://dgph.fgov.be/types/common/v3" schemaLocation="DGPHCommonV3.xsd"/>
+  <xs:complexType name="PersonDataType">
+    <xs:sequence>
+      <xs:element name="lastName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="48"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Sometimes, people has no first name-->
+      <xs:element name="firstName" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="24"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="address" type="tns:AddressType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="building" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="48"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="streetCode" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{10}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="streetName" type="dgph_common:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="houseNumber" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="boxNumber" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="postalCode" type="tns:PostalCodeType" minOccurs="0"/>
+      <xs:element name="cityCode" type="tns:CityCodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>For Belgian locations this is the "NISCode", for foreign locations the cityCode</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cityName" type="dgph_common:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="countryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="countryName" type="dgph_common:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="date" type="xs:date" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="class" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of location: Belgian, Foreign or Diplomatic Post</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="belgianAddress"/>
+          <xs:enumeration value="foreignAddress"/>
+          <xs:enumeration value="diplomaticPost"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:simpleType name="BaseDescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CivilStateCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>single</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:documentation>married</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="25">
+        <xs:annotation>
+          <xs:documentation>annulment of marriage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26">
+        <xs:annotation>
+          <xs:documentation>putative marriage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="30">
+        <xs:annotation>
+          <xs:documentation>widow</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation>
+          <xs:documentation>divorced</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="41">
+        <xs:annotation>
+          <xs:documentation>divorced (from 01/10/1994)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="50">
+        <xs:annotation>
+          <xs:documentation>separated from bed and board</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="51">
+        <xs:annotation>
+          <xs:documentation>separated from bed and board (from 01/10/1994)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="60">
+        <xs:annotation>
+          <xs:documentation>repudiation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="80">
+        <xs:annotation>
+          <xs:documentation>partnership</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="81">
+        <xs:annotation>
+          <xs:documentation>end of partnership</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90">
+        <xs:annotation>
+          <xs:documentation>indeterminate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CityCodeType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CivilStateType">
+    <xs:sequence>
+      <xs:element name="date" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="suppressDate" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="civilStateCode" type="tns:CivilStateCodeType"/>
+      <xs:element name="partner" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="partnerSsin" type="dgph_common:SsinType" minOccurs="0"/>
+            <xs:element name="lastName" type="tns:NameType" minOccurs="0"/>
+            <xs:element name="givenName" type="tns:GivenNameType" minOccurs="0" maxOccurs="3"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeceaseType">
+    <xs:sequence>
+      <xs:element name="date" type="dgph_common:IncompleteDateType"/>
+      <xs:element name="suppressDate" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="actNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="deceasePlace" type="tns:LocationType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="GenderCodeType">
+    <xs:annotation>
+      <xs:documentation>The gender code  (omit, M = male, F = female)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:enumeration value="F"/>
+      <xs:enumeration value="M"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GivenNameType">
+    <xs:simpleContent>
+      <xs:extension base="tns:GivenNameValueType">
+        <xs:attribute name="sequence">
+          <xs:simpleType>
+            <xs:restriction base="xs:int">
+              <xs:maxInclusive value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="GivenNameValueType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="48"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IdentityType">
+    <xs:sequence>
+      <xs:element name="lastName" type="tns:NameType"/>
+      <xs:element name="givenName" type="tns:GivenNameType" minOccurs="0" maxOccurs="4"/>
+      <xs:element name="gender" type="tns:GenderCodeType" minOccurs="0"/>
+      <xs:element name="birthDate" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NationalityType">
+    <xs:sequence>
+      <xs:element name="date" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="suppressDate" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="nationalityCode" type="tns:NationalityCodeType"/>
+      <xs:element name="nationalityDescription" type="dgph_common:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InfoGenericType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string" minOccurs="0"/>
+      <xs:element name="label" type="tns:LabelType" minOccurs="0" maxOccurs="5"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InfoGenericRNType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="label" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LabelType">
+    <xs:annotation>
+      <xs:documentation>Type specifying how a value that can exist in several languages will be modelled</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="tns:BaseDescriptionType">
+        <xs:attribute name="language" type="dgph_common:LanguageType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="LocationType">
+    <xs:annotation>
+      <xs:documentation>Type describing a Belgian location (BelgianMunicipality). Can be used as a birthplace or decease place.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="countryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="countryName" type="dgph_common:DescriptionType" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="cityCode" type="tns:CityCodeType" minOccurs="0"/>
+      <xs:element name="cityName" type="dgph_common:DescriptionType" minOccurs="0" maxOccurs="3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NationalityCodeType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RegistrationRegisterType">
+    <xs:sequence>
+      <xs:element name="date" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="suppressDate" type="dgph_common:IncompleteDateType" minOccurs="0"/>
+      <xs:element name="register" type="tns:OriginType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OriginType">
+    <xs:annotation>
+      <xs:documentation>Type specifying the register which is the authentic source of the legal data of a person.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="code" type="xs:string" minOccurs="0"/>
+      <xs:element name="label" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:enumeration value="BCSS_KSZ"/>
+            <xs:enumeration value="RN_RR"/>
+            <xs:enumeration value="RN_RA"/>
+            <xs:enumeration value="RAD"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PostalCodeType">
+    <xs:annotation>
+      <xs:documentation>Type defining a postal code</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>file:/home/stijn/git/Fidus/handiservice/HandiServiceRegistry/wsdl/handiService/1.0.0/handi/DGPH/DGPHCommonV3.xsd</con:url>
+        <con:content><![CDATA[<!--edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by USER (KSZ-BCSS)-->
+<!--====================================================================================================================================
+* File Name             : DGPHCommonV3.xsd
+* Author                : Johan Kumps - Peter Van den Bosch
+* Owner                 : Crossroad Bank for Social Security (CBSS)
+* Domain                : CBSS Registries Public Services
+* Creation Date         : 31-05-2010
+* Last revision date	: 
+* Description           : This XML schema document contains a set of Common XML  type definition and content model fragments for use in CBSS webservices and batch file schema definitions within the CBSS domain. 
+* Status                : 
+* Current Version       : 3.0
+* Revision History      : 09-03-2011  	String2Type added
+*                                       LegalContext added
+*                                       DescriptionType refactored + lenght constraint 50 changed to 100
+*                                       InformationCustomerType.ticket length constraint 32 changed to 36
+*                                       LegalContext + IntegrationContext concepts added
+*                                       RuntimeFaultType refactored to CBSSFaultType
+*                                       Parameters added to BaseRequestType
+*                         18-10-2011    removed String100Type 
+*                                       Added InformationNotificationCBSS/InformationNotified
+*                                       Increased the max number of occurences of Information in CBSSFaultType from 5 to 15
+*                         25-10-2011    Refactored unbounded business errors to 25
+*                                       Refactored SSINType to SsinType
+*                         09-11-2011    Changed namespace to v3
+*                                       thorough validation leading to modifications: see CBSS common XSD types.doc
+*                         02/02/2011    added EN in langage enumeration, update SsinType and DescriptionType
+* 30/09/2013 : schema adapte par la DGPH en consequence : (ATI)
+											* autre namespace
+											* changement de version
+* 05/02/2014 : (ATI) changer les noms et prefix namespace   avec DGPH
+====================================================================================================================================-->
+<xsd:schema targetNamespace="http://dgph.fgov.be/types/common/v3" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="201402-05" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://dgph.fgov.be/types/common/v3">
+  <!--Request / response meta data-->
+  <xsd:simpleType name="SeverityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFORMATION"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="FATAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="UUIDType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TicketType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="36"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CbeNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE number identifying an enterprise or business unit</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{10}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EnterpriseNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE enterprise number (starting with 0 or 1)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-1]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Percentage">
+    <xsd:annotation>
+      <xsd:documentation>A percentage number (from 0 to 100)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MoneyAmountType">
+    <xsd:annotation>
+      <xsd:documentation>An amount of money (max 999999999.99, with 2 decimals)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:totalDigits value="9"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusinessUnitNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE business unit number (starting with 2-8)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[2-8]\d{9}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SsinType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\p{N}{11}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="IntegrationContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="InformationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block from CBSS.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType"/>
+      <xsd:element name="timestampReceive" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time request was received by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply was sent by CBSS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationCustomerType">
+    <xsd:annotation>
+      <xsd:documentation>Information block that can be used by the customer for diagnostic use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Client can assign their own ticket reference for the request. Not mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="customerIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationSupplierType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for supplier of a service</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReceive" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampReply" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="supplierIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotificationCBSSType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for CBSS info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticketCBSS" type="tns:UUIDType">
+        <xsd:annotation>
+          <xsd:documentation>UUID generated by Customer or Supplier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timestampSent" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time of request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationNotifiedType">
+    <xsd:annotation>
+      <xsd:documentation>Information block for partner info when CBSS notifies partner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ticket" type="tns:TicketType" minOccurs="0"/>
+      <xsd:element name="timestampReply" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="identification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrganizationIdentificationType">
+    <xsd:choice>
+      <xsd:element name="cbeNumber" type="tns:CbeNumberType"/>
+      <xsd:sequence>
+        <xsd:element name="sector">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="institution">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:unsignedShort">
+              <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="OpenPeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an optional end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containing a begin date and an end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="IncompleteDateType">
+    <xsd:annotation>
+      <xsd:documentation>A possibly incomplete date. Format yyyy-mm-dd, yyyy-mm-00 or yyyy-00-00</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="10"/>
+      <xsd:whiteSpace value="collapse"/>
+      <xsd:pattern value="^(19|20)\d\d[\-](0[0-9]|1[012])[\-](0[0-9]|[12][0-9]|3[01])$"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DescriptionType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying how a value that can exist in several languages will be modelled</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="tns:BaseDescriptionType">
+        <xsd:attribute name="language" type="tns:LanguageType"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="BaseDescriptionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DescriptionStyleParametersType">
+    <xsd:sequence>
+      <xsd:element name="descriptionExpected" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Using this element the consumer can specify whether the description of the given CTMS code is expected.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="descriptionLanguage" type="tns:LanguageType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The language the consumer can specify in order to receive code table value descriptions in the preferred language. If not provided the description will be provided in NL, FR and DE languages.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="errorDescriptionExpected" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Using this element the consumer can specify whether the description of the given error code is expected.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LanguageType">
+    <xsd:annotation>
+      <xsd:documentation>Type specifying the language of a given value</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NL"/>
+      <xsd:enumeration value="FR"/>
+      <xsd:enumeration value="DE"/>
+      <xsd:enumeration value="EN"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RegistersCharacterSetType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the possible character sets to use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ASCII"/>
+      <xsd:enumeration value="ASCII_ÄÖÜ"/>
+      <xsd:enumeration value="ASCII_CBSS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!--Errors and warnings structures-->
+  <xsd:group name="BusinessAnomaliesContentFragment">
+    <xsd:annotation>
+      <xsd:documentation>Structure reporting business errors to the consumer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="businessAnomalies" type="tns:BusinessAnomaliesType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="BusinessAnomaliesType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of the part of the response containing business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="businessAnomaly" type="tns:BusinessAnomalyType" maxOccurs="25"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BusinessAnomalyType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the structure of one business Faults</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique code referring to a description of this Fault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="description">
+        <xsd:annotation>
+          <xsd:documentation>Some description of this Fault</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CBSSFaultType">
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType" minOccurs="0"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="detail" type="tns:MessageType" maxOccurs="30"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageType">
+    <xsd:sequence>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="reasonCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="diagnostic">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="authorCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationType">
+    <xsd:sequence>
+      <xsd:element name="fieldName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="fieldValue" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Base types for most common request/response format for consultation type operations. Can be used to define request and response types with extension type inheritance. Don't use if it doesn't fit the requirements.-->
+  <xsd:complexType name="BaseRequestType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service requests</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType" minOccurs="0"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType">
+        <xsd:annotation>
+          <xsd:documentation>legal context under which the request was made</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BaseResponseType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service responses</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="informationCBSS" type="tns:InformationCBSSType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType"/>
+      <xsd:element name="status" type="tns:StatusType"/>
+      <xsd:element name="businessAnomalies" type="tns:BusinessAnomaliesType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!--Commonly used status type for consultation type operations. Define another if it doesn't fit requirements.-->
+  <xsd:complexType name="StatusType">
+    <xsd:sequence>
+      <xsd:element name="value">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DATA_FOUND"/>
+            <xsd:enumeration value="NO_DATA_FOUND"/>
+            <xsd:enumeration value="NO_RESULT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="code">
+        <xsd:annotation>
+          <xsd:documentation>the code of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>the description of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="information" type="tns:InformationType" minOccurs="0" maxOccurs="15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://fidus.brussels/services/handiservice/v1</con:endpoint>
+    </con:endpoints>
+    <con:operation isOneWay="false" action="http://fidus.brussels/services/handiservice/getHandiFile" name="getHandiFile" bindingOperationName="getHandiFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="7d9557bf-f666-43f9-8056-fdf3b2f96ea7">
+      <con:settings/>
+      <con:call name="1 - Local - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="955a1097-c542-4c09-a6f2-483fc6f3a196">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://localhost:8243/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>12003001507</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="2 - Dev - Request" outgoingWss="Outflow DEV" incomingWss="Inflow DEV" id="bea36874-6439-4a5a-9838-89db8f3645db">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.36.61:8243/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>12003001507</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - External - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="e1e794f5-01e4-47c0-9f2f-714892f44100">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-test.irisnetlab.be/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - LB - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="ef68c27a-1707-4d12-a4ed-30e02ba50e1a">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - Worker1 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="f75bb84f-311a-44c0-8f7e-0ab0eefc5f92">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.53:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="3 - Test - Worker2 - Request" outgoingWss="Outflow TEST" incomingWss="Inflow TEST" id="357b48f1-31ec-44e0-9d5e-55819804db8c">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.22.54:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - External - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="be702c79-e372-41c3-921c-109800bbc9a7">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.irisnetlab.be/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - LB - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="5255d5dd-98a8-4336-8b31-fda2ce593e19">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - Worker1 - Request" outgoingWss="Outflow STAG" incomingWss="Inflow STAG" id="32e0241c-bd5d-40a3-b42a-0e8e53bbd22a">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.16:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="4 - Staging - Worker2 - Request" incomingWss="Inflow STAG" outgoingWss="Outflow STAG" id="adad0654-94ad-4df3-80ad-f83df1414637">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.24.17:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - External - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="1adea0fb-209c-46d2-9d9b-9a3e16336ab7">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus.sec.brussels/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - LB - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="7708af39-f102-4906-a778-273345574977">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - Worker1 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="1582881a-69f0-44e0-ad84-83967e1388b6">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.26.22:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      <con:call name="5 - Prod - Worker2 - Request" outgoingWss="Outflow PROD" incomingWss="Inflow PROD" id="d70bbbc7-311f-4eab-8732-f0835d5ef9d0">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://192.168.26.19:8443/services/HandiService_v1.0</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiService"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="58b47e61-92c2-49a4-b3b7-135706295242" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="dd2ea452-c7be-4154-9b8b-766f7ec788e6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getHandiFile" searchProperties="true"><con:settings/><con:testStep type="request" id="a7076d28-7882-44a8-b827-10346eb5f76e" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase2 - Dev - Request" id="74c617a8-2a0b-45d5-9af2-f540ef930e05" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>12003001507</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="bb28bbdc-68f6-4386-a87c-9b3a0d6053a5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0cf0f1fb-9d4f-433f-a0a0-002b7eccfe49" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6c6c66d3-9ac5-4df1-9b6e-6c19ec931807" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="51532e20-cbb1-4746-ab83-3ea4dd96b3ee" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="18d15e61-00fc-4ba8-b45a-c87906fa8d98" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getHandiFile" searchProperties="true"><con:settings/><con:testStep type="request" id="2c394a58-82ff-49a3-8617-b380e2e1739f" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase3 - Test - External - Request" id="1ebe4f6c-ed25-4001-b1e5-bc6bfa02124a" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4b0666a8-1e09-4230-a050-0aee10331040" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="195d3fdc-e867-4968-95ed-5c5be1671a80" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c83c4ba4-2064-434e-b236-c06164633797" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="3207ddcd-7181-4960-8a98-dbd4a8e68e71" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase3 - Test - LB - Request" id="43fd48d4-1d63-487a-a400-6493829c9626" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="136525c2-16e5-4be3-a135-950149af6684" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b07e2632-706a-4fe5-81af-8a73cc347956" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b5eb5f49-662a-4c7b-8d7d-84500102905a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="6cf9846d-0e5e-4a90-80f6-172ce17d8edc" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="30f07807-a734-4fb0-847c-9999c6809d28" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.53:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="14a9e29d-ae88-4f09-9989-8b611e39f713" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="e8e7009c-0c12-44cf-9744-6ac524904d95" name="SOAP Response"/><con:assertion type="Schema Compliance" id="139571e1-0dd2-486b-a449-a8ba90334fd8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="50199a04-74d4-47b3-8f3b-7a76c05b663e" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="14073906-2a87-4b28-ad6b-42b12a0cf97f" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.22.54:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>26091621808</v1:personNumber>
+            <v1:informationAtReferenceDate>
+               <referenceDate>2015-01-14</referenceDate>
+               <evolutionOfRequest>true</evolutionOfRequest>
+               <handicapRecognition>true</handicapRecognition>
+               <rights>true</rights>
+               <socialCards>true</socialCards>
+            </v1:informationAtReferenceDate>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-12-31</endDate>
+            </v1:paymentsAtPeriod>
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b09c030e-6ca4-40f4-bd9b-68e1453b32d6" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="39a51f90-349d-4622-b3bf-96309ac60c80" name="SOAP Response"/><con:assertion type="Schema Compliance" id="117f3858-0729-4029-8c00-55e768a41ad8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="635bef7a-1312-4118-a132-e302ac4472af" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="af4a9772-3e0b-4718-8133-afaf3aa0e90b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getHandiFile" searchProperties="true"><con:settings/><con:testStep type="request" id="d0904623-3c31-48f2-877f-52fa06547893" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase4 - Staging - External - Request" id="9cd50707-6702-4317-a52d-ece587a65316" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d1497ba6-9ae8-4095-9c9e-42d1db6a14ea" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="da0f0bd7-e8e7-4f6a-9e66-735a2d17214d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="67391f3b-5f1e-493c-8ce9-2b37fdbb1b9d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="6934626f-b6d1-4393-a2f5-1aec4678f89e" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase4 - Staging - LB - Request" id="05dc439b-5ec4-4fa0-a53f-c14e7e4f292f" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="246215fa-d854-4d6b-9178-9bab40786e99" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4871a16d-b3e4-4d4f-af76-7b639cc9a6af" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f04ac776-d0e9-4280-9bf1-bc67956d3372" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="634db5ff-ad6a-4ee3-8bd6-d9d6d4ff4d4a" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="20fd6a5e-9159-401c-acdc-421beea02055" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d2a8f5ba-6663-43b5-bb1d-5fd929db8e00" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c2f41f20-6493-405c-8eef-36367f2acfc1" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c672e655-9217-42fc-bea5-2495070d02d3" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="2e8c26d6-5746-47eb-9108-4060ff539bb4" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="6356aeb2-efa0-4ef6-be80-b8127828dfcd" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5f505e21-60ce-4322-b458-8f14092bbac0" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="95d104e5-3777-4df9-8574-528a0a0f4722" name="SOAP Response"/><con:assertion type="Schema Compliance" id="40accac1-75c3-425b-9f9e-e33fe88e18ef" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="5d78b46d-921e-44e5-9277-28a0432cb8f5" name="PROD"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5922e5d3-2055-4291-a72c-ad333c4aa615" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getHandiFile" searchProperties="true"><con:settings/><con:testStep type="request" id="641131b1-3c2d-4a64-ac96-8983b6ff0c19" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase5 - Prod - External - Request" id="717c4b06-d7e3-457d-8c8e-921e47c93cfc" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1daf3351-00ea-4b20-80aa-2dd3e2468260" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c46dc6ab-4280-4c74-9288-918e08549ead" name="SOAP Response"/><con:assertion type="Schema Compliance" id="62446244-a268-449f-b8da-3700be3bde90" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="237f1ff9-0900-450e-897b-4df87697f16c" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase5 - Prod - LB - Request" id="075d6032-8b2c-4988-ab67-d0ba5205f67b" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6d307f36-8c9f-4177-937c-040bf9aa8a70" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="243389a7-e670-40d1-83d3-53a5f3f5f4d0" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6c3efbaa-fef3-47bd-b67f-1a13a2ff3e7b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="d5bbda3c-ac87-4901-a228-f7856eb61881" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="ef5195fa-c62f-4019-adaf-fb893b49e058" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="3bcf9699-8d6f-41ea-be39-876b25e41f07" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="722a40d3-ee17-4f80-8096-0a8d308b8520" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ee7a7f91-c876-4f50-bc1e-b3ab4c0f6a43" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:testStep type="request" id="59398a38-1413-4239-ac1e-1055bfb65f50" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HandiServiceHTTPBinding</con:interface><con:operation>getHandiFile</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="c22152dc-83ab-4865-a9ac-f2cc5e26ffbb" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/HandiService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+         </v1:messageContext>
+         <v1:legalContext>ServiceIntegrator</v1:legalContext>
+         <v1:request>
+            <v1:personNumber>39091700873</v1:personNumber>
+            <v1:paymentsAtPeriod>
+               <startDate>2015-01-01</startDate>
+               <endDate>2015-10-01</endDate>
+            </v1:paymentsAtPeriod>            
+         </v1:request>
+      </v1:getHandiRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="93b64b5b-c778-4b41-8575-4e5abecce099" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2050500c-d839-4060-9727-bd9102d43824" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ec3e0706-94b4-44d2-a2c2-54a9d0c31fb7" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/handiservice/getHandiFile"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService port="8080" path="/" host="localhost.localdomain" name="MockService 1" id="46ccba7e-ac8d-41bc-a6e5-a6ed7fba862f">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting>
+    </con:settings>
+    <con:mockOperation name="getHandiFile" interface="HandiServiceHTTPBinding" operation="getHandiFile" id="d82dd292-d3a7-42e7-beb8-1ebf94d70f58">
+      <con:settings/>
+      <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+      <con:defaultResponse>MockResponse 1</con:defaultResponse>
+      <con:response name="MockResponse 1" encoding="UTF-8" id="63dc380b-a3ef-47d4-9169-4b5bafc7b888" httpResponseStatus="200">
+        <con:settings/>
+        <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/handiservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1" xmlns:v12="http://fidus.brussels/type/common/exceptions/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getHandiResponse>
+         <v1:messageContext>
+            <v11:messageId>?</v11:messageId>
+            <v11:transactionId>?</v11:transactionId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </v1:messageContext>
+         <!--Optional:-->
+         <v1:responses>
+            <v1:response>
+               <!--Optional:-->
+               <v1:file>
+                  <ssin>?</ssin>
+                  <!--Optional:-->
+                  <addressHandicappedPerson>
+                     <!--Optional:-->
+                     <lastName>?</lastName>
+                     <!--Optional:-->
+                     <firstName>?</firstName>
+                     <!--Optional:-->
+                     <address class="?">
+                        <!--Optional:-->
+                        <building>?</building>
+                        <!--Optional:-->
+                        <streetCode>?</streetCode>
+                        <!--0 to 3 repetitions:-->
+                        <streetName language="?">?</streetName>
+                        <!--Optional:-->
+                        <houseNumber>?</houseNumber>
+                        <!--Optional:-->
+                        <boxNumber>?</boxNumber>
+                        <!--Optional:-->
+                        <postalCode>?</postalCode>
+                        <!--Optional:-->
+                        <cityCode>?</cityCode>
+                        <!--0 to 3 repetitions:-->
+                        <cityName language="?">?</cityName>
+                        <countryCode>?</countryCode>
+                        <!--0 to 3 repetitions:-->
+                        <countryName language="?">?</countryName>
+                        <!--Optional:-->
+                        <date>?</date>
+                     </address>
+                  </addressHandicappedPerson>
+                  <evolutionOfRequest>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <noDataReason>?</noDataReason>
+                     <!--Optional:-->
+                     <legislation>?</legislation>
+                     <!--Optional:-->
+                     <requestDate>?</requestDate>
+                     <!--Optional:-->
+                     <administrativePendingRequest>?</administrativePendingRequest>
+                     <!--Optional:-->
+                     <handicapRecognitionPending>?</handicapRecognitionPending>
+                     <!--Optional:-->
+                     <fileCompletionDate>?</fileCompletionDate>
+                     <!--Optional:-->
+                     <appeal>?</appeal>
+                  </evolutionOfRequest>
+                  <handicapRecognition>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <noDataReason>?</noDataReason>
+                     <!--Optional:-->
+                     <dateOfDecision>?</dateOfDecision>
+                     <!--Optional:-->
+                     <startDateRecognition>?</startDateRecognition>
+                     <!--Optional:-->
+                     <endDateRecognition>?</endDateRecognition>
+                     <!--Optional:-->
+                     <handicapRecognitionDetails>
+                        <!--Optional:-->
+                        <lowerLimbs50p>?</lowerLimbs50p>
+                        <!--Optional:-->
+                        <fullBlindness>?</fullBlindness>
+                        <!--Optional:-->
+                        <upperLimbsAmputated>?</upperLimbsAmputated>
+                        <!--Optional:-->
+                        <upperLimbsParalyzed>?</upperLimbsParalyzed>
+                     </handicapRecognitionDetails>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <!--Optional:-->
+                     <resultRecognitionChild>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <noDataReason>?</noDataReason>
+                        <!--Optional:-->
+                        <inabilityFollowCourse>?</inabilityFollowCourse>
+                        <!--Optional:-->
+                        <inabilityToWork>?</inabilityToWork>
+                        <!--Optional:-->
+                        <disabilityCode>?</disabilityCode>
+                        <!--Optional:-->
+                        <independencyScore>?</independencyScore>
+                        <!--Optional:-->
+                        <pillars>
+                           <!--Optional:-->
+                           <pillar1>?</pillar1>
+                           <!--Optional:-->
+                           <pillar2>?</pillar2>
+                           <!--Optional:-->
+                           <pillar3>?</pillar3>
+                           <!--Optional:-->
+                           <pillarsTotal>?</pillarsTotal>
+                        </pillars>
+                        <!--Optional:-->
+                        <childPathology>?</childPathology>
+                     </resultRecognitionChild>
+                     <!--Optional:-->
+                     <resultRecognitionAdult>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <noDataReason>?</noDataReason>
+                        <!--Optional:-->
+                        <diminuationIndependence>
+                           <!--You have a CHOICE of the next 2 items at this level-->
+                           <noDataReason>?</noDataReason>
+                           <!--Optional:-->
+                           <mobility>?</mobility>
+                           <!--Optional:-->
+                           <nourishment>?</nourishment>
+                           <!--Optional:-->
+                           <hygiene>?</hygiene>
+                           <!--Optional:-->
+                           <household>?</household>
+                           <!--Optional:-->
+                           <supervision>?</supervision>
+                           <!--Optional:-->
+                           <socialSkills>?</socialSkills>
+                           <!--Optional:-->
+                           <totalPoints>?</totalPoints>
+                        </diminuationIndependence>
+                        <!--Optional:-->
+                        <diminuationEarnings>?</diminuationEarnings>
+                        <!--Optional:-->
+                        <unsuitability>
+                           <!--Optional:-->
+                           <mentalUnsuitability>?</mentalUnsuitability>
+                           <!--Optional:-->
+                           <physicalUnsuitability>?</physicalUnsuitability>
+                        </unsuitability>
+                     </resultRecognitionAdult>
+                  </handicapRecognition>
+                  <rights>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <noDataReason>?</noDataReason>
+                     <!--Optional:-->
+                     <period>
+                        <beginDate>?</beginDate>
+                        <!--Optional:-->
+                        <endDate>?</endDate>
+                     </period>
+                     <!--Optional:-->
+                     <legislation>?</legislation>
+                     <!--Optional:-->
+                     <totalMonthAmount>?</totalMonthAmount>
+                     <!--Optional:-->
+                     <monthAmount>?</monthAmount>
+                     <!--Optional:-->
+                     <categoryIVT>?</categoryIVT>
+                     <!--Optional:-->
+                     <categoryIT>?</categoryIT>
+                     <!--Optional:-->
+                     <partnerIncome>?</partnerIncome>
+                  </rights>
+                  <!--1 to 2 repetitions:-->
+                  <socialCards>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <noDataReason>?</noDataReason>
+                     <!--Optional:-->
+                     <deliveryDate>?</deliveryDate>
+                     <!--Optional:-->
+                     <endDate>?</endDate>
+                     <!--Optional:-->
+                     <cardNumber>?</cardNumber>
+                     <!--Optional:-->
+                     <cardType>?</cardType>
+                  </socialCards>
+                  <!--1 to 24 repetitions:-->
+                  <payments>
+                     <!--You have a CHOICE of the next 2 items at this level-->
+                     <noDataReason>?</noDataReason>
+                     <!--Optional:-->
+                     <yearMonth>?</yearMonth>
+                     <!--Optional:-->
+                     <amount>?</amount>
+                     <!--Optional:-->
+                     <cancelledPayment>?</cancelledPayment>
+                  </payments>
+               </v1:file>
+               <!--Optional:-->
+               <v1:exceptions>
+                  <!--1 or more repetitions:-->
+                  <v12:exception>
+                     <v12:type>?</v12:type>
+                     <v12:code>?</v12:code>
+                     <v12:source>?</v12:source>
+                     <v12:description>?</v12:description>
+                  </v12:exception>
+               </v1:exceptions>
+            </v1:response>
+         </v1:responses>
+         <!--Optional:-->
+         <v1:exceptions>
+            <!--1 or more repetitions:-->
+            <v12:exception>
+               <v12:type>?</v12:type>
+               <v12:code>?</v12:code>
+               <v12:source>?</v12:source>
+               <v12:description>?</v12:description>
+            </v12:exception>
+         </v1:exceptions>
+      </v1:getHandiResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/handiservice/getHandiFile"/>
+      </con:response>
+      <con:dispatchConfig/>
+    </con:mockOperation>
+    <con:properties/>
+  </con:mockService>
+  <con:properties/>
+  <con:wssContainer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing><con:outgoing><con:name>Outflow PROD</con:name></con:outgoing></con:wssContainer>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/><con:sensitiveInformation/>
+</con:soapui-project>

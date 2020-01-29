@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4fecc9ea-beac-47b9-a282-675dfa729910" activeEnvironment="Default" name="Client-BCSSInscriptionService-1.1-soapui-project" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="01a9184c-a147-4881-b2f0-0cbc40d5a6d0" wsaVersion="NONE" name="BCSSInscriptionServiceProxy_v1.1Soap11Binding" type="wsdl" bindingName="{http://fidus.brussels/services/InscriptionService/V1}BCSSInscriptionServiceProxy_v1.1Soap11Binding" soapVersion="1_1" anonymous="optional" definition="https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?wsdl"><con:part><con:url>https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fidus.brussels/services/InscriptionService/V1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:common="http://fidus.brussels/types/common/v3" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidus.brussels/services/InscriptionService/V1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ins="http://fidus.brussels/types/Inscription/v1">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://fidus.brussels/services/InscriptionService/V1">
+      <xsd:import namespace="http://fidus.brussels/types/Inscription/v1" schemaLocation="BCSSInscriptionServiceProxy_v1.1?xsd=InscriptionV1.xsd"/>
+      <xsd:import namespace="http://fidus.brussels/types/common/v3" schemaLocation="BCSSInscriptionServiceProxy_v1.1?xsd=CommonV3.xsd"/>
+      <xsd:element name="addInscriptionRequest" type="ins:AddInscriptionRequestType"/>
+      <xsd:element name="addInscriptionResponse" type="ins:AddInscriptionResponseType"/>
+      <xsd:element name="removeInscriptionRequest" type="ins:RemoveInscriptionRequestType"/>
+      <xsd:element name="removeInscriptionResponse" type="ins:RemoveInscriptionResponseType"/>
+      <xsd:element name="consultInscriptionsRequest" type="ins:ConsultInscriptionsRequestType"/>
+      <xsd:element name="consultInscriptionsResponse" type="ins:ConsultInscriptionsResponseType"/>
+      <xsd:element name="removeInscriptionFault" type="common:CBSSFaultType"/>
+      <xsd:element name="consultInscriptionFault" type="common:CBSSFaultType"/>
+      <xsd:element name="addInscriptionFault" type="common:CBSSFaultType"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultInscriptionsRequestMsg">
+    <wsdl:part name="consultInscriptionsRequestParam" element="tns:consultInscriptionsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="consultInscriptionsResponseMsg">
+    <wsdl:part name="consultInscriptionsResponseParam" element="tns:consultInscriptionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="fault">
+    <wsdl:part name="consulteInscriptionFaultParam" element="tns:consultInscriptionFault"/>
+  </wsdl:message>
+  <wsdl:message name="addInscriptionRequestMsg">
+    <wsdl:part name="addInscrptionRequestParam" element="tns:addInscriptionRequest"/>
+  </wsdl:message>
+  <wsdl:message name="addInscriptionResponseMsg">
+    <wsdl:part name="addInscriptionResponseParam" element="tns:addInscriptionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="removeInscriptionRequestMsg">
+    <wsdl:part name="removeInscriptionRequestParam" element="tns:removeInscriptionRequest"/>
+  </wsdl:message>
+  <wsdl:message name="removeInscriptionResponseMsg">
+    <wsdl:part name="removeInscriptionResponseparam" element="tns:removeInscriptionResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BCSSInscriptionServiceProxy_v1.1PortType">
+    <wsdl:operation name="consultInscriptions">
+      <wsdl:input message="tns:consultInscriptionsRequestMsg" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/consultInscriptions"/>
+      <wsdl:output message="tns:consultInscriptionsResponseMsg" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/InscriptionPortType/consultInscriptionsResponse"/>
+      <wsdl:fault message="tns:fault" name="fault" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/InscriptionPortType/consultInscriptions/Fault/fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="addInscription">
+      <wsdl:input message="tns:addInscriptionRequestMsg" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/addInscription"/>
+      <wsdl:output message="tns:addInscriptionResponseMsg" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/InscriptionPortType/addInscriptionResponse"/>
+      <wsdl:fault message="tns:fault" name="fault" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/InscriptionPortType/addInscription/Fault/fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="removeInscription">
+      <wsdl:input message="tns:removeInscriptionRequestMsg" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/removeInscription"/>
+      <wsdl:output message="tns:removeInscriptionResponseMsg" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/InscriptionPortType/removeInscriptionResponse"/>
+      <wsdl:fault message="tns:fault" name="fault" wsaw:Action="http://fidus.brussels/services/InscriptionService/V1/InscriptionPortType/removeInscription/Fault/fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BCSSInscriptionServiceProxy_v1.1Soap11Binding" type="tns:BCSSInscriptionServiceProxy_v1.1PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="consultInscriptions">
+      <soap:operation soapAction="http://fidus.brussels/services/InscriptionService/V1/consultInscriptions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addInscription">
+      <soap:operation soapAction="http://fidus.brussels/services/InscriptionService/V1/addInscription" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeInscription">
+      <soap:operation soapAction="http://fidus.brussels/services/InscriptionService/V1/removeInscription" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BCSSInscriptionServiceProxy_v1.1Soap12Binding" type="tns:BCSSInscriptionServiceProxy_v1.1PortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="consultInscriptions">
+      <soap12:operation soapAction="http://fidus.brussels/services/InscriptionService/V1/consultInscriptions" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap12:fault use="literal" name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addInscription">
+      <soap12:operation soapAction="http://fidus.brussels/services/InscriptionService/V1/addInscription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap12:fault use="literal" name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeInscription">
+      <soap12:operation soapAction="http://fidus.brussels/services/InscriptionService/V1/removeInscription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap12:fault use="literal" name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BCSSInscriptionServiceProxy_v1.1HttpBinding" type="tns:BCSSInscriptionServiceProxy_v1.1PortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="consultInscriptions">
+      <http:operation location="consultInscriptions"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInscription">
+      <http:operation location="addInscription"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeInscription">
+      <http:operation location="removeInscription"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BCSSInscriptionServiceProxy_v1.1">
+    <wsdl:port name="BCSSInscriptionServiceProxy_v1.1HttpSoap11Endpoint" binding="tns:BCSSInscriptionServiceProxy_v1.1Soap11Binding">
+      <soap:address location="/services/BCSSInscriptionServiceProxy_v1.1.BCSSInscriptionServiceProxy_v1.1HttpSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="BCSSInscriptionServiceProxy_v1.1HttpsSoap11Endpoint" binding="tns:BCSSInscriptionServiceProxy_v1.1Soap11Binding">
+      <soap:address location="/services/BCSSInscriptionServiceProxy_v1.1.BCSSInscriptionServiceProxy_v1.1HttpsSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="BCSSInscriptionServiceProxy_v1.1HttpsSoap12Endpoint" binding="tns:BCSSInscriptionServiceProxy_v1.1Soap12Binding">
+      <soap12:address location="/services/BCSSInscriptionServiceProxy_v1.1.BCSSInscriptionServiceProxy_v1.1HttpsSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="BCSSInscriptionServiceProxy_v1.1HttpSoap12Endpoint" binding="tns:BCSSInscriptionServiceProxy_v1.1Soap12Binding">
+      <soap12:address location="/services/BCSSInscriptionServiceProxy_v1.1.BCSSInscriptionServiceProxy_v1.1HttpSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="BCSSInscriptionServiceProxy_v1.1HttpsEndpoint" binding="tns:BCSSInscriptionServiceProxy_v1.1HttpBinding">
+      <http:address location="/services/BCSSInscriptionServiceProxy_v1.1.BCSSInscriptionServiceProxy_v1.1HttpsEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="BCSSInscriptionServiceProxy_v1.1HttpEndpoint" binding="tns:BCSSInscriptionServiceProxy_v1.1HttpBinding">
+      <http:address location="/services/BCSSInscriptionServiceProxy_v1.1.BCSSInscriptionServiceProxy_v1.1HttpEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?xsd=InscriptionV1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://fidus.brussels/types/Inscription/v1" version="20141210" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:exc="http://fidus.brussels/type/common/exceptions/v1" xmlns:common="http://fidus.brussels/types/common/v3" xmlns:tns="http://fidus.brussels/types/Inscription/v1" xmlns:cme="http://fidus.brussels/type/common/messages/v1">
+  <xsd:import namespace="http://fidus.brussels/types/common/v3" schemaLocation="BCSSInscriptionServiceProxy_v1.1?xsd=CommonV3.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/messages/v1" schemaLocation="BCSSInscriptionServiceProxy_v1.1?xsd=baseMessageTypes_v1.xsd"/>
+  <xsd:import namespace="http://fidus.brussels/type/common/exceptions/v1" schemaLocation="BCSSInscriptionServiceProxy_v1.1?xsd=exceptionTypes_v1.xsd"/>
+  <xsd:complexType name="ConsultInscriptionsRequestType">
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseRequestType">
+        <xsd:sequence>
+          <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+          <xsd:element minOccurs="0" name="userContext" type="cme:UserContextType"/>
+          <xsd:element name="criteria" type="tns:ConsultInscriptionsCriteriaType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultInscriptionsResponseType">
+    <xsd:sequence>
+      <xsd:element name="transactionId" type="cme:MessageIdType"/>
+      <xsd:element name="status" type="common:FidusStatusType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultInscriptionsCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element minOccurs="0" name="inscriptionContext" type="common:InscriptionContextType"/>
+      <xsd:element minOccurs="0" name="period" type="common:OpenPeriodType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddInscriptionRequestType">
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseRequestType">
+        <xsd:sequence>
+          <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+          <xsd:element minOccurs="0" name="userContext" type="cme:UserContextType"/>
+          <xsd:element name="criteria" type="tns:AddInscriptionCriteriaType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AddInscriptionResponseType">
+    <xsd:sequence>
+      <xsd:element name="transactionId" type="cme:MessageIdType"/>
+      <xsd:element name="status" type="common:FidusStatusType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddInscriptionCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element minOccurs="0" name="inscriptionContext" type="common:InscriptionContextType"/>
+      <xsd:element minOccurs="0" name="period" type="common:OpenPeriodType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RemoveInscriptionRequestType">
+    <xsd:complexContent>
+      <xsd:extension base="common:BaseRequestType">
+        <xsd:sequence>
+          <xsd:element name="messageContext" type="cme:RequestMessageContextType"/>
+          <xsd:element minOccurs="0" name="userContext" type="cme:UserContextType"/>
+          <xsd:element name="criteria" type="tns:RemoveInscriptionCriteriaType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RemoveInscriptionResponseType">
+    <xsd:sequence>
+      <xsd:element name="transactionId" type="cme:MessageIdType"/>
+      <xsd:element name="status" type="common:FidusStatusType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RemoveInscriptionCriteriaType">
+    <xsd:sequence>
+      <xsd:element name="ssin" type="common:SsinType"/>
+      <xsd:element minOccurs="0" name="inscriptionContext" type="common:InscriptionContextType"/>
+      <xsd:element minOccurs="0" name="period" type="common:OpenPeriodType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InscriptionsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="100" name="inscription" type="tns:InscriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InscriptionType">
+    <xsd:sequence>
+      <xsd:element name="organization" type="common:OrganizationIdentificationType"/>
+      <xsd:element name="qualityCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:unsignedShort">
+            <xsd:maxInclusive value="999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="inscriptionContext" type="common:InscriptionContextType"/>
+      <xsd:element minOccurs="0" name="period" type="common:OpenPeriodType">
+        <xsd:annotation>
+          <xsd:documentation>When the inscription is preliminary or
+						definitive, the period is absent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="timestamp" type="xsd:dateTime" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="NameType">
+    <xsd:sequence>
+      <xsd:element name="lastName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="givenName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="GenderCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="M"/>
+      <xsd:enumeration value="F"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="SsinWithRegisterType">
+    <xsd:simpleContent>
+      <xsd:extension base="common:SsinType">
+        <xsd:attribute name="register" type="tns:RegisterType" use="required"/>
+        <xsd:attribute name="replacing" type="xsd:boolean" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="RegisterType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NR"/>
+      <xsd:enumeration value="RAD"/>
+      <xsd:enumeration value="BIS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?xsd=CommonV3.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://fidus.brussels/types/common/v3" version="3.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/types/common/v3">
+  <xsd:simpleType name="SeverityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFORMATION"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="FATAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="UUIDType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TicketType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="36"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CbeNumberType">
+    <xsd:annotation>
+      <xsd:documentation>CBE number identifying an enterprise or business unit</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{10}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SsinType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre National</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Rijksregister</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero Bis</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bis register : Bisnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="FR">Registre Bis : numero TER</xsd:documentation>
+          <xsd:documentation xml:lang="NL">Bisregister : Ternummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="InscriptionContextType">
+    <xsd:annotation>
+      <xsd:documentation>The way in which an organization knows a person (textual equivalent of former numerical quality code)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="InformationCustomerType">
+    <xsd:annotation>
+      <xsd:documentation>Information block that can be used by the customer for diagnostic use.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ticket" type="tns:TicketType">
+        <xsd:annotation>
+          <xsd:documentation>Client can assign their own ticket reference for the request. Not mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestampSent" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="customerIdentification" type="tns:OrganizationIdentificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrganizationIdentificationType">
+    <xsd:sequence>
+      <xsd:element name="cbeNumber" type="tns:CbeNumberType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OpenPeriodType">
+    <xsd:annotation>
+      <xsd:documentation>Period containining a begin date and an optional end date.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="beginDate" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CBSSFaultType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element maxOccurs="30" name="detail" type="tns:MessageType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageType">
+    <xsd:sequence>
+      <xsd:element name="severity" type="tns:SeverityType"/>
+      <xsd:element name="reasonCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="diagnostic">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="authorCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="15" minOccurs="0" name="information" type="tns:InformationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformationType">
+    <xsd:sequence>
+      <xsd:element name="fieldName">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fieldValue">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="BaseRequestType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service requests</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType">
+        <xsd:annotation>
+          <xsd:documentation>legal context under which the request was made</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="BaseResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Type defining the base structure for all service responses</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="informationCustomer" type="tns:InformationCustomerType"/>
+      <xsd:element name="legalContext" type="tns:LegalContextType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StatusType">
+    <xsd:sequence>
+      <xsd:element name="value">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DATA_FOUND"/>
+            <xsd:enumeration value="NO_DATA_FOUND"/>
+            <xsd:enumeration value="NO_RESULT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="code">
+        <xsd:annotation>
+          <xsd:documentation>the code of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="description">
+        <xsd:annotation>
+          <xsd:documentation>the description of the status</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="15" minOccurs="0" name="information" type="tns:InformationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FidusStatusType">
+    <xsd:sequence>
+      <xsd:element name="value">
+        <xsd:annotation>
+          <xsd:documentation>global status of the result</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string"/>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?xsd=baseMessageTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/messages/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://fidus.brussels/type/common/v1" xmlns:tns="http://fidus.brussels/type/common/messages/v1">
+  <xsd:simpleType name="MessageIdType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PersonNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9][0-9](([0][0-9])|([1][0-2]))(([0-2][0-9])|([3][0-1]))(([0-9]{2}[1-9])|([0-9][1-9][0-9])|([1-9][0-9]{2}))(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>National Register format</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([2][0-9])|([3][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Bis Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+      <xsd:pattern value="[0-9][0-9](([4][0-9])|([5][0-2]))(([0-2][0-9])|([3][0-1]))[0-9]{3}(([0-8][0-9])|([9][0-7]))">
+        <xsd:annotation>
+          <xsd:documentation>CBSS Register format: Ter Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RequestMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>Message context block generated by the consumer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Consumer must assign their own MessageId reference for the request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when client sent request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseMessageContextType">
+    <xsd:annotation>
+      <xsd:documentation>MessageContext block generated by fidus.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique identifier generated by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="transactionId" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>A unique ID returned to the client for tracing purposes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="relatesTo" type="tns:MessageIdType">
+        <xsd:annotation>
+          <xsd:documentation>Optional field. The unique id of a previous batch file in this exchange Only used for responses.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time reply sent by fidus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LegalContextType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="64"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UserContextType">
+    <xsd:annotation>
+      <xsd:documentation>The user context defines information regarding the actual user performing a request.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="language" nillable="true" type="xsd:language">
+        <xsd:annotation>
+          <xsd:documentation>The preferred language of the actual user performing the request.
+						This influences the language in which response elements are cast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:9443/services/BCSSInscriptionServiceProxy_v1.1?xsd=exceptionTypes_v1.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fidus.brussels/type/common/exceptions/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fidus.brussels/type/common/exceptions/v1">
+  <xsd:complexType name="ExceptionsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="exception" type="tns:ExceptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionType">
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:ExceptionClassType"/>
+      <xsd:element name="code" type="tns:ExceptionCodeType"/>
+      <xsd:element name="source" type="tns:ExceptionSourceType"/>
+      <xsd:element name="description" type="tns:ExceptionDescriptionType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ExceptionClassType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="WARNING"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionCodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionSourceType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ExceptionDescriptionType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:8243/services/BCSSInscriptionServiceProxy_v1.1</con:endpoint></con:endpoints><con:operation id="3f5a7873-edb3-487d-b9f1-cc0b020e4335" isOneWay="false" action="http://fidus.brussels/services/InscriptionService/V1/addInscription" name="addInscription" bindingOperationName="addInscription" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd399de2-820f-4009-9358-ae2b15f1e841" name="Local"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/BCSSInscriptionServiceProxy_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/services/InscriptionService/V1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:addInscriptionRequest>
+         <informationCustomer>
+            <!--Optional:-->
+            <ticket>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</ticket>
+            <!--Optional:-->
+            <timestampSent>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</timestampSent>
+            <customerIdentification>
+               <cbeNumber>0240678477</cbeNumber>
+            </customerIdentification>
+         </informationCustomer>
+         <legalContext>FIDUS:UPDATE_PERSON_DATA</legalContext>
+         <messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:timestamp>
+         </messageContext>
+         <!--Optional:-->
+         <userContext>
+            <v11:language>fr</v11:language>
+         </userContext>
+         <criteria>
+            <ssin>86081744930</ssin>
+            <!--Optional:-->
+            <inscriptionContext>fidus:administrative_file</inscriptionContext>
+            <!--Optional:-->
+            <period>
+               <beginDate>2018-12-01</beginDate>
+               <!--Optional:-->
+               <endDate>2018-12-31</endDate>
+            </period>
+         </criteria>
+      </v1:addInscriptionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/InscriptionService/V1/addInscription"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9ac0c71b-fe31-4952-83b2-5bbffccc66e6" isOneWay="false" action="http://fidus.brussels/services/InscriptionService/V1/consultInscriptions" name="consultInscriptions" bindingOperationName="consultInscriptions" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8dfb7226-7827-4ca4-8bc9-d7b9db5dfb64" name="Local"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/BCSSInscriptionServiceProxy_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/services/InscriptionService/V1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:consultInscriptionsRequest>
+         <informationCustomer>
+            <!--Optional:-->
+            <ticket>?</ticket>
+            <!--Optional:-->
+            <timestampSent>?</timestampSent>
+            <customerIdentification>
+               <cbeNumber>?</cbeNumber>
+            </customerIdentification>
+         </informationCustomer>
+         <legalContext>?</legalContext>
+         <messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </messageContext>
+         <!--Optional:-->
+         <userContext>
+            <v11:language>?</v11:language>
+         </userContext>
+         <criteria>
+            <ssin>?</ssin>
+            <!--Optional:-->
+            <inscriptionContext>?</inscriptionContext>
+            <!--Optional:-->
+            <period>
+               <beginDate>?</beginDate>
+               <!--Optional:-->
+               <endDate>?</endDate>
+            </period>
+         </criteria>
+      </v1:consultInscriptionsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/InscriptionService/V1/consultInscriptions"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4e34129e-d164-47cf-93d9-80a471efc3f3" isOneWay="false" action="http://fidus.brussels/services/InscriptionService/V1/removeInscription" name="removeInscription" bindingOperationName="removeInscription" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="70b868e4-cbac-4664-bc16-c2ccdfbc717c" name="Local"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8243/services/BCSSInscriptionServiceProxy_v1.1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/services/InscriptionService/V1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:removeInscriptionRequest>
+         <informationCustomer>
+            <!--Optional:-->
+            <ticket>?</ticket>
+            <!--Optional:-->
+            <timestampSent>?</timestampSent>
+            <customerIdentification>
+               <cbeNumber>?</cbeNumber>
+            </customerIdentification>
+         </informationCustomer>
+         <legalContext>?</legalContext>
+         <messageContext>
+            <v11:messageId>?</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>?</v11:timestamp>
+         </messageContext>
+         <!--Optional:-->
+         <userContext>
+            <v11:language>?</v11:language>
+         </userContext>
+         <criteria>
+            <ssin>?</ssin>
+            <!--Optional:-->
+            <inscriptionContext>?</inscriptionContext>
+            <!--Optional:-->
+            <period>
+               <beginDate>?</beginDate>
+               <!--Optional:-->
+               <endDate>?</endDate>
+            </period>
+         </criteria>
+      </v1:removeInscriptionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/InscriptionService/V1/removeInscription"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="5347cd75-2ae1-4e8d-807e-02a99ac9e4f4" port="8088" path="/mockBCSSInscriptionServiceProxy_v1.1Soap11Binding" host="localhost.localdomain" name="BCSSInscriptionServiceProxy_v1.1Soap11Binding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="addInscription" id="47841134-abcf-455d-a382-0249053b6b13" interface="BCSSInscriptionServiceProxy_v1.1Soap11Binding" operation="addInscription"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="b87fee2d-eea6-4e84-9cf4-6c82f16dae74" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/services/InscriptionService/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:addInscriptionResponse>
+         <transactionId>?</transactionId>
+         <status>
+            <value>?</value>
+            <code>?</code>
+            <!--Optional:-->
+            <description>?</description>
+            <!--0 to 15 repetitions:-->
+            <information>
+               <fieldName>?</fieldName>
+               <!--Optional:-->
+               <fieldValue>?</fieldValue>
+            </information>
+         </status>
+      </v1:addInscriptionResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/InscriptionService/V1/addInscription"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="consultInscriptions" id="acbeaf55-7b72-43c4-8887-47d7ae0713c1" interface="BCSSInscriptionServiceProxy_v1.1Soap11Binding" operation="consultInscriptions"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6f227116-bf6e-43de-afcd-d8d35c23d75d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/services/InscriptionService/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:consultInscriptionsResponse>
+         <transactionId></transactionId>
+         <status>
+            <value></value>
+            <code></code>
+            <!--Optional:-->
+            <description>?</description>
+            <!--0 to 15 repetitions:-->
+            <information>
+               <fieldName>?</fieldName>
+               <!--Optional:-->
+               <fieldValue>?</fieldValue>
+            </information>
+         </status>
+      </v1:consultInscriptionsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/InscriptionService/V1/consultInscriptions"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="removeInscription" id="224735c5-c9b1-4af5-b851-d3a5b8339e00" interface="BCSSInscriptionServiceProxy_v1.1Soap11Binding" operation="removeInscription"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6ccdedb3-4985-4a2f-b1f1-246c01be9578" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/services/InscriptionService/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:removeInscriptionResponse>
+         <transactionId>?</transactionId>
+         <status>
+            <value>?</value>
+            <code>?</code>
+            <!--Optional:-->
+            <description>?</description>
+            <!--0 to 15 repetitions:-->
+            <information>
+               <fieldName>?</fieldName>
+               <!--Optional:-->
+               <fieldValue>?</fieldValue>
+            </information>
+         </status>
+      </v1:removeInscriptionResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/InscriptionService/V1/removeInscription"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
