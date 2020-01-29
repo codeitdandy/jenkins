@@ -30,11 +30,411 @@
                 <version>5.3.0</version>
                 
                 <executions>
+				<execution>
+                        <id>Fidus-VehicleService</id>
+                        <configuration>
+                            <projectFile>test-Client-VehicleService-1.1-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-UrbanismPermitService</id>
+                        <configuration>
+                            <projectFile>test-Client-UrbanismPermitService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-SocialTenantService</id>
+                        <configuration>
+                            <projectFile>test-Client-SocialTenantService-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-RegondesService</id>
+                        <configuration>
+                            <projectFile>test-Client-RegondesService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-ReferenceDirectoryService</id>
+                        <configuration>
+                            <projectFile>test-Client-ReferenceDirectoryService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-PersonService</id>
+                        <configuration>
+                            <projectFile>test-Client-PersonService-v1-1-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-RealEstateService</id>
+                        <configuration>
+                            <projectFile>test-Client-RealEstateService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-MessageForMeService</id>
+                        <configuration>
+                            <projectFile>test-Client-MessageForMeService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-LowEmissionZoneService</id>
+                        <configuration>
+                            <projectFile>test-Client-LowEmissionZoneService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-LivingWagesWithAmountService</id>
+                        <configuration>
+                            <projectFile>test-Client-LivingWagesWithAmountService-v1-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-InvoiceService</id>
+                        <configuration>
+                            <projectFile>test-Client-InvoiceService-2.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-InscriptionService</id>
+                        <configuration>
+                            <projectFile>test-Client-InscriptionService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-HouseHoldService</id>
+                        <configuration>
+                            <projectFile>test-Client-HouseHoldService-2.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-HandiService</id>
+                        <configuration>
+                            <projectFile>test-Client-HandiService-2.0--soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-FourthWayTransactionService</id>
+                        <configuration>
+                            <projectFile>test-Client-FourthWayTransactionService-1-0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteFourthWayDebtService</id>
+                        <configuration>
+                            <projectFile>test-Client-FourthWayDebtService-1-0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteFamilyAllocationService</id>
+                        <configuration>
+                            <projectFile>test-Client-FamilyAllocationService-2.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteEuropeanDisabilityCardService</id>
+                        <configuration>
+                            <projectFile>test-Client-EuropeanDisabilityCardService-2.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteEnterpriseSocialDebtService</id>
+                        <configuration>
+                            <projectFile>test-Client-EnterpriseSocialDebtService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteEnterpriseService</id>
+                        <configuration>
+                            <projectFile>test-Client-EnterpriseService-2.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteEnterpriseFiscalDebtService</id>
+                        <configuration>
+                            <projectFile>test-Client-EnterpriseFiscalDebtService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteEnterpriseDebtService</id>
+                        <configuration>
+                            <projectFile>test-Client-EnterpriseDebtService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteDmfaService</id>
+                        <configuration>
+                            <projectFile>test-Client-DmfaService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				<execution>
+                        <id>Fidus-TestSuiteDistrictTeamService</id>
+                        <configuration>
+                            <projectFile>test-Client-DistrictTeamService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+				 <execution>
+                        <id>Fidus-TestSuiteConsultLogService</id>
+                        <configuration>
+                            <projectFile>test-Client-ConsultLogService-1.0-soapui-project.xml</projectFile>
+                            <outputFolder>target/surefire-reports</outputFolder>
+                            <testSuite>TEST</testSuite>
+                            <junitReport>true</junitReport>
+                            <!--<exportwAll>true</exportwAll>-->
+                            <printReport>true</printReport>
+                            <testFailIgnore>true</testFailIgnore>
+                        </configuration>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
                     
 			  <execution>
                         <id>Fidus-TestSuiteCountry</id>
                         <configuration>
-                            <projectFile>Client-CountryService-1.0-soapui-project.xml</projectFile>
+                            <projectFile>test-Client-CountryService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -50,7 +450,7 @@
 			  <execution>
                         <id>Fidus-TestSuiteArchitectOrder</id>
                         <configuration>
-                            <projectFile>Client-ArchitectOrderService-1.0-soapui-project.xml</projectFile>
+                            <projectFile>test-Client-ArchitectOrderService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -66,7 +466,7 @@
 			 <execution>
                         <id>Fidus-TestSuiteAttestation</id>
                         <configuration>
-                            <projectFile>Client-AttestationService-1.0-soapui-project.xml</projectFile>
+                            <projectFile>test-Client-AttestationService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -80,9 +480,9 @@
                         <phase>test</phase>
                     </execution>
 			 <execution>
-                        <id>Fidus-TestSuiteHousehold</id>
+                        <id>Fidus-TestSuiteHandiService</id>
                         <configuration>
-                            <projectFile>Client-test-houseHoldService1.0.xml</projectFile>
+                            <projectFile>test-Client-HandiService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -98,7 +498,7 @@
 			<execution>
                         <id>Fidus-TestSuiteDimona</id>
                         <configuration>
-                            <projectFile>Client-test-DimonaService1.0.xml</projectFile>
+                            <projectFile>test-Client-DimonaService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -114,7 +514,7 @@
 			<execution>
                         <id>Fidus-TestSuiteCivilStatusDocument</id>
                         <configuration>
-                            <projectFile>Client-test-CivilStatusDocumentService1.0.xml</projectFile>
+                            <projectFile>test-Client-CivilStatusDocumentService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -130,7 +530,7 @@
 			<execution>
                         <id>Fidus-TestSuiteCivilStatusMigration</id>
                         <configuration>
-                            <projectFile>Client-test-CivilStatusMigrationService1.0.xml</projectFile>
+                            <projectFile>test-Client-CivilStatusMigrationService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
@@ -146,7 +546,7 @@
 			<execution>
                         <id>Fidus-TestSuiteCivilStatusNotification</id>
                         <configuration>
-                            <projectFile>Client-test-CivilStatusNotificationService1.0.xml</projectFile>
+                            <projectFile>test-Client-CivilStatusNotificationService-v1-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
