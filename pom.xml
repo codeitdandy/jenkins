@@ -210,7 +210,7 @@
 				<execution>
                         <id>Fidus-HandiService</id>
                         <configuration>
-                            <projectFile>test-Client-HandiService-2.0--soapui-project.xml</projectFile>
+                            <projectFile>test-Client-HouseHoldService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
