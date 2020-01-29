@@ -158,22 +158,7 @@
                         </goals>
                         <phase>test</phase>
                     </execution>
-				<execution>
-                        <id>Fidus-LivingWagesWithAmountService</id>
-                        <configuration>
-                            <projectFile>test-Client-LivingWagesWithAmountService-v1-soapui-project.xml</projectFile>
-                            <outputFolder>target/surefire-reports</outputFolder>
-                            <testSuite>TEST</testSuite>
-                            <junitReport>true</junitReport>
-                            <!--<exportwAll>true</exportwAll>-->
-                            <printReport>true</printReport>
-                            <testFailIgnore>true</testFailIgnore>
-                        </configuration>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <phase>test</phase>
-                    </execution>
+				
 				<execution>
                         <id>Fidus-InvoiceService</id>
                         <configuration>
