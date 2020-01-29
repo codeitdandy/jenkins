@@ -97,7 +97,7 @@
 				<execution>
                         <id>Fidus-PersonService</id>
                         <configuration>
-                            <projectFile>test-Client-PersonService-v1-1-soapui-project.xml</projectFile>
+                            <projectFile>test-Client-PersonService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
                             <testSuite>TEST</testSuite>
                             <junitReport>true</junitReport>
