@@ -47,22 +47,6 @@
                         <phase>test</phase>
                     </execution>
 				<execution>
-                        <id>Fidus-UrbanismPermitService</id>
-                        <configuration>
-                            <projectFile>test-Client-UrbanismPermitService-1.0-soapui-project.xml</projectFile>
-                            <outputFolder>target/surefire-reports</outputFolder>
-                            <testSuite>TEST</testSuite>
-                            <junitReport>true</junitReport>
-                            <!--<exportwAll>true</exportwAll>-->
-                            <printReport>true</printReport>
-                            <testFailIgnore>true</testFailIgnore>
-                        </configuration>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <phase>test</phase>
-                    </execution>
-				<execution>
                         <id>Fidus-SocialTenantService</id>
                         <configuration>
                             <projectFile>test-Client-SocialTenantService-soapui-project.xml</projectFile>
