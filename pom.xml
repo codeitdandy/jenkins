@@ -192,23 +192,7 @@
                         <phase>test</phase>
                     </execution>
 				<execution>
-                        <id>Fidus-HouseHoldService</id>
-                        <configuration>
-                            <projectFile>test-Client-HouseHoldService-2.0-soapui-project.xml</projectFile>
-                            <outputFolder>target/surefire-reports</outputFolder>
-                            <testSuite>TEST</testSuite>
-                            <junitReport>true</junitReport>
-                            <!--<exportwAll>true</exportwAll>-->
-                            <printReport>true</printReport>
-                            <testFailIgnore>true</testFailIgnore>
-                        </configuration>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <phase>test</phase>
-                    </execution>
-				<execution>
-                        <id>Fidus-HandiService</id>
+                        <id>Fidus-Household</id>
                         <configuration>
                             <projectFile>test-Client-HouseHoldService-1.0-soapui-project.xml</projectFile>
                             <outputFolder>target/surefire-reports</outputFolder>
