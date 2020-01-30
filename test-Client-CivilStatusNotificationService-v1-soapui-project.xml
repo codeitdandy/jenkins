@@ -2052,7 +2052,7 @@
          </v1:request>
       </v1:modifyMessageStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="18394975-77b1-4008-80f6-c2529d93e3d8" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1f1d34ff-4b20-4881-ae2f-070c283263f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createNotification" searchProperties="true"><con:settings/><con:testStep type="request" id="62646641-e3d2-4d97-b294-6bf604c1ef38" name="testcase2- DEV  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase2- DEV  - Request" id="415e2385-9ce9-49db-8d60-795df65d8fa6" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="ecf3d66d-43f0-4e2c-ba6b-f011056d2e9b" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9d40194d-7bc7-44eb-b54f-bb9797852220" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createNotification" searchProperties="true"><con:settings/><con:testStep type="request" id="b3bb508a-c9bb-4890-bd52-ab2fcbc6a14f" name="testcase2- DEV  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase2- DEV  - Request" id="2d906742-4f91-4a1b-9c86-e5abc8b17b03" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:createNotificationRequest>
@@ -2089,7 +2089,7 @@
          </v1:request>
       </v1:createNotificationRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="30811351-9269-4494-8e9a-d8e8075b59fd" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3832ced2-6736-4e97-b84b-8ba89bbad8d6" name="SOAP Response"/><con:assertion type="Schema Compliance" id="738ee002-5701-4470-b339-b475bf8e1488" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8a035265-2582-4403-9407-590f593d55c4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getMyMessagesStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="4dfacee3-6b70-476a-a07b-53f416b3f0ab" name="testcase2- DEV  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase2- DEV  - Request" id="8371caed-8834-4471-a284-9f6fe8ec82ae" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b0f461b2-d59d-4ece-9be7-18821f4f8338" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a7223f52-33aa-4374-8acd-449c9c63173d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c09f8514-72df-40f4-b749-0055a2edf002" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f07364ca-dfe7-437d-8dad-4f374df5e126" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getMyMessagesStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="9f1376ee-67e8-4d9e-a593-40cd3a89bd01" name="testcase2- DEV  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase2- DEV  - Request" id="a25cb77a-1ab2-4237-8994-cb4a38b8a311" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getMyMessagesStatusRequest>
@@ -2112,7 +2112,7 @@
          </v1:request>
       </v1:getMyMessagesStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="405a6891-1c2e-46d0-b3d4-640e5671d46f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="d927d7a4-d15c-4fa1-9f48-2549b93927a0" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b310e062-4e2c-4d5c-8134-84a609932232" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d6a8740f-fbf1-4a11-ba89-45d7aa4f990f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getNotifications" searchProperties="true"><con:settings/><con:testStep type="request" id="895bc92c-f5ba-403e-928b-80d3016e2a4b" name="testcase2- DEV - Request2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase2- DEV - Request2" id="de04b5fd-18e9-420e-9a6b-11a6500df56b" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="3a468944-e430-411f-8b78-e6ecfd31b8e3" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="e70b36db-210d-4f8d-a88a-e909c45e52b6" name="SOAP Response"/><con:assertion type="Schema Compliance" id="046dec2e-f474-4e5e-bd2e-5958b6c17379" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="042ea3a3-b5a4-4f30-a9c2-a2de9a15daca" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getNotifications" searchProperties="true"><con:settings/><con:testStep type="request" id="7f8e0ed8-4c6c-4b6b-a9bb-ea080436e0e2" name="testcase2- DEV - Request2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase2- DEV - Request2" id="fce29f6f-a367-4a7d-9737-2c44d488276e" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getNotificationsRequest>
@@ -2137,7 +2137,7 @@
          </v1:request>
       </v1:getNotificationsRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5d9b349b-3928-48aa-996a-04b53bd25e5f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="773c3d1c-b5ee-418e-9211-843332bb421d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4c8cb37e-365f-4752-9696-b599bfd6c20e" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0b2217c5-ee7e-462d-bf3f-d8d4bea299bc" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="modifyMessageStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="2d05c4cb-f0e8-4481-9f0e-d59f0cfbb9ac" name="testcase2- DEV  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase2- DEV  - Request" id="9206316e-7878-45cf-a1c2-6ed54334f9d2" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="57f67d18-4dce-4500-8572-26c5177f6435" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="121ca701-4df9-4da4-a03e-549dd1cd409d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d95bb89a-a739-4a34-9ca8-401e825b2970" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bb7adbf7-fc87-47e6-85fa-f4b36f4ffce4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="modifyMessageStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="6509da74-6423-4713-8fe4-cacea88e45b7" name="testcase2- DEV  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase2- DEV  - Request" id="1f697131-8b2d-40a0-8bcb-f2fe7bd92892" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.205:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:modifyMessageStatusRequest>
@@ -2155,7 +2155,7 @@
          </v1:request>
       </v1:modifyMessageStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5b45ae7f-ab2e-499f-aee8-5673e68a8154" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="55cdb077-8aa9-433e-b03f-f2f7bb02e053" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b47f2021-9551-4b79-b70f-2f07662ebf93" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="5396747c-cc2f-4398-90da-8d120ea9e1dd" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="38649762-28e3-49bf-b24b-7fed2f31d9d1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createNotification" searchProperties="true"><con:settings/><con:testStep type="request" id="f7b81afa-1358-429f-9418-fd5e553af8f9" name="testcase3- TEST - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - External - Request" id="a95e5ca6-8169-41ec-bf0c-d9592f7936b2" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="167fe0a0-a111-42b0-bab1-794267b3e90f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="80ab3dc1-e598-41ad-bcd9-d8ce08827287" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0b51f17c-0384-4944-9489-65a2db3a7885" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="2414bff6-e017-486d-9194-09a86d1c8072" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3b222d0e-21b8-4d70-b6d6-93715538bd08" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createNotification" searchProperties="true"><con:settings/><con:testStep type="request" id="b075b01a-10b6-4de1-881c-c3a99cb297c8" name="testcase3- TEST - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - External - Request" id="6e154927-2f35-4297-ac6a-09ce13e57847" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:createNotificationRequest>
@@ -2192,7 +2192,7 @@
          </v1:request>
       </v1:createNotificationRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="60cd9488-b36c-48d1-82aa-d6152351a167" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="1fbb0e5a-1161-479b-bc4e-0b5dc4a02b89" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0e76a853-b07d-4806-a3c1-0e2e1668a586" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="a499a57a-9154-40eb-a16b-9dc68b27b866" name="testcase3- TEST - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - LB - Request" id="465d0490-0a52-4c84-91c6-87bda960ea12" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="09d84ec7-51fa-4d8c-8f7f-5f7a856f5f2b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="34bc2cc0-1490-47b4-9240-3ab472e06ddc" name="SOAP Response"/><con:assertion type="Schema Compliance" id="da903e5a-6698-45ea-983b-05f742ffcbd8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="4a5abdb1-3265-4173-a844-46df258b5f6b" name="testcase3- TEST - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - LB - Request" id="ff45555f-36a9-410c-b1c1-f8607088f91a" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:createNotificationRequest>
@@ -2229,7 +2229,7 @@
          </v1:request>
       </v1:createNotificationRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="bd23b23f-91aa-4b51-a86c-2503f6a22e06" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="f5d313f4-269f-41e0-970c-ef1de6928999" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c35684ba-c948-45f4-ae71-dc3ef5669de2" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="f27a70f2-1ee3-40f5-a75b-91ba39abc873" name="testcase3- TEST - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - Worker 1  - Request" id="dc0a01e4-735b-4f87-99f2-6d6c6193dc06" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1455d57a-78c7-4f7f-a9c0-9cfa154221ad" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="accbfda3-547d-4b1c-9046-25e4b5875e48" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f016a7b5-a060-41b5-9e0c-21d1bb603795" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="317d7e21-38a4-408c-a33a-e7903ebda3cb" name="testcase3- TEST - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - Worker 1  - Request" id="725e4fb6-7438-481b-9c1f-a1742bb8f835" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:createNotificationRequest>
@@ -2265,7 +2265,7 @@
          </v1:request>
       </v1:createNotificationRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c585b9bb-46f1-4185-bd85-8f2c68c2532c" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="7cbf1b43-076a-4a33-9ea4-ba908760817b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f6d82164-e406-4b1a-b927-d88b1656fce4" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="8991d278-19d2-4207-8b57-c9a860b8d414" name="testcase3- TEST - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - Worker 2  - Request" id="2631e823-dc67-4d1c-a47e-4bceaa3b5f7c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6320a348-b196-4dfe-b232-4e33e35fb0dd" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2c909fff-dea0-4a6d-8ae7-a52e78404a31" name="SOAP Response"/><con:assertion type="Schema Compliance" id="30359c26-4886-4c0c-a413-f2df0ec0faf7" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="7dee0e75-3160-4fb1-bbf8-dd6065f6222e" name="testcase3- TEST - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase3- TEST - Worker 2  - Request" id="1041760d-c085-464c-9344-46974684e64c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:createNotificationRequest>
@@ -2302,7 +2302,7 @@
          </v1:request>
       </v1:createNotificationRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="8eff1f75-510b-4b52-afe8-1fddf8947dc9" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a52d9775-9b2e-4bb0-a24e-e065674a5dd4" name="SOAP Response"/><con:assertion type="Schema Compliance" id="cc0fa904-cd1b-4c59-9690-e7699c27eb87" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3a689f38-eec2-4786-a0cd-9257816b68c7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getMyMessagesStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="f59db6b8-eb97-4996-b037-158abc879947" name="testcase3- TEST - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - External  - Request" id="f99e8ca6-2ec4-4923-a113-5a46bbc2104b" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="26238e8e-d997-4b28-a194-1f945e293200" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="09873d1c-40b9-47b3-b9e8-ff9c6010fedb" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c5051d8e-82d4-459c-aece-d2dcb9182b18" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c3f18dc2-66c4-4694-b056-645b9771e6a0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getMyMessagesStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="98cc486b-8494-4f0d-b0f3-105226051347" name="testcase3- TEST - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - External  - Request" id="d20afee9-fae4-4fb4-848f-4c4c5e851a18" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getMyMessagesStatusRequest>
@@ -2325,7 +2325,7 @@
          </v1:request>
       </v1:getMyMessagesStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f2a1afe8-34a3-4426-921a-76416b25481e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4eb3144f-c14d-494f-a927-b1fa210fb5ee" name="SOAP Response"/><con:assertion type="Schema Compliance" id="8c24bab6-46fe-4be5-b0e6-a6fc1654b6dc" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="23428bb4-dcab-4170-83de-e6a441e25636" name="testcase3- TEST - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - LB  - Request" id="8d1192ac-eb50-4cf8-b8ae-12737ddc6ef6" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="521e6022-fc2b-4c06-823b-4b3f3f792f1e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="7925a7a2-740e-4cc3-a4f4-e5fcc25607df" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f05c8b78-f33b-4b26-bf74-6ee0a86e5910" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="c8a39eee-2b65-4dc3-8c2f-5e1bd417c4c2" name="testcase3- TEST - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - LB  - Request" id="5c073754-48ba-4ce3-8a0a-cb4896c55254" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getMyMessagesStatusRequest>
@@ -2348,7 +2348,7 @@
          </v1:request>
       </v1:getMyMessagesStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="7b02d69b-bc64-4d4e-b010-8ce23f0fc939" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8a777f4e-831a-49ae-bcb5-e33ea8dde329" name="SOAP Response"/><con:assertion type="Schema Compliance" id="8a5a62f8-a352-4784-a1fe-3b4afb30b8ae" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="a748c0a0-d6be-45d4-b0bf-abb08afaafe5" name="testcase3- TEST - Worker 1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - Worker 1 - Request" id="61fd7620-a4c4-449c-98f0-c1de92d6f4ce" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d4b16467-1263-44d8-9ebf-5057a7bbc8d3" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="fbca5ef9-cfff-4211-bb65-df94a2132f9b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="7ab2adcc-d109-4dca-9e1a-aa6ca9a2a8ad" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="2a87fb59-cebf-4302-bedd-fbd7345a223b" name="testcase3- TEST - Worker 1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - Worker 1 - Request" id="2eaa4052-dab4-4d76-b61c-d2b8b50b9959" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getMyMessagesStatusRequest>
@@ -2364,7 +2364,7 @@
          </v1:request>
       </v1:getMyMessagesStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="05c23f73-6100-4c22-8ee2-7e9b0e97fb1c" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="70cc37de-bac0-487d-9a34-e4cb62520c11" name="SOAP Response"/><con:assertion type="Schema Compliance" id="73a61f47-309a-4eba-9334-2b4e3da561be" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="c0215359-b71f-4006-a279-aaa90029eb11" name="testcase3- TEST - Worker 2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - Worker 2 - Request" id="76f23f12-8e37-478c-afd2-35e6056fa257" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c16d0b92-2a1a-44ee-80f9-ea4442244622" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0a5d35ea-87ce-4627-8fdc-150eaf1dfcbc" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ee53c842-46be-46e2-ab82-569ab0d2d395" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="05b5100c-9855-4b77-999f-4332bc8007b9" name="testcase3- TEST - Worker 2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase3- TEST - Worker 2 - Request" id="d3538504-1140-4667-8e7d-8ba80c81ee55" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getMyMessagesStatusRequest>
@@ -2387,7 +2387,7 @@
          </v1:request>
       </v1:getMyMessagesStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="10b005ce-46d8-42e5-93f1-6a384c0333dd" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b4f932de-88c4-47fe-8883-303579275178" name="SOAP Response"/><con:assertion type="Schema Compliance" id="fa844df9-22fe-4003-9146-ca05cfa746eb" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="57d32cc0-f0b3-47bf-af6b-cc26cf009bba" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getNotifications" searchProperties="true"><con:settings/><con:testStep type="request" id="5cde7698-0ffa-4dde-8a3b-a3085bbea2fb" name="testcase3 - TEST - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3 - TEST - External  - Request" id="3a1561f6-4cca-4391-b4a0-d4a1762bc83c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6f8d677a-124f-4078-973d-bc41842ca72a" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="fce4ff35-1e0c-4247-8cd8-d125c4a2560d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="62893147-0066-40f5-8dad-0153c1ec349a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f7bb4169-53fb-4547-98f4-e29b623d0907" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getNotifications" searchProperties="true"><con:settings/><con:testStep type="request" id="b5169306-e3d5-4aef-a9f8-87437c65b060" name="testcase3 - TEST - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3 - TEST - External  - Request" id="a79a56f2-fe6a-4dc9-9146-2f5c0f84a426" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getNotificationsRequest>
@@ -2412,7 +2412,7 @@
          </v1:request>
       </v1:getNotificationsRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ffd507b5-bd7b-4db5-8600-6d1056b69fa1" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="e55c192e-10a7-4688-93cb-df85928cec76" name="SOAP Response"/><con:assertion type="Schema Compliance" id="a0a3362f-c2c8-48fe-a43a-ccbc9404ac28" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="5a350a59-be10-425b-ac34-d71161462576" name="testcase3- TEST - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3- TEST - LB  - Request" id="ac0ec286-7d5b-435a-b0ed-53f0ac8467ee" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="587eca0a-3987-4355-992e-d85ab9acec85" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4aa94e22-d3ed-4bed-8ebc-45f4fb003a8e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="0cf67dd3-7b19-4e51-848d-9c2b82b06965" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="f71b4169-ee88-456a-a20f-bbe68b5e55a7" name="testcase3- TEST - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3- TEST - LB  - Request" id="814dbd33-052f-47c3-bc9f-3ef6b8930adb" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getNotificationsRequest>
@@ -2437,7 +2437,7 @@
          </v1:request>
       </v1:getNotificationsRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1c06f0a7-7b08-470b-a2be-aa72708c3d79" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="ea3c5ba5-f7fc-494a-806e-a7063532b6bb" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c131a481-59d2-4d98-a073-fd3ad908a329" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="f94d3f42-a9b0-4eb2-ad60-507a40ee1edf" name="testcase3- TEST - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3- TEST - Worker 1  - Request" id="a48cef97-4a82-4be5-b9ae-0bc0bcb5f48b" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="3dc2da8f-c9b8-4967-8654-166116de5e02" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="13f92dee-80f2-47e1-89ff-a6ef0dc98376" name="SOAP Response"/><con:assertion type="Schema Compliance" id="df995de7-8e1c-4212-b3c2-a074ec608447" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="94a5911d-5c07-40fe-aae5-be769f346c3d" name="testcase3- TEST - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3- TEST - Worker 1  - Request" id="a2fd3c33-b522-4964-a2c1-9bf2eb223de5" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getNotificationsRequest>
@@ -2462,7 +2462,7 @@
          </v1:request>
       </v1:getNotificationsRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f971ff6f-60af-4e41-93e2-f3022750b117" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="bb9df022-d357-40d9-82af-a4338905d749" name="SOAP Response"/><con:assertion type="Schema Compliance" id="061da81b-69c4-4813-a9f5-7be2bf59cc88" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="3ed8f144-9f9e-4351-8357-a13b2fcb7c40" name="testcase3- TEST - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3- TEST - Worker 2  - Request" id="93a2b23b-4802-4e37-8044-d69df1e60e82" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="aded2835-c8a1-4e96-aed8-d57b7346dabf" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="7988ccd7-4d5c-45d5-937f-863293d1f423" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6c58dd43-8a99-4e31-9dfb-2f81b33dce19" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="8feb5ef3-0bc8-43d6-a194-00273a1ab4ee" name="testcase3- TEST - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase3- TEST - Worker 2  - Request" id="4a6f9af7-3385-4886-b542-43e5a10ae27c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:getNotificationsRequest>
@@ -2487,7 +2487,7 @@
          </v1:request>
       </v1:getNotificationsRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="2e17d434-040a-4f46-9958-6c039d82f534" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="d6a1ea55-9fb2-4a75-b3a2-d44552fcb267" name="SOAP Response"/><con:assertion type="Schema Compliance" id="62dc6dd4-3d1c-4004-91d8-89ddb929acd9" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="202bd45a-88b7-49a0-bd28-ee2ed0498ef0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="modifyMessageStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="8b8f1066-922f-4e14-b236-887bff6ad053" name="testcase3- TEST - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - External  - Request" id="67a97b2c-4c6d-469f-9733-c6e5d8955545" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="380e5470-bafd-421e-83fb-1b94b2a56d44" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="a7fdfe71-b5e5-49eb-bbdf-16147d8b5744" name="SOAP Response"/><con:assertion type="Schema Compliance" id="15b06c18-71fb-4e25-85b7-93fd467b3bcd" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bfa5544d-0cd3-4f34-81b5-a08952975834" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="modifyMessageStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="39e0e279-ab42-477a-963e-91524d1b73ca" name="testcase3- TEST - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - External  - Request" id="80db7810-70a1-4d04-b4b5-cc79218d4987" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:modifyMessageStatusRequest>
@@ -2505,7 +2505,7 @@
          </v1:request>
       </v1:modifyMessageStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="89a5e0aa-6a99-400e-a562-8fda827d2412" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="61797121-5d19-48e1-a790-302ccad421ce" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4f845129-a9ee-4f4b-b580-2ea817b933bf" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="25004e89-4c02-467a-997f-7650594305af" name="testcase3- TEST - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - LB  - Request" id="05348fe8-5dda-4428-bd89-773fcf15d310" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="fd85a87f-7529-4103-a06e-716b55a10795" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="63a1badf-cea9-46f2-a8f2-8c4f3cfa8db7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6bbd5be2-dfb0-4100-bb37-e682d9110d90" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="c0209b8f-1401-4ad3-b3fc-944190f20143" name="testcase3- TEST - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - LB  - Request" id="ad0f96cc-b196-40cf-8498-9b17869b269e" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:modifyMessageStatusRequest>
@@ -2523,7 +2523,7 @@
          </v1:request>
       </v1:modifyMessageStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40a74ac4-f1ef-45d5-aeb2-4f0cf0bfb7ff" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="50a4e838-13a9-44ed-834a-a504ee415cba" name="SOAP Response"/><con:assertion type="Schema Compliance" id="a351b446-5cf3-4309-b152-afb608ba8f23" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="39fca7b6-4cef-49b1-9e01-a40641643ae8" name="testcase3- TEST - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - Worker 1  - Request" id="c633063b-7734-4a02-b174-aff3ca75b9df" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="40c54b4e-628c-405b-bf41-289d2c5ccfd7" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="6770ab9f-3036-45f4-9052-f190516971e5" name="SOAP Response"/><con:assertion type="Schema Compliance" id="4ffa6fdd-78a4-434d-aeff-0c9b77716fa7" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="8fca03e1-34c6-455e-8d3b-b2201010cbeb" name="testcase3- TEST - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - Worker 1  - Request" id="b08271cf-7114-451e-a583-921d9d29f347" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:modifyMessageStatusRequest>
@@ -2541,7 +2541,7 @@
          </v1:request>
       </v1:modifyMessageStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f77a8073-e1ae-4807-9323-4599847b43f5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="6802c350-1b0b-4b3f-b091-4bf20f095962" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e19740c3-5b6c-491c-84b8-128cb421aaf6" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="6b27f691-798f-470a-aa57-d5e6dafea561" name="testcase3- TEST - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - Worker 2  - Request" id="56ced0c0-9c32-4439-97db-f4d81fa1a158" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c579fc77-fe0e-42da-a01c-6a6c3a07aee9" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="20fd069f-1422-4814-aa8f-21506b2ee3f8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="26d8c738-ef1c-4a42-a879-aea783a89530" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="99eb9b07-7c1c-47ed-b924-e72037f681f5" name="testcase3- TEST - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase3- TEST - Worker 2  - Request" id="e15990ce-968c-4f22-954a-9406b30e78ea" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <v1:modifyMessageStatusRequest>
@@ -2559,4 +2559,416 @@
          </v1:request>
       </v1:modifyMessageStatusRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="17e8c570-15a1-4d83-ba4e-58a529e5a98c" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="14a8ae84-2d4d-4f87-ac45-811bd105c543" name="SOAP Response"/><con:assertion type="Schema Compliance" id="06e9a59a-66fe-4a09-aaf6-179c1667756c" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="cbb24dbc-debb-4e4a-b25d-ae392ba9f563" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="845d596a-8fef-47c8-a949-9ea0d8938edf" name="SOAP Response"/><con:assertion type="Schema Compliance" id="884ccf88-6e4a-4fa9-8ddd-8748ae1a1e58" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="3f1b6194-382e-480e-b084-470a6fb028a5" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="30dbf8a8-172c-4f17-a2f1-ee780a3eacee" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createNotification" searchProperties="true"><con:settings/><con:testStep type="request" id="3138f465-8e4a-4769-a56a-7bbc8ad0555c" name="testcase4- STAGING - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase4- STAGING - External  - Request" id="4882fd45-e956-4007-b6e2-1aa73133e69e" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:createNotificationRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <notification>
+               <!--Optional:-->
+               <id>2662</id>
+            <!--Optional:-->
+            <creationDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</creationDate>
+            <destination>01050</destination>
+            <!--Optional:-->
+            <generatedby>23025</generatedby>
+               <!--Optional:-->
+               <message xsi:type="core:textMessage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <!--Optional:
+                  <id>1111111</id>-->
+               <!--Optional:-->
+               <status>CREATED</status>
+               <!--Optional:-->
+               <statusDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</statusDate>
+               <!--Optional:
+                  <docReference>123</docReference>-->
+               <messageTextType>TEXT_COMMUNICATION</messageTextType>
+               <messageTextTitle>bla bla</messageTextTitle>
+               <messageTextContent>M bla bla bla</messageTextContent>
+               </message>
+            </notification>
+         </v1:request>
+      </v1:createNotificationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="8d223015-b4de-4e91-929b-6e3927325adf" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="cfb2f607-3273-4efd-86af-3b58ed2026c7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6f18dbed-f5e7-49d7-a8ad-ccf4edab9beb" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="4b1fec80-8d27-4cc6-a2a4-1be6a8d53922" name="testcase4- STAGING - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase4- STAGING - LB - Request" id="9b197b48-51d4-4e97-997f-8ae299eaa901" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:createNotificationRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <notification>
+               <!--Optional:-->
+               <id>2662</id>
+            <!--Optional:-->
+            <creationDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</creationDate>
+            <destination>01050</destination>
+            <!--Optional:-->
+            <generatedby>23025</generatedby>
+               <!--Optional:-->
+               <message xsi:type="core:textMessage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <!--Optional:
+                  <id>1111111</id>-->
+               <!--Optional:-->
+               <status>CREATED</status>
+               <!--Optional:-->
+               <statusDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</statusDate>
+               <!--Optional:
+                  <docReference>123</docReference>-->
+               <messageTextType>TEXT_COMMUNICATION</messageTextType>
+               <messageTextTitle>bla bla</messageTextTitle>
+               <messageTextContent>M bla bla bla</messageTextContent>
+               </message>
+            </notification>
+         </v1:request>
+      </v1:createNotificationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="dd133e8c-3106-406a-8e13-5eb12f248ee0" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="fe98f9cd-d091-4da8-9517-19d9df2ed611" name="SOAP Response"/><con:assertion type="Schema Compliance" id="74638c0a-37c1-4156-a27f-a24764ab234b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="4b286ece-8813-440f-a2e7-9dce00978000" name="testcase4- STAGING - Worker 1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase4- STAGING - Worker 1 - Request" id="9f038a94-17da-435c-a032-ba2faaa17ce8" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.57:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:createNotificationRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <notification>
+               <!--Optional:-->
+               <id>2662</id>
+            <!--Optional:-->
+            <creationDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</creationDate>
+            <destination>01050</destination>
+            <!--Optional:-->
+            <generatedby>23025</generatedby>
+               <!--Optional:-->
+               <message xsi:type="core:textMessage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <!--Optional:
+                  <id>1111111</id>-->
+               <!--Optional:-->
+               <status>CREATED</status>
+               <!--Optional:-->
+               <statusDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</statusDate>
+               <!--Optional:
+                  <docReference>123</docReference>-->
+               <messageTextType>TEXT_COMMUNICATION</messageTextType>
+               <messageTextTitle>bla bla</messageTextTitle>
+               <messageTextContent>M bla bla bla</messageTextContent>
+               </message>
+            </notification>
+         </v1:request>
+      </v1:createNotificationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e9d51950-2ae1-4ed4-b3f1-967e6d795248" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="47716108-a30a-49aa-8e85-2f7c81d58b0f" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f482c670-9985-400e-89c5-5ef567266a1d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:testStep type="request" id="5dd505b5-19c7-4285-81b6-b366cea0af0b" name="testcase4- STAGING - Worker 2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>createNotification</con:operation><con:request name="testcase4- STAGING - Worker 2 - Request" id="1fee9244-7148-456e-92f4-5bb37d8c2520" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.64:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:core="http://www.fgov.be/dabs/core" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:createNotificationRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <notification>
+               <!--Optional:-->
+               <id>2662</id>
+            <!--Optional:-->
+            <creationDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</creationDate>
+            <destination>01050</destination>
+            <!--Optional:-->
+            <generatedby>23025</generatedby>
+               <!--Optional:-->
+               <message xsi:type="core:textMessage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <!--Optional:
+                  <id>1111111</id>-->
+               <!--Optional:-->
+               <status>CREATED</status>
+               <!--Optional:-->
+               <statusDate>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</statusDate>
+               <!--Optional:
+                  <docReference>123</docReference>-->
+               <messageTextType>TEXT_COMMUNICATION</messageTextType>
+               <messageTextTitle>bla bla</messageTextTitle>
+               <messageTextContent>M bla bla bla</messageTextContent>
+               </message>
+            </notification>
+         </v1:request>
+      </v1:createNotificationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="727cd817-b41d-46ef-8c56-db5ea21fa17d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4bee0a92-d114-4f55-9f7f-faccda13a400" name="SOAP Response"/><con:assertion type="Schema Compliance" id="1cde8b3d-6fa3-4a94-ba34-7b5d775eb1dc" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/createNotification"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="44f66b09-12c0-49e9-b152-4b385c52f46d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getMyMessagesStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="1402fdbe-6327-42ed-8964-805152ef07ed" name="testcase4- STAGING - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase4- STAGING - External  - Request" id="107e0199-f41c-4a0d-8e6b-065705204bd3" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getMyMessagesStatusRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <withClosed>true</withClosed>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <notificationId>2667</notificationId>
+         </v1:request>
+      </v1:getMyMessagesStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="714bd2ed-ac2c-4482-b7a3-c1a4ddfbbbb8" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="8a279674-50d6-414c-b1e2-a17bcea0b269" name="SOAP Response"/><con:assertion type="Schema Compliance" id="99a4a9cd-1583-4911-afd8-b19dd2aea068" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="f0920e1f-c7a1-44af-8a57-4ac2efe1ecf0" name="testcase4- STAGING - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase4- STAGING - LB  - Request" id="29d8a47b-e837-4514-bc3a-38ad94735841" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getMyMessagesStatusRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <withClosed>true</withClosed>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <notificationId>2667</notificationId>
+         </v1:request>
+      </v1:getMyMessagesStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="7629b6a2-6676-4ca6-bcbc-63c188292c33" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0d89e4fa-1904-474f-94f7-1234f642a86b" name="SOAP Response"/><con:assertion type="Schema Compliance" id="3f9e6748-9a15-4f04-9960-6c0d7b4ca32b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="c7b4bd12-e214-4726-bbc2-3e892c28fffd" name="testcase4- STAGING - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase4- STAGING - Worker 1  - Request" id="91464124-f1a0-45e7-ba4a-e0af5b24729e" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.57:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getMyMessagesStatusRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <withClosed>true</withClosed>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <notificationId>2667</notificationId>
+         </v1:request>
+      </v1:getMyMessagesStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="d9eba5f4-f23f-42c6-8a98-d7cb94c074a5" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0cfa4f22-c808-427c-9e6c-ef096f8c3590" name="SOAP Response"/><con:assertion type="Schema Compliance" id="8eadfd92-4ab2-497b-ab00-bc2fe3ac96b5" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="315de887-6488-4a5d-9e9e-c63842816109" name="testcase4- STAGING - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getMyMessagesStatus</con:operation><con:request name="testcase4- STAGING - Worker 2  - Request" id="f98950a6-e9bb-49e1-813d-3c5dc62e6777" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.64:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getMyMessagesStatusRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <withClosed>true</withClosed>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <notificationId>2667</notificationId>
+         </v1:request>
+      </v1:getMyMessagesStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="143a1e0f-1df1-4d21-b9a0-56114dd0733c" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b86d127d-aca0-40c9-85a8-344ad7ec4ccd" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c3753bc7-03de-432b-b1b6-b948e88eccb6" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getMyMessagesStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="2f35c060-eb15-4d40-a4fb-a4f66e46e22c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getNotifications" searchProperties="true"><con:settings/><con:testStep type="request" id="d3b64023-920f-42f3-b8ea-72d22d7772c4" name="testcase4- STAGING - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase4- STAGING - External  - Request" id="25a8f1f9-93a8-4350-b9f3-75942f3e13f9" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getNotificationsRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+             <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <!--Optional:-->
+            <notificationId>2667</notificationId>
+            <!--Optional:-->
+            <niscode>10500</niscode>
+         </v1:request>
+      </v1:getNotificationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b3682c3e-a13d-468a-8ac8-d154de47f473" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5a1e2d88-1e38-409d-b061-d6d2e1c215c9" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e078829e-5b1e-425e-a6bd-f6913ee644de" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="be4d22cc-5459-43f0-a893-5742f510eb2d" name="testcase4- STAGING - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase4- STAGING - LB  - Request" id="eaa5113b-1014-4e52-9a5a-af0ec85d6c9a" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getNotificationsRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+             <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <!--Optional:-->
+            <notificationId>2667</notificationId>
+            <!--Optional:-->
+            <niscode>10500</niscode>
+         </v1:request>
+      </v1:getNotificationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ea8b213f-bc37-49b1-a8f4-27148ccf89bf" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3b6b051a-ad01-40ca-bb7e-18c80cb7f3db" name="SOAP Response"/><con:assertion type="Schema Compliance" id="5e0a5053-2597-4d49-8d86-482d0c24ff41" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="3ea26d0e-ed3b-45b9-a698-71bfec9bd032" name="testcase4- STAGING - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase4- STAGING - Worker 1  - Request" id="950d4eaf-4014-4a05-a861-c0a4cdd7a961" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.57:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getNotificationsRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+             <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <!--Optional:-->
+            <notificationId>2667</notificationId>
+            <!--Optional:-->
+            <niscode>10500</niscode>
+         </v1:request>
+      </v1:getNotificationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4fc47271-4e86-4776-93c7-7de871425c1f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="fa81fa5a-e8f2-4d7e-a24b-05973512911e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ef218bb8-de00-444a-8f23-aa0b5b3570b8" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:testStep type="request" id="26cd304c-4c6e-4a8f-97cd-a6039ad06257" name="testcase4- STAGING - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>getNotifications</con:operation><con:request name="testcase4- STAGING - Worker 2  - Request" id="726cf97e-f83a-4563-ad1a-98ae2a93dfb9" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.64:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getNotificationsRequest>
+         <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <!--Optional:-->
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+         <v1:legalContext>None</v1:legalContext>
+         <v1:language>fr</v1:language>
+         <v1:request>
+             <!--Optional:-->
+            <from>2016-06-18T17:20:14.449</from>
+            <!--Optional:-->
+            <to>2019-06-18T17:20:14.449</to>
+            <!--Optional:-->
+            <messageId>1273</messageId>
+            <!--Optional:-->
+            <notificationId>2667</notificationId>
+            <!--Optional:-->
+            <niscode>10500</niscode>
+         </v1:request>
+      </v1:getNotificationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="ccb74394-c87e-49e5-80d9-ca206c96c3fd" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="37f7279f-4010-4ca9-b739-4898090d4cda" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b2956ad8-cd64-47c7-ad7d-20d2bb3f4bfe" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/getNotifications"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e429643e-2be9-4840-9444-c325411282a8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="modifyMessageStatus" searchProperties="true"><con:settings/><con:testStep type="request" id="befbf8ca-b232-4303-9533-c6ae9f24c668" name="testcase4- STAGING - External  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase4- STAGING - External  - Request" id="a1dc9d43-189e-4517-98c7-2842b0b28d39" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:modifyMessageStatusRequest>
+            <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+          <v1:legalContext>None</v1:legalContext>
+          <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <notificationId>123</notificationId>
+            <!--Optional:-->
+            <status>CREATED</status>
+         </v1:request>
+      </v1:modifyMessageStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4e442ee5-6bcd-4729-9805-ba5e8dd6a73e" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4dac1d7d-9727-4b32-a2b5-aa25fe433f36" name="SOAP Response"/><con:assertion type="Schema Compliance" id="25cea317-d6a2-4764-9e15-3f0d5441be3a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="b24d8207-d2e6-4f61-b529-45ea071757ae" name="testcase4- STAGING - LB  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase4- STAGING - LB  - Request" id="8da5a830-b2fe-455e-8baf-3be408a833a5" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:modifyMessageStatusRequest>
+            <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+          <v1:legalContext>None</v1:legalContext>
+          <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <notificationId>123</notificationId>
+            <!--Optional:-->
+            <status>CREATED</status>
+         </v1:request>
+      </v1:modifyMessageStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="e8618806-9579-4481-982c-0432b35903ee" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="ee6d880f-6b45-4548-b4a3-b0c3b58fccd0" name="SOAP Response"/><con:assertion type="Schema Compliance" id="3e8f289e-80d7-481f-9fb9-7b963c69fbe4" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="ce81d19a-5d54-41c0-953a-3ab99e6c19b2" name="testcase4- STAGING - Worker 1  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase4- STAGING - Worker 1  - Request" id="abb333e7-545c-45c9-8aa4-eab05d19832c" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:modifyMessageStatusRequest>
+            <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+          <v1:legalContext>None</v1:legalContext>
+          <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <notificationId>123</notificationId>
+            <!--Optional:-->
+            <status>CREATED</status>
+         </v1:request>
+      </v1:modifyMessageStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1fac879f-fc0f-4d04-9b14-eebe0bb8bacd" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="eefc61ae-f5e9-4255-ac99-eacb5d71c472" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c0e746ed-2150-4ad0-8e88-a4aee4627b66" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:testStep type="request" id="e9fd49e9-0a3c-4f01-8340-8c2886409ecf" name="testcase4- STAGING - Worker 2  - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CivilStatusNotificationService_v1.0Soap11Binding</con:interface><con:operation>modifyMessageStatus</con:operation><con:request name="testcase4- STAGING - Worker 2  - Request" id="8fa25989-6df1-4c4a-8c5a-956b1df98454" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.64:8443/services/CivilStatusNotificationService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/service/civilstatusnotificationservice/messages/v1" xmlns:v11="http://fidus.brussels/type/common/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:modifyMessageStatusRequest>
+            <v1:messageContext>
+            <v11:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v11:messageId>
+            <v11:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v11:timestamp>
+         </v1:messageContext>
+          <v1:legalContext>None</v1:legalContext>
+          <v1:language>fr</v1:language>
+         <v1:request>
+            <!--Optional:-->
+            <notificationId>123</notificationId>
+            <!--Optional:-->
+            <status>CREATED</status>
+         </v1:request>
+      </v1:modifyMessageStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="85688f51-f4c0-4c8b-a9b7-fb04eb9075cf" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="145a92f2-415b-4b87-963b-3c5bdeef3b1e" name="SOAP Response"/><con:assertion type="Schema Compliance" id="8241babc-755b-419d-bd7a-ab46324158d3" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/service/civilstatusnotificationservice/modifyMessageStatus"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

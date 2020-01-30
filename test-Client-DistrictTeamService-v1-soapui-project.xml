@@ -1767,7 +1767,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>false</con:preemptive><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/districtteamservice/createDemand"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="ae6ccec6-d4ce-4454-9627-80a01366c82c" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7e0526d1-2dee-4d3f-a66f-026f569d4756" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="d4a46285-69a7-44e8-b144-70621ad6f8e0" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase2 - Dev - Request" id="3955a977-a430-42e8-9222-273a501c278b" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>false</con:preemptive><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fidus.brussels/services/districtteamservice/createDemand"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="45424fa4-9871-4d65-b0d2-99aaf8743111" name="DEV"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="adee4faf-9494-4412-bbcf-5460084ffe13" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="b31abc7e-1a33-4c57-a2bd-d13b70b86290" name="testcase2 - Dev - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase2 - Dev - Request" id="bd97709d-2ad2-4187-b0dc-9299ee06482f" outgoingWss="Outflow DEV"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.36.61:8243/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -1820,7 +1820,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4c9e4f06-52d8-4770-9d26-ad57aba62996" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b1578900-8d19-40d7-9e2f-8655ed485b76" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ac822831-6197-4452-95f5-0aed2d8bff58" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="31675bd9-2cdf-4261-9f33-3052d6c12867" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="654009bf-197c-4548-9881-30e4297386aa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="de5b8862-939c-4f06-8e29-f29bb99a18cd" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - External - Request" id="6ba56b37-722b-4ff6-b1a3-e39327e465e6" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5c7359ea-803b-4019-b106-8cf20903ae3a" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c00655be-e989-4a78-8973-6bd8b76448a8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b6fa518a-34f3-4755-b4b1-af3092a9ec0b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="1f37b80d-86f0-4a1f-9199-c3e8b1bf0dcd" name="TEST"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c6415d12-3e25-45a9-b252-99bb822e5d78" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="30a4287a-5054-4a35-9918-ffac08d10d17" name="testcase3 - Test - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - External - Request" id="ea0c4415-d4cb-4daa-9a00-b979ab37c71c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-test.irisnetlab.be/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -1873,7 +1873,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="68aed889-e56c-42d5-9423-afa4545b678d" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="507bcd3c-a177-4416-8a50-ea7b5319b7da" name="SOAP Response"/><con:assertion type="Schema Compliance" id="76c29593-b470-4c5b-8752-131cf618e0bd" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="b0b0b158-66f3-43ce-8408-8a27d44453b9" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="0985c2e0-68fc-4c85-9bbf-6c5c37c5c426" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="4ccecadc-df5e-4da8-b7ce-8b0e8e98ca25" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b3fffd8a-c7f2-4213-b47e-6e814a2bfabc" name="SOAP Response"/><con:assertion type="Schema Compliance" id="1529faf0-515d-4b16-b040-d27a2746ba88" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="402a3a57-ab07-4262-ab66-667a9dba7b8b" name="testcase3 - Test - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - Worker1 - Request" id="4e71637b-bef3-46e3-939d-317b681dc994" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -1927,7 +1927,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6b16fdc9-090b-43d7-b6a5-1256f0995b8a" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="1be1603f-512f-4d52-8dc6-46440cd4f7c1" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ea80b2db-9fc8-4bfc-9d62-b75f0fb5d22a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="48c64dab-4254-49cd-acd8-8be4ea9eb02e" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="feb93d62-b52b-48e4-b58b-de01a2ba3207" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.45:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="eb66f3fe-f39e-4522-b00f-124484c46149" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b8e0bb4a-d2a6-40f5-b77f-48d534700fb8" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e41d0c62-548a-493f-aff8-f41730232578" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="9c483d20-86af-404f-9919-6bb6da8ec212" name="testcase3 - Test - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - Worker2 - Request" id="1d7a8278-ba0b-4c40-8cc3-7c3f65806f5c" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.51:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -1981,7 +1981,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="0ae3d773-79f3-4789-a369-4c81edd0322b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="628384c6-6402-4b37-91b2-364d9a611f76" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6c0d2eae-46e2-4cfa-b601-f358f88b7b7b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="81ec2a07-08e9-4fba-bf12-ac7c3a01c67f" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - LB - Request" id="fa58aff0-6eac-4dc6-b633-608561edc9e1" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="92bcbdfe-703c-4346-abec-cd2460f24160" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0e162267-935d-4828-a8bd-c6374d695ffd" name="SOAP Response"/><con:assertion type="Schema Compliance" id="6f06d871-b246-4005-944c-0574be25877b" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="47196f81-5a8d-45ff-9c92-c480e0501b15" name="testcase3 - Test - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase3 - Test - LB - Request" id="5e71796d-d215-46fa-9a19-ae7caf9cf2f9" outgoingWss="Outflow TEST"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esb-security-gw.sta.srv.cirb.lan:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -2034,7 +2034,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="f48268ac-ab0f-41cd-8b98-b278288940f4" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="4591dcda-f4d6-4f2e-93f4-f322cf951d2a" name="SOAP Response"/><con:assertion type="Schema Compliance" id="e1f589d7-5dc2-4286-8e3a-dfea8a49dd2a" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="cdfe73c9-f5a5-4fc4-8abf-a730c8327430" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3dba5080-809d-416b-b285-144796942cc3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="74062b58-5f2b-4280-a8e7-e88b66154fe1" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - External - Request" id="12b97264-221f-490c-a33d-dbbe5cdf8be2" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="c377e7bd-d5f3-42e2-a9ae-01dc1eff0fd1" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3154bfb3-86cf-4c90-a124-d4f5550b3f4c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d1f5ece6-b570-4e9a-9e2b-f6f938b21609" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="4f16eee5-67fb-4ad9-a9dd-51d141cc6bd6" name="STAG"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f566c550-2e9f-442b-aaad-cc98a4092535" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="5b6eab33-97a1-4544-ba61-3b0b1fbde973" name="testcase4 - Staging - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - External - Request" id="f52db24b-8103-4262-9060-1c7020298d08" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.irisnetlab.be/services/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -2087,7 +2087,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="0dbff908-f7dc-4a0f-bdf6-ce07431d8aff" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2a012d2d-baed-4ccb-a23e-a773d171e386" name="SOAP Response"/><con:assertion type="Schema Compliance" id="908d6a65-f3e3-40a2-8e9b-71828bb88b21" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="eebf2ac3-5659-43d1-9c79-5f9b3e9a40d9" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - LB - Request" id="e3eee6f8-fa89-4009-b0e3-2fa5c41c53f9" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="1ba26a6b-698c-41c1-ad01-aeff042f423f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="1f136487-3e9b-4dc4-bc26-1c99b8b67564" name="SOAP Response"/><con:assertion type="Schema Compliance" id="dc162214-290c-42ce-bbb1-05fadab6523d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="1fb723ad-614a-4f94-8753-f6a8127711ca" name="testcase4 - Staging - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - LB - Request" id="e9d5c22e-7d39-496f-bf91-62678737a7bf" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.sta.srv.cirb.lan:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -2140,61 +2140,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="44fc66b9-d5fa-490a-bddc-78b1198895b6" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="27c36cbd-1a53-4671-b479-776c244d9ded" name="SOAP Response"/><con:assertion type="Schema Compliance" id="b7c48ec7-6092-4403-b8cb-83a3f3438ea4" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="5494f607-c760-4768-9a2d-23456a0a807a" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="23a28825-e310-4370-814e-f9fe366e22a2" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.16:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <dem:createDemandRequest>
-         <dem:messageContext>
-            <v1:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v1:messageId>
-            <v1:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v1:timestamp>
-         </dem:messageContext>
-         <dem:legalContext>ServiceIntegrator</dem:legalContext>
-         <dem:request>
-            <dem:demandIdentificationData>
-               <dem:procedure>AC-ZP</dem:procedure>
-               <dem:sender>21015</dem:sender>
-               <dem:recipient>5344</dem:recipient>
-               <dem:type>CHANGE_RESIDENTIAL_ADDRESS</dem:type>
-               <dem:identifier>1</dem:identifier>
-               <dem:reference>Ref.</dem:reference>
-            </dem:demandIdentificationData>
-            <dem:demandInfos>
-               <dem:date>2018-01-01</dem:date>
-               <dem:language>FR</dem:language>
-               <dem:priority>MEDIUM</dem:priority>
-               <dem:contactPerson>Myriel</dem:contactPerson>
-               <dem:contactEmail>machin.bidule@mail.be</dem:contactEmail>
-               <dem:extraInformation>extra infos</dem:extraInformation>
-            </dem:demandInfos>
-            <dem:demandAddress>
-               <dem:postcode>1030</dem:postcode>
-               <dem:streetCode>3174</dem:streetCode>
-               <dem:policeNumber>64</dem:policeNumber>
-            </dem:demandAddress>
-            <dem:demandPersons>
-               <dem:person>
-                <!--<dem:rrn>91120406960</dem:rrn>-->
-                  <dem:lastname>Benjelloun</dem:lastname>
-                  <dem:firstname>Ismail</dem:firstname>
-                  <dem:birthdayYear>1989</dem:birthdayYear>
-                  <dem:birthdayMonth>03</dem:birthdayMonth>
-                  <dem:birthdayDay>02</dem:birthdayDay>
-                  <dem:nationality>BE</dem:nationality>
-                  <dem:gender>F</dem:gender>
-                  <dem:isReferentPerson>true</dem:isReferentPerson>
-               </dem:person>
-            </dem:demandPersons>
-            <dem:demandExtraInfos>
-               <dem:address>
-                  <dem:postcode>1030</dem:postcode>
-                  <dem:streetCode>3174</dem:streetCode>
-                  <dem:policeNumber>64</dem:policeNumber>
-               </dem:address>
-            </dem:demandExtraInfos>
-         </dem:request>
-      </dem:createDemandRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="60c0a764-2dc3-4e6f-b05f-022958e90cfe" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="3ee48e9d-3177-4972-aaca-70a18b5c1a4c" name="SOAP Response"/><con:assertion type="Schema Compliance" id="37d60ab8-cab3-46af-9aad-fb4aee275aeb" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="591909f3-a350-4d95-9f9a-dc1237fe5a85" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="c2791e47-950a-4644-b08a-8389ea34a161" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.17:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="5caab60e-f9af-4833-93f9-ab2df988808b" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b44836f5-b0c3-43be-9b73-70d3e5e9e158" name="SOAP Response"/><con:assertion type="Schema Compliance" id="1b8656d1-5e69-4153-9475-5f0d40518b98" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="acc5b124-9aaa-48ae-8da1-8321c0431779" name="testcase4 - Staging - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - Worker1 - Request" id="6658ca79-362e-4023-93c2-57b0f8f4f40f" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.57:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -2248,113 +2194,7 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="a886afe9-c349-4926-bbf8-30e1aa7ccf0f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="50120c15-174f-4d8c-8438-14a52242fdee" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f28d090d-dd44-4af1-896f-0c0ca70e0656" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="7a104518-73da-4273-aae0-ef2de991404c" name="PROD"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5c2be79d-44e6-4032-88c4-35c73b3e1686" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="55a38c89-3446-4955-8e3f-acbedcc41bef" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - External - Request" id="cee94e6b-04f8-4f75-a92b-dd2cfef67016" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <dem:createDemandRequest>
-         <dem:messageContext>
-            <v1:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v1:messageId>
-            <v1:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v1:timestamp>
-         </dem:messageContext>
-         <dem:legalContext>ServiceIntegrator</dem:legalContext>
-         <dem:request>
-            <dem:demandIdentificationData>
-               <dem:procedure>AC-ZP</dem:procedure>
-               <dem:sender>21015</dem:sender>
-               <dem:recipient>5344</dem:recipient>
-               <dem:type>CHANGE_RESIDENTIAL_ADDRESS</dem:type>
-               <dem:identifier>1</dem:identifier>
-               <dem:reference>Ref.</dem:reference>
-            </dem:demandIdentificationData>
-            <dem:demandInfos>
-               <dem:date>2018-01-01</dem:date>
-               <dem:language>FR</dem:language>
-               <dem:priority>MEDIUM</dem:priority>
-               <dem:contactPerson>Myriel</dem:contactPerson>
-               <dem:contactEmail>machin.bidule@mail.be</dem:contactEmail>
-               <dem:extraInformation>extra infos</dem:extraInformation>
-            </dem:demandInfos>
-            <dem:demandAddress>
-               <dem:postcode>1030</dem:postcode>
-               <dem:streetCode>3174</dem:streetCode>
-               <dem:policeNumber>64</dem:policeNumber>
-            </dem:demandAddress>
-            <dem:demandPersons>
-               <dem:person>
-                  <dem:lastname>Benjelloun</dem:lastname>
-                  <dem:firstname>Ismail</dem:firstname>
-                  <dem:birthdayYear>1989</dem:birthdayYear>
-                  <dem:birthdayMonth>03</dem:birthdayMonth>
-                  <dem:birthdayDay>02</dem:birthdayDay>
-                  <dem:nationality>BE</dem:nationality>
-                  <dem:gender>F</dem:gender>
-                  <dem:isReferentPerson>true</dem:isReferentPerson>
-               </dem:person>
-            </dem:demandPersons>
-            <dem:demandExtraInfos>
-               <dem:address>
-                  <dem:postcode>1030</dem:postcode>
-                  <dem:streetCode>3174</dem:streetCode>
-                  <dem:policeNumber>64</dem:policeNumber>
-               </dem:address>
-            </dem:demandExtraInfos>
-         </dem:request>
-      </dem:createDemandRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="69d2ed76-ef32-4029-a5fd-ae703f3cf945" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="0114c68e-08ac-42e4-b233-3a6532167835" name="SOAP Response"/><con:assertion type="Schema Compliance" id="94051b41-2947-4e41-b92a-4b880a0932f2" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="d799d23f-0132-4e9c-bd40-b8458f2fcb49" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - LB - Request" id="c6b346cd-95f7-49cc-a370-4f1e7ca32128" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <dem:createDemandRequest>
-         <dem:messageContext>
-            <v1:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v1:messageId>
-            <v1:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v1:timestamp>
-         </dem:messageContext>
-         <dem:legalContext>ServiceIntegrator</dem:legalContext>
-         <dem:request>
-            <dem:demandIdentificationData>
-               <dem:procedure>AC-ZP</dem:procedure>
-               <dem:sender>21015</dem:sender>
-               <dem:recipient>5344</dem:recipient>
-               <dem:type>CHANGE_RESIDENTIAL_ADDRESS</dem:type>
-               <dem:identifier>1</dem:identifier>
-               <dem:reference>Ref.</dem:reference>
-            </dem:demandIdentificationData>
-            <dem:demandInfos>
-               <dem:date>2018-01-01</dem:date>
-               <dem:language>FR</dem:language>
-               <dem:priority>MEDIUM</dem:priority>
-               <dem:contactPerson>Myriel</dem:contactPerson>
-               <dem:contactEmail>machin.bidule@mail.be</dem:contactEmail>
-               <dem:extraInformation>extra infos</dem:extraInformation>
-            </dem:demandInfos>
-            <dem:demandAddress>
-               <dem:postcode>1030</dem:postcode>
-               <dem:streetCode>3174</dem:streetCode>
-               <dem:policeNumber>64</dem:policeNumber>
-            </dem:demandAddress>
-            <dem:demandPersons>
-               <dem:person>
-                  <dem:lastname>Benjelloun</dem:lastname>
-                  <dem:firstname>Ismail</dem:firstname>
-                  <dem:birthdayYear>1989</dem:birthdayYear>
-                  <dem:birthdayMonth>03</dem:birthdayMonth>
-                  <dem:birthdayDay>02</dem:birthdayDay>
-                  <dem:nationality>BE</dem:nationality>
-                  <dem:gender>F</dem:gender>
-                  <dem:isReferentPerson>true</dem:isReferentPerson>
-               </dem:person>
-            </dem:demandPersons>
-            <dem:demandExtraInfos>
-               <dem:address>
-                  <dem:postcode>1030</dem:postcode>
-                  <dem:streetCode>3174</dem:streetCode>
-                  <dem:policeNumber>64</dem:policeNumber>
-               </dem:address>
-            </dem:demandExtraInfos>
-         </dem:request>
-      </dem:createDemandRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="0d1b4a0d-8449-4e41-9505-9da1dcde38be" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="55af842c-fb2e-42fe-88fb-6f5d52f8d4bc" name="SOAP Response"/><con:assertion type="Schema Compliance" id="9a308307-3fe1-4827-9854-2488630be6fb" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="28036238-c967-4dca-a9c7-452becf2428e" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="5d7ebeda-4381-43ac-9d02-121ff8d7d182" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="b7357068-04a6-4ad9-a225-01e46610f647" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="2f18bd58-c919-497e-bd8f-95b29bd5ebae" name="SOAP Response"/><con:assertion type="Schema Compliance" id="10cecbdb-93ac-4cce-9f31-e33c264dfdca" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="550ac6bd-9779-491c-a2f0-a81aa53283ef" name="testcase4 - Staging - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase4 - Staging - Worker2 - Request" id="baa362f2-bc2c-49ef-93fd-be78d6ebd93c" outgoingWss="Outflow STAG"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.24.64:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -2408,7 +2248,113 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="6aab0311-a472-4b82-925b-959e7c34dfde" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="b367ce56-c144-40d9-af93-4372736ba09a" name="SOAP Response"/><con:assertion type="Schema Compliance" id="147fd26a-06c0-47de-a14a-c98f5c9b3cfd" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="0ed1dbdc-633c-49fd-915e-d26adb85df86" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="900e5322-31c2-4704-94b1-0da3f2155b4f" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="65c1665e-eebb-41db-b92b-8b102348dd63" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="46f94ca5-b791-4758-83f0-90d2f4b26c6d" name="SOAP Response"/><con:assertion type="Schema Compliance" id="d04a268f-18f3-4aaf-8dcf-9c374b9ba088" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="5c4a3642-0dbd-4a76-a8e1-cd9a813238bc" name="PROD"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="13323ef6-3c3b-4716-ba0c-cfc255288ee1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createDemand" searchProperties="true"><con:settings/><con:testStep type="request" id="8b365d02-bd74-4720-a5a8-c6df597160eb" name="testcase5 - Prod - External - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - External - Request" id="5c09cd03-5c62-4d5f-90d9-7cfdd6df8da4" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus.sec.brussels/services/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dem:createDemandRequest>
+         <dem:messageContext>
+            <v1:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v1:messageId>
+            <v1:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v1:timestamp>
+         </dem:messageContext>
+         <dem:legalContext>ServiceIntegrator</dem:legalContext>
+         <dem:request>
+            <dem:demandIdentificationData>
+               <dem:procedure>AC-ZP</dem:procedure>
+               <dem:sender>21015</dem:sender>
+               <dem:recipient>5344</dem:recipient>
+               <dem:type>CHANGE_RESIDENTIAL_ADDRESS</dem:type>
+               <dem:identifier>1</dem:identifier>
+               <dem:reference>Ref.</dem:reference>
+            </dem:demandIdentificationData>
+            <dem:demandInfos>
+               <dem:date>2018-01-01</dem:date>
+               <dem:language>FR</dem:language>
+               <dem:priority>MEDIUM</dem:priority>
+               <dem:contactPerson>Myriel</dem:contactPerson>
+               <dem:contactEmail>machin.bidule@mail.be</dem:contactEmail>
+               <dem:extraInformation>extra infos</dem:extraInformation>
+            </dem:demandInfos>
+            <dem:demandAddress>
+               <dem:postcode>1030</dem:postcode>
+               <dem:streetCode>3174</dem:streetCode>
+               <dem:policeNumber>64</dem:policeNumber>
+            </dem:demandAddress>
+            <dem:demandPersons>
+               <dem:person>
+                  <dem:lastname>Benjelloun</dem:lastname>
+                  <dem:firstname>Ismail</dem:firstname>
+                  <dem:birthdayYear>1989</dem:birthdayYear>
+                  <dem:birthdayMonth>03</dem:birthdayMonth>
+                  <dem:birthdayDay>02</dem:birthdayDay>
+                  <dem:nationality>BE</dem:nationality>
+                  <dem:gender>F</dem:gender>
+                  <dem:isReferentPerson>true</dem:isReferentPerson>
+               </dem:person>
+            </dem:demandPersons>
+            <dem:demandExtraInfos>
+               <dem:address>
+                  <dem:postcode>1030</dem:postcode>
+                  <dem:streetCode>3174</dem:streetCode>
+                  <dem:policeNumber>64</dem:policeNumber>
+               </dem:address>
+            </dem:demandExtraInfos>
+         </dem:request>
+      </dem:createDemandRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="484fd9a7-e67f-4c06-af3c-c7ade876252f" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5b38604d-9471-4654-954f-9925c91a1e34" name="SOAP Response"/><con:assertion type="Schema Compliance" id="043b5ca8-95a6-4886-a62c-111f1e7bb8e0" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="b421bf77-a9ac-4a0f-8af2-092f11b5c4bc" name="testcase5 - Prod - LB - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - LB - Request" id="cbe0db10-76ac-46aa-b53b-ffbb2c414335" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://fidus-esb-sg.prd.srv.cirb.lan:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dem:createDemandRequest>
+         <dem:messageContext>
+            <v1:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v1:messageId>
+            <v1:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v1:timestamp>
+         </dem:messageContext>
+         <dem:legalContext>ServiceIntegrator</dem:legalContext>
+         <dem:request>
+            <dem:demandIdentificationData>
+               <dem:procedure>AC-ZP</dem:procedure>
+               <dem:sender>21015</dem:sender>
+               <dem:recipient>5344</dem:recipient>
+               <dem:type>CHANGE_RESIDENTIAL_ADDRESS</dem:type>
+               <dem:identifier>1</dem:identifier>
+               <dem:reference>Ref.</dem:reference>
+            </dem:demandIdentificationData>
+            <dem:demandInfos>
+               <dem:date>2018-01-01</dem:date>
+               <dem:language>FR</dem:language>
+               <dem:priority>MEDIUM</dem:priority>
+               <dem:contactPerson>Myriel</dem:contactPerson>
+               <dem:contactEmail>machin.bidule@mail.be</dem:contactEmail>
+               <dem:extraInformation>extra infos</dem:extraInformation>
+            </dem:demandInfos>
+            <dem:demandAddress>
+               <dem:postcode>1030</dem:postcode>
+               <dem:streetCode>3174</dem:streetCode>
+               <dem:policeNumber>64</dem:policeNumber>
+            </dem:demandAddress>
+            <dem:demandPersons>
+               <dem:person>
+                  <dem:lastname>Benjelloun</dem:lastname>
+                  <dem:firstname>Ismail</dem:firstname>
+                  <dem:birthdayYear>1989</dem:birthdayYear>
+                  <dem:birthdayMonth>03</dem:birthdayMonth>
+                  <dem:birthdayDay>02</dem:birthdayDay>
+                  <dem:nationality>BE</dem:nationality>
+                  <dem:gender>F</dem:gender>
+                  <dem:isReferentPerson>true</dem:isReferentPerson>
+               </dem:person>
+            </dem:demandPersons>
+            <dem:demandExtraInfos>
+               <dem:address>
+                  <dem:postcode>1030</dem:postcode>
+                  <dem:streetCode>3174</dem:streetCode>
+                  <dem:policeNumber>64</dem:policeNumber>
+               </dem:address>
+            </dem:demandExtraInfos>
+         </dem:request>
+      </dem:createDemandRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="26f9d474-d0b2-4309-95e2-f4272bedb9e7" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="231c552e-3f32-420c-bca6-c7a96e4174aa" name="SOAP Response"/><con:assertion type="Schema Compliance" id="db9ee5dc-b3f5-411a-9918-f5483df213e9" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="1be8bea3-ecd3-41df-be5f-15b5446b9b91" name="testcase5 - Prod - Worker1 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - Worker1 - Request" id="186224f8-c73f-4ddc-9293-c12ac66e8488" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.22:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
    <soapenv:Header/>
    <soapenv:Body>
       <dem:createDemandRequest>
@@ -2462,4 +2408,58 @@
          </dem:request>
       </dem:createDemandRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="56e79ad6-a79c-4d3a-bccf-73a315a41d17" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="5ef50e41-1edd-410c-954f-a7a2375d9c76" name="SOAP Response"/><con:assertion type="Schema Compliance" id="ed26df56-ecb3-42e7-9a96-e09f8fb8ce7e" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>projectName</con:name><con:value>DistrictTeamService</con:value></con:property><con:property><con:name>keystorepassword</con:name><con:value>wso2carbon</con:value></con:property><con:property><con:name>keystorePath</con:name><con:value>/data/wso2/keystores</con:value></con:property><con:property><con:name>endpointId</con:name><con:value>worker1</con:value></con:property><con:property><con:name>env</con:name><con:value>test</con:value></con:property><con:property><con:name>serviceId</con:name><con:value>fidus</con:value></con:property><con:property><con:name>wsdlServiceName</con:name><con:value>DistrictTeamService_v1.0</con:value></con:property></con:properties><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing><con:outgoing><con:name>Outflow PROD</con:name></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="42a4036b-f63c-4ec2-9ad5-53215424d673" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="41cd947e-7956-4727-9387-5979faa8e5d1" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c9147610-eff8-4317-996d-12dda222319d" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:testStep type="request" id="c5768d6e-395d-4887-98ce-e43dba9a8b27" name="testcase5 - Prod - Worker2 - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DistrictTeamServiceHTTPBinding</con:interface><con:operation>createDemand</con:operation><con:request name="testcase5 - Prod - Worker2 - Request" id="e3867d87-77a9-4daa-8f9c-23366593f2f2" outgoingWss="Outflow PROD"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.26.19:8443/services/DistrictTeamService_v1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://fidus.brussels/type/common/messages/v1" xmlns:dem="http://fidus.brussels/service/districtteamservice/messages/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dem:createDemandRequest>
+         <dem:messageContext>
+            <v1:messageId>${=import static java.util.UUID.randomUUID; uuid = randomUUID() as String}</v1:messageId>
+            <v1:timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").format(new Date())}</v1:timestamp>
+         </dem:messageContext>
+         <dem:legalContext>ServiceIntegrator</dem:legalContext>
+         <dem:request>
+            <dem:demandIdentificationData>
+               <dem:procedure>AC-ZP</dem:procedure>
+               <dem:sender>21015</dem:sender>
+               <dem:recipient>5344</dem:recipient>
+               <dem:type>CHANGE_RESIDENTIAL_ADDRESS</dem:type>
+               <dem:identifier>1</dem:identifier>
+               <dem:reference>Ref.</dem:reference>
+            </dem:demandIdentificationData>
+            <dem:demandInfos>
+               <dem:date>2018-01-01</dem:date>
+               <dem:language>FR</dem:language>
+               <dem:priority>MEDIUM</dem:priority>
+               <dem:contactPerson>Myriel</dem:contactPerson>
+               <dem:contactEmail>machin.bidule@mail.be</dem:contactEmail>
+               <dem:extraInformation>extra infos</dem:extraInformation>
+            </dem:demandInfos>
+            <dem:demandAddress>
+               <dem:postcode>1030</dem:postcode>
+               <dem:streetCode>3174</dem:streetCode>
+               <dem:policeNumber>64</dem:policeNumber>
+            </dem:demandAddress>
+            <dem:demandPersons>
+               <dem:person>
+                <!--<dem:rrn>91120406960</dem:rrn>-->
+                  <dem:lastname>Benjelloun</dem:lastname>
+                  <dem:firstname>Ismail</dem:firstname>
+                  <dem:birthdayYear>1989</dem:birthdayYear>
+                  <dem:birthdayMonth>03</dem:birthdayMonth>
+                  <dem:birthdayDay>02</dem:birthdayDay>
+                  <dem:nationality>BE</dem:nationality>
+                  <dem:gender>F</dem:gender>
+                  <dem:isReferentPerson>true</dem:isReferentPerson>
+               </dem:person>
+            </dem:demandPersons>
+            <dem:demandExtraInfos>
+               <dem:address>
+                  <dem:postcode>1030</dem:postcode>
+                  <dem:streetCode>3174</dem:streetCode>
+                  <dem:policeNumber>64</dem:policeNumber>
+               </dem:address>
+            </dem:demandExtraInfos>
+         </dem:request>
+      </dem:createDemandRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="3dccaad9-a687-46f0-a951-1fa33d833ea9" name="Not SOAP Fault"/><con:assertion type="SOAP Response" id="c57b85ed-ce38-446c-af1b-a88e331e9fd7" name="SOAP Response"/><con:assertion type="Schema Compliance" id="c7e048e3-3386-417f-a40d-3a3cb67d740f" name="Schema Compliance"><con:configuration/></con:assertion><con:wsaConfig action="http://fidus.brussels/services/districtteamservice/createDemand"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>projectName</con:name><con:value>DistrictTeamService</con:value></con:property><con:property><con:name>keystorepassword</con:name><con:value>wso2carbon</con:value></con:property><con:property><con:name>keystorePath</con:name><con:value>/data/wso2/keystores</con:value></con:property><con:property><con:name>endpointId</con:name><con:value>worker1</con:value></con:property><con:property><con:name>env</con:name><con:value>test</con:value></con:property><con:property><con:name>serviceId</con:name><con:value>fidus</con:value></con:property><con:property><con:name>wsdlServiceName</con:name><con:value>DistrictTeamService_v1.0</con:value></con:property></con:properties><con:wssContainer><con:crypto><con:source>data/wso2/keystores/user-rajarshi.jks</con:source><con:password>test@fidus01</con:password><con:type>KEYSTORE</con:type></con:crypto><con:outgoing><con:name>Outflow DEV</con:name></con:outgoing><con:outgoing><con:name>Outflow TEST</con:name><con:entry type="Signature" username="testuser-test.fidus.brussels" password="test@fidus01"><con:configuration><crypto>user-rajarshi.jks</crypto><keyIdentifierType>3</keyIdentifierType><signatureAlgorithm/><signatureCanonicalization/><useSingleCert>true</useSingleCert><digestAlgorithm/><customTokenValueType/><customTokenId/></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300000</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry></con:outgoing><con:outgoing><con:name>Outflow STAG</con:name></con:outgoing><con:outgoing><con:name>Outflow PROD</con:name></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
